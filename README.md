@@ -11,6 +11,8 @@ rebalances across all six factions, settler-company flank slots, militia compani
 | `Data/` | The live loose-file override depot. Mirrors the game's `Data\` folder, which the engine mounts on top of `Data.rwd` (see `startup\autoexec.txt`: `adddepot data.rwd` then `adddepot data/`). This is what "ships". |
 | `workbench/` | Full working tree: every file in the game's `Data (Mod)\` extract that differs from the pristine `Data (Backup)\` extract - new files, size changes, and equal-size content changes. Includes `__GIMP FILES\` art sources for the 4K UI work. |
 | `maps/` | Authored test maps from `Documents\Kohan2\data\Maps`. |
+| `ce/` | Cheat Engine table (`k2.exe`-relative addresses): render scaling, camera zoom, minimap colors, plus unidentified probes. From `D:\Game Mods\Kohan II Kings of War\`. |
+| `tools/third_party/` | `K2ExtractRWD.zip` - the community `Data.rwd` extractor (hard to find; archived here). |
 | `tools/collect.ps1` | Game install -> repo. Re-run after editing in the game folders, then commit. |
 | `tools/deploy.ps1` | Repo `Data/` -> game `Data\`. Copy-only, never deletes. |
 | `docs/WIDESCREEN.md` | State of the 4K/widescreen effort and engine findings. |
