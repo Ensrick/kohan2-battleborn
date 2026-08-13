@@ -1,0 +1,188 @@
+
+/* 	WALL SET		*/
+
+[WallSet Template=WallSet]
+{
+	ids = shadow_wallset
+	name = "#shadow_settlement_shadow_wallset_name"
+
+	wall_segment_ids = shadow_wall
+	wall_corner_ids = shadow_tower
+	gate_ids = shadow_gate
+}
+
+/* 	WALL PLACEHOLDERS		*/
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = shadow_wall_placeholder_vfx
+	name = "#shadow_settlement_shadow_wall_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Shadow/ShadowWallVillageDecal.dds
+	attached_scale = 0
+	texture_size = 6
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = shadow_wall_placeholder
+	name = "#shadow_settlement_shadow_wall_placeholder_name"
+	
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = shadow_wall_placeholder_vfx
+	}
+}
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = shadow_corner_placeholder_vfx
+	name = "#shadow_settlement_shadow_corner_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Shadow/ShadowCornerVillageDecal.dds
+	attached_scale = 0
+	texture_size = 6
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = shadow_corner_placeholder
+	name = "#shadow_settlement_shadow_corner_placeholder_name"
+
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = shadow_corner_placeholder_vfx
+	}
+}
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = shadow_gate_placeholder_vfx
+	name = "#shadow_settlement_shadow_gate_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Shadow/ShadowGateVillageDecal.dds
+	attached_scale = 0
+	texture_size = 6
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = shadow_gate_placeholder
+	name = "#shadow_settlement_shadow_gate_placeholder_name"
+
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = shadow_gate_placeholder_vfx
+	}
+}
+
+/* 	SETTLEMENT		*/
+
+[Thing Template=K2Settlement]
+{
+	ids = shadow_settlement
+	name = "#shadow_settlement_Thing_name"
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = settlement
+		
+		[Property]
+		property_IDS = settlement_shadow
+
+		[Property]
+		property_IDS = evil
+	}
+	
+	[SettlementComponent]
+	{
+		default_layout_ids = horde_standard
+		connected_wall = true
+		wall_neighbor_damage_factor = 0
+		
+		[AvailableStructures]
+		{
+			[Structure]
+			structure_ids = shadow_quarry
+		
+			[Structure]
+			structure_ids = shadow_woodmill
+			
+			[Structure]
+			structure_ids = shadow_blacksmith
+			
+			[Structure]
+			structure_ids = shadow_market
+
+			[Structure]
+			structure_ids = shadow_barracks
+			
+			[Structure]
+			structure_ids = shadow_shrine
+			
+			[Structure]
+			structure_ids = shadow_library
+
+			[Structure]
+			structure_ids = shadow_manafocus
+		}
+
+		[Levels]
+		{
+			[Level]
+			max_structures = 7
+			settlement_center_ids = shadow_center_village
+			wallset_ids = shadow_wallset
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = shadow_center_town
+			wallset_ids = shadow_wallset
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = shadow_center_city
+			wallset_ids = shadow_wallset
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = shadow_center_citadel
+			wallset_ids = shadow_wallset
+		}
+
+		[Placeholders]
+		wall_segment_placeholder_ids = shadow_wall_placeholder
+		wall_corner_placeholder_ids = shadow_corner_placeholder
+		gate_placeholder_ids = shadow_gate_placeholder
+
+		[Shape]
+		wall_diameter = 40
+		num_wall_sides = 9
+		num_wall_gates = 4
+		
+		[StructureLayouts]
+		{
+			[Layout]
+			layout_ids = haroun_shadow_layout_01
+			
+			[Layout]
+			layout_ids = haroun_shadow_layout_02
+			
+			[Layout]
+			layout_ids = haroun_shadow_layout_03
+			
+			[Layout]
+			layout_ids = haroun_shadow_layout_04
+		}
+	}
+}

@@ -1,0 +1,248 @@
+
+/******************************************  JUGGERNAUT PORTRAIT  **********************************/
+
+[Thing Template=Portrait]
+{
+	ids = portrait_juggernaut
+	name = "#juggernaut_portrait_juggernaut_name"
+
+	[View]
+	{
+		resource_prefix = Juggernaut/JuggernautPortrait
+
+		[AspectNormal]
+		{
+			[Animation Template=ObjectAnimationIdle]
+			IDS = idle
+
+			[Animation Template=ObjectAnimationFidget]
+			IDS = fidget1
+			
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget2
+
+			[Animation Template=ObjectAnimationFidget]
+			IDS = fidget3
+		}
+	}
+}
+
+/******************************************  JUGGERNAUT UNIT  **********************************/
+
+[Unit template=K2GauriUnit]
+{
+	IDS = juggernaut
+	name = "#juggernaut_name"
+	
+	[Size]
+	{
+		blocking_shape = CIRCLE
+		blocking_radius = 0.75
+		soft_shape = CIRCLE
+		soft_radius = 1.0
+	}
+	
+	[Stance Template=StanceDeath]
+		
+	[View]
+	{
+		resource_prefix = Juggernaut/Juggernaut
+		portrait_ids = portrait_juggernaut
+
+		[Aspect Template=AspectDeath]
+	}
+
+	[BodyComponent]
+	{
+		health = 680
+		defense = 8
+
+		[WhenStartDie Template=FXC_ChangeAspect]
+		aspect_ids = aspect_death
+	}
+	
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 3
+				
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+				
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+			length = 1.5
+		
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = juggernaut_death
+		}
+						
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.6
+		length = 1
+
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee2
+		key_ratio = 0.6
+		length = 1
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 50
+		
+		[Upkeep]
+		iron = 5
+		mana = 1
+	}
+	
+	[ElementComponent]
+	{
+		morale_value = 55
+		required_structures = gauri_library,gauri_blacksmith
+		denizen_type = denizen_type_melee
+		group_priority = 3
+		resupply_rate = 0.04
+	}
+	
+	[MoverComponent]
+	{
+		speed_max = 2.5
+	
+		[TrackInfo Template=K2TracksBipedLargeHoofRight]
+		
+		[TrackInfo Template=K2TracksBipedLargeHoofLeft]
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+			animation2 = melee2
+
+			[AbilityDefinition Template=K2SiegeAttack]
+			{
+				name = "#juggernaut_AbilityDefinition_name"
+				area = 2.0
+				attenuation_range_min = .5
+				attenuation_factor_max = 0.5
+				impact_impulse = 1000
+				impulse_area = 1
+				max_targets = 8
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = siege
+				amount = 40
+				
+				[Effect Template=AddDamageEffect]
+				damage_type_IDS = siege
+				targets = buildings
+				amount = 60
+
+				[WhenDoPerTarget template=FXC_CreateVFX]
+				VFX_IDS = bash_hiteffect
+				at = TARGET_HIT_POSITION
+				attached = false
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = metal_swing1
+			}
+		}	
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = siege
+
+		[Property]
+		property_IDS = mechanical
+
+		[Property]
+		property_IDS = fireproof
+
+		[Property]
+		property_IDS = unstoppable
+		
+		[Property]
+		property_IDS = role_siege
+	}
+}
+
+[Thing template=K2GauriCompany]
+{
+	IDS = company_juggernaut
+	name = "#juggernaut_company_juggernaut_name"
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_ids = berserk
+
+		[Property]
+		property_IDS = company_siege		
+	}
+
+	[View]
+	{
+		resource_prefix = juggernaut/juggernaut
+		banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = juggernaut_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = juggernaut_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = juggernaut_attack
+	}
+
+	[OrganizationComponent]
+	{
+		layout_IDS = company_siege
+		entrenchment_time = 300
+		
+		[Slot]	;; Siege Unit
+		element_IDS = juggernaut
+
+		[Slot]	;; Flank Units
+		element_IDS = null
+	}	
+}
+
+[Thing Template=K2GauriMilitia]
+{
+	IDS = militia_juggernaut
+	name = "#juggernaut_militia_name"
+	
+	[View]
+	resource_prefix = Juggernaut/Juggernaut
+	banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_siege_militia
+		entrenchment_time = 300
+		
+		[Slot]	;; siege
+		element_IDS = juggernaut
+	}	
+}

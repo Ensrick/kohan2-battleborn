@@ -1,0 +1,241 @@
+
+[Unit template=K2HumanUnit]
+{
+	IDS = dragoon
+	name = "#dragoon_name"
+	
+	[Size]
+	{
+		blocking_radius = 0.75
+		soft_shape = RECT
+		rect_width = 1.5
+		rect_height = 3.0
+	}
+	
+	[View]
+	{
+		resource_prefix = Dragoon/Dragoon
+
+		[AspectNormal]
+		skin = %sbase.dds
+	}
+		
+	[BodyComponent]
+	health = 340
+	defense = 5
+	
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.75
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 3
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget3
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+			length = 1.5
+			
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = dragoon_death
+		}
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.6
+						
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee2
+		key_ratio = 0.6
+		
+		[Animation Template=ChargeAnimation]
+		IDS = charge
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 10 ;; 20
+		
+		[Upkeep]
+		wood = 0.5 ;; 1
+		iron = 0.5 ;; 1
+	}
+	
+	[ElementComponent]
+	morale_value = 12
+	required_structures = human_center_city
+	group_priority = 2
+	
+	[MoverComponent]
+	{
+		speed_max = 4
+	
+		[TrackInfo Template=K2TracksQuadFrontRight]
+		
+		[TrackInfo Template=K2TracksQuadBackLeft]
+		
+		[TrackInfo Template=K2TracksQuadBackRight]
+		
+		[TrackInfo Template=K2TracksQuadFrontLeft]
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+			animation2 = melee2
+			
+			[AbilityDefinition Template=K2meleeAttack]
+			{
+				name = "#dragoon_AbilityDefinition_name"
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 26
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = metal_swing3
+			}
+		}
+		
+		[Ability template=K2Charge]
+		ability_IDS = charge	
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_human
+
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = flank
+		
+		[Property]
+		property_IDS = melee
+		
+		[Property]
+		property_IDS = role_cavalry
+		
+		[Property]
+		property_IDS = agile
+	}
+}
+
+[Thing template=K2HumanCompany]
+{
+	IDS = company_dragoon
+	name = "#dragoon_company_dragoon_name"
+
+	[View]
+	{
+		resource_prefix = Dragoon/Dragoon	
+		banner_icon = /Organizations/BannerIcons/CavalryIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = dragoon_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = dragoon_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = dragoon_attack
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = company_melee
+	}
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_mounted
+		entrenchment_time = 300
+		
+		[Slot]	;; front
+		element_IDS = dragoon
+		
+		[Slot]	;; flank
+		element_IDS = dragoon
+		
+		[Slot]	;; support
+		element_IDS = null
+		
+		[Slot]	;; support
+		element_IDS = null
+		
+		[Slot]	;; captain
+		element_IDS = captain
+	}	
+}
+
+
+[Thing template=K2HumanCompany]
+{
+	IDS = company_dragoon_xander
+	name = "#dragoon_company_dragoon_xander_name"
+	
+	recruitable = NO
+
+	[Placement]
+	placement_group_IDS = group_campaign
+
+	[View]
+	{
+		resource_prefix = Dragoon/Dragoon	
+		banner_icon = /Organizations/BannerIcons/CavalryIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = dragoon_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = dragoon_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = dragoon_attack
+	}
+		
+	[OrganizationComponent]
+	{
+		layout_IDS = company_mounted
+		entrenchment_time = 300
+		
+		[Slot]	;; front
+		element_IDS = dragoon
+		
+		[Slot]	;; flank
+		element_IDS = bowman
+		
+		[Slot]	;; support
+		element_IDS = wizard
+		
+		[Slot]	;; support
+		element_IDS = cleric
+		
+		[Slot]	;; captain
+		element_IDS = xander_kharei
+	}	
+}

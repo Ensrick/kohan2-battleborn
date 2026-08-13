@@ -1,0 +1,206 @@
+
+/* 	WALL SETS		*/
+
+[WallSet Template=WallSet]
+{
+	ids = drauga_wallset_01
+	name = "#drauga_settlement_drauga_wallset_01_name"
+
+	wall_segment_ids = drauga_wall_01
+	wall_corner_ids = drauga_tower_01
+	gate_ids = drauga_gate_01
+}
+
+[WallSet Template=WallSet]
+{
+	ids = drauga_wallset_02
+	name = "#drauga_settlement_drauga_wallset_02_name"
+
+	wall_segment_ids = drauga_wall_02
+	wall_corner_ids = drauga_tower_02
+	gate_ids = drauga_gate_02
+}
+
+[WallSet Template=WallSet]
+{
+	ids = drauga_wallset_03
+	name = "#drauga_settlement_drauga_wallset_03_name"
+
+	wall_segment_ids = drauga_wall_03
+	wall_corner_ids = drauga_tower_03
+	gate_ids = drauga_gate_03
+}
+
+/* 	WALL PLACEHOLDERS		*/
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = drauga_wall_placeholder_vfx
+	name = "#drauga_settlement_drauga_wall_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Drauga/DraugaWallVillageDecal.dds
+	attached_scale = 0
+	texture_size = 6
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = drauga_wall_placeholder
+	name = "#drauga_settlement_drauga_wall_placeholder_name"
+	
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = drauga_wall_placeholder_vfx
+	}
+}
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = drauga_corner_placeholder_vfx
+	name = "#drauga_settlement_drauga_corner_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Drauga/DraugaCornerVillageDecal.dds
+	attached_scale = 0
+	texture_size = 4
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = drauga_corner_placeholder
+	name = "#drauga_settlement_drauga_corner_placeholder_name"
+
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = drauga_corner_placeholder_vfx
+	}
+}
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = drauga_gate_placeholder_vfx
+	name = "#drauga_settlement_drauga_gate_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Drauga/DraugaGateVillageDecal.dds
+	attached_scale = 0
+	texture_size = 6
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = drauga_gate_placeholder
+	name = "#drauga_settlement_drauga_gate_placeholder_name"
+
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = drauga_gate_placeholder_vfx
+	}
+}
+
+/* 	SETTLEMENT		*/
+
+[Thing Template=K2Settlement]
+{
+	ids = drauga_settlement
+	name = "#drauga_settlement_Thing_name"
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = settlement
+		
+		[Property]
+		property_IDS = settlement_drauga
+		
+		[Property]
+		property_IDS = settlement_notshadow
+
+		[Property]
+		property_IDS = good
+	}
+	
+	[SettlementComponent]
+	{
+		default_layout_ids = company_standard
+
+		[AvailableStructures]
+		{
+			[Structure]
+			structure_ids = drauga_quarry
+		
+			[Structure]
+			structure_ids = drauga_woodmill
+			
+			[Structure]
+			structure_ids = drauga_blacksmith
+			
+			[Structure]
+			structure_ids = drauga_market
+			
+			[Structure]
+			structure_ids = drauga_barracks
+			
+			[Structure]
+			structure_ids = drauga_shrine
+			
+			[Structure]
+			structure_ids = drauga_library
+		}
+
+		[Levels]
+		{
+			[Level]
+			max_structures = 7
+			settlement_center_ids = drauga_center_village
+			wallset_ids = drauga_wallset_01
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = drauga_center_town
+			wallset_ids = drauga_wallset_01
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = drauga_center_city
+			wallset_ids = drauga_wallset_02
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = drauga_center_citadel
+			wallset_ids = drauga_wallset_03
+		}
+
+		[Placeholders]
+		wall_segment_placeholder_ids = drauga_wall_placeholder
+		wall_corner_placeholder_ids = drauga_corner_placeholder
+		gate_placeholder_ids = drauga_gate_placeholder
+
+		[Shape]
+		wall_diameter = 32
+		num_wall_sides = 10
+		num_wall_gates = 5
+		
+		[StructureLayouts]
+		{
+			[Layout]
+			layout_ids = drauga_layout_01
+			
+			[Layout]
+			layout_ids = drauga_layout_02
+			
+			[Layout]
+			layout_ids = drauga_layout_03
+			
+			[Layout]
+			layout_ids = drauga_layout_04
+		}
+	}
+}

@@ -1,0 +1,76 @@
+
+[Thing Template=K2ShadowCenter]
+{
+	IDS = shadow_center_citadel
+	name = "#shadow_center_citadel_name"
+	name_list_ids = namelist_shadow_settlement
+
+	[RandomActor]
+	random_actor_ids = random_settlement_citadel
+	weight = 0.2
+
+	[View]
+	{
+		resource_prefix = ShadowCenter/ShadowCenterCitadel
+		shadow_type = STENCIL
+
+		[TextureSearchPath]
+		path = /Shared/SharedTextures
+
+	}
+
+	[BodyComponent]
+	health = 14000 ;; 7000
+
+	[DenizenComponent]
+	{
+		[Organization]
+		organization_ids = workers_shadow
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_fury
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_reaver
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_leviathan
+		behavior = MILITIA_DEFENSIVE
+		
+		[Inventory]
+		actor_ids = nightbringer
+		count = 4
+
+		[Inventory]
+		actor_ids = fury
+		count = 24 ;; 8
+		
+		[Inventory]
+		actor_ids = reaver
+		count = 30 ;; 10
+
+		[Inventory]
+		actor_ids = leviathan
+		count = 2
+	}
+	
+	[DetectionComponent]	
+	detection_range = 46
+	
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 1200
+		
+		[Production]
+		gold = 34
+		mana = 4
+		unit_limit_provided = 10 ;; 5
+	}
+
+	[SupplyComponent]
+	supply_range = 46
+}

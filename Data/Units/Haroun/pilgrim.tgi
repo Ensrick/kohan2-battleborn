@@ -1,0 +1,210 @@
+
+[Unit template=K2HarounUnit]
+{
+	IDS = pilgrim
+	name = "#pilgrim_name"
+	description = "#pilgrim_description"
+ 	
+	[View]
+	resource_prefix = Pilgrim/Pilgrim
+		
+	[BodyComponent]
+	health = 120
+	defense = 1
+	
+	[BuilderComponent]
+	{
+		[BuildActor]
+		actor_ids = haroun_center_village
+	}
+
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.5
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+				
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = pilgrim_death
+		}
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die2
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = pilgrim_death
+		}
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.5
+						
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee2
+		key_ratio = 0.5
+		
+		[Animation Template=BuildAnimation]
+		{
+			IDS = build1
+			key_ratio = 0.5
+
+			[WhenStart Template=FXC_Equipment]
+			action = HIDE
+			location = spine
+			equipment_type_ids = sapling
+			
+			[WhenEnd Template=FXC_Equipment]
+			action = UNHIDE
+			location = spine
+			equipment_type_ids = sapling
+		}
+
+		[Animation Template=BuildAnimation]
+		{
+			IDS = build2
+			key_ratio = 0.5
+
+			[WhenStart Template=FXC_Equipment]
+			action = HIDE
+			location = spine
+			equipment_type_ids = sapling
+			
+			[WhenEnd Template=FXC_Equipment]
+			action = UNHIDE
+			location = spine
+			equipment_type_ids = sapling
+		}
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 3 ;; 8
+		
+		[Upkeep]
+		Stone = 0.5 ;; 1
+	}
+	
+	[ElementComponent]
+	{
+		morale_value = 7
+		required_structures = haroun_center_village
+	
+		[SupportProperty]
+		property_IDS = trailblazing
+	}
+	
+	[MoverComponent]
+	{
+		speed_max = 4.0
+		
+		[TrackInfo Template=K2TracksBipedRight]
+		
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+	
+	[PerformerComponent]
+	{	
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+			animation2 = melee2
+			
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#pilgrim_AbilityDefinition_name"
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 8
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = nonmetal_swing3
+			}
+		}
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_haroun
+
+		[Property]
+		property_IDS = front
+		
+		[Property]
+		property_IDS = settler_support
+
+		[Property]
+		property_IDS = bb_settler_flank
+
+		[Property]
+		property_IDS = role_settler
+	}
+}
+
+[Thing template=K2harounCompany]
+{
+	IDS = company_pilgrim
+	name = "#pilgrim_company_pilgrim_name"
+	
+	[View]
+	{
+		resource_prefix = HarounSettler/HarounSettler
+		banner_icon = /Organizations/BannerIcons/SettlerIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = pilgrim_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = pilgrim_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = pilgrim_attack
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = role_settler
+	}
+
+	[OrganizationComponent]
+	{
+		layout_IDS = company_settler
+		entrenchment_time = 60
+		
+		[Slot]	;; front
+		element_IDS = pilgrim
+
+		[Slot]	;; bb_settler_flank
+		element_IDS = pilgrim
+		
+		[Slot]	;; support
+		element_IDS = pilgrim
+		
+		[Slot]	;; captain
+		element_IDS = guide
+	}	
+}

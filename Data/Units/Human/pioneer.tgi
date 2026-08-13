@@ -1,0 +1,236 @@
+
+[Unit template=K2HumanUnit]
+{
+	IDS = pioneer
+	name = "#pioneer_name"
+	description = "#pioneer_description"
+ 
+	[View]
+	{
+		resource_prefix = Pioneer/Pioneer
+
+		[WhenCreated Template=FXC_Equipment]
+		action = UNHIDE
+		location = rhand
+		equipment_type_ids = staff
+
+		[WhenCreated Template=FXC_Equipment]
+		action = HIDE
+		location = rhand
+		equipment_type_ids = sledgehammer
+
+		[WhenCreated Template=FXC_Equipment]
+		action = HIDE
+		location = rhand
+		equipment_type_ids = hammer
+	}
+		
+	[BodyComponent]
+	health = 120
+	defense = 1
+	
+	[BuilderComponent]
+	{
+		[BuildActor]
+		actor_ids = human_center_village
+	}
+	
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.4
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = pioneer_death
+		}
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.4
+		
+		[Animation Template=MeleeAttackAnimation]
+		{
+			IDS = build1
+			key_ratio = 0.4
+
+			[WhenStart Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = staff
+
+			[WhenStart Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = hammer
+
+			[WhenEnd Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = staff
+
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = hammer
+		}
+		
+		[Animation Template=MeleeAttackAnimation]
+		{
+			IDS = build2
+			key_ratio = 0.4
+
+			[WhenStart Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = staff
+
+			[WhenStart Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = sledgehammer
+
+			[WhenEnd Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = staff
+
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = sledgehammer
+		}
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 2 ;; 5
+			
+		[Upkeep]
+		Stone = 0.5 ;; 1
+	}
+	
+	[ElementComponent]
+	morale_value = 6
+	required_structures = human_center_village
+	
+	[MoverComponent]
+	{
+		speed_max = 3
+		
+		[TrackInfo Template=K2TracksBipedRight]
+		
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{			
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#pioneer_AbilityDefinition_name"
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 10
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = nonmetal_swing1
+			}
+		}
+
+		[Ability Template=K2ConstructLocalSettlement]
+		{
+			animation1 = build1
+			animation2 = build2
+
+			[AbilityDefinition Template=K2ConstructActionSettlement]
+			{
+				[Effect Template=HealEffect]
+				amount = 20
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build
+			}
+		}
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_human
+
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = bb_settler_flank
+
+		[Property]
+		property_IDS = role_settler
+	}
+}
+
+[Thing template=K2HumanCompany]
+{
+	IDS = company_pioneer
+	name = "#pioneer_company_pioneer_name"
+	
+	[View]
+	{
+		resource_prefix = Pioneer/Pioneer
+		banner_icon = /Organizations/BannerIcons/SettlerIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = pioneer_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = pioneer_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = pioneer_attack
+	}
+		
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = role_settler
+	}
+
+	[OrganizationComponent]
+	{
+		layout_IDS = company_settler
+		entrenchment_time = 60
+		
+		[Slot]	;; front
+		element_IDS = pioneer
+
+		[Slot]	;; bb_settler_flank
+		element_IDS = pioneer
+		
+		[Slot]	;; support
+		element_IDS = ox
+		
+		[Slot]	;; captain
+		element_IDS = captain
+	}	
+}

@@ -1,0 +1,147 @@
+
+[Unit template=K2HumanUnit]
+{
+	IDS = sorceress
+	name = "#sorceress_name"
+	
+	[View]
+	resource_prefix = Sorceress/Sorceress
+
+	[BodyComponent]
+	{
+		health = 140
+		defense = 1
+		
+		[WhenHealth Template=FXC_PlayHitEffect]
+		{
+			health_trigger_type = RELATIVE_DECREASE
+			health = 0.035
+			
+			pivot = head
+			axis = 0,0,1
+			max_impulse = 500
+			max_damage = 0.20
+			max_angle = 30
+			vel_decay = 1.05
+			stiffness = 15
+		}
+	}
+
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.35
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+	
+		[Animation Template=DieAnimation]
+		IDS = die1
+
+		[Animation Template=DieAnimation]
+		IDS = die2
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.6
+		
+		[Animation Template=CastAnimation]
+		IDS = cast
+		key_ratio = 0.7
+
+		[Animation Template=CastIdleAnimation]
+		IDS = idlecast	
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 22
+		
+		[Upkeep]
+		mana = 2
+	}
+	
+	[ElementComponent]
+	morale_value = 5
+	required_structures = human_center_town,human_library
+	
+	[MoverComponent]
+	{
+		speed_max = 3.5
+		
+		[TrackInfo Template=K2TracksBipedRight]
+		
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+	
+	[PerformerComponent]
+	{
+		cv_bias = 2
+		wait_bonus = 2
+ 
+		[Ability Template=K2MeleeLocal]
+		{
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#sorceress_AbilityDefinition_name"
+				
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 8
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = nonmetal_swing2
+			}
+		}
+
+		[Ability template=K2SpellInstantLocal]
+		ability_IDS = elemental_aura
+		required_experience_min = 0
+		required_experience_max = 2
+
+		[Ability template=K2SpellEnchantmentLocal]
+		ability_IDS = heavens_cage
+		required_experience_min = 0
+		required_experience_max = 2
+
+		[Ability template=K2SpellInstantLocal]
+		ability_IDS = elemental_aura2
+		required_experience_min = 3
+		required_experience_max = 3
+
+		[Ability template=K2SpellEnchantmentLocal]
+		ability_IDS = heavens_cage2
+		required_experience_min = 3
+		required_experience_max = 3
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_human
+
+		[Property]
+		property_IDS = support
+
+		[Property]
+		property_IDS = spellcaster
+		
+		[Property]
+		property_IDS = role_assault
+	}
+}

@@ -1,0 +1,77 @@
+
+[Thing Template=K2UndeadCenter]
+{
+	IDS = undead_center_citadel
+	name = "#undead_center_citadel_name"
+	name_list_ids = namelist_undead_settlement
+
+	[RandomActor]
+	random_actor_ids = random_settlement_citadel
+	weight = 0.2
+
+	[View]
+	resource_prefix = UndeadCenter/UndeadCenterCitadel
+
+	[BodyComponent]
+	health = 14400 ;; 7200
+
+	[DenizenComponent]
+	{
+		[Organization]
+		organization_ids = workers_undead
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_bonearcher
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_skeleton
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_zombie ;; CUSTOM COMPANY!
+		behavior = MILITIA_OFFENSIVE
+
+				[Organization]
+		organization_ids = militia_bone_golem ;; CUSTOM COMPANY!
+		behavior = MILITIA_DEFENSIVE
+
+		[Inventory]
+		actor_ids = boneweaver
+		count = 4
+		
+		[Inventory]
+		actor_ids = bonearcher
+		count = 18 ;; 8
+
+		[Inventory]
+		actor_ids = skeleton
+		count = 18 ;; 10
+
+		[Inventory]
+		actor_ids = zombie
+		count = 60
+
+		[Inventory]
+		actor_ids = bone_golem
+		count = 1
+	}
+	
+	[DetectionComponent]	
+	detection_range = 46
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 1500 ;; 300
+		
+		[Production]
+		gold = 44
+		mana = 2
+		unit_limit_provided = 10 ;; 5
+	}
+
+	[SupplyComponent]
+	supply_range = 46
+}

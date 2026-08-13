@@ -1,0 +1,78 @@
+
+[Thing Template=K2HumanBuilding]
+{
+	IDS = human_fort
+	name = "#human_fort_name"
+	name_list_ids = namelist_human_outpost
+	
+	[View]
+	{
+		resource_prefix = HumanFort/HumanFort
+		icon = /UI/Game/StructureButtons/OutpostIcon.png
+ 
+		[TextureSearchPath]
+		path = /Buildings/Human/HumanOutpost
+
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = select_human_outpost
+	}
+
+	[BodyComponent]
+	health = 3900 ;; 1950
+	captureable = true
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = workers_human
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_swordsman
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_pikeman
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_bowman
+		behavior = MILITIA_OFFENSIVE
+		
+		[Inventory]
+		actor_ids = worker
+		count = 4
+
+		[Inventory]
+		actor_ids = pikeman
+		count = 24
+
+		[Inventory]
+		actor_ids = swordsman
+		count = 18 ;; 8
+
+		[Inventory]
+		actor_ids = bowman
+		count = 24 ;; 8
+	}
+	
+	[DetectionComponent]
+	detection_range = 30
+	
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 250 ;; 100
+		
+		[Upkeep]
+		stone = 6
+
+		[Production]
+		unit_limit_provided = 3
+	}
+
+	[SupplyComponent]
+	supply_range = 30
+}

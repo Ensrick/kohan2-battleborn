@@ -1,0 +1,6 @@
+/* 	ORGANIZATION SLOT PROPERITES	*/
+
+[Property Template=SharedProperty]
+IDS = bb_settler_flank
+name = "#bb_properties_organization_settler_flank_name"
+icon = NULL

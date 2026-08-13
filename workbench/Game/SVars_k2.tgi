@@ -1,0 +1,55 @@
+[SVars]
+{
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;; GAME-SPECIFIC	
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	;; easy vars
+	string	MapDefaultBiome = temperate
+
+	flag	AllowSettlements = true
+
+	;; world rules - NOTE: these defaults are overridden by "world_rules.tgi"
+	fixed	ResourceStockpileDefault 	= 500		;; Starting resources (gold,etc.) for new maps and random maps
+	
+	;; for engagement
+	fixed	PrimarySampleTime = 5
+	fixed	RetreatingTime = 12
+	fixed	RoutingTime = 12
+	fixed	ReformTime = 8
+	fixed	StalemateTime = 10
+	fixed	RegroupTime = 8
+	bool	KillTargetIsHighestPriority = false
+
+	;; for sieging
+	;; drp071404 - was 5 but catapult recharge is 6
+	fixed	UnderSiegeRecentlyDamagedSeconds = 7
+	
+	;; for morale
+	fixed	MoraleEngagementLoss = 0.7
+	fixed	MoraleEngagementLossFactorMax = 1.25
+	fixed	MoraleDeathFactor = 0.65
+	fixed	MoraleRetreatPenalty = 0.0
+	fixed	MoraleSlayerBase = 1.0
+	fixed	MoraleSlayerFactorMin = 0.5
+	fixed	MoraleSlayerFactorMax = 1.5
+	fixed	MoraleBreakerBase = 2.0
+	fixed	MoraleBreakerFactorMin = 0.5
+	fixed	MoraleBreakerFactorMax = 1.5
+	fixed	MoraleReplenish = 1.75
+	fixed	MoraleSupplyBonus = 0.0
+
+	;; economy
+	int	EconomyLimitedResourceMax = 40 ;; 20
+	
+	;; sai
+	flag	UseAirAttacks				= false
+	
+	; attack efficiency
+	fixed	AttackEfficiencyPointsPerSecondClimbing = 0.01
+	fixed	AttackEfficiencyPointsPerSecondFalling = 0.03
+	
+	; Targeted state persistence
+	fixed	TargetedStateTimer = 1
+	
+} ; end [Vars]

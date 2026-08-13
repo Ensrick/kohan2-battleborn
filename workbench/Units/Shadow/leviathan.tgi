@@ -1,0 +1,246 @@
+
+/******************************************  LEVIATHAN PORTRAIT  **********************************/
+
+[Thing Template=Portrait]
+{
+	ids = leviathan_portrait
+	name = "#leviathan_portrait_name"
+
+	[View]
+	{
+		resource_prefix = Leviathan/LeviathanPortrait
+
+		[AspectNormal]
+		{
+			[Animation Template=ObjectAnimationIdle]
+			ids = idle
+			length = 3.5
+
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget1
+			length = 1.7
+			
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget2
+			length = 5.3
+
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget3
+			length = 3.5
+		}
+	}
+}
+
+/******************************************  LEVIATHAN UNIT  **********************************/
+
+[Unit template=K2ShadowUnit]
+{
+	IDS = leviathan
+	name = "#leviathan_name"
+	
+	[Size]
+	{
+		blocking_radius = 0.8
+		soft_shape = RECT
+		rect_width = 1.6
+		rect_height = 3.2
+	}
+		
+	[View]
+	resource_prefix = Leviathan/Leviathan
+	portrait_ids = leviathan_portrait
+		
+	[BodyComponent]
+	health = 620
+	defense = 4
+	
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 3.5
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+				
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+			length = 1.5
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = leviathan_death
+		}
+
+		[Animation Template=DieAnimation]
+		{
+			IDS = die2
+			length = 1.5
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = leviathan_death
+		}
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.42
+		length = 1.5
+						
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee2
+		key_ratio = 0.44
+		length = 1.5
+
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee3
+		key_ratio = 0.4
+		length = 1.5
+
+		[Animation Template=CastAnimation]
+		IDS = cast
+		key_ratio = 0.55
+		
+		[Animation Template=IdleAnimation]
+		IDS = idlecast
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 40
+		
+		[Upkeep]
+		mana = 5
+	}
+	
+	[ElementComponent]
+	{
+		morale_value = 100
+		denizen_type = denizen_type_melee
+		required_structures = shadow_manafocus,shadow_barracks
+		resupply_rate = 0.04
+	}
+	
+	[MoverComponent]
+	{
+		speed_max = 3.0
+	
+		[TrackInfo Template=K2TracksDragonClawRight]
+		
+		[TrackInfo Template=K2TracksDragonClawLeft]
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+			animation2 = melee2
+			animation3 = melee3
+			
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#leviathan_AbilityDefinition_name"
+				
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 48
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = leviathan_bite
+			}
+		}
+		
+		[Ability template=K2SpellInstantLocal]
+		ability_IDS = dreadfire_blast
+		spawn_position = 0.3,-1.4,1.9
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = siege
+
+		[Property]
+		property_IDS = monstrous
+
+		[Property]
+		property_IDS = role_siege
+	}
+}
+
+[Thing template=K2ShadowCompany]
+{
+	IDS = horde_leviathan
+	name = "#leviathan_horde_leviathan_name"
+
+	[View]
+	{
+		resource_prefix = Leviathan/Leviathan
+		banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = leviathan_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = leviathan_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = leviathan_attack
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = company_siege
+	}
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = horde_siege
+		entrenchment_time = 300
+		
+		[Slot]	;; Siege Unit
+		element_IDS = leviathan
+
+		[Slot]	;; Flank Units
+		element_IDS = null
+	}	
+}
+
+[Thing template=K2ShadowMilitia]
+{
+	IDS = militia_leviathan
+	name = "#leviathan_militia_name"
+	
+	[View]
+	{
+		resource_prefix = Leviathan/Leviathan
+		banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = leviathan_select
+	}
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_siege_militia
+		entrenchment_time = 300
+		
+		[Slot]	;; siege
+		element_IDS = leviathan
+	}	
+}

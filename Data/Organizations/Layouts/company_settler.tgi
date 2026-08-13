@@ -1,0 +1,150 @@
+[OrganizationLayout template=K2OrganizationLayout]
+{
+	IDS = company_settler
+	name = "#company_settler_name"
+	
+	[Slot template=LayoutSlot]
+	property_IDS = front
+	locked = true
+	number = 4
+	name = "#company_settler_Slot_name"
+
+	[Slot template=LayoutSlot]
+	property_IDS = bb_settler_flank
+	locked = true
+	number = 2
+	name = "#bb_company_settler_flank_Slot_name"
+
+	[Slot template=LayoutSlot]
+	property_IDS = settler_support
+	locked = true
+	number = 2
+	name = "#company_settler_Slot_name_2"
+
+	[Slot template=PrimarySlot]
+	property_IDS = captain
+	locked = true
+	name = "#company_settler_Slot_name_3"
+	
+	[Formation]
+	{
+		formation_IDS = company_combat
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -3.75,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.25,+3
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.25,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +3.75,+3
+
+		[Position template=FormationPosition]
+		property_IDS = bb_settler_flank
+		offset = +4.5,0
+		
+		[Position template=FormationPosition]
+		property_IDS = bb_settler_flank
+		offset = -4.5,0
+
+		[Position template=FormationPosition]
+		property_IDS = settler_support
+		offset = -2,-1.5
+
+		[Position template=FormationPosition]
+		property_IDS = settler_support
+		offset = +2,-1.5
+		
+		[Position template=FormationPosition]
+		property_IDS = captain
+		offset = 0,0
+	}
+	[Formation]
+	{
+		formation_IDS = company_skirmish
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.5,-3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.5,-3
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.5,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.5,+3
+
+		[Position template=FormationPosition]
+		property_IDS = bb_settler_flank
+		offset = +4,0
+		
+		[Position template=FormationPosition]
+		property_IDS = bb_settler_flank
+		offset = -4,0
+
+		[Position template=FormationPosition]
+		property_IDS = settler_support
+		offset = +3,0
+
+		[Position template=FormationPosition]
+		property_IDS = settler_support
+		offset = -3,0
+		
+		[Position template=FormationPosition]
+		property_IDS = captain
+		offset = 0,0
+	}
+	[Formation]
+	{
+		formation_IDS = company_column
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.25,+4
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.25,+6
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.25,-6
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.25,-4
+
+		[Position template=FormationPosition]
+		property_IDS = bb_settler_flank
+		offset = +1.25,+3
+		
+		[Position template=FormationPosition]
+		property_IDS = bb_settler_flank
+		offset = -1.25,-3
+
+		[Position template=FormationPosition]
+		property_IDS = settler_support
+		offset = -1.25,+1
+
+		[Position template=FormationPosition]
+		property_IDS = settler_support
+		offset = +1.25,-1
+		
+		
+		[Position template=FormationPosition]
+		property_IDS = captain
+		offset = 0,0
+	}
+}

@@ -1,0 +1,206 @@
+
+/* 	WALL SETS		*/
+
+[WallSet Template=WallSet]
+{
+	ids = gauri_wallset_01
+	name = "#gauri_settlement_gauri_wallset_01_name"
+
+	wall_segment_ids = gauri_wall_01
+	wall_corner_ids = gauri_tower_01
+	gate_ids = gauri_gate_01
+}
+
+[WallSet Template=WallSet]
+{
+	ids = gauri_wallset_02
+	name = "#gauri_settlement_gauri_wallset_02_name"
+
+	wall_segment_ids = gauri_wall_02
+	wall_corner_ids = gauri_tower_02
+	gate_ids = gauri_gate_02
+}
+
+[WallSet Template=WallSet]
+{
+	ids = gauri_wallset_03
+	name = "#gauri_settlement_gauri_wallset_03_name"
+
+	wall_segment_ids = gauri_wall_03
+	wall_corner_ids = gauri_tower_03
+	gate_ids = gauri_gate_03
+}
+
+/* 	WALL PLACEHOLDERS		*/
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = gauri_wall_placeholder_vfx
+	name = "#gauri_settlement_gauri_wall_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Gauri/GauriWallVillageDecal.dds
+	attached_scale = 0
+	texture_size = 6
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = gauri_wall_placeholder
+	name = "#gauri_settlement_gauri_wall_placeholder_name"
+	
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = gauri_wall_placeholder_vfx
+	}
+}
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = gauri_corner_placeholder_vfx
+	name = "#gauri_settlement_gauri_corner_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Gauri/GauriCornerVillageDecal.dds
+	attached_scale = 0
+	texture_size = 4
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = gauri_corner_placeholder
+	name = "#gauri_settlement_gauri_corner_placeholder_name"
+
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = gauri_corner_placeholder_vfx
+	}
+}
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = gauri_gate_placeholder_vfx
+	name = "#gauri_settlement_gauri_gate_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Gauri/GauriGateVillageDecal.dds
+	attached_scale = 0
+	texture_size = 6
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = gauri_gate_placeholder
+	name = "#gauri_settlement_gauri_gate_placeholder_name"
+
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = gauri_gate_placeholder_vfx
+	}
+}
+
+/* 	SETTLEMENT		*/
+
+[Thing Template=K2Settlement]
+{
+	ids = gauri_settlement
+	name = "#gauri_settlement_Thing_name"
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = settlement
+		
+		[Property]
+		property_IDS = settlement_gauri
+		
+		[Property]
+		property_IDS = settlement_notshadow
+
+		[Property]
+		property_IDS = good
+	}
+	
+	[SettlementComponent]
+	{
+		default_layout_ids = company_standard
+
+		[AvailableStructures]
+		{
+			[Structure]
+			structure_ids = gauri_quarry
+		
+			[Structure]
+			structure_ids = gauri_woodmill
+			
+			[Structure]
+			structure_ids = gauri_blacksmith
+			
+			[Structure]
+			structure_ids = gauri_market
+	
+			[Structure]
+			structure_ids = gauri_barracks
+			
+			[Structure]
+			structure_ids = gauri_shrine
+			
+			[Structure]
+			structure_ids = gauri_library	
+		}
+
+		[Levels]
+		{
+			[Level]
+			max_structures = 7
+			settlement_center_ids = gauri_center_village
+			wallset_ids = gauri_wallset_01
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = gauri_center_town
+			wallset_ids = gauri_wallset_01
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = gauri_center_city
+			wallset_ids = gauri_wallset_02
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = gauri_center_citadel
+			wallset_ids = gauri_wallset_03
+		}
+
+		[Placeholders]
+		wall_segment_placeholder_ids = gauri_wall_placeholder
+		wall_corner_placeholder_ids = gauri_corner_placeholder
+		gate_placeholder_ids = gauri_gate_placeholder
+		
+		[Shape]
+		wall_diameter = 38
+		num_wall_sides = 6
+		num_wall_gates = 4
+		
+		[StructureLayouts]
+		{
+			[Layout]
+			layout_ids = gauri_layout_01
+			
+			[Layout]
+			layout_ids = gauri_layout_02
+			
+			[Layout]
+			layout_ids = gauri_layout_03
+			
+			[Layout]
+			layout_ids = gauri_layout_04
+		}
+	}
+}

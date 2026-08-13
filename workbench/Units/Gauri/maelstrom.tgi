@@ -1,0 +1,287 @@
+
+/******************************************  JUGGERNAUT PORTRAIT  **********************************/
+
+[Thing Template=Portrait]
+{
+	ids = maelstrom_portrait
+	name = "#maelstrom_portrait_name"
+
+	[View]
+	{
+		resource_prefix = Maelstrom/MaelstromPortrait
+
+		[AspectNormal]
+		{
+			[Animation Template=ObjectAnimationIdle]
+			ids = idle
+			length = 2
+
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget1
+			length = 2
+			
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget2
+			length = 2
+		}
+	}
+}
+
+/******************************************  JUGGERNAUT VFX  **********************************/
+
+[VFX template=K2VFXModelTemporary]
+{
+	IDS = maelstrom_hit_effect
+	name = "#maelstrom_hit_effect_name"
+	model = Maelstrom/MaelstromHitEffect.nif
+}
+
+/******************************************  JUGGERNAUT UNIT  **********************************/
+
+[Unit template=K2GauriUnit]
+{
+	IDS = maelstrom
+	name = "#maelstrom_name"
+	
+	[Flags]
+	conform_to_terrain = true
+
+	[Size]
+	blocking_radius = 0.75
+	soft_shape = SQUARE
+	square_size = 2.0
+
+	[Stance]
+	{
+		ids = death
+		aspect_ids = death
+		property_ids = NULL
+		health = 0.05
+		actor_state = dead
+	}
+	
+	[View]
+	{
+		resource_prefix = Maelstrom/Maelstrom
+		portrait_ids = maelstrom_portrait
+
+		[Aspect]
+		ids = death
+		model = %sDie1.nif
+
+		[Swivel]
+		{
+			swivel_node_ids = base
+			swivel_inertia = .1
+			spring_constant = .4
+			swivel_mass = 2000
+			wind_sway = false
+			recoil = true
+			impact_sway = true
+			movement_inertia = true
+		}
+	}
+
+	[BodyComponent]
+	health = 400
+	defense = 5
+	
+	[CharacterComponent]
+	{		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+		
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = maelstrom_death
+		}
+
+		[Animation Template=RangedAttackAnimation]
+		IDS = range
+		key_ratio = 0.72
+
+		[Animation Template=RangedIdleAnimation]
+		IDS = idlerange
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 50
+		
+		[Upkeep]
+		wood = 5
+		mana = 1
+	}
+	
+	[ElementComponent]
+	morale_value = 55
+	required_structures = gauri_woodmill,gauri_library
+	denizen_type = denizen_type_ranged
+	resupply_rate = 0.04
+	
+	[MoverComponent]
+	{
+		speed_max = 2.5
+		turn_radius = 1.5
+		turn_type = while_moving
+
+		tire_circumference = 1.75
+		
+		[Tire]
+		tire_ids = front_wheel
+		type = Rear
+
+		[Tire]
+		tire_ids = middle_wheel
+		type = Rear
+
+		[Tire]
+		tire_ids = back_wheel
+		type = Rear
+
+		[TrackInfo]
+		{
+			track_type = continuous
+			track_texture = /effects/tracks/Wheel.tga
+			track_texture_mirrored = true
+			track_offset = 0.9,-0.9
+			track_size = 0.5, 0.5						
+			fade_sec = 10
+		}
+		
+		[TrackInfo]
+		{
+			track_type = continuous
+			track_texture = /effects/tracks/Wheel.tga
+			track_texture_mirrored = false
+			track_offset = -0.9,-0.9
+			track_size = 0.5, 0.5						
+			fade_sec = 10
+		}
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2RangedLocal]
+		{
+			spawn_bone_ids = catapult_ae_01
+			turret_ids = turret
+
+			[AbilityDefinition Template=K2RangedAttack]
+			{
+				projectile_IDS = maelstrom_bolt
+				name = "#maelstrom_AbilityDefinition_name"
+				icon = /properties/AbilityIcons/AbilityKhalduniteIcon.png
+				
+				recharge_time = 5
+				range = 20
+				impact_impulse = 5000
+				area = 3.5
+				attenuation_range_min = 1.0
+				attenuation_factor_max = 0.5
+				max_targets = 12
+															
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = khaldunite
+				amount = 40
+
+				[Effect Template=AddDamageEffect]
+				damage_type_IDS = siege
+				targets = buildings
+				amount = 140
+
+				[WhenDoPerTarget template=FXC_CreateVFX]
+				VFX_IDS = maelstrom_hit_effect
+				at = TARGET_HIT_POSITION
+				attached = false
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = pathfinder_bow
+			}
+		} 
+
+		[Turret]
+		turret_ids = Turret
+		yaw_rotation_per_sec_degrees = 75
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = siege
+
+		[Property]
+		property_IDS = mechanical
+		
+		[Property]
+		property_IDS = role_siege
+	}
+}
+
+[Thing template=K2GauriCompany]
+{
+	IDS = company_maelstrom
+	name = "#maelstrom_company_maelstrom_name"
+	
+	[View]
+	{
+		resource_prefix = Maelstrom/Maelstrom
+		banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = maelstrom_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = maelstrom_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = maelstrom_attack
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = company_siege
+	}
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_siege
+		entrenchment_time = 300
+		
+		[Slot]	;; Siege Unit
+		element_IDS = maelstrom
+
+		[Slot]	;; Flank Units
+		element_IDS = null
+	}	
+}
+
+[Thing Template=K2GauriMilitia]
+{
+	IDS = militia_maelstrom
+	name = "#maelstrom_militia_name"
+	
+	[View]
+	resource_prefix = Maelstrom/Maelstrom
+	banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_siege_militia
+		entrenchment_time = 300
+		
+		[Slot]	;; siege
+		element_IDS = maelstrom
+	}	
+}

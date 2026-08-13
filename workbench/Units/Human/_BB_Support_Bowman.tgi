@@ -1,0 +1,299 @@
+[Unit Template=K2HumanUnit]
+{
+	IDS = bowman
+	name = "#bowman_name"
+	
+	[View]
+	{
+		resource_prefix = Bowman/Bowman
+
+		[AspectNormal]
+		skin = %sbase.dds
+		
+		[WhenCreated Template=FXC_Equipment]
+		action = UNHIDE
+		location = LHAND
+		equipment_type_ids = bow
+
+		[WhenCreated Template=FXC_Equipment]
+		action = HIDE
+		location = rhand
+		equipment_type_ids = sword
+
+		[WhenCreated Template=FXC_Equipment]
+		action = HIDE
+		location = rhand
+		equipment_type_ids = arrow
+	}
+
+	[BodyComponent]
+	health = 180
+	defense = 2
+	
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.5
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		{
+			IDS = idlemelee
+
+			[WhenStart Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = sword
+
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = Sword
+		}
+		
+		[Animation Template=RangedIdleAnimation]
+		IDS = idlerange
+		length = 2
+				
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+			
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = bowman_death
+		}
+
+		[Animation Template=DieAnimation]
+		{
+			IDS = die2
+			
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = bowman_death
+		}
+						
+		[Animation Template=MeleeAttackAnimation]
+		{
+			IDS = melee1
+			key_ratio = 0.6
+
+			[WhenStart Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = sword
+
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = sword
+		}				
+						
+		[Animation Template=RangedAttackAnimation]
+		{
+			IDS = range
+			key_ratio = 0.7
+			
+			[WhenDoAtTime Template=FXC_Equipment]
+			time = 0.3
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = arrow
+			
+			[WhenDoAtTime Template=FXC_Equipment]
+			time = 1.05
+			action = HIDE
+			location = rhand
+			equipment_type_ids = arrow
+			
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = arrow
+		}
+		
+		[Animation Template=VolleyAnimation]
+		IDS = volley
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 6 ;; 12
+		
+		[Upkeep]
+		wood = 0.5 ;; 1.5
+	}
+	
+	[ElementComponent]
+	morale_value = 9
+	required_structures = human_woodmill,human_blacksmith
+	denizen_type = denizen_type_ranged
+	
+	[MoverComponent]
+	{
+		speed_max = 2.5
+		
+		[TrackInfo Template=K2TracksBipedRight]
+		
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#bowman_AbilityDefinition_name"
+				
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 14
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = metal_swing1
+			}
+		}
+
+		[Ability Template=K2RangedLocal]
+		{
+			spawn_position = 0,-0.5,1.45
+
+			[AbilityDefinition Template=K2RangedAttack]
+			{
+				projectile_IDS = arrow
+				name = "#bowman_AbilityDefinition_name_2"
+				range = 16
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = ranged
+				amount = 20
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = bow
+			}
+		}
+
+		[Ability Template=K2BombardLocal]
+		{
+			spawn_position = 0,-0.5,1.45
+
+			[AbilityDefinition Template=K2BombardAttack]
+			{
+				projectile_IDS = arrow
+				name = "#bowman_AbilityDefinition_name_3"
+				range = 28
+				
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = ranged
+				amount = 20
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = bow
+			}
+		}
+		
+		[Ability template=K2Volley]
+		ability_IDS = volley
+	}
+		
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_human
+
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = flank
+		
+		[Property]
+		property_IDS = ranged
+		
+		[Property]
+		property_IDS = role_archer
+	}
+}
+
+[Thing Template=K2HumanCompany]
+{
+	IDS = company_bowman
+	name = "#bowman_company_bowman_name"
+	
+	[View]
+	{
+		resource_prefix = Bowman/Bowman
+		banner_icon = /Organizations/BannerIcons/ArcherIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = bowman_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = bowman_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = bowman_attack
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = company_ranged
+	}
+
+	[OrganizationComponent]
+	{
+		layout_IDS = company_ranged
+		entrenchment_time = 60
+		
+		[Slot]	;; front
+		element_IDS = bowman
+		
+		[Slot]	;; flank
+		element_IDS = bowman
+		
+		[Slot]	;; support
+		element_IDS = null
+		
+		[Slot]	;; support
+		element_IDS = null
+		
+		[Slot]	;; captain
+		element_IDS = bb_captain_ranger
+	}	
+}
+
+[Thing Template=K2HumanMilitia]
+{
+	IDS = militia_bowman
+	name = "#bowman_militia_bowman_name"
+	
+	[View]
+	resource_prefix = Bowman/Bowman
+	banner_icon = /Organizations/BannerIcons/ArcherIcon.tga
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_militia
+		entrenchment_time = 300
+		
+		[Slot]	;; front
+		element_IDS = bowman
+		
+		[Slot]	;; support
+		element_IDS = null
+	}	
+}

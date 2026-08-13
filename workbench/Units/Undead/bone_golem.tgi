@@ -1,0 +1,288 @@
+
+/******************************************  BONE GOLEM PORTRAIT  **********************************/
+
+[Thing Template=Portrait]
+{
+	ids = bonegolem_portrait
+	name = "#bone_golem_bonegolem_portrait_name"
+
+	[View]
+	{
+		resource_prefix = BoneGolem/BoneGolemPortrait
+
+		[AspectNormal]
+		{
+			[Animation Template=ObjectAnimationIdle]
+			ids = idle
+
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget1
+
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget2
+		}
+	}
+}
+
+/******************************************  BONE GOLEM UNIT  **********************************/
+
+[Thing Template=K2UndeadUnit]
+{
+	IDS = bone_golem
+	name = "#bone_golem_Thing_name"
+
+	[Size]
+	{
+		blocking_radius = 0.8
+		soft_shape = RECT
+		rect_width = 2.4
+		rect_height = 1.6
+	}
+	
+	[Stance Template=StanceDeath]
+			
+	[View]
+	{
+		resource_prefix = BoneGolem/BoneGolem
+		portrait_ids = bonegolem_portrait
+
+		[Aspect Template=AspectDeath]
+	}
+
+	[BodyComponent]
+	{
+		health = 800
+		defense = 2
+
+		[WhenStartDie Template=FXC_ChangeAspect]
+		aspect_ids = aspect_death
+
+		[OnDeathAbility	template=AbilityLocal]
+		{
+			idle_animation = idle
+			reload_time = 0.0
+		
+			[AbilityDefinition Template=K2SummonSpell]
+			{
+				IDS = death_summon
+				name = "#bone_golem_BodyComponent_OnDeathAbility_AbilityDefinition_name"
+				targets = +ENEMY
+				mana_cost = 0
+				recharge_time = 999
+				attenuation_range_min = 0.1
+				area = 0.1
+		
+				[Effect Template=SummonEffect]
+				object_ids = company_skeleton_summoned
+				property_ids = summoned
+				targets = +SELF
+			}
+		}
+	}
+	
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 3
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		length = 1.5
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+			length = 2
+		
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = bone_golem_death
+		}				
+ 
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.3
+		length = 1.5
+						
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee2
+		key_ratio = 0.4
+		length = 1.5
+
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee3
+		key_ratio = 0.5
+		length = 1.5
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 40
+		
+		[Upkeep]
+		stone = 3
+		mana = 3
+	}
+	
+	[ElementComponent]
+	{
+		morale_value = 55
+		required_structures = undead_manafocus,undead_barracks
+		denizen_type = denizen_type_melee
+		group_priority = 2
+		resupply_rate = 0.02
+	}
+	
+	[MoverComponent]
+	{
+		speed_max = 2.5
+	
+		[TrackInfo Template=K2TracksBipedLargeHoofRight]
+		
+		[TrackInfo Template=K2TracksBipedLargeHoofLeft]
+	}
+
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+			animation2 = melee2
+			animation3 = melee3
+
+			[AbilityDefinition Template=K2SiegeAttack]
+			{
+				name = "#bone_golem_AbilityDefinition_name_2"
+				area = 2.0
+				attenuation_range_min = .5
+				attenuation_factor_max = 0.5	
+				impact_impulse = 1000
+				impulse_area = 1
+				max_targets = 8
+											
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = siege
+				amount = 38
+				
+				[Effect Template=AddDamageEffect]
+				damage_type_IDS = siege
+				targets = buildings
+				amount = 60
+	
+				[WhenDoPerTarget template=FXC_CreateVFX]
+				VFX_IDS = bash_hiteffect
+				at = TARGET_HIT_POSITION
+				attached = false
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = bone_golem_smash
+			}
+		}
+	}
+	
+	[PropertiesComponent]
+	{	
+		[Property]
+		property_IDS = front
+		
+		[Property]
+		property_IDS = siege
+
+		[Property]
+		property_IDS = skeletal
+
+		[Property]
+		property_IDS = unstoppable
+		
+		[Property]
+		property_IDS = role_siege
+	}
+}
+
+[Thing Template=K2UndeadCompany]
+{
+	IDS = company_bonegolem
+	name = "#bone_golem_company_bonegolem_name"
+
+	[View]
+	{
+		resource_prefix = BoneGolem/BoneGolem
+		banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+		
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = bone_golem_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = bone_golem_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = bone_golem_attack
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = company_siege
+	}
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_siege
+		entrenchment_time = 300
+		
+		[Slot]	;; Siege Unit
+		element_IDS = bone_golem
+
+		[Slot]	;; Flank Units
+		element_IDS = null
+	}	
+}
+
+[Thing template=K2MonsterCompany]
+{
+	IDS = company_bonegolem_summoned
+	name = "#bone_golem_company_bonegolem_summoned_name"
+	recruitable = no
+	
+	[View]
+	resource_prefix = BoneGolem/BoneGolem
+	banner_icon = /Organizations/BannerIcons/MonsterIcon.tga
+			
+	[OrganizationComponent]
+	{
+		layout_IDS = company_summoned_one
+		entrenchment_time = 300
+		
+		[Slot]	;; front
+		element_IDS = bone_golem
+	}	
+}
+
+[Thing Template=K2UndeadMilitia]
+{
+	IDS = militia_bone_golem
+	name = "#bone_golem_militia_name"
+
+	[View]
+	resource_prefix = BoneGolem/BoneGolem
+	banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_siege_militia
+		entrenchment_time = 300
+		
+		[Slot]	;; siege
+		element_IDS = bone_golem
+	}	
+}

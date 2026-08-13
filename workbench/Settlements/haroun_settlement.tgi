@@ -1,0 +1,203 @@
+
+/* 	WALL SETS		*/
+
+[WallSet Template=WallSet]
+{
+	ids = haroun_wallset_01
+	name = "#haroun_settlement_haroun_wallset_01_name"
+
+	wall_segment_ids = haroun_wall_01
+	wall_corner_ids = haroun_tower_01
+	gate_ids = haroun_wall_01
+}
+
+[WallSet Template=WallSet]
+{
+	ids = haroun_wallset_02
+	name = "#haroun_settlement_haroun_wallset_02_name"
+
+	wall_segment_ids = haroun_wall_02
+	wall_corner_ids = haroun_tower_02
+	gate_ids = haroun_wall_02
+}
+
+[WallSet Template=WallSet]
+{
+	ids = haroun_wallset_03
+	name = "#haroun_settlement_haroun_wallset_03_name"
+
+	wall_segment_ids = haroun_wall_03
+	wall_corner_ids = haroun_tower_03
+	gate_ids = haroun_wall_03
+}
+
+/* 	WALL PLACEHOLDERS		*/
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = haroun_wall_placeholder_vfx
+	name = "#haroun_settlement_haroun_wall_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Haroun/HarounWallVillageDecal.dds
+	attached_scale = 0
+	texture_size = 6
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = haroun_wall_placeholder
+	name = "#haroun_settlement_haroun_wall_placeholder_name"
+	
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = haroun_wall_placeholder_vfx
+	}
+}
+
+[Thing Template=VFXProjectedTexture]
+{
+	ids = haroun_corner_placeholder_vfx
+	name = "#haroun_settlement_haroun_corner_placeholder_vfx_name"
+
+	texture = /Effects/Decals/Haroun/HarounCornerVillageDecal.dds
+	attached_scale = 0
+	texture_size = 3
+
+	decal_fade_time = 5, 5
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = haroun_corner_placeholder
+	name = "#haroun_settlement_haroun_corner_placeholder_name"
+
+	[View]
+	{
+		[WhenCreated Template=FXC_CreateVFX]
+		vfx_ids = haroun_corner_placeholder_vfx
+	}
+}
+
+[Thing Template=K2WallPlaceholder]
+{
+	IDS = haroun_gate_placeholder
+	name = "#haroun_settlement_haroun_gate_placeholder_name"
+}
+
+/* 	SETTLEMENT		*/
+
+[Property template=SharedProperty]
+{
+	ids = intruder_autoraze_property
+	name = "#properties_actor_states_k2_actor_state_razing_name"
+	icon = /properties/PropertyIcons/IconPropertyGeneric.png
+	
+	[Modifier template=PeriodicDamageModifier]
+	damage_type = siege
+	amount = 50
+}
+
+[Thing Template=K2Settlement]
+{
+	ids = haroun_settlement
+	name = "#haroun_settlement_Thing_name"
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = haroun_autoheal
+		
+		[Property]
+		property_IDS = settlement
+		
+		[Property]
+		property_IDS = settlement_haroun
+		
+		[Property]
+		property_IDS = settlement_notshadow
+
+		[Property]
+		property_IDS = good
+	}
+
+	[SettlementComponent]
+	{
+		default_layout_ids = company_standard
+		intruder_raze_property = intruder_autoraze_property
+
+		[AvailableStructures]
+		{
+			[Structure]
+			structure_ids = haroun_quarry
+		
+			[Structure]
+			structure_ids = haroun_woodmill
+			
+			[Structure]
+			structure_ids = haroun_blacksmith
+			
+			[Structure]
+			structure_ids = haroun_market
+
+			[Structure]
+			structure_ids = haroun_barracks
+			
+			[Structure]
+			structure_ids = haroun_shrine
+			
+			[Structure]
+			structure_ids = haroun_library
+		}
+
+		[Levels]
+		{
+			[Level]
+			max_structures = 7
+			settlement_center_ids = haroun_center_village
+			wallset_ids = haroun_wallset_01
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = haroun_center_town
+			wallset_ids = haroun_wallset_01
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = haroun_center_city
+			wallset_ids = haroun_wallset_02
+
+			[Level]
+			max_structures = 7
+			settlement_center_ids = haroun_center_citadel
+			wallset_ids = haroun_wallset_03
+		}
+
+		[Placeholders]
+		wall_segment_placeholder_ids = haroun_wall_placeholder
+		wall_corner_placeholder_ids = haroun_corner_placeholder
+		gate_placeholder_ids = haroun_gate_placeholder
+		
+		[Shape]
+		wall_diameter = 40
+		num_wall_sides = 9
+		num_wall_gates = 0
+		
+		[StructureLayouts]
+		{
+			[Layout]
+			layout_ids = haroun_shadow_layout_01
+			
+			[Layout]
+			layout_ids = haroun_shadow_layout_02
+			
+			[Layout]
+			layout_ids = haroun_shadow_layout_03
+			
+			[Layout]
+			layout_ids = haroun_shadow_layout_04
+		}
+	}
+}

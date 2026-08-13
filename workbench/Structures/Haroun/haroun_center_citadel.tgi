@@ -1,0 +1,58 @@
+
+[Thing Template=K2HarounCenter]
+{
+	IDS = haroun_center_citadel
+	name = "#haroun_center_citadel_name"
+	name_list_ids = namelist_haroun_settlement
+
+	[RandomActor]
+	random_actor_ids = random_settlement_citadel
+	weight = 0.2
+
+	[View]
+	resource_prefix = HarounCenter/HarounCenterCitadel
+
+	[BodyComponent]
+	health = 10400 ;; 5200
+
+	[DenizenComponent]
+	{
+		[Organization]
+		organization_ids = militia_rainbringer
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_mistrunner
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_hillstrider
+		behavior = MILITIA_DEFENSIVE
+
+		[Inventory]
+		actor_ids = rainbringer
+		count = 30 ;; 10
+
+		[Inventory]
+		actor_ids = mistrunner
+		count = 30 ;; 10
+
+		[Inventory]
+		actor_ids = hillstrider
+		count = 2
+	}
+	
+	[DetectionComponent]	
+	detection_range = 61
+
+	[EconomyComponent]
+	{
+		[Production]
+		gold = 36
+		wood = 4
+		unit_limit_provided = 10 ;; 5
+	}
+
+	[SupplyComponent]
+	supply_range = 61
+}

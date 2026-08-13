@@ -1,0 +1,74 @@
+
+[Thing Template=K2UndeadCenter]
+{
+	IDS = undead_center_village
+	name = "#undead_center_village_name"
+	name_list_ids = namelist_undead_settlement
+
+	[RandomActor]
+	random_actor_ids = random_settlement_village
+	weight = 0.8
+
+	[View]
+	resource_prefix = UndeadCenter/UndeadCenterVillage
+
+	[BodyComponent]
+	health = 2400 ;; 1200
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = undead_center_town
+	}
+	
+	[DenizenComponent]
+	{
+		[Organization]
+		organization_ids = workers_undead
+		behavior = WORKER
+
+		;;[Organization]
+		;;organization_ids = militia_bonearcher
+		;;behavior = MILITIA_OFFENSIVE
+
+		;;[Organization]
+		;;organization_ids = militia_skeleton
+		;;behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_zombie ;; CUSTOM ORGANIZATION
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = boneweaver
+		count = 4
+		
+		;;[Inventory]
+		;;actor_ids = bonearcher
+		;;count = 12 ;; 6
+
+		;;[Inventory]
+		;;actor_ids = skeleton
+		;;count = 18 ;; 6
+
+		[Inventory]
+		actor_ids = zombie
+		count = 60
+	}
+	
+	[DetectionComponent]	
+	detection_range = 40
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 450 ;; 90
+		
+		[Production]
+		gold = 14
+		unit_limit_provided = 2
+	}
+
+	[SupplyComponent]
+	supply_range = 40
+}

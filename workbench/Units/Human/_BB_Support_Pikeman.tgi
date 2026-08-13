@@ -1,0 +1,135 @@
+
+[Unit template=K2HumanUnit]
+{
+	IDS = bb_praetorian
+	name = "#bb_pikeman_praetorian_name"
+	
+	[View]
+	{
+		resource_prefix = Pikeman/Pikeman
+		icon = /Units/Human/_BB_Praetorian/bb_PraetorianIcon.tga
+
+		[AspectNormal]
+		skin = /Units/Human/_BB_Praetorian/bb_praetorian.dds
+	}
+	
+		
+	[BodyComponent]
+	health = 240
+	defense = 3
+	
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.5
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = pikeman_death
+		}
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.5
+						
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee2
+		key_ratio = 0.5
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 5 ;; pikeman 2
+		
+		[Upkeep]
+		iron = 0.25 ;; Pikeman 0.125
+	}
+	
+	[ElementComponent]
+	{
+		morale_value = 10 ;; pikeman 9
+		required_structures = human_center_village
+		denizen_type = denizen_type_melee
+		group_priority = 2
+	
+		[SupportProperty]
+		property_IDS = cavalry_foe
+
+		[SupportProperty]
+		property_IDS = bb_guardsman
+	}
+
+	[MoverComponent]
+	{
+		speed_max = 3.5 ;; Pikeman 3
+		
+		[TrackInfo Template=K2TracksBipedRight]
+		
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+			animation2 = melee2
+						
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#pikeman_AbilityDefinition_name"
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 21 ;; Pikeman 14
+				
+				[Effect Template=AddDamageEffect]
+				damage_type_IDS = siege
+				targets = buildings
+				amount = 5
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = metal_stab3
+			}
+		}
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_human
+
+		[Property]
+		property_IDS = support
+
+		[Property]
+		property_IDS = agile
+		
+		[Property]
+		property_IDS = melee
+		
+		[Property]
+		property_IDS = role_infantry
+	}
+}

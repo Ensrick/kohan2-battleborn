@@ -1,0 +1,68 @@
+
+[Thing Template=K2HumanCenter]
+{
+	IDS = human_center_citadel
+	name = "#human_center_citadel_name"
+	name_list_ids = namelist_human_settlement
+
+	[RandomActor]
+	random_actor_ids = random_settlement_citadel
+	weight = 0.2
+
+	[View]
+	resource_prefix = HumanCenter/HumanCenterCitadel
+
+	[BodyComponent]
+	health = 15000 ;; 6500
+
+	[DenizenComponent]
+	{
+		[Organization]
+		organization_ids = workers_human
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_bowman
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_pikeman
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_swordsman
+		behavior = MILITIA_DEFENSIVE
+
+		[Inventory]
+		actor_ids = worker
+		count = 4
+		
+		[Inventory]
+		actor_ids = bowman
+		count = 24 ;; 8
+
+		[Inventory]
+		actor_ids = pikeman
+		count = 24 ;; 12
+
+		[Inventory]
+		actor_ids = swordsman
+		count = 16
+	}
+	
+	[DetectionComponent]	
+	detection_range = 53
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 1800 ;; 360
+		
+		[Production]
+		gold = 48
+		unit_limit_provided = 10 ;; 5
+	}
+
+	[SupplyComponent]
+	supply_range = 53
+}

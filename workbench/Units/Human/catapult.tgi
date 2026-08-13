@@ -1,0 +1,264 @@
+
+/******************************************  CATAPULT PORTRAIT  ******************************/
+
+[Thing Template=Portrait]
+{
+	ids = portrait_catapult
+	name = "#catapult_portrait_catapult_name"
+
+	[View]
+	{
+		resource_prefix = Catapult/CatapultPortrait
+
+		[AspectNormal]
+		{
+			[Animation Template=ObjectAnimationIdle]
+			ids = idle
+
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget1
+
+			[Animation Template=ObjectAnimationFidget]
+			ids = fidget2
+		}
+	}
+}
+
+/******************************************  CATAPULT UNIT  ******************************/
+
+[Unit template=K2HumanUnit]
+{
+	IDS = catapult
+	name = "#catapult_name"
+
+	[Flags]
+	conform_to_terrain = true
+
+	[Size]
+	{
+		blocking_radius = 0.8
+		soft_shape = RECT
+		rect_width = 1.6
+		rect_height = 3.2
+	}
+	
+	[Stance Template=StanceDeath]
+	
+	[View]
+	{
+		resource_prefix = catapult/catapult
+		shadow_type = STENCIL
+		portrait_ids = portrait_catapult
+
+		[Aspect Template=AspectDeath]
+
+		[Swivel]
+		{
+			swivel_node_ids = base
+			swivel_inertia = .1
+			spring_constant = .4
+			swivel_mass = 2200
+			wind_sway = false
+			recoil = true
+			impact_sway = true
+			movement_inertia = true
+		}
+	}
+
+	[BodyComponent]
+	{
+		health = 500
+		defense = 3
+
+		[WhenStartDie Template=FXC_ChangeAspect]
+		aspect_ids = aspect_death
+	}
+
+	[CharacterComponent]
+	{
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+		
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+			length = 1.5
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = catapult_death
+		}
+
+		[Animation Template=RangedIdleAnimation]
+		{
+			IDS = idlerange
+			length = 4
+
+			[WhenEnd Template=FXC_Equipment]
+			action = UNHIDE
+			location = catapult_arm
+			equipment_type_ids = rock
+		}
+
+		[Animation Template=RangedAttackAnimation]
+		{
+			IDS = range
+			key_ratio = 0.2
+			
+			[WhenDoAtTime Template=FXC_Equipment]
+			{
+				time = 0.3
+				action = HIDE
+				location = catapult_arm
+				equipment_type_ids = rock
+			}
+		}
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 50
+		
+		[Upkeep]
+		stone = 4
+		wood = 4
+	}
+	
+	[ElementComponent]
+	morale_value = 55
+	required_structures = human_center_town
+	resupply_rate = 0.04
+	
+	[MoverComponent]
+	{
+		speed_max = 2.5
+		turn_radius = 1.5
+		turn_type = while_moving
+		tire_circumference = 3.0
+		
+		[Tire]
+		tire_ids = front_wheel
+		type = Rear
+
+		[Tire]
+		tire_ids = back_wheel
+		type = Rear
+
+		[TrackInfo]
+		{
+			track_type = continuous
+			track_texture = /effects/tracks/Wheel.tga
+			track_texture_mirrored = true
+			track_offset = 0.9,-0.9
+			track_size = 0.5, 0.5						
+			fade_sec = 10
+		}
+		
+		[TrackInfo]
+		{
+			track_type = continuous
+			track_texture = /effects/tracks/Wheel.tga
+			track_texture_mirrored = false
+			track_offset = -0.9,-0.9
+			track_size = 0.5, 0.5						
+			fade_sec = 10
+		}
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2RangedLocal]
+		{
+			spawn_bone_ids = catapult_ae_01
+			turret_ids = turret
+
+			[AbilityDefinition Template=K2RangedAttack]
+			{
+				projectile_IDS = catapultrock
+				name = "#catapult_AbilityDefinition_name"
+				icon = /properties/AbilityIcons/AbilitySiegeIcon.png
+				
+				recharge_time = 5
+				range = 20
+				impact_impulse = 5000
+				area = 3.5
+				attenuation_range_min = 1.0
+				attenuation_factor_max = 0.5
+				max_targets = 12
+			
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = siege
+				amount = 40
+				
+				[Effect Template=AddDamageEffect]
+				damage_type_IDS = siege
+				targets = buildings
+				amount = 160
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = catapult_fire
+			}
+		}
+
+		[Turret]
+		turret_ids = Turret
+		yaw_rotation_per_sec_degrees = 75
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = front
+		
+		[Property]
+		property_IDS = siege
+		
+		[Property]
+		property_IDS = mechanical
+		
+		[Property]
+		property_IDS = role_siege
+	}
+}
+
+[Thing template=K2HumanCompany]
+{
+	IDS = company_catapult
+	name = "#catapult_company_catapult_name"
+	
+	[View]
+	{
+		resource_prefix = Catapult/Catapult
+		banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = catapult_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = catapult_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = catapult_attack
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = company_siege
+	}
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_siege
+		entrenchment_time = 300
+		
+		[Slot]	;; Siege Unit
+		element_IDS = catapult
+
+		[Slot]	;; Flank Units
+		element_IDS = null
+	}	
+}

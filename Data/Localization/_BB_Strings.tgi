@@ -1,0 +1,76 @@
+;; Battleborn Mod (BB) String Tables
+
+[Text language = default]
+{
+	ids = Localization/bb_strings_data
+	name = "@Localization/_BB_Strings.tgi"
+
+/******************************************  Units  **********************************/
+
+	;; Human Units
+	
+	bb_captain_dragoon_name = "Cavalry Captain"
+	bb_support_dragoon_name = "Cataphract"
+	bb_front_dragoon_name = "Cavalier"
+
+	bb_captain_swordsman_name = "Infantry Captain"
+	bb_support_swordsman_name = "Myrmidon"
+	bb_front_swordsman_Name = "Footman"
+
+	bb_captain_ranger_name = "Ranger Captain"
+	bb_support_ranger_name = "Marksman"
+	bb_front_ranger_name = "Ranger"
+	
+	bb_captain_pikeman_name = "Infantry Sergeant"
+	bb_support_pikeman_name = "Praetorian"
+	bb_front_pikeman_name = "Halberdier"
+
+	bb_captain_lancer_name = "Cavalry Sergeant"
+	bb_support_lancer_name = "Lancer"
+
+	bb_captain_bowman_name = "Ranger Sergeant"
+	bb_support_bowman_name = "Marksman"
+
+	bb_captain_pioneer_name = "Explorer"
+
+
+	;; Council Units
+
+	bb_front_council_swordsman_name = "Storm Guard"
+	bb_support_council_swordsman_name = "Eldritch Warrior"
+	bb_captain_council_swordsman_name = "Storm Lord"
+	bb_captain_council_hammer_name = "Rune Lord"
+
+	;; Militia
+	bb_hillstrider_militia_name = "Hillstrider Militia"
+	bb_leviathan_militia_name = "Leviathan Militia"
+	bb_bone_golem_militia_name = "Bone Golem Militia"
+	bb_juggernaut_militia_name = "Juggernaut Militia"
+	bb_maelstrom_militia_name = "Maelstrom Militia"
+
+	;; Companys/Organizations
+	bb_company_militia_company_siege_militia_name = "Siege Militia"
+	bb_company_settler_flank_Slot_name = "Settler Flank Slot"
+
+
+/******************************************  Unit Abilities/Weapons/Spells  **********************************/
+
+	bb_properties_support_guardsman_name = "Guardian"
+	bb_spellsword_AbilityDefinition_name = "Khaldunite Sword"
+	bb_praetorian_AbilityDefinition_name = "Fine Steel Halberd"
+
+
+/******************************************  Templates  **********************************/
+	;; Templates
+	bb_base_center_city_name = "Base City"
+
+
+/******************************************  Effects  **********************************/
+	;; Effects
+	bb_spellsword_blur_slash0_name = "Blurry Magic Slash for Spellsword 0"
+	bb_spellsword_blur_slash1_name = "Blurry Magic Slash for Spellsword 1"
+
+/******************************************  Properties  **********************************/
+
+	bb_properties_organization_settler_flank_name = "Settler Flank"
+}

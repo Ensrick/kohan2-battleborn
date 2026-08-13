@@ -1,0 +1,75 @@
+
+[Thing Template=K2DraugaCenter]
+{
+	IDS = drauga_center_city
+	name = "#drauga_center_city_name"
+	name_list_ids = namelist_drauga_settlement
+
+	[View]
+	resource_prefix = DraugaCenter/DraugaCenterCity
+	
+	[RandomActor]
+	random_actor_ids = random_settlement_city
+	weight = 0.4
+
+	[BodyComponent]
+	health = 9600 ;; 4800
+	
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = drauga_center_citadel
+	}
+	
+	[DenizenComponent]
+	{
+		[Organization]
+		organization_ids = workers_laborer
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_impaler
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_raider
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_berserker
+		behavior = MILITIA_DEFENSIVE
+
+		[Inventory]
+		actor_ids = laborer
+		count = 4
+		
+		[Inventory]
+		actor_ids = impaler
+		count = 30 ;; 10
+
+		[Inventory]
+		actor_ids = raider
+		count = 30 ;; 10
+
+		[Inventory]
+		actor_ids = berserker
+		count = 8
+	}
+	
+	[DetectionComponent]	
+	detection_range = 48
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 1100 ;; 220
+		
+		[Production]
+		;iron = 3
+		gold = 36
+		unit_limit_provided = 9 ;; 4
+	}
+
+	[SupplyComponent]
+	supply_range = 48
+}
