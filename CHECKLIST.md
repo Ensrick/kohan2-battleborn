@@ -1,5 +1,10 @@
 # Battleborn feature checklist
 
+**Design doc:** Google Sheet ["Kohan II Kings of War modding"](https://docs.google.com/spreadsheets/d/1OGjwstadLcFT5Wg6ehIgD23KLH5CQd4L6ZH0dnD2jfw/edit)
+(Oct 2024) - goals, tiered unit-design table with per-unit status, town-center target
+values, known bugs, to-do list. Section 12 below summarizes it. Art references marked
+"AW" = the Arcane Wars mod (`D:\Game Mods\Kohan II Kings of War\Arcane_Wars_0.82beta.rar`).
+
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. Two dimensions per item: authored (checkbox) and **[SHIPPED]** =
 present in the live `Data/` depot. Only the settler-flank slice + `_BB_Strings.tgi` ever
@@ -47,7 +52,7 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [ ] `bb_captain_lancer`: mid-conversion **STUB**: no `captain` property, duplicates `company_lancer`/`militia_lancer` IDs vs lancer.tgi
 - [ ] Captain/Support Bowman ("Ranger Sergeant"/"Marksman"): **STUB** byte-identical copies of bowman.tgi (would triple-define `bowman` if deployed); names already staged in loc
 - [ ] Captain/Support Engineer: **STUB** untouched vanilla engineer copies
-- [ ] captain.tgi rework (hp 360, melee 38, agile) done but **BROKEN** name key (see section 2)
+- [ ] captain.tgi rework (hp 360, melee 38, agile) done but **BROKEN** name key (see section 2). **Also contradicts the design doc:** "The original captain is to remain untouched to keep the campaign intact" (only removed from the recruit pool) - decide which wins
 - [ ] lancer.tgi adds `militia_lancer` (duplicate vs _BB_Captain_Lancer + missing name key)
 
 ## 4. Council
@@ -73,8 +78,9 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] All 6 settlements: `max_structures` flattened to 7 at every tier
 - [x] All 24 center files: health x2, base militia x2-3, cost x5, `unit_limit_provided` -> 7/8/9/10
 - [x] Elite garrisons at city/citadel: berserker x8/x16, juggernaut+maelstrom, hillstrider, swordsman x8/x16, leviathan x1/x2, zombie x60 all tiers + bone golem
-- [ ] **Bug:** `undead_center_village` unit_limit_provided left at 2 (only file of 24 not bumped)
-- [ ] **Bug (copy-paste):** Haroun city hillstrider count 24 vs citadel 2 - inverted and way above every other faction
+- [ ] **Bug:** `undead_center_village` unit_limit_provided left at 2 (design doc: 7 for all six factions)
+- [ ] **Bug (copy-paste):** Haroun city hillstrider count 24 vs citadel 2 (design doc: city 1, citadel 2 - the 24 is a typo)
+- [ ] Sync remaining center values against the design doc's target tables (per-faction cost/unit-limit/health/denizen counts; e.g. Undead citadel design adds bone archer/skeleton x18, Gauri citadel spear/anvil x24)
 - [ ] **VERIFY:** Undead village bonearcher/skeleton militia+inventory fully commented out (zombie-only garrison), asymmetric vs town/city
 - [ ] `bb_base_center_city` faction-choice structure: defined, upgrades into all 6 faction cities, loc OK; placeholder art (Drauga model + generic upgrade icon); nothing can build it yet - decide entry point
 - [ ] Cosmetic: stray indent in undead citadel, missing `;;` old-value annotations (shadow citadel cost, stale human citadel comment)
@@ -83,6 +89,7 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 
 - [x] Fort + outpost: health x2, captureable, cost 100->250, bigger garrisons, `unit_limit_provided` 3/2
 - [ ] `bb_human_woodmill_outpost`: defined (hp 500, wood +4, capturable) but **unbuildable** - zero references, no build list entry; commented [Upgrade] targets `bb_human_sawmill_outpost`/`bb_human_woodmarket_outpost` don't exist. Economy-outpost chain not started
+- [ ] Outpost/fort passes for the other five factions: design doc tables have Human-only rows filled, Drauga/Haroun/Gauri/Undead/Shadow left blank - not started
 
 ## 8. Game variables
 
@@ -91,7 +98,7 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 
 ## 9. Political-faction captains (staging only)
 
-- [ ] CUSTOM_PROPHET_CAPTAIN (Ceyah), CUSTOM_DREADLORD_CAPTAIN (Fallen), CUSTOM_ZEALOT_CAPTAIN (Nationalist), CUSTOM_PALADIN_CAPTAIN (Royalist): every file hash-identical to vanilla, no tgi, no references - pristine staging folders, work not started
+- [ ] CUSTOM_PROPHET_CAPTAIN (Ceyah), CUSTOM_DREADLORD_CAPTAIN (Fallen), CUSTOM_ZEALOT_CAPTAIN (Nationalist), CUSTOM_PALADIN_CAPTAIN (Royalist): every file hash-identical to vanilla, no tgi, no references - staging for the design doc's politics-faction unit lines (section 12), work not started
 - [x] Royalist Paladin retexture (`Paladinbase.dds` differs from vanilla, loads via vanilla path)
 
 ## 10. Art status
@@ -109,3 +116,23 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [ ] Duplicate-ID hazard when promoting workbench to `Data/`: bowman x3, engineer x2, lancer company/militia x2 - stubs must be excluded or completed first
 - [ ] Prune junk: `workbench/UI/3840/UNFINISHED Game/**/Thumbs.db` (widescreen-owned path, Thumbs.db only), ` - Copy` vanilla backups
 - [x] `tools/collect.ps1` / `tools/deploy.ps1` sync scripts; 3 test maps (`BB_Test_2`, `TEST`, `Trial Map Human`)
+
+## 12. Design-doc plans not yet in any file (from the Google Sheet)
+
+Tier scheme: 1-3 = line troops + Sergeants (weaker captains, gold-recolored armor),
+4-6 = elite front/support/captain lines gated by politics faction. Statuses below are
+the sheet's own.
+
+- [ ] **Royalist cavalry line** (Paladin model): Knight (front) / Paladin (support, "Done (Needs Work)" - the Paladinbase.dds retexture in section 9) / Champion (captain, all-gold)
+- [ ] **Nationalist infantry line** (Ghalen Mordecai model): Crusader (front) / Warpriest (support) / Templar (captain)
+- [ ] **Ceyah ranged line**: Stalker / Shadow Hunter / Masked Outcast; **Ceyah melee line** (Stonewalker model, black armor): Blackguard / Slayer / Harbinger (lich-hero portrait); Macabre support
+- [ ] **Council ranged line** (AW Sharpshooter art): Sentry / Arcane Archer / Warder
+- [ ] **Council Gauri line** (Hammer model): Rune Hammer / Warmage / Rune Lord (partially covered by section 4's Rune Lord strings/art)
+- [ ] **Council Mage Lord** captain (from Ravid Sakeri); **Undead Necromancer** captain; **Human Skirmisher** support + **Ranger Sergeant** captain (Aethyn Farhyd model); **Engineer line**: Siege Expert / Engineer Sergeant; "Vanguard" (unspecified)
+- [ ] Roster additions from existing units: Drauga Fire Wyrm, Gauri Mana Construct, Ceyah Lightning Dragon, Fallen Spiders
+- [ ] Xander Kerai copy as a recruitable Kohan hero; make heroes very durable
+- [ ] Structures: out-of-town buildable versions of all structures (needs AI testing), innate self-repair, towns needing more buildings + higher cost to upgrade
+- [ ] Higher-tier units gated behind higher-tier towns + structures
+- [ ] To-do items from the sheet: spellsword custom ability (matches section 4's Eldritch Warrior "UNFINISHED: Needs Custom Spell"), weapon names + ability names + company compositions for custom units, denizen icons for siege, possibly a new denizen type, captain restrictions by assigned unit type
+- [ ] Long-term reskin-faction ideas (two alternative sets, e.g. Human -> Darklanders or Northern Domain)
+- **KNOWN CRASH (sheet's Bugs tab):** putting regular units in support slots crashes when the AI hires them (invalid layout + memory access violation) - the "allow special slots to contain regular units" goal was abandoned for this reason; keep support slots on support-property units only
