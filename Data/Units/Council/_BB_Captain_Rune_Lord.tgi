@@ -66,7 +66,7 @@
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 30
+		gold = 32 ;; tankiest commander, morale 14
 
 		[Upkeep]
 		iron = 1

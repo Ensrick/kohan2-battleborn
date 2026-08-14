@@ -63,10 +63,10 @@
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 30
+		gold = 32 ;; Wizard-tier casting + captain body
 
 		[Upkeep]
-		mana = 1
+		mana = 2 ;; caster tax
 	}
 
 	[ElementComponent]

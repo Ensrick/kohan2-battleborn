@@ -110,7 +110,7 @@
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 28
+		gold = 30 ;; magic-ranged premium
 
 		[Upkeep]
 		iron = 1

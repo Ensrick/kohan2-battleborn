@@ -58,11 +58,11 @@
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 24
+		gold = 28 ;; was 24 - aligned to politics-commander tier
 		
 		[Upkeep]
 		iron = 1
-		mana = 1
+		mana = 2 ;; was 1 - caster tax
 	}
 	
 	[ElementComponent]

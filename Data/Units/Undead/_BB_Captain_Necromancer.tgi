@@ -63,7 +63,7 @@
 		gold = 30
 
 		[Upkeep]
-		mana = 1
+		mana = 3 ;; summoner tax - summons are free units over time
 	}
 
 	[ElementComponent]

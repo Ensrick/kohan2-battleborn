@@ -43,6 +43,12 @@ All notable changes to the Battleborn mod. Format follows
   (per design-doc targets).
 
 ### Changed
+- Commander cost balance (2026-08-14): politics commanders priced at the
+  politics-support gold tier plus a captain premium, with mana upkeep
+  scaling to casting power (native captains are free in vanilla; Shadow
+  specials set the unique-resource precedent). Storm Lord 24->28g +mana 2,
+  Templar 28g, Warder 30g, Rune Lord 32g, Mage Lord 32g +mana 2,
+  Necromancer mana 3 summoner tax.
 - `workbench/` is now the single source of truth; `Data/` rebuilt as the curated
   deployable superset (95 files, reference-verified; stub units and orphaned art
   excluded). Reconciled bidirectional drift (Drauga settler, pilgrim flank + costs).

@@ -241,6 +241,15 @@ front/support/captain lines gated by politics faction. "Sheet status" is the doc
 | Siege | 2 | Siege Expert | Engineer | Support | (blank) | Done 2026-08-14; art debt | - |
 | Siege | 3 | Engineer Sergeant | Engineer | Captain | (blank) | Done 2026-08-14; art debt | - |
 
+**Commander cost model (2026-08-14):** vanilla native captains (Captain/Warlord/Leader/
+Guide/Reaper) are FREE; Shadow's five specials are 10g + mana upkeep with auras/spells;
+politics supports run 26-28g + mana 3. Politics commanders are therefore priced at
+politics-support gold tier + captain premium, with mana upkeep scaling to casting power:
+Harbinger 26g, Templar 28g, Storm Lord 28g+mana 2 (was 24+1), Warder 30g, Rune Lord 32g,
+Mage Lord 32g+mana 2, Necromancer 30g+mana 3 (summoner tax), Champion 36g (ceiling).
+Open idea (sheet + user): signature company auras per commander, Shadow-style - needs a
+SupportProperty mapping pass.
+
 ### Politics-faction lines (Royalist / Nationalist / Ceyah)
 
 | Line | Tier | Name | Base unit | Role | Sheet status | Files now | Appearance plan |

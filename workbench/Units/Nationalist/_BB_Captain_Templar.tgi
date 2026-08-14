@@ -59,7 +59,7 @@
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 26
+		gold = 28 ;; politics-support tier + captain premium
 
 		[Upkeep]
 		iron = 1
