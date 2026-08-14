@@ -231,6 +231,6 @@
 		element_IDS = ox
 		
 		[Slot]	;; captain
-		element_IDS = bb_pioneer_captain
+		element_IDS = bb_captain_pioneer
 	}	
 }

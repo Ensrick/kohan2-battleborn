@@ -1,0 +1,68 @@
+
+[Thing Template=K2ShadowCenter]
+{
+	IDS = shadow_center_town
+	name = "#shadow_center_town_name"
+	name_list_ids = namelist_shadow_settlement
+	
+	[RandomActor]
+	random_actor_ids = random_settlement_town
+	weight = 0.6
+
+	[View]
+	resource_prefix = ShadowCenter/ShadowCenterTown
+	shadow_type = STENCIL
+
+	[BodyComponent]
+	health = 5600 ;; 2800
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = shadow_center_city
+	}
+	
+	[DenizenComponent]
+	{
+		[Organization]
+		organization_ids = workers_shadow
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_fury
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_reaver
+		behavior = MILITIA_DEFENSIVE
+		
+		[Inventory]
+		actor_ids = nightbringer
+		count = 4
+
+		[Inventory]
+		actor_ids = fury
+		count = 18 ;; 6
+		
+		[Inventory]
+		actor_ids = reaver
+		count = 24 ;; 6
+	}
+	
+	[DetectionComponent]	
+	detection_range = 42
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 500 ;; 100
+		
+		[Production]
+		gold = 22
+		mana = 2
+		unit_limit_provided = 8 ;; 3
+	}
+
+	[SupplyComponent]
+	supply_range = 42
+}

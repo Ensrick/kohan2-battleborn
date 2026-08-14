@@ -1,0 +1,82 @@
+
+[Thing Template=K2GauriCenter]
+{
+	IDS = gauri_center_citadel
+	name = "#gauri_center_citadel_name"
+	name_list_ids = namelist_gauri_settlement
+
+	[View]
+	resource_prefix = GauriCenter/GauriCenterCitadel
+	
+	[RandomActor]
+	random_actor_ids = random_settlement_citadel
+	weight = 0.2
+
+	[BodyComponent]
+	health = 16000 ;; 7500
+	
+	[DenizenComponent]
+	{
+		guard_range = 38
+
+		[Organization]
+		organization_ids = workers_gauri
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_spear
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_anvil
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_juggernaut
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_maelstrom
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = forge
+		count = 4
+		
+		[Inventory]
+		actor_ids = spear
+		count = 24 ;; 8
+
+		[Inventory]
+		actor_ids = anvil
+		count = 24 ;; 8
+
+		[Inventory]
+		actor_ids = juggernaut
+		count = 1
+
+		[Inventory]
+		actor_ids = maelstrom
+		count = 1
+	}
+	
+	[DetectionComponent]	
+	detection_range = 55
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 1800 ;; 330
+		
+		[Production]
+		gold = 40
+		stone = 1
+		wood = 1
+		iron = 1
+		mana = 1
+		unit_limit_provided = 10 ;; 5
+	}
+
+	[SupplyComponent]
+	supply_range = 55
+}

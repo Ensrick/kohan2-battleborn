@@ -5,7 +5,20 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Fixed
+- All dangling references (2026-08-13 breakage pass): pioneer's captain slot typo
+  (`bb_pioneer_captain` -> `bb_captain_pioneer`), Infantry/Ranger Captain portrait wiring
+  (skin paths + `portrait_ids`), Infantry Sergeant art refs, Praetorian/captain/militia
+  name keys re-pointed at defined `bb_` loc keys (+ new "Zombie Militia"/"Hobilar
+  Militia" strings), Haroun city hillstrider 24 -> 1 and Undead village unit cap 2 -> 7
+  (per design-doc targets).
+
 ### Changed
+- `workbench/` is now the single source of truth; `Data/` rebuilt as the curated
+  deployable superset (95 files, reference-verified; stub units and orphaned art
+  excluded). Reconciled bidirectional drift (Drauga settler, pilgrim flank + costs).
+- Localization consolidated on the full-file `strings_data_K2.tgi` override;
+  `_BB_Strings.tgi` retired with its 10 unique keys merged in.
 - Split display/compat work (UI, Fonts, AVars/UVars, strings_rtse_ui.tgi, UI GIMP
   sources, CE table) into the companion
   [kohan2-widescreen](https://github.com/Ensrick/kohan2-widescreen) repo; `collect.ps1`

@@ -1,0 +1,38 @@
+
+[Thing Template=K2Structure]
+{
+	IDS = bb_base_center_city
+	name = "#bb_base_center_city_name"
+
+	[Placement]
+	placement_group_IDS = null
+	placement_category = none
+
+	[View]
+	resource_prefix = /Structures/Drauga/DraugaCenter/DraugaCenterCity
+	icon = /UI/Game/ActionButtons/IconUpgrade.png
+	
+	[BodyComponent]
+	health = 1
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = drauga_center_city
+		
+		[Upgrade]
+		ids = gauri_center_city
+
+		[Upgrade]
+		ids = haroun_center_city
+
+		[Upgrade]
+		ids = human_center_city
+		
+		[Upgrade]
+		ids = shadow_center_city
+
+		[Upgrade]
+		ids = undead_center_city
+	}
+}

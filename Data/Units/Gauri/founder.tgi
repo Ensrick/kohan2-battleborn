@@ -72,10 +72,10 @@
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 5
+		gold = 2 ;; 5
 
 		[Upkeep]
-		stone = 1
+		stone = 0.5 ;; 1
 	}
 	
 	[ElementComponent]

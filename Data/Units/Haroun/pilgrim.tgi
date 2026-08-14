@@ -200,7 +200,7 @@
 
 		[Slot]	;; bb_settler_flank
 		element_IDS = pilgrim
-		
+
 		[Slot]	;; support
 		element_IDS = pilgrim
 		

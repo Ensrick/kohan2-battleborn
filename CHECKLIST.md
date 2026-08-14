@@ -6,9 +6,11 @@ current file status. Art references marked "AW" = the Arcane Wars mod
 (`D:\Game Mods\Kohan II Kings of War\Arcane_Wars_0.82beta.rar`).
 
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
-`Data (Backup)` extract. Two dimensions per item: authored (checkbox) and **[SHIPPED]** =
-present in the live `Data/` depot. Only the settler-flank slice + `_BB_Strings.tgi` ever
-shipped; everything else is workbench-only.
+`Data (Backup)` extract. **2026-08-13 fix pass:** workbench is now the single source of
+truth and `Data/` was rebuilt as the curated deployable superset (stubs + orphaned art
+excluded, all references verified to resolve against Data/ + vanilla). Historically only
+the settler-flank slice + `_BB_Strings.tgi` had shipped. `Data/` is NOT yet deployed to
+the game install (game folder is at vanilla baseline for the widescreen work).
 
 Legend: **BROKEN** = dangling reference, will misbehave if deployed as-is. **STUB** =
 placeholder copy, no real content. **VERIFY** = looks intentional but worth an in-game check.
@@ -21,9 +23,7 @@ placeholder copy, no real content. **VERIFY** = looks intentional but worth an i
 
 - [x] `bb_settler_flank` property (`_BB_Properties.tgi`) + `company_settler` layout: 4 front / 2 flank / 2 support / locked captain, all 3 formations
 - [x] Human pioneer, Gauri founder, Undead boneweaver, Haroun pilgrim (Data only), Drauga settler (Data only)
-- [ ] **Drift:** Drauga `settler.tgi` exists only in `Data/`, missing from workbench
-- [ ] **Drift:** Haroun `pilgrim.tgi` workbench copy lacks the flank slot that shipped in `Data/`
-- [ ] **Drift:** Gauri founder cost discount (gold 2 / stone 0.5) is workbench-only; shipped copy has vanilla 5/1. Pilgrim gold 3 discount is Data-only. Pick intended costs and sync
+- [x] ~~Drift~~ FIXED 2026-08-13: Drauga settler copied into workbench; pilgrim flank slot + gold 3 merged into workbench; founder keeps the discount (settler-discount pattern) and Data/ rebuilt from workbench
 - [ ] Shadow uses `horde_shadowsettler`, untouched: confirm intentionally exempt
 
 ## 2. Localization (two competing mechanisms, must be reconciled)
@@ -37,10 +37,9 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] Vanilla renames (workbench override only): Pikeman -> Halberdier (incl. company/militia/sounds/tutorial), Lancer -> Hobilar, Dragoon -> Cavalier, Poleaxe -> Masterwork Poleaxe, Pike -> Halberd, Lance -> Couched Lance
 - [x] Kingdom color renames (workbench `strings_rtse_data.tgi`): Ochre/Saffron/Indigo/Teal/Mint/Khaki/Azure/Umber/White - pairs with the `kingdom_colors.tgi` value retune (ship both together)
 - [x] New-unit name strings staged in both files (Storm Guard line, sergeants, militias, etc.)
-- [ ] **Decide the mechanism.** Base-key renames (Halberdier/Hobilar/Cavalier, abilities, colors) only work via the full-file override; _BB-only keys (Footman, Explorer, settler-flank names) must be merged into it (or kept additive alongside). Then delete the loser
-- [ ] **BROKEN key mismatches** (unit files reference keys no file defines): `#captain_cavalry_name` (captain.tgi), `#bb_pikeman_praetorian_name`, `#zombie_militia_zombie_name`, `#lancer_militia_name`, and all 5 siege-militia names (`#juggernaut_militia_name` etc.; loc defines `bb_`-prefixed variants)
-- [ ] `bb_front_swordsman_Name` capital-N key in _BB_Strings (works only if lookups are case-insensitive: **VERIFY** or fix)
-- [ ] Lancer -> Hobilar rename vs new `bb_support_lancer` "Lancer": under the additive mechanism both would display "Lancer"
+- [x] FIXED 2026-08-13: full-file override adopted as the mechanism; all 10 `_BB`-only keys merged into it (capital-N key normalized; `_Slot_name` casing kept to match its references); `_BB_Strings.tgi` retired from `Data/`; added `bb_zombie_militia_name` + `bb_lancer_militia_name` ("Hobilar Militia")
+- [x] FIXED 2026-08-13: all key mismatches resolved by pointing units at the defined `bb_`-prefixed keys (captain, praetorian, zombie, lancer, 5 siege militias)
+- [x] Lancer/Hobilar name collision moot under the override mechanism (base lancer displays "Hobilar")
 
 ## 3. Human roster overhaul
 
@@ -48,16 +47,16 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] Tech-tree shift to town centers: catapult, cleric, ranger, sorceress (town), dragoon, warmage (city), swordsman (town), bowman (+blacksmith)
 - [x] Company rewiring: flank slots filled (bowman/dragoon/pikeman/swordsman), custom captains/supports as defaults
 - [x] `bb_support_dragoon` "Cataphract" and `bb_support_swordsman` "Myrmidon": complete, loc OK (picker-only, no default slot)
-- [x] `bb_praetorian` "Praetorian" wired into pikeman support slots, art exists, but: [ ] **BROKEN** name ref `#bb_pikeman_praetorian_name`
-- [ ] `bb_captain_infantry` "Infantry Captain": unit + skin + icon done; **BROKEN** portrait 3 ways (skin path names nonexistent folder/file, `portrait_ids` given a file path, defined portrait ids never referenced)
-- [ ] `bb_captain_ranger` "Ranger Captain": unit + skin + icon done; **BROKEN** both portrait refs dangling
-- [ ] `bb_captain_pikeman` "Infantry Sergeant": stats done; **BROKEN** icon `bb_SergeantPikemanIcon.tga` + skin `bb_sergeant_pikeman.dds` missing (folder has `bb_sergeant_infantry.dds` under the wrong name)
-- [ ] `bb_captain_pioneer` "Explorer": unit done but **BROKEN** orphan: pioneer.tgi's captain slot points at nonexistent `bb_pioneer_captain` (typo'd ID); its custom art folder also unreferenced. Shipped pioneer fell back to vanilla `captain`
+- [x] `bb_praetorian` "Praetorian" wired into pikeman support slots, art exists; name ref FIXED 2026-08-13 (`#bb_support_pikeman_name`)
+- [x] `bb_captain_infantry` "Infantry Captain": portrait FIXED 2026-08-13 (skin path corrected to `_BB_Captain_Infantry/bb_captain_infantry_portrait.dds`, `portrait_ids` -> defined id `captain_infantry_portrait`)
+- [x] `bb_captain_ranger` "Ranger Captain": portrait FIXED 2026-08-13 (skin path -> `_BB_Captain_Ranger/bb_captain_ranger_portrait.dds`, `portrait_ids` -> defined id `captain_ranger_portrait`)
+- [x] `bb_captain_pikeman` "Infantry Sergeant": art refs FIXED 2026-08-13 (skin -> existing `bb_sergeant_infantry.dds`; icon -> vanilla PikemanIcon for now). [ ] Custom sergeant icon still owed (design: gold armor recolor)
+- [x] `bb_captain_pioneer` "Explorer": FIXED 2026-08-13 - pioneer.tgi captain slot now points at `bb_captain_pioneer`. [ ] Its custom art folder still unreferenced (unit uses default Pioneer skin; decide whether to wire `bb_captain_pioneer.dds`)
 - [ ] `bb_captain_lancer`: mid-conversion **STUB**: no `captain` property, duplicates `company_lancer`/`militia_lancer` IDs vs lancer.tgi
 - [ ] Captain/Support Bowman ("Ranger Sergeant"/"Marksman"): **STUB** byte-identical copies of bowman.tgi (would triple-define `bowman` if deployed); names already staged in loc
 - [ ] Captain/Support Engineer: **STUB** untouched vanilla engineer copies
-- [ ] captain.tgi rework (hp 360, melee 38, agile) done but **BROKEN** name key (see section 2). **Also contradicts the design doc:** "The original captain is to remain untouched to keep the campaign intact" (only removed from the recruit pool) - decide which wins
-- [ ] lancer.tgi adds `militia_lancer` (duplicate vs _BB_Captain_Lancer + missing name key)
+- [ ] captain.tgi rework (hp 360, melee 38, agile): name key FIXED 2026-08-13 (`#bb_captain_cavalry_name`), but it still **contradicts the design doc:** "The original captain is to remain untouched to keep the campaign intact" (only removed from the recruit pool) - decide which wins
+- [x] lancer.tgi `militia_lancer` name key FIXED 2026-08-13 (`#bb_lancer_militia_name` = "Hobilar Militia"); duplicate-ID stub `_BB_Captain_Lancer.tgi` excluded from `Data/`
 
 ## 4. Council
 
@@ -74,7 +73,7 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] Siege militia orgs wired: juggernaut, maelstrom, hillstrider, leviathan, bone_golem (+ denizen_type props)
 - [x] `militia_zombie` (standard layout, MonsterIcon)
 - [x] `militia_pikeman` added to fort + outpost
-- [ ] **BROKEN:** all 6 militia name keys unprefixed vs `bb_`-prefixed loc definitions (section 2)
+- [x] Militia name keys FIXED 2026-08-13: all 7 units now reference the `bb_`-prefixed loc keys
 - [ ] Siege layout reuses `#company_militia_company_short_militia_name` for display: **VERIFY** intended
 
 ## 6. Settlements, town centers, structures
@@ -82,8 +81,8 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] All 6 settlements: `max_structures` flattened to 7 at every tier
 - [x] All 24 center files: health x2, base militia x2-3, cost x5, `unit_limit_provided` -> 7/8/9/10
 - [x] Elite garrisons at city/citadel: berserker x8/x16, juggernaut+maelstrom, hillstrider, swordsman x8/x16, leviathan x1/x2, zombie x60 all tiers + bone golem
-- [ ] **Bug:** `undead_center_village` unit_limit_provided left at 2 (design target: 7 for all six factions, section 15)
-- [ ] **Bug (copy-paste):** Haroun city hillstrider count 24 vs citadel 2 (design target: city 1, citadel 2 - the 24 is a typo)
+- [x] FIXED 2026-08-13: `undead_center_village` unit_limit_provided 2 -> 7 (design target)
+- [x] FIXED 2026-08-13: Haroun city hillstrider count 24 -> 1 (design target; citadel stays 2)
 - [ ] Sync remaining center values against the design target tables in section 15 (e.g. Undead citadel design adds bone archer/skeleton x18)
 - [ ] **VERIFY:** Undead village bonearcher/skeleton militia+inventory fully commented out (zombie-only garrison), asymmetric vs town/city - but matches the design table, which gives Undead villages zombies only
 - [ ] `bb_base_center_city` faction-choice structure: defined, upgrades into all 6 faction cities, loc OK; placeholder art (Drauga model + generic upgrade icon); nothing can build it yet - decide entry point
@@ -116,8 +115,8 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 
 ## 11. Repo / pipeline hygiene
 
-- [ ] Reconcile `Data/` vs `workbench/` into one source of truth (README pending item; drift documented in sections 1-2)
-- [ ] Duplicate-ID hazard when promoting workbench to `Data/`: bowman x3, engineer x2, lancer company/militia x2 - stubs must be excluded or completed first
+- [x] FIXED 2026-08-13: workbench = single source of truth; `Data/` rebuilt as curated superset (95 files), reference-verified. Future promotions: edit workbench, re-copy to `Data/`
+- [x] Duplicate-ID hazard neutralized: stubs (bowman pair, engineer pair, captain lancer) excluded from `Data/`; they remain workbench-only until completed
 - [ ] Prune junk: `workbench/UI/3840/UNFINISHED Game/**/Thumbs.db` (widescreen-owned path, Thumbs.db only), ` - Copy` vanilla backups
 - [x] `tools/collect.ps1` / `tools/deploy.ps1` sync scripts; 3 test maps (`BB_Test_2`, `TEST`, `Trial Map Human`)
 

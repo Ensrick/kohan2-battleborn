@@ -100,7 +100,7 @@
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 8
+		gold = 3 ;; 8
 		
 		[Upkeep]
 		Stone = 0.5 ;; 1
@@ -157,6 +157,9 @@
 		property_IDS = settler_support
 
 		[Property]
+		property_IDS = bb_settler_flank
+
+		[Property]
 		property_IDS = role_settler
 	}
 }
@@ -194,7 +197,10 @@
 		
 		[Slot]	;; front
 		element_IDS = pilgrim
-		
+
+		[Slot]	;; bb_settler_flank
+		element_IDS = pilgrim
+
 		[Slot]	;; support
 		element_IDS = pilgrim
 		

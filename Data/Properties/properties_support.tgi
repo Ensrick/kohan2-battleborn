@@ -1,0 +1,305 @@
+[Property Template=SupportProperty]
+{
+	IDS = combat_tactics
+	name = "#properties_support_combat_tactics_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyAttack.png
+	performer_cv_bias = 2
+		
+	[Modifier Template=AddModifier]
+	attribute = AV
+	amount = 3
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = inspiration
+	name = "#properties_support_inspiration_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyAttack.png
+	performer_cv_bias = 3
+		
+	[Modifier Template=AddModifier]
+	attribute = AV
+	amount = 2
+
+	[Modifier Template=AddModifier]
+	attribute = DV
+	amount = 1
+
+	[Modifier Template=MultiplyModifier]
+	attribute = MORALE_LOSS_RATE
+	amount = +.33
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = warden_immunity
+	name = "#properties_support_warden_immunity_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyDefense.png
+	performer_cv_bias = 3
+
+	[Modifier Template=AddModifier]
+	attribute = DV
+	amount = 2
+		
+	[Modifier template=ResistDamageModifier]
+	damage_type = magic
+	amount = +.20
+
+	[Modifier template=EnchantmentImmunityModifier]
+	enchantment_type = NULL
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = bloodlust
+	name = "#properties_support_bloodlust_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyAttack.png
+	performer_cv_bias = 2
+		
+	[Modifier Template=AddModifier]
+	attribute = AV
+	amount = 3
+}
+
+
+[Property Template=SupportProperty]
+{
+	IDS = defensive_tactics
+	name = "#properties_support_defensive_tactics_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyDefense.png
+	performer_cv_bias = 2
+			
+	[Modifier Template=AddModifier]
+	attribute = DV
+	amount = 3
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = aura_of_fear
+	name = "#properties_support_aura_of_fear_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyDefense.png
+	performer_cv_bias = 2
+			
+	[Modifier Template=AddModifier]
+	attribute = DV
+	amount = 3
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = bravery
+	name = "#properties_support_bravery_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyGeneric.png
+	performer_cv_bias = 1
+
+	[Modifier Template=AddModifier]
+	attribute = AV
+	amount = 1
+
+	[Modifier Template=MultiplyModifier]
+	attribute = MORALE_LOSS_RATE
+	amount = +.33	
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = frenzy
+	name = "#properties_support_frenzy_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyGeneric.png
+	performer_cv_bias = 1
+		
+	[Modifier Template=AddModifier]
+	attribute = Morale
+	amount = 2
+
+	[Modifier Template=MultiplyModifier]
+	attribute = MORALE_LOSS_RATE
+	amount = +.33
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = trailblazing
+	name = "#properties_support_trailblazing_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyTrailblazing.png
+	performer_cv_bias = 2
+		
+	[Modifier template=FlagModifier]
+	modifier_flag = TRAILBLAZING
+
+	[Modifier Template=AddModifier]
+	attribute = DETECTION_RANGE
+	amount = 3
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = recon
+	name = "#properties_support_recon_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyGeneric.png
+	performer_cv_bias = 1
+		
+	[Modifier Template=AddModifier]
+	attribute = DETECTION_RANGE
+	amount = 6
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = rapid_entrench
+	name = "#properties_support_rapid_entrench_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyDefense.png
+	performer_cv_bias = 1
+		
+	[Modifier Template=MultiplyModifier]
+	attribute = ENTRENCHMENT_RATE
+	amount = +.50
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = tactician
+	name = "#properties_support_tactician_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyAttack.png
+	performer_cv_bias = 2
+		
+	[Modifier Template=AddModifier]
+	attribute = AV
+	amount = 2	
+		
+	[Modifier Template=MultiplyModifier]
+	attribute = ENTRENCHMENT_RATE
+	amount = +.25
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = cavalry_foe
+	name = "#properties_support_cavalry_foe_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyAttack.png
+	required_properties = melee
+		
+	[Modifier Template=MeleeAttackEffectModifier]
+	{
+		[Effect Template=AddDamageEffect]
+		targets = cavalry
+		damage_type_IDS = melee
+		amount = +5
+	}
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = archer_foe
+	name = "#properties_support_archer_foe_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyAttack.png
+	required_properties = melee
+		
+	[Modifier Template=MeleeAttackEffectModifier]
+	{
+		[Effect Template=AddDamageEffect]
+		targets = archer
+		damage_type_IDS = melee
+		amount = +5
+	}
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = infantry_foe
+	name = "#properties_support_infantry_foe_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyAttack.png
+	required_properties = melee
+		
+	[Modifier Template=MeleeAttackEffectModifier]
+	{
+		[Effect Template=AddDamageEffect]
+		targets = infantry
+		damage_type_IDS = melee
+		amount = +5
+	}
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = bb_guardsman
+	name = "#bb_properties_support_guardsman_name"
+	icon = /Properties/%s/PropertyIcons/IconPropertyDefense.png
+	performer_cv_bias = 2
+			
+	[Modifier Template=AddModifier]
+	attribute = DV
+	amount = 1
+}
+
+/* Examples of Support Properties that give enchantment effects to melee attacks
+
+[Property Template=SupportProperty]
+{
+	IDS = diseased_strikes
+	name = "Diseased Strikes"
+	icon = /Properties/%s/PropertyIcons/IconPropertyMovement.png
+	required_properties = melee
+
+	[Modifier Template=MeleeAttackEffectModifier]
+	{
+		[Effect template=EnchantmentEffect]
+		{
+			[EnchantmentProperty Template=EnchantmentProperty]
+  			{
+  				ids = ghoul_plague
+  				name = "#ghoul_AbilityDefinition_Effect_EnchantmentProperty_name"
+  				duration = 15
+  				enchantment_type = magical
+  				icon = /Properties/%s/PropertyIcons/IconPropertyMovement.png
+  			
+  				[Modifier Template=AddModifier]
+  				attribute = AV
+  				amount = -1
+    			
+    				[Modifier Template=MultiplyModifier]
+  				attribute = SPEED_MAX
+  				amount = -0.25
+  
+ 				[WhenAdded Template=FXC_CreateVFX]
+  				vfx_ids = tint_disease
+			}
+		}
+	}
+}
+
+[Property Template=SupportProperty]
+{
+	IDS = infecting_strikes
+	name = "Infecting Strikes"
+	icon = /Properties/%s/PropertyIcons/IconPropertyMovement.png
+	required_properties = melee
+
+	[Modifier Template=MeleeAttackEffectModifier]
+	{
+		[Effect template=EnchantmentEffect]
+		{
+			[EnchantmentProperty Template=EnchantmentProperty]
+			{
+				ids = zombie_plague
+				name = "#zombie_AbilityDefinition_Effect_EnchantmentProperty_name"
+				duration = 15
+				enchantment_type = disease
+				icon = /Properties/%s/PropertyIcons/IconPropertyMovement.png
+			
+				[Modifier Template=AddModifier]
+				attribute = AV
+				amount = -1
+
+				[Modifier Template=MultiplyModifier]
+				attribute = SPEED_MAX
+				amount = -0.25
+
+				[WhenAdded Template=FXC_CreateVFX]
+				vfx_ids = tint_disease
+			}
+		}
+	}
+}
+*/

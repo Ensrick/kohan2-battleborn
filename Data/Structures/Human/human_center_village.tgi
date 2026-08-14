@@ -1,0 +1,66 @@
+
+[Thing Template=K2HumanCenter]
+{
+	IDS = human_center_village
+	name = "#human_center_village_name"
+	name_list_ids = namelist_human_settlement
+
+	[RandomActor]
+	random_actor_ids = random_settlement_village
+	weight = 0.8
+
+	[View]
+	resource_prefix = humanCenter/humancentervillage
+
+	[BodyComponent]
+	health = 2600 ;; 1300
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = human_center_town
+	}
+	
+	[DenizenComponent]
+	{
+		[Organization]
+		organization_ids = workers_human
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_bowman
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_pikeman
+		behavior = MILITIA_DEFENSIVE
+
+		[Inventory]
+		actor_ids = worker
+		count = 4
+		
+		[Inventory]
+		actor_ids = bowman
+		count = 12 ;; 6
+
+		[Inventory]
+		actor_ids = pikeman
+		count = 18 ;; 6
+	}
+		
+	[DetectionComponent]	
+	detection_range = 40
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 500 ;; 100
+		
+		[Production]
+		gold = 18
+		unit_limit_provided = 7 ;; 2
+	}
+
+	[SupplyComponent]
+	supply_range = 40
+}

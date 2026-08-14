@@ -1,0 +1,58 @@
+
+[Thing Template=K2HarounCenter]
+{
+	IDS = haroun_center_town
+	name = "#haroun_center_town_name"
+	name_list_ids = namelist_haroun_settlement
+	
+	[RandomActor]
+	random_actor_ids = random_settlement_town
+	weight = 0.6
+
+	[View]
+	resource_prefix = harounCenter/harouncentertown
+
+	[BodyComponent]
+	health = 4200 ;; 2600
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = haroun_center_city
+	}
+	
+	[DenizenComponent]
+	{
+		guard_range = 38
+
+		[Organization]
+		organization_ids = militia_rainbringer
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_mistrunner
+		behavior = MILITIA_DEFENSIVE
+
+		[Inventory]
+		actor_ids = rainbringer
+		count = 24 ;; 8
+
+		[Inventory]
+		actor_ids = mistrunner
+		count = 24 ;; 6
+	}
+	
+	[DetectionComponent]	
+	detection_range = 46
+
+	[EconomyComponent]
+	{
+		[Production]
+		gold = 22
+		wood = 2
+		unit_limit_provided = 8 ;; 3
+	}
+
+	[SupplyComponent]
+	supply_range = 46
+}

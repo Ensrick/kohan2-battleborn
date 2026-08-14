@@ -1,0 +1,190 @@
+[OrganizationLayout template=K2OrganizationLayout]
+{
+	IDS = company_militia
+	name = "#company_militia_name"
+	
+	[Slot template=LayoutSlot]
+	property_IDS = front
+	locked = true
+	number = 4
+	name = "#company_militia_Slot_name"
+
+	[Slot template=LayoutSlot]
+	property_IDS = support
+	required = false
+	number = 1
+	name = "#company_militia_Slot_name_2"
+
+	[Formation]
+	{
+		formation_IDS = company_combat
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -3.75,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.25,+3
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.25,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +3.75,+3
+
+		[Position template=FormationPosition]
+		property_IDS = support
+		offset = 0,-0
+	}
+}
+
+[OrganizationLayout template=K2OrganizationLayout]
+{
+	IDS = company_triad_militia
+	name = "#company_militia_company_triad_militia_name"
+	
+	[Slot template=LayoutSlot]
+	property_IDS = front
+	locked = true
+	number = 1
+	name = "#company_militia_Slot_name_3"
+
+	[Slot template=LayoutSlot]
+	property_IDS = front
+	locked = true
+	number = 1
+	name = "#company_militia_Slot_name_4"
+
+	[Slot template=LayoutSlot]
+	property_IDS = front
+	locked = true
+	number = 1
+	name = "#company_militia_Slot_name_5"
+
+	[Formation]
+	{
+		formation_IDS = company_combat
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -3.75,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.25,+3
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.25,+3
+	}
+}
+
+[OrganizationLayout template=K2OrganizationLayout]
+{
+	IDS = company_tough_militia
+	name = "#company_militia_company_tough_militia_name"
+	
+	[Slot template=LayoutSlot]
+	property_IDS = front
+	locked = true
+	number = 4
+	name = "#company_militia_Slot_name"
+
+	[Slot template=LayoutSlot]
+	property_IDS = front
+	required = false
+	number = 2
+	name = "#company_militia_Slot_name_6"
+
+	[Formation]
+	{
+		formation_IDS = company_combat
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -3.75,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.25,+3
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.25,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +3.75,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = 0,-0
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +2.5,-1.5
+	}
+}
+
+[OrganizationLayout template=K2OrganizationLayout]
+{
+	IDS = company_short_militia
+	name = "#company_militia_company_short_militia_name"
+	
+	[Slot template=LayoutSlot]
+	property_IDS = front
+	locked = true
+	number = 3
+	name = "#company_militia_Slot_name"
+
+	[Slot template=LayoutSlot]
+	property_IDS = support
+	required = false
+	number = 1
+	name = "#company_militia_Slot_name_2"
+
+	[Formation]
+	{
+		formation_IDS = company_combat
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -3.75,+3
+
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = -1.25,+3
+		
+		[Position template=FormationPosition]
+		property_IDS = front
+		offset = +1.25,+3
+
+		[Position template=FormationPosition]
+		property_IDS = support
+		offset = 0,-0
+	}
+}
+
+[OrganizationLayout template=K2OrganizationLayout]
+{
+	IDS = company_siege_militia
+	name = "#company_militia_company_short_militia_name"
+	
+	[Slot template=LayoutSlot]
+	property_IDS = siege
+	locked = true
+	number = 1
+	name = "#company_militia_Slot_name"
+
+	[Formation]
+	{
+		formation_IDS = company_combat
+
+		[Position template=FormationPosition]
+		property_IDS = siege
+		offset = 0,-0
+	}
+}

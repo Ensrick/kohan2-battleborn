@@ -1,0 +1,139 @@
+;; Kingdom 1
+[KingdomColor Template=Color]
+{
+	IDS = blue
+	name = "#kingdom_colors_blue_name"
+	color = 0.080, 0.210, 0.700
+}
+
+;; Kingdom 2
+[KingdomColor Template=Color]
+{
+	IDS = red
+	name = "#kingdom_colors_red_name"
+	color = 0.500, 0.050, 0.020
+}
+
+;; Kingdom 3
+[KingdomColor Template=Color]
+{
+	IDS = green
+	name = "#kingdom_colors_green_name"
+	color = 0.150, 0.320, 0.150
+}
+
+;; Kingdom 4
+[KingdomColor Template=Color]
+{
+	IDS = black
+	name = "#kingdom_colors_black_name"
+	color = .15, .15, .15
+}
+
+;; Kingdom 5
+[KingdomColor Template=Color]
+{
+	IDS = cyan
+	name = "#kingdom_colors_cyan_name"
+	color = .5, .5, 1
+}
+
+;; Kingdom 6
+[KingdomColor Template=Color]
+{
+	IDS = brown
+	name = "#kingdom_colors_brown_name"
+	color = 0.300, 0.130, 0.080 ;; Umber
+}
+
+;; Kingdom 7
+[KingdomColor Template=Color]
+{
+	IDS = yellow
+	name = "#kingdom_colors_yellow_name"
+	color = 0.960, 0.770, 0.190 ;; Saffron
+}
+
+;; Kingdom 8
+[KingdomColor Template=Color]
+{
+	IDS = pink
+	name = "#kingdom_colors_pink_name"
+	color = 0.760, 0.690, 0.570 ;; Khaki
+}
+
+;; Kingdom 9
+[KingdomColor Template=Color]
+{
+	IDS = gray
+	name = "#kingdom_colors_gray_name"
+	color = 0.570, 0.640, 0.690 ;; Cadet Grey
+}
+
+;; Kingdom 10
+[KingdomColor Template=Color]
+{
+	IDS = maroon
+	name = "#kingdom_colors_maroon_name"
+	color = .32,.02,.10
+}
+
+;; Kingdom 11
+[KingdomColor Template=Color]
+{
+	IDS = lime
+	name = "#kingdom_colors_lime_name"
+	color = .243,.706,.537 ;; Mint
+}
+
+;; Kingdom 12
+[KingdomColor Template=Color]
+{
+	IDS = purple
+	name = "#kingdom_colors_purple_name"
+	color = .294,.0,.51 ;; Indigo
+}
+
+;; Kingdom 13
+[KingdomColor Template=Color]
+{
+	IDS = sky
+	name = "#kingdom_colors_sky_name"
+	color = 0.050, 0.500, 1.000 ;; Azure
+}
+
+;; Kingdom 14
+[KingdomColor Template=Color]
+{
+	IDS = orange
+	name = "#kingdom_colors_orange_name"
+	color = .88,.5,.14 ;; Ochre
+}
+
+;; Kingdom 15
+[KingdomColor Template=Color]
+{
+	IDS = gold
+	name = "#kingdom_colors_gold_name"
+	color = .961,.961,.961 ;; White
+}
+
+;; Kingdom 16
+[KingdomColor Template=Color]
+{
+	IDS = aqua
+	name = "#kingdom_colors_aqua_name"
+	color = 0,.5,.5 ;; Teal
+}
+
+;; DEFAULT COLOR
+;; - expected by the code
+;; - listed last so gets handed out last 
+;; - the color should match AVar "ReplacementColorDefault"
+[KingdomColor template=Color]
+{
+	IDS = default
+	name = "#kingdom_colors_default_name"
+	color = 1,1,1	
+}
+
