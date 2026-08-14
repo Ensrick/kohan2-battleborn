@@ -103,12 +103,11 @@ in-town parity for now - the tanky-x2 doctrine was deliberately NOT applied here
 playtest. Random names via DEDICATED per-structure lists (user 2026-08-14: never reuse the fort
 lists): `namelist_bb_<faction>_{woodmill,sawmill,woodmarket}`, 18 lists x 50 names each
 (fort-list parity) in `NameLists/namelist_bb_<faction>_wood.tgi` + 918 `bb_namelist_*` loc keys.
-- [ ] **NAMING PASS OWED (user names everything):** all Claude-authored name VALUES and the
-invented type prefixes (Ghorn/Krazh/Bharg, Skog/Verk/Torg, Ghaba/Minshar/Sihr,
-Oihan/Zur/Sorgin) are placeholders. Edit the string values in the
-`;; BB wood-outpost namelists` block at the tail of `Localization/strings_data_K2.tgi`
-(keys stay fixed), or edit the pools in `tools/gen_namelists.ps1` and rerun it.
-Vanilla-derived base names and design-doc unit names are the user's own.
+Naming policy (user 2026-08-14): generated generic random pools like these are fine;
+unit TYPES, heroes, and unique things are named by the user - never invent those (all
+current unit names come from the user's design sheet). To tweak namelist values: edit the
+`;; BB wood-outpost namelists` block at the tail of `Localization/strings_data_K2.tgi`,
+or edit the pools in `tools/gen_namelists.ps1` and rerun.
 Builder units per faction (vanilla `BuilderComponent` carriers): Human engineer, Drauga
 crafter, Gauri forge, Haroun caretaker, Shadow nightbringer, Undead boneweaver.
 
