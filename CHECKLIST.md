@@ -88,12 +88,20 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [ ] `bb_base_center_city` faction-choice structure: defined, upgrades into all 6 faction cities, loc OK; placeholder art (Drauga model + generic upgrade icon); nothing can build it yet - decide entry point
 - [ ] Cosmetic: stray indent in undead citadel, missing `;;` old-value annotations (shadow citadel cost, stale human citadel comment)
 
-## 7. Buildings (Human)
+## 7. Buildings (out-of-town economy outposts)
+
+**Design intent (user, 2026-08-13): every faction gets these expensive outpost structures -
+buildable economic output outside towns, enabling defensive/turtle play.** Formula: 3x
+in-town cost, 2/3 output, capturable + razable, small garrison. Builder units per faction
+(vanilla `BuilderComponent` carriers): Human engineer, Drauga crafter, Gauri forge, Haroun
+caretaker, Shadow nightbringer, Undead boneweaver.
 
 - [x] Fort + outpost: health x2, captureable, cost 100->250, bigger garrisons, `unit_limit_provided` 3/2 (matches the design targets in section 15 exactly)
 - [x] `bb_human_woodmill_outpost` chain COMPLETED 2026-08-13: engineer.tgi override adds it to the `BuilderComponent` build list (vanilla out-of-town build mechanism); upgrades `bb_human_sawmill_outpost` (285g, wood 8) and `bb_human_woodmarket_outpost` (285g, gold 12 + wood 3) authored on the 3x-cost / 2/3-output formula, vanilla sawmill/woodexport art + names, capturable + razable, same worker/bowman garrison. **VERIFY in-game:** build via engineer, upgrade paths, and whether the AI ever builds it (design-doc caution)
 - [ ] Out-of-town sawmill/woodmarket intentionally DROP the in-town versions' ranged-tech research trees (reduced efficacy) - revisit if they should carry research
 - [ ] Outpost/fort passes for the other five factions: design tables have Human-only rows filled, Drauga/Haroun/Gauri/Undead/Shadow left blank - not started
+- [ ] Economy-outpost wood chains for the other five factions (clone each faction's woodmill/sawmill/wood-export-or-convert per the formula + one BuildActor on their builder unit) - not started
+- [ ] Beyond wood: decide which other in-town producers get outpost versions (quarry, foundry, market, library chains exist for all six factions in vanilla)
 
 ## 8. Game variables
 
