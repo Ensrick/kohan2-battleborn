@@ -3,6 +3,7 @@
 {
 	IDS = bb_drauga_woodmarket_outpost
 	name = "#drauga_woodexport_name"
+	name_list_ids = namelist_drauga_outpost
 
 	[View]
 	{

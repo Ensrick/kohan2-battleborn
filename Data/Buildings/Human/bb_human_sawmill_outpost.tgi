@@ -3,6 +3,7 @@
 {
 	IDS = bb_human_sawmill_outpost
 	name = "#human_sawmill_name"
+	name_list_ids = namelist_human_outpost
 
 	[View]
 	{

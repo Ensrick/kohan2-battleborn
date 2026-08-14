@@ -3,6 +3,7 @@
 {
 	IDS = bb_drauga_sawmill_outpost
 	name = "#drauga_sawmill_name"
+	name_list_ids = namelist_drauga_outpost
 
 	[View]
 	{

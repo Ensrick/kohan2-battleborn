@@ -90,17 +90,23 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 
 ## 7. Buildings (out-of-town economy outposts)
 
-**Design intent (user, 2026-08-13): every faction gets these expensive outpost structures -
+**Design intent (user, 2026-08-13/14): every faction gets these expensive outpost structures -
 buildable economic output outside towns, enabling defensive/turtle play.** Formula: 3x
-in-town cost, 2/3 output, capturable + razable, small garrison. Builder units per faction
-(vanilla `BuilderComponent` carriers): Human engineer, Drauga crafter, Gauri forge, Haroun
-caretaker, Shadow nightbringer, Undead boneweaver.
+in-town cost, 2/3 output, capturable + razable. **Guard doctrine (user 2026-08-14):** guards
+are weaker units, thematically suited to the structure (wood structures = the faction's
+hunter/ranged unit x8 + its workers, parity with the playtested Human pilot); military
+outposts/forts stay strictly stronger so economy outposts never replace them. Building HP at
+in-town parity for now - the tanky-x2 doctrine was deliberately NOT applied here pending
+playtest. Random names via each faction's `namelist_<faction>_outpost` (same lists forts use).
+Builder units per faction (vanilla `BuilderComponent` carriers): Human engineer, Drauga
+crafter, Gauri forge, Haroun caretaker, Shadow nightbringer, Undead boneweaver.
 
 - [x] Fort + outpost: health x2, captureable, cost 100->250, bigger garrisons, `unit_limit_provided` 3/2 (matches the design targets in section 15 exactly)
 - [x] `bb_human_woodmill_outpost` chain COMPLETED 2026-08-13: engineer.tgi override adds it to the `BuilderComponent` build list (vanilla out-of-town build mechanism); upgrades `bb_human_sawmill_outpost` (285g, wood 8) and `bb_human_woodmarket_outpost` (285g, gold 12 + wood 3) authored on the 3x-cost / 2/3-output formula, vanilla sawmill/woodexport art + names, capturable + razable, same worker/bowman garrison. **VERIFY in-game:** build via engineer, upgrade paths, and whether the AI ever builds it (design-doc caution)
 - [ ] Out-of-town sawmill/woodmarket intentionally DROP the in-town versions' ranged-tech research trees (reduced efficacy) - revisit if they should carry research
 - [ ] Outpost/fort passes for the other five factions: design tables have Human-only rows filled, Drauga/Haroun/Gauri/Undead/Shadow left blank - not started
-- [x] Economy-outpost wood chains COMPLETED for all six factions 2026-08-13: `bb_<faction>_{woodmill,sawmill,woodmarket}_outpost` x6 on the 3x-cost / 2/3-output formula, faction-correct art/names/HP (woodmarket = each faction's export or mana-convert variant); builder overrides add the BuildActor: engineer, crafter, forge, caretaker, nightbringer, boneweaver. Garrisons mirror each faction's vanilla outpost (Haroun gets no workers, like its outpost). **VERIFY in-game per faction:** build button, upgrades, AI usage
+- [x] Economy-outpost wood chains COMPLETED for all six factions 2026-08-13 (guards + namelists retuned 2026-08-14): `bb_<faction>_{woodmill,sawmill,woodmarket}_outpost` x6 on the 3x-cost / 2/3-output formula, faction-correct art/names/HP (woodmarket = each faction's export or mana-convert variant); builder overrides add the BuildActor. Guards per doctrine: bowman (Human), impaler (Drauga), spear (Gauri), rainbringer (Haroun, workerless like its outpost), fury (Shadow), bone archer (Undead), x8 + workers x4. **VERIFY in-game per faction:** build button, upgrades, random names, AI usage
+- [ ] Playtest knobs deliberately left open: guard counts (8 vs "large amount"), building HP (in-town parity vs the mod's x2-tanky doctrine)
 - [ ] Beyond wood: decide which other in-town producers get outpost versions (quarry, foundry, market, library chains exist for all six factions in vanilla)
 
 ## 8. Game variables

@@ -3,7 +3,7 @@
 {
 	IDS = bb_human_woodmill_outpost
 	name = "#human_woodmill_name"
-	;;name_list_ids = namelist_human_outpost
+	name_list_ids = namelist_human_outpost
 	
 	[View]
 	resource_prefix = /Structures/Human/HumanWoodmill/humanwoodmill

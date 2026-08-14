@@ -3,6 +3,7 @@
 {
 	IDS = bb_shadow_woodmill_outpost
 	name = "#shadow_woodmill_name"
+	name_list_ids = namelist_shadow_outpost
 
 	[View]
 	{
@@ -34,7 +35,7 @@
 		behavior = WORKER
 
 		[Organization]
-		organization_ids = militia_reaver
+		organization_ids = militia_fury
 		behavior = MILITIA_OFFENSIVE
 
 		[Inventory]
@@ -42,7 +43,7 @@
 		count = 4
 
 		[Inventory]
-		actor_ids = reaver
+		actor_ids = fury
 		count = 8
 	}
 

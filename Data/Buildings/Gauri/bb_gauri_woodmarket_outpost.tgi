@@ -3,6 +3,7 @@
 {
 	IDS = bb_gauri_woodmarket_outpost
 	name = "#gauri_woodexport_name"
+	name_list_ids = namelist_gauri_outpost
 
 	[View]
 	{

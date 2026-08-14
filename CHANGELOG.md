@@ -10,7 +10,11 @@ All notable changes to the Battleborn mod. Format follows
   upgrading into sawmill / woodmarket variants (3x in-town cost, 2/3 output,
   capturable + razable, faction outpost-style garrisons, no research trees).
   Builder overrides: Human engineer, Drauga crafter, Gauri forge, Haroun
-  caretaker, Shadow nightbringer, Undead boneweaver.
+  caretaker, Shadow nightbringer, Undead boneweaver. Guards follow the
+  structure-flavor doctrine: each faction's hunter/ranged unit x8 (bowman /
+  impaler / spear / rainbringer / fury / bone archer) + its workers, staying
+  strictly weaker than military outposts and forts. All 18 buildings draw
+  random names from their faction's outpost namelist, like forts do.
 
 ### Fixed
 - All dangling references (2026-08-13 breakage pass): pioneer's captain slot typo
