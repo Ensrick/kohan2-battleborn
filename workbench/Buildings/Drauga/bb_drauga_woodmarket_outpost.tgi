@@ -1,0 +1,61 @@
+
+[Thing Template=K2DraugaBuilding]
+{
+	IDS = bb_drauga_woodmarket_outpost
+	name = "#drauga_woodexport_name"
+
+	[View]
+	{
+		resource_prefix = /Structures/Drauga/DraugaWoodExport/draugawoodexport
+		icon = /UI/Game/StructureButtons/WoodConvertIcon.png
+
+		[TextureSearchPath]
+		path = /Structures/Drauga/DraugaWoodmill
+	}
+
+	[BodyComponent]
+	health = 750
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		can_raze = true
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = workers_laborer
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_impaler
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = laborer
+		count = 4
+
+		[Inventory]
+		actor_ids = impaler
+		count = 8
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 285 ;; from 3 * 95
+
+		[Production]
+		gold = 10 ;; from 2/3 * 15
+		wood = 3 ;; from 2/3 * 5, rounded down
+	}
+
+	[SupplyComponent]
+	supply_range = 13
+}

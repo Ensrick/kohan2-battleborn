@@ -1,0 +1,284 @@
+
+[Unit template=K2GauriUnit]
+{
+	IDS = forge
+	name = "#forge_name"
+	description = "#forge_description"
+		
+	[View]
+	{
+		resource_prefix = Forge/Forge
+
+		[AspectNormal]
+		skin = %sbase.dds
+	}
+		
+	[BodyComponent]
+	health = 220
+	defense = 3
+	
+	[BuilderComponent template=BuilderComponent]
+	{
+		[BuildActor]
+		actor_ids = gauri_outpost
+
+		[BuildActor]
+		actor_ids = bb_gauri_woodmill_outpost
+	
+		[BuildActor]
+		actor_ids = gauri_mine_gold
+		
+		[BuildActor]
+		actor_ids = gauri_mine_stone
+		
+		[BuildActor]
+		actor_ids = gauri_mine_wood
+		
+		[BuildActor]
+		actor_ids = gauri_mine_iron
+		
+		[BuildActor]
+		actor_ids = gauri_mine_mana	
+	}
+
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.3
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.4
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = forge_death
+		}
+
+		[Animation Template=DieAnimation]
+		{
+			IDS = die2
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = forge_death
+		}
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.4
+						
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee2
+		key_ratio = 0.4
+		
+		[Animation Template=BuildAnimation]
+		IDS = build1
+		key_ratio = 0.6
+
+		[Animation Template=BuildAnimation]
+		IDS = build2
+		key_ratio = 0.6
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 10
+		
+		[Upkeep]
+		stone = 1
+	}
+	
+	[ElementComponent]
+	{
+		morale_value = 10
+		required_structures = gauri_center_village
+		denizen_type = denizen_type_worker
+		group_priority = 1
+	
+		[SupportProperty]
+		property_IDS = rapid_entrench
+	}
+		
+	[MoverComponent]
+	{
+		speed_max = 3.0
+		
+		[TrackInfo Template=K2TracksBipedRight]
+		
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+	
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+			animation2 = melee2
+			
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#forge_AbilityDefinition_name"
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 16
+				
+				[Effect Template=AddDamageEffect]
+				damage_type_IDS = siege
+				targets = buildings
+				amount = 12
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = nonmetal_swing2
+			}
+		}
+		
+		[Ability Template=K2RepairLocal]
+		{			
+			[AbilityDefinition Template=K2RepairAction]
+			{
+				[Effect Template=HealEffect]
+				amount = 16
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build
+			}
+		}
+		
+		[Ability Template=K2ConstructLocal]
+		{
+			animation1 = build1
+			animation2 = build2
+
+			[AbilityDefinition Template=K2ConstructAction]
+			{
+				[Effect Template=HealEffect]
+				amount = 8
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build
+			}
+		}
+		
+		[Ability Template=K2RepairAllLocal]
+		{		
+			animation1 = build1
+			animation2 = build2
+
+			[AbilityDefinition Template=K2RepairAllAction]
+			{
+				[Effect Template=HealEffect]
+				amount = 15
+
+				[Effect Template=HealEffect]
+				targets = walls
+				amount = 50
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build
+			}
+		}
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_gauri
+
+		[Property]
+		property_IDS = agile
+
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = melee
+			
+		[Property]
+		property_IDS = role_infantry	
+
+		[Property]
+		property_IDS = role_engineer	
+
+		[Property]
+		property_IDS = rapid_entrench
+	}
+}
+
+[Thing template=K2GauriCompany]
+{
+	IDS = company_forge
+	name = "#forge_company_forge_name"
+	
+	[View]
+	{
+		resource_prefix = Forge/Forge	
+		banner_icon = /Organizations/BannerIcons/EngineerIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = forge_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = forge_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = forge_attack
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = role_engineer	
+	}
+
+	[OrganizationComponent]
+	{
+		layout_IDS = company_engineer
+		entrenchment_time = 60
+		
+		[Slot]	;; front
+		element_IDS = forge
+		
+		[Slot]	;; flank
+		element_IDS = forge
+		
+		[Slot]	;; captain
+		element_IDS = leader
+	}	
+}
+
+[Thing template=K2GauriWorkers]
+{
+	IDS = workers_gauri
+	name = "#forge_workers_gauri_name"
+	
+	[View]
+	resource_prefix = Forge/Forge
+	banner_icon = /Organizations/BannerIcons/SettlerIcon.tga
+	
+	[OrganizationComponent]
+	{
+		layout_IDS = company_worker
+		entrenchment_time = 300
+		
+		[Slot]	;; front
+		element_IDS = forge
+	}	
+}

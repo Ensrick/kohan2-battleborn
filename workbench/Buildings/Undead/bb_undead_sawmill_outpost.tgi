@@ -1,0 +1,60 @@
+
+[Thing Template=K2UndeadBuilding]
+{
+	IDS = bb_undead_sawmill_outpost
+	name = "#undead_sawmill_name"
+
+	[View]
+	{
+		resource_prefix = /Structures/Undead/Undeadsawmill/undeadsawmill
+		icon = /UI/Game/StructureButtons/SawmillIcon.png
+
+		[TextureSearchPath]
+		path = /Structures/Undead/UndeadWoodmill
+	}
+
+	[BodyComponent]
+	health = 600
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		can_raze = true
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = workers_undead
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_bonearcher
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = boneweaver
+		count = 4
+
+		[Inventory]
+		actor_ids = bonearcher
+		count = 8
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 240 ;; from 3 * 80
+
+		[Production]
+		wood = 7 ;; from 2/3 * 11, rounded down
+	}
+
+	[SupplyComponent]
+	supply_range = 13
+}

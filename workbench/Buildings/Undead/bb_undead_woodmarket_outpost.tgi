@@ -1,0 +1,62 @@
+
+[Thing Template=K2UndeadBuilding]
+{
+	IDS = bb_undead_woodmarket_outpost
+	name = "#undead_woodconvert_name"
+
+	[View]
+	{
+		resource_prefix = /Structures/Undead/UndeadWoodConvert/Undeadwoodconvert
+		icon = /UI/Game/StructureButtons/WoodtoManaConvertIcon.png
+
+		[TextureSearchPath]
+		path = /Structures/Undead/UndeadWoodmill
+	}
+
+	[BodyComponent]
+	health = 600
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		can_raze = true
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = workers_undead
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_bonearcher
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = boneweaver
+		count = 4
+
+		[Inventory]
+		actor_ids = bonearcher
+		count = 8
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 240 ;; from 3 * 80
+
+		[Production]
+		gold = 7 ;; from 2/3 * 10, rounded up
+		wood = 2 ;; from 2/3 * 3, rounded down
+		mana = 1 ;; from 2/3 * 2, rounded down
+	}
+
+	[SupplyComponent]
+	supply_range = 13
+}

@@ -1,0 +1,53 @@
+
+[Thing Template=K2HarounBuilding]
+{
+	IDS = bb_haroun_woodmarket_outpost
+	name = "#haroun_woodconvert_name"
+
+	[View]
+	{
+		resource_prefix = /Structures/Haroun/HarounWoodConvert/harounwoodconvert
+		icon = /UI/Game/StructureButtons/WoodtoManaConvertIcon.png
+
+		[TextureSearchPath]
+		path = /Shared/SharedTextures, /Structures/Haroun/HarounWoodmill
+	}
+
+	[BodyComponent]
+	health = 750
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		can_raze = true
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = militia_rainbringer
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = rainbringer
+		count = 8
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 300 ;; from 3 * 100
+
+		[Production]
+		wood = 8 ;; from 2/3 * 12
+		mana = 2 ;; from 2/3 * 3
+	}
+
+	[SupplyComponent]
+	supply_range = 13
+}

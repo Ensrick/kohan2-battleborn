@@ -1,0 +1,222 @@
+
+[Unit template=K2DraugaUnit]
+{
+	IDS = Crafter
+	name = "#crafter_name"
+	description = "#crafter_description"
+	
+	[View]
+	resource_prefix = Crafter/Crafter
+		
+	[BodyComponent]
+	health = 240
+	defense = 0
+	
+	[BuilderComponent template=BuilderComponent]
+	{
+		[BuildActor]
+		actor_ids = drauga_outpost
+
+		[BuildActor]
+		actor_ids = bb_drauga_woodmill_outpost
+	
+		[BuildActor]
+		actor_ids = drauga_mine_gold
+		
+		[BuildActor]
+		actor_ids = drauga_mine_stone
+		
+		[BuildActor]
+		actor_ids = drauga_mine_wood
+		
+		[BuildActor]
+		actor_ids = drauga_mine_iron
+		
+		[BuildActor]
+		actor_ids = drauga_mine_mana	
+	}
+
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 2
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 3
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = beastrider_death
+		}
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.6				
+		
+		[Animation Template=BuildAnimation]
+		IDS = build1
+		key_ratio = 0.6
+		
+		[Animation Template=BuildAnimation]
+		IDS = build2
+		key_ratio = 0.6
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 15
+		
+		[Upkeep]
+		stone = 1
+	}
+	
+	[ElementComponent]
+	{
+		morale_value = 9
+		required_structures = drauga_quarry
+		group_priority = 1
+	
+		[SupportProperty]
+		property_IDS = rapid_entrench
+	}
+	
+	[MoverComponent]
+	{
+		speed_max = 3
+		
+		[TrackInfo Template=K2TracksBipedRight]
+		
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+	
+	[PerformerComponent]
+	{	
+		[Ability Template=K2MeleeLocal]
+		{
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#crafter_AbilityDefinition_name"
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 22
+				
+				[Effect Template=AddDamageEffect]
+				damage_type_IDS = siege
+				targets = buildings
+				amount = 12
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = metal_swing2
+			}
+		}
+		
+		[Ability Template=K2RepairLocal]
+		{			
+			animation1 = build1
+			animation2 = build2
+
+			[AbilityDefinition Template=K2RepairAction]
+			{
+				[Effect Template=HealEffect]
+				amount = 10
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build
+			}
+		}
+		
+		[Ability Template=K2ConstructLocal]
+		{
+			animation1 = build1
+			animation2 = build2
+			
+			[AbilityDefinition Template=K2ConstructAction]
+			{
+				[Effect Template=HealEffect]
+				amount = 5
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build
+			}
+		}
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_drauga
+
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = melee
+
+		[Property]
+		property_IDS = role_engineer
+
+		[Property]
+		property_IDS = rapid_entrench
+	}
+}
+
+[Thing Template=K2DraugaCompany]
+{
+	IDS = company_crafter
+	name = "#crafter_company_crafter_name"
+	
+	[View]
+	{
+		resource_prefix = Crafter/Crafter
+		banner_icon = /Organizations/BannerIcons/EngineerIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = crafter_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = crafter_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = crafter_attack
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = role_engineer
+	}
+
+	[OrganizationComponent]
+	{
+		layout_IDS = company_engineer
+		entrenchment_time = 60
+		
+		[Slot]	;; front
+		element_IDS = crafter
+		
+		[Slot]	;; flank
+		element_IDS = crafter
+		
+		[Slot]	;; captain
+		element_IDS = warlord
+	}	
+}

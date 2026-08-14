@@ -1,50 +1,59 @@
 
-[Unit template=K2UndeadUnit]
+[Unit template=K2ShadowUnit]
 {
-	IDS = boneweaver
-	name = "#boneweaver_name"
-	description = "#boneweaver_description"
+	IDS = nightbringer
+	name = "#Nightbringer_name"
+	description = "#Nightbringer_description"
  	
 	[View]
-	resource_prefix = Boneweaver/Boneweaver
-			
+	{
+		resource_prefix = Nightbringer/Nightbringer
+
+		[AspectNormal]
+		skin = %sbase.dds
+	}
+		
 	[BodyComponent]
-	health = 120
+	health = 180
 	defense = 1
 	
 	[BuilderComponent template=BuilderComponent]
 	{
 		[BuildActor]
-		actor_ids = undead_center_village
+		actor_ids = shadow_center_village
 		
 		[BuildActor]
-		actor_ids = undead_outpost
+		actor_ids = shadow_outpost
 
 		[BuildActor]
-		actor_ids = bb_undead_woodmill_outpost
+		actor_ids = bb_shadow_woodmill_outpost
 	
 		[BuildActor]
-		actor_ids = undead_mine_gold
+		actor_ids = shadow_mine_gold
 		
 		[BuildActor]
-		actor_ids = undead_mine_stone
+		actor_ids = shadow_mine_stone
 		
 		[BuildActor]
-		actor_ids = undead_mine_wood
+		actor_ids = shadow_mine_wood
 		
 		[BuildActor]
-		actor_ids = undead_mine_iron
+		actor_ids = shadow_mine_iron
 		
 		[BuildActor]
-		actor_ids = undead_mine_mana	
+		actor_ids = shadow_mine_mana	
 	}
 
 	[CharacterComponent]
 	{
 		[Animation Template=MoveAnimation]
 		IDS = walk
-		walk_distance = 0.68
+		walk_distance = 1.5
 				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+		
 		[Animation Template=IdleAnimation]
 		IDS = idle
 		
@@ -60,101 +69,86 @@
 		[Animation Template=DieAnimation]
 		{
 			IDS = die1
-		
+
 			[WhenStart template=FXC_PlaySFX]
-			audio_ids = boneweaver_death
+			audio_ids = nightbringer_death
+		}
+		
+		[Animation Template=DieAnimation]
+		{
+			IDS = die2
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = nightbringer_death
 		}
 				
 		[Animation Template=MeleeAttackAnimation]
 		IDS = melee1
-		key_ratio = 0.4
-						
+		key_ratio = 0.44
+		
 		[Animation Template=BuildAnimation]
 		IDS = build1
-		key_ratio = 0.5
+		key_ratio = 0.6
 
 		[Animation Template=BuildAnimation]
 		IDS = build2
-		key_ratio = 0.5
+		key_ratio = 0.6
+
+		[Animation Template=CastAnimation]
+		IDS = cast
+   		key_ratio = 0.48
+
+		[Animation Template=IdleAnimation]
+		IDS = idlecast	
 	}
 
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 6
-		
+		gold = 5
+			
 		[Upkeep]
 		stone = 1
 	}
 	
 	[ElementComponent]
 	{
-		morale_value = 10
-		required_structures = undead_center_village
+		morale_value = 15
+		required_structures = shadow_center_village
 		denizen_type = denizen_type_worker
-		group_priority = 1
-		
+	
 		[SupportProperty]
 		property_IDS = rapid_entrench
 	}
-
+	
 	[MoverComponent]
 	{
-		speed_max = 3.5
-		turn_radius = 0.75
-	
-		[TrackInfo Template=K2TracksQuadInsectFootFrontRight]
+		speed_max = 3
 		
-		[TrackInfo Template=K2TracksQuadInsectFootBackLeft]
+		[TrackInfo Template=K2TracksBipedRight]
 		
-		[TrackInfo Template=K2TracksQuadInsectFootBackRight]
-		
-		[TrackInfo Template=K2TracksQuadInsectFootFrontLeft]
+		[TrackInfo Template=K2TracksBipedLeft]
 	}
 	
 	[PerformerComponent]
-	{		
+	{	
 		[Ability Template=K2MeleeLocal]
 		{
 			animation1 = melee1
-				
+			
 			[AbilityDefinition Template=K2MeleeAttack]
 			{
-				name = "#boneweaver_AbilityDefinition_name"
+				name = "#Nightbringer_AbilityDefinition_name"
 							
 				[Effect Template=MainDamageEffect]
 				damage_type_IDS = melee
 				amount = 10
 				
-				[Effect Template=AddDamageEffect]
-				damage_type_IDS = siege
-				targets = buildings
-				amount = 4
-				
 				[WhenDo template=FXC_PlaySFX]
-				audio_ids = claw_small
+				audio_ids = nonmetal_swing2
 			}
 		}
 		
-		[Ability Template=K2RepairAllLocal]
-		{
-			animation1 = build1
-			animation2 = build2
-			
-			[AbilityDefinition Template=K2RepairAllAction]
-			{
-				[Effect Template=HealEffect]
-				amount = 10
-				
-				[Effect Template=HealEffect]
-				targets = walls
-				amount = 50				
-
-				[WhenDo template=FXC_PlaySFX]
-				audio_ids = worker_build_undead
-			}
-		}
-
 		[Ability Template=K2RepairLocal]
 		{			
 			animation1 = build1
@@ -163,10 +157,10 @@
 			[AbilityDefinition Template=K2RepairAction]
 			{
 				[Effect Template=HealEffect]
-				amount = 10
+				amount = 12
 
 				[WhenDo template=FXC_PlaySFX]
-				audio_ids = worker_build_undead
+				audio_ids = worker_build_shadow
 			}
 		}
 		
@@ -178,10 +172,10 @@
 			[AbilityDefinition Template=K2ConstructActionSettlement]
 			{
 				[Effect Template=HealEffect]
-				amount = 5
+				amount = 8
 
 				[WhenDo template=FXC_PlaySFX]
-				audio_ids = worker_build_undead
+				audio_ids = worker_build_shadow
 			}
 		}
 		
@@ -194,57 +188,64 @@
 			[AbilityDefinition Template=K2ConstructAction]
 			{
 				[Effect Template=HealEffect]
-				amount = 5
+				amount = 8
 				
 				[WhenDo template=FXC_PlaySFX]
-				audio_ids = worker_build_undead
+				audio_ids = worker_build_shadow
+			}
+		}
+		
+		[Ability Template=K2RepairAllLocal]
+		{		
+			animation1 = build1
+			animation2 = build2
+			
+			[AbilityDefinition Template=K2RepairAllAction]
+			{
+				[Effect Template=HealEffect]
+				amount = 10
+				
+				[Effect Template=HealEffect]
+				targets = walls
+				amount = 20				
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build_shadow
 			}
 		}
 	}
-
+	
 	[PropertiesComponent]
 	{
 		[Property]
 		property_IDS = front
 
 		[Property]
-		property_IDS = settler_support
-		
-		[Property]
-		property_IDS = bb_settler_flank
-
-		[Property]
-		property_IDS = skeletal
-
-		[Property]
 		property_IDS = role_settler
 		
 		[Property]
 		property_IDS = role_engineer
-
-		[Property]
-		property_IDS = rapid_entrench
 	}
 }
 
-[Thing Template=K2UndeadCompany]
+[Thing template=K2ShadowCompany]
 {
-	IDS = company_boneweaver
-	name = "#boneweaver_company_boneweaver_name"
+	IDS = horde_nightbringer
+	name = "#Nightbringer_horde_nightbringer_name"
 	
 	[View]
 	{
-		resource_prefix = Boneweaver/Boneweaver
+		resource_prefix = Nightbringer/Nightbringer	
 		banner_icon = /Organizations/BannerIcons/SettlerIcon.tga
  
 		[WhenSelected Template=FXC_PlaySFX]
-		audio_ids = boneweaver_select
+		audio_ids = nightbringer_select
 
 		[WhenCommanded Template=FXC_PlaySFX]
-		audio_ids = boneweaver_move
+		audio_ids = nightbringer_move
 
 		[WhenCommandedAggressive Template=FXC_PlaySFX]
-		audio_ids = boneweaver_attack
+		audio_ids = nightbringer_attack
 	}
 
 	[PropertiesComponent]
@@ -258,31 +259,27 @@
 
 	[OrganizationComponent]
 	{
-		layout_IDS = company_settler
+		layout_IDS = horde_settler
 		entrenchment_time = 60
 		
 		[Slot]	;; front
-		element_IDS = boneweaver
-
-		[Slot]	;; bb_settler_flank
-		element_IDS = boneweaver
-		
-		[Slot]	;; support
-		element_IDS = boneweaver
+		element_IDS = nightbringer
 		
 		[Slot]	;; captain
-		element_IDS = reaper
+		element_IDS = shade
 	}	
 }
 
-[Thing Template=K2UndeadWorkers]
+[Thing Template=K2ShadowWorkers]
 {
-	IDS = workers_undead
-	name = "#boneweaver_workers_undead_name"
+	IDS = workers_shadow
+	name = "#Nightbringer_workers_shadow_name"
 	
 	[View]
-	resource_prefix = Boneweaver/Boneweaver
+	resource_prefix = Nightbringer/Nightbringer
 	banner_icon = /Organizations/BannerIcons/SettlerIcon.tga
+
+
 	
 	[OrganizationComponent]
 	{
@@ -290,6 +287,6 @@
 		entrenchment_time = 300
 		
 		[Slot]	;; front
-		element_IDS = boneweaver
+		element_IDS = nightbringer
 	}	
 }

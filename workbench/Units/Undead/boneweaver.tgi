@@ -19,6 +19,9 @@
 		
 		[BuildActor]
 		actor_ids = undead_outpost
+
+		[BuildActor]
+		actor_ids = bb_undead_woodmill_outpost
 	
 		[BuildActor]
 		actor_ids = undead_mine_gold

@@ -1,0 +1,63 @@
+
+[Thing Template=K2GauriBuilding]
+{
+	IDS = bb_gauri_woodmill_outpost
+	name = "#gauri_woodmill_name"
+
+	[View]
+	{
+		resource_prefix = /Structures/Gauri/GauriWoodmill/gauriwoodmill
+		icon = /UI/Game/StructureButtons/WoodmillIcon.png
+	}
+
+	[BodyComponent]
+	health = 600
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = bb_gauri_sawmill_outpost
+
+		[Upgrade]
+		ids = bb_gauri_woodmarket_outpost
+
+		can_raze = true
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = workers_gauri
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_spear
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = forge
+		count = 4
+
+		[Inventory]
+		actor_ids = spear
+		count = 8
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 225 ;; from 3 * 75
+
+		[Production]
+		wood = 5 ;; from 2/3 * 7, rounded up
+	}
+
+	[SupplyComponent]
+	supply_range = 13
+}

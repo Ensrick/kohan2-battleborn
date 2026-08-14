@@ -6,10 +6,11 @@ All notable changes to the Battleborn mod. Format follows
 ## [Unreleased]
 
 ### Added
-- Out-of-town economy pilot completed: the woodmill outpost is now buildable
-  (engineer `BuilderComponent` override) and upgrades into new
-  `bb_human_sawmill_outpost` / `bb_human_woodmarket_outpost` (3x cost, 2/3 output,
-  capturable + razable, no research trees).
+- Out-of-town economy outposts for ALL SIX factions: buildable woodmill outpost
+  upgrading into sawmill / woodmarket variants (3x in-town cost, 2/3 output,
+  capturable + razable, faction outpost-style garrisons, no research trees).
+  Builder overrides: Human engineer, Drauga crafter, Gauri forge, Haroun
+  caretaker, Shadow nightbringer, Undead boneweaver.
 
 ### Fixed
 - All dangling references (2026-08-13 breakage pass): pioneer's captain slot typo

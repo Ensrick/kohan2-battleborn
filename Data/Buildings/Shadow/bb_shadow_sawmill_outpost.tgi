@@ -1,0 +1,60 @@
+
+[Thing Template=K2ShadowBuilding]
+{
+	IDS = bb_shadow_sawmill_outpost
+	name = "#shadow_sawmill_name"
+
+	[View]
+	{
+		resource_prefix = /Structures/Shadow/ShadowSawmill/ShadowSawmill
+		icon = /UI/Game/StructureButtons/SawmillIcon.png
+
+		[TextureSearchPath]
+		path = /Structures/Shadow/ShadowWoodmill
+	}
+
+	[BodyComponent]
+	health = 600
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		can_raze = true
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = workers_shadow
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_reaver
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = nightbringer
+		count = 4
+
+		[Inventory]
+		actor_ids = reaver
+		count = 8
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 240 ;; from 3 * 80
+
+		[Production]
+		wood = 7 ;; from 2/3 * 11, rounded down
+	}
+
+	[SupplyComponent]
+	supply_range = 13
+}

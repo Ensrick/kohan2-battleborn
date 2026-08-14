@@ -1,0 +1,61 @@
+
+[Thing Template=K2ShadowBuilding]
+{
+	IDS = bb_shadow_woodmarket_outpost
+	name = "#shadow_woodconvert_name"
+
+	[View]
+	{
+		resource_prefix = /Structures/Shadow/ShadowWoodConvert/ShadowWoodConvert
+		icon = /UI/Game/StructureButtons/WoodtoManaConvertIcon.png
+
+		[TextureSearchPath]
+		path = /Structures/Shadow/ShadowWoodmill
+	}
+
+	[BodyComponent]
+	health = 600
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		can_raze = true
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = workers_shadow
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_reaver
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = nightbringer
+		count = 4
+
+		[Inventory]
+		actor_ids = reaver
+		count = 8
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 240 ;; from 3 * 80
+
+		[Production]
+		wood = 3 ;; from 2/3 * 4, rounded up
+		mana = 2 ;; from 2/3 * 3
+	}
+
+	[SupplyComponent]
+	supply_range = 13
+}

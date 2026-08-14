@@ -1,0 +1,53 @@
+
+[Thing Template=K2HarounBuilding]
+{
+	IDS = bb_haroun_sawmill_outpost
+	name = "#haroun_sawmill_name"
+
+	[View]
+	{
+		resource_prefix = /Structures/Haroun/HarounSawmill/HarounSawmill
+		icon = /UI/Game/StructureButtons/WoodConvertIcon.png
+
+		[TextureSearchPath]
+		path = /Shared/SharedTextures, /Structures/Haroun/HarounWoodmill
+	}
+
+	[BodyComponent]
+	health = 750
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		can_raze = true
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 24
+
+		[Organization]
+		organization_ids = militia_rainbringer
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = rainbringer
+		count = 8
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 300 ;; from 3 * 100
+
+		[Production]
+		gold = 4 ;; from 2/3 * 6
+		wood = 9 ;; from 2/3 * 14, rounded down
+	}
+
+	[SupplyComponent]
+	supply_range = 13
+}
