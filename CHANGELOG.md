@@ -14,9 +14,11 @@ All notable changes to the Battleborn mod. Format follows
   structure-flavor doctrine: each faction's hunter/ranged unit x8 (bowman /
   impaler / spear / rainbringer / fury / bone archer) + its workers, staying
   strictly weaker than military outposts and forts. All 18 buildings draw
-  random names from dedicated new per-structure namelists (18 lists x 12
-  authored names in each faction's naming style - e.g. Gauri "Torg" markets,
-  Haroun "Minshar" sawmills, Undead "Bonesaw Mill" / "Ashen Tithe").
+  random names from dedicated new per-structure namelists (18 lists x 50
+  names, matching the fort lists' size, in each faction's naming style -
+  e.g. Gauri "Torg" markets, Haroun "Minshar" sawmills, Undead "Bonesaw
+  Mill" / "Ashen Tithe"; built from the vanilla outpost/settlement name
+  pools plus authored additions).
 
 ### Fixed
 - All dangling references (2026-08-13 breakage pass): pioneer's captain slot typo

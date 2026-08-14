@@ -98,9 +98,9 @@ hunter/ranged unit x8 + its workers, parity with the playtested Human pilot); mi
 outposts/forts stay strictly stronger so economy outposts never replace them. Building HP at
 in-town parity for now - the tanky-x2 doctrine was deliberately NOT applied here pending
 playtest. Random names via DEDICATED per-structure lists (user 2026-08-14: never reuse the fort
-lists): `namelist_bb_<faction>_{woodmill,sawmill,woodmarket}`, 18 lists x 12 authored
-names in each faction's naming language, in `NameLists/namelist_bb_<faction>_wood.tgi` +
-`bb_namelist_*` loc keys.
+lists): `namelist_bb_<faction>_{woodmill,sawmill,woodmarket}`, 18 lists x 50 names each
+(fort-list parity; built from vanilla outpost/settlement name pools plus authored
+additions) in `NameLists/namelist_bb_<faction>_wood.tgi` + 918 `bb_namelist_*` loc keys.
 Builder units per faction (vanilla `BuilderComponent` carriers): Human engineer, Drauga
 crafter, Gauri forge, Haroun caretaker, Shadow nightbringer, Undead boneweaver.
 
