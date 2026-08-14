@@ -43,6 +43,11 @@ All notable changes to the Battleborn mod. Format follows
   (per design-doc targets).
 
 ### Changed
+- Garrison audit (2026-08-14): all 24 town-center files + Human fort/outpost
+  diffed against the design-doc target tables (cost, health, unit limit, every
+  garrison count). Sole deviation found and fixed: Drauga city berserker
+  8 -> 10. Files now match every design table row exactly; stale deviation
+  markers cleared from CHECKLIST section 15.
 - Commander cost balance (2026-08-14): politics commanders priced at the
   politics-support gold tier plus a captain premium, with mana upkeep
   scaling to casting power (native captains are free in vanilla; Shadow

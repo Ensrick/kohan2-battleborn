@@ -86,8 +86,12 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] Elite garrisons at city/citadel: berserker x8/x16, juggernaut+maelstrom, hillstrider, swordsman x8/x16, leviathan x1/x2, zombie x60 all tiers + bone golem
 - [x] FIXED 2026-08-13: `undead_center_village` unit_limit_provided 2 -> 7 (design target)
 - [x] FIXED 2026-08-13: Haroun city hillstrider count 24 -> 1 (design target; citadel stays 2)
-- [ ] Sync remaining center values against the design target tables in section 15 (e.g. Undead citadel design adds bone archer/skeleton x18)
-- [ ] **VERIFY:** Undead village bonearcher/skeleton militia+inventory fully commented out (zombie-only garrison), asymmetric vs town/city - but matches the design table, which gives Undead villages zombies only
+- [x] GARRISON AUDIT 2026-08-14: all 24 center files + Human fort/outpost diffed against
+  the section 15 tables (cost, health, unit limit, every garrison count). Sole deviation:
+  Drauga city berserker 8 -> 10, fixed. Haroun town/city/citadel carry no `[Cost]` block,
+  matching the sheet's 0-cost cells (vanilla Haroun convention). Undead citadel bone
+  archer/skeleton x18 confirmed already present. Files now match every table row exactly
+- [x] Undead village zombie-only garrison confirmed intentional (matches the design table; bonearcher/skeleton commented out)
 - [ ] `bb_base_center_city` faction-choice structure: defined, upgrades into all 6 faction cities, loc OK; placeholder art (Drauga model + generic upgrade icon); nothing can build it yet - decide entry point
 - [ ] Cosmetic: stray indent in undead citadel, missing `;;` old-value annotations (shadow citadel cost, stale human citadel comment)
 
@@ -207,7 +211,7 @@ files actually are as of 2026-08-13.
 
 - [ ] New companies - partial (settler flank + Siege Militia done; per-line companies of section 13 not started)
 - [ ] Bigger militia units - partial (garrisons yes; militia company sizes unchanged)
-- [x] Town centers changed for all six factions (sheet recorded only Human + Drauga as Done - files finished all six; remaining value syncs in section 6)
+- [x] Town centers changed for all six factions - COMPLETE 2026-08-14: full garrison/value audit passed, files match every section 15 table row (section 6)
   - Target changes: much more militia (Human as the proportionality reference), double health, 5x cost, bigger unit cap each upgrade
 
 ## 13. Planned unit roster (the sheet's Unit Stats table)
@@ -328,7 +332,10 @@ Only one row was designed:
 
 ## 15. Target value tables (town centers, outposts, forts)
 
-Design targets; **bold** = files currently deviate. Denizen counts are per-center garrisons.
+Design targets. Denizen counts are per-center garrisons. **AUDIT 2026-08-14: files match
+every row below exactly** (workers x4 are extra in all factions but Haroun - vanilla
+baseline, not in the sheet's garrison columns). Haroun's 0-cost town/city/citadel = no
+`[Cost]` block in the files, the vanilla Haroun convention.
 
 ### Village halls (all: unit limit 7)
 
@@ -338,7 +345,7 @@ Design targets; **bold** = files currently deviate. Denizen counts are per-cente
 | Drauga | 500 | 2400 | Impaler 12, Raider 24 |
 | Haroun | 625 | 2600 | Rainbringer 16, Mistrunner 18 |
 | Gauri | 500 | 3000 | Spear 12, Anvil 18 |
-| Undead | 450 | 2400 | Zombie 60 (**files: unit limit still 2**) |
+| Undead | 450 | 2400 | Zombie 60 |
 | Shadow | 400 | 2800 | Fury 12, Reaver 18 |
 
 ### Town halls (all: unit limit 8)
@@ -358,7 +365,7 @@ Design targets; **bold** = files currently deviate. Denizen counts are per-cente
 |---|---|---|---|
 | Human | 1200 | 10400 | Bowman 24, Pikeman 24, Swordsman 8 |
 | Drauga | 1100 | 9600 | Impaler 30, Raider 30, Berserker 10 |
-| Haroun | 0 | 7800 | Rainbringer 30, Mistrunner 24, Hillstrider 1 (**files: 24**) |
+| Haroun | 0 | 7800 | Rainbringer 30, Mistrunner 24, Hillstrider 1 |
 | Gauri | 1100 | 12000 | Spear 24, Anvil 24, Juggernaut 1 |
 | Undead | 900 | 9600 | Bone Archer 12, Skeleton 12, Zombie 60 |
 | Shadow | 800 | 11200 | Fury 24, Reaver 24, Leviathan 1 |
