@@ -42,6 +42,16 @@ All notable changes to the Battleborn mod. Format follows
   Militia" strings), Haroun city hillstrider 24 -> 1 and Undead village unit cap 2 -> 7
   (per design-doc targets).
 
+### Added
+- Fort/outpost passes for the five non-Human factions (2026-08-14, derived -
+  the design sheet's rows were blank): Human transformation applied to all 10
+  vanilla files. Health x2, captureable, cost x2.5, unit limit 2/3, faction
+  upkeep untouched. Garrisons: core pair 18/18 outpost / 24/24 fort using each
+  faction's center mix (Shadow gains fury), elite melee 12/18 (Drauga
+  berserker), city siege beast x1 at fort only (Gauri juggernaut, Haroun
+  hillstrider, Shadow leviathan). Value table in CHECKLIST section 15;
+  in-game verify + user sign-off owed.
+
 ### Changed
 - Garrison audit (2026-08-14): all 24 town-center files + Human fort/outpost
   diffed against the design-doc target tables (cost, health, unit limit, every

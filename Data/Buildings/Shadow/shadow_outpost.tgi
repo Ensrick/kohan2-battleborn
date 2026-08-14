@@ -1,0 +1,74 @@
+
+[Thing Template=K2ShadowBuilding]
+{
+	IDS = shadow_outpost
+	name = "#shadow_outpost_name"
+	name_list_ids = namelist_shadow_outpost
+
+	[View]
+	{
+		resource_prefix = ShadowOutpost/ShadowOutpost
+		icon = /UI/Game/StructureButtons/OutpostIcon.png
+
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = select_shadow_outpost
+	}
+
+	[BodyComponent]
+	health = 1400 ;; 700
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = shadow_fort
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 22
+
+		[Organization]
+		organization_ids = workers_shadow
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_fury
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_reaver
+		behavior = MILITIA_DEFENSIVE
+
+		[Inventory]
+		actor_ids = nightbringer
+		count = 4
+
+		[Inventory]
+		actor_ids = fury
+		count = 18
+
+		[Inventory]
+		actor_ids = reaver
+		count = 18 ;; 8
+	}
+
+	[DetectionComponent]
+	detection_range = 24
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 200 ;; 80
+
+		[Upkeep]
+		mana = 1
+		stone = 2
+
+		[Production]
+		unit_limit_provided = 2
+	}
+
+	[SupplyComponent]
+	supply_range = 24
+}

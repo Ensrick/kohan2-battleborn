@@ -1,0 +1,76 @@
+
+[Thing Template=K2UndeadBuilding]
+{
+	IDS = undead_outpost
+	name = "#undead_outpost_name"
+	name_list_ids = namelist_undead_outpost
+
+	[View]
+	{
+		resource_prefix = UndeadOutpost/UndeadOutpost
+		icon = /UI/Game/StructureButtons/OutpostIcon.png
+
+		[TextureSearchPath]
+		path = /Shared/SharedTextures
+
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = select_undead_outpost
+	}
+
+	[BodyComponent]
+	health = 2000 ;; 1000
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = undead_fort
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 22
+
+		[Organization]
+		organization_ids = workers_undead
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_skeleton
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_bonearcher
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = boneweaver
+		count = 4
+
+		[Inventory]
+		actor_ids = skeleton
+		count = 18 ;; 4
+
+		[Inventory]
+		actor_ids = bonearcher
+		count = 18 ;; 4
+	}
+
+	[DetectionComponent]
+	detection_range = 24
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 200 ;; 80
+
+		[Upkeep]
+		stone = 4
+
+		[Production]
+		unit_limit_provided = 2
+	}
+
+	[SupplyComponent]
+	supply_range = 24
+}

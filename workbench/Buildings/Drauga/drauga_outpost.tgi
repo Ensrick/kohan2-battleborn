@@ -1,0 +1,81 @@
+
+[Thing Template=K2DraugaBuilding]
+{
+	IDS = drauga_outpost
+	name = "#drauga_outpost_name"
+	name_list_ids = namelist_drauga_outpost
+
+	[View]
+	{
+		resource_prefix = DraugaOutpost/DraugaOutpost
+		icon = /UI/Game/StructureButtons/OutpostIcon.png
+
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = select_drauga_outpost
+	}
+
+	[BodyComponent]
+	health = 2400 ;; 1200
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = drauga_fort
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 22
+
+		[Organization]
+		organization_ids = workers_laborer
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_raider
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_impaler
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_berserker
+		behavior = MILITIA_DEFENSIVE
+
+		[Inventory]
+		actor_ids = laborer
+		count = 4
+
+		[Inventory]
+		actor_ids = raider
+		count = 18 ;; 4
+
+		[Inventory]
+		actor_ids = impaler
+		count = 18 ;; 4
+
+		[Inventory]
+		actor_ids = berserker
+		count = 12
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 200 ;; 80
+
+		[Upkeep]
+		stone = 4
+
+		[Production]
+		unit_limit_provided = 2
+	}
+
+	[SupplyComponent]
+	supply_range = 26
+}

@@ -118,7 +118,18 @@ crafter, Gauri forge, Haroun caretaker, Shadow nightbringer, Undead boneweaver.
 - [x] Fort + outpost: health x2, captureable, cost 100->250, bigger garrisons, `unit_limit_provided` 3/2 (matches the design targets in section 15 exactly)
 - [x] `bb_human_woodmill_outpost` chain COMPLETED 2026-08-13: engineer.tgi override adds it to the `BuilderComponent` build list (vanilla out-of-town build mechanism); upgrades `bb_human_sawmill_outpost` (285g, wood 8) and `bb_human_woodmarket_outpost` (285g, gold 12 + wood 3) authored on the 3x-cost / 2/3-output formula, vanilla sawmill/woodexport art + names, capturable + razable, same worker/bowman garrison. **VERIFY in-game:** build via engineer, upgrade paths, and whether the AI ever builds it (design-doc caution)
 - [ ] Out-of-town sawmill/woodmarket intentionally DROP the in-town versions' ranged-tech research trees (reduced efficacy) - revisit if they should carry research
-- [ ] Outpost/fort passes for the other five factions: design tables have Human-only rows filled, Drauga/Haroun/Gauri/Undead/Shadow left blank - not started
+- [x] Outpost/fort passes for the other five factions DONE 2026-08-14 (derived - the sheet's
+  rows were blank): Human transformation applied faction-appropriately to all 10 vanilla
+  files. Recipe: health x2, captureable, cost x2.5 (100->250, 80->200, preserving faction-
+  relative pricing like the center x5 pass), unit limit 2 (outpost) / 3 (fort), upkeep
+  untouched (Haroun wood / Shadow mana+cheap stone identity). Garrisons: faction core pair
+  at 18/18 outpost, 24/24 fort (mix from the user's own center tables - Shadow gains fury,
+  matching its centers); countable elite melee at 12/18 (Human swordsman, Drauga
+  berserker); single-siege-beast factions get their city beast x1 at the FORT only
+  (Gauri juggernaut, Haroun hillstrider, Shadow leviathan; Undead gets none - bone golem
+  stays citadel-tier, zombies stay town-swarm). Full value table in section 15.
+  **VERIFY in-game + playtest knob:** derived garrisons are Claude-proposed, not
+  sheet-designed - user sign-off owed
 - [x] Economy-outpost wood chains COMPLETED for all six factions 2026-08-13 (guards + namelists retuned 2026-08-14): `bb_<faction>_{woodmill,sawmill,woodmarket}_outpost` x6 on the 3x-cost / 2/3-output formula, faction-correct art/names/HP (woodmarket = each faction's export or mana-convert variant); builder overrides add the BuildActor. Guards per doctrine: bowman (Human), impaler (Drauga), spear (Gauri), rainbringer (Haroun, workerless like its outpost), fury (Shadow), bone archer (Undead), x8 + workers x4. **VERIFY in-game per faction:** build button, upgrades, random names, AI usage
 - [ ] Playtest knobs deliberately left open: guard counts (8 vs "large amount"), building HP (in-town parity vs the mod's x2-tanky doctrine)
 - [ ] Beyond wood: decide which other in-town producers get outpost versions (quarry, foundry, market, library chains exist for all six factions in vanilla)
@@ -381,14 +392,29 @@ baseline, not in the sheet's garrison columns). Haroun's 0-cost town/city/citade
 | Undead | 1500 | 14400 | Bone Archer 18, Skeleton 18, Zombie 60, Bone Golem 1 |
 | Shadow | 1200 | 14000 | Fury 24, Reaver 30, Leviathan 2 |
 
-### Outposts and forts (capturable + razable, stone upkeep)
+### Outposts and forts (capturable + razable)
 
-| Building | Faction | Cost | Unit limit | Health | Garrison | Stone upkeep |
+Human rows = the sheet's design. The other five factions were blank in the sheet; their
+rows below are DERIVED 2026-08-14 from the Human transformation (recipe in section 7) and
+implemented - user sign-off + playtest owed.
+
+| Building | Faction | Cost | Unit limit | Health | Garrison | Upkeep |
 |---|---|---|---|---|---|---|
-| Outpost | Human | 250 | 2 | 2600 | Pikeman 18, Bowman 18, Swordsman 12 | 4 |
-| Fort | Human | 250 | 3 | 3900 | Pikeman 24, Bowman 24, Swordsman 18 | 6 |
+| Outpost | Human | 250 | 2 | 2600 | Pikeman 18, Bowman 18, Swordsman 12 | stone 4 |
+| Fort | Human | 250 | 3 | 3900 | Pikeman 24, Bowman 24, Swordsman 18 | stone 6 |
+| Outpost | Drauga | 200 | 2 | 2400 | Raider 18, Impaler 18, Berserker 12 | stone 4 |
+| Fort | Drauga | 200 | 3 | 3600 | Raider 24, Impaler 24, Berserker 18 | stone 6 |
+| Outpost | Gauri | 250 | 2 | 3000 | Anvil 18, Spear 18 | stone 4 |
+| Fort | Gauri | 250 | 3 | 4500 | Anvil 24, Spear 24, Juggernaut 1 | stone 6 |
+| Outpost | Haroun | 250 | 2 | 2600 | Mistrunner 18, Rainbringer 18 | wood 3 |
+| Fort | Haroun | 250 | 3 | 3900 | Mistrunner 24, Rainbringer 24, Hillstrider 1 | wood 4 |
+| Outpost | Undead | 200 | 2 | 2000 | Skeleton 18, Bone Archer 18 | stone 4 |
+| Fort | Undead | 200 | 3 | 3000 | Skeleton 24, Bone Archer 24 | stone 6 |
+| Outpost | Shadow | 200 | 2 | 1400 | Fury 18, Reaver 18 | stone 2, mana 1 |
+| Fort | Shadow | 200 | 3 | 2800 | Fury 24, Reaver 24, Leviathan 1 | stone 2, mana 2 |
 
-Files match the Human rows exactly. All five other factions' rows were left blank - not designed yet (section 7).
+Files match all rows (audit script rerun 2026-08-14). Workers x4 extra everywhere but
+Haroun, as with the centers.
 
 ## 16. Ideas backlog (sheet's IDEAS blocks)
 

@@ -1,0 +1,68 @@
+
+[Thing Template=K2HarounBuilding]
+{
+	IDS = haroun_outpost
+	name = "#haroun_outpost_name"
+	name_list_ids = namelist_haroun_outpost
+
+	[Flags]
+	allow_alpha_blend = false
+
+	[View]
+	{
+		resource_prefix = HarounOutpost/HarounOutpost
+		icon = /UI/Game/StructureButtons/OutpostIcon.png
+
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = select_haroun_outpost
+	}
+
+	[BodyComponent]
+	health = 2600 ;; 1300
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = haroun_fort
+	}
+
+	[DetectionComponent]
+	detection_range = 26
+
+	[DenizenComponent]
+	{
+		guard_range = 22
+
+		[Organization]
+		organization_ids = militia_mistrunner
+		behavior = MILITIA_DEFENSIVE
+
+		[Organization]
+		organization_ids = militia_rainbringer
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = mistrunner
+		count = 18 ;; 4
+
+		[Inventory]
+		actor_ids = rainbringer
+		count = 18 ;; 4
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 250 ;; 100
+
+		[Upkeep]
+		wood = 3
+
+		[Production]
+		unit_limit_provided = 2
+	}
+
+	[SupplyComponent]
+	supply_range = 26
+}

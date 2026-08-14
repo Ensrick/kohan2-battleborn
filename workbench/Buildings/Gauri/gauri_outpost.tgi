@@ -1,0 +1,73 @@
+
+[Thing Template=K2GauriBuilding]
+{
+	IDS = gauri_outpost
+	name = "#gauri_outpost_name"
+	name_list_ids = namelist_gauri_outpost
+
+	[View]
+	{
+		resource_prefix = GauriOutpost/GauriOutpost
+		icon = /UI/Game/StructureButtons/OutpostIcon.png
+
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = select_gauri_outpost
+	}
+
+	[BodyComponent]
+	health = 3000 ;; 1500
+	captureable = true
+
+	[ConstructionComponent]
+	{
+		[Upgrade]
+		ids = gauri_fort
+	}
+
+	[DenizenComponent]
+	{
+		guard_range = 22
+
+		[Organization]
+		organization_ids = workers_gauri
+		behavior = WORKER
+
+		[Organization]
+		organization_ids = militia_anvil
+		behavior = MILITIA_OFFENSIVE
+
+		[Organization]
+		organization_ids = militia_spear
+		behavior = MILITIA_OFFENSIVE
+
+		[Inventory]
+		actor_ids = forge
+		count = 4
+
+		[Inventory]
+		actor_ids = anvil
+		count = 18 ;; 4
+
+		[Inventory]
+		actor_ids = spear
+		count = 18 ;; 4
+	}
+
+	[DetectionComponent]
+	detection_range = 30
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 250 ;; 100
+
+		[Upkeep]
+		stone = 4
+
+		[Production]
+		unit_limit_provided = 2
+	}
+
+	[SupplyComponent]
+	supply_range = 30
+}
