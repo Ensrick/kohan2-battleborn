@@ -67,7 +67,7 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] `bb_captain_council_swordsman` "Storm Lord": complete (Ghalen Mordecai model, lightning casts, xp-gated)
 - [x] `bb_spellsword` "Eldritch Warrior" support: complete (storm shield casts); [ ] **VERIFY** blur-VFX outer-id rename with vanilla inner ids (opposite convention from Infantry Captain's fully-renamed set; one of the two is likely wrong)
 - [ ] Both require `bb_base_center_city` + blacksmith + library: only reachable once section 6's base city ships
-- [ ] "Rune Lord" (`bb_captain_council_hammer`): loc string + BB_Runelord art only, **no unit tgi** - not started (part of the Council Gauri line, section 13)
+- [x] "Rune Lord" (`bb_captain_council_hammer`) BUILT 2026-08-14: Council cavalry captain on the Gauri Hammer ram-rider (hp 420, melee 34, morale 14). The orphaned BB_Runelord art stays unwired until its target model is confirmed (section 10a)
 - [ ] "Storm Guard" front unit (`bb_front_council_swordsman`): loc string only; BB_Stormguard folder is 100% placeholder copies of Spellsword art - not started
 
 ## 5. Militia companies
@@ -153,7 +153,12 @@ Every unit below is functional but waiting on custom textures:
 - [ ] `bb_captain_pioneer` Explorer - decide whether to wire the existing `bb_captain_pioneer.dds`
 - [ ] `bb_base_center_city` - placeholder Drauga city model + generic upgrade icon
 - [ ] Storm Guard (Council) - BB_Stormguard folder is placeholder copies; full skin/icon/portrait needed before the unit is authored
-- [ ] Rune Lord (Council) - BB_Runelord art exists, unit not authored yet
+- [ ] `bb_captain_nationalist_swordsman` Templar - dark iron w/ gold trim Ghalen skin + own icon (ships with default Ghalen art + his portrait)
+- [ ] `bb_captain_ceyah_stonewalker` Harbinger - black/gold stonewalker skin + own icon + lich-hero portrait (SKIN xcf started in GIMP sources)
+- [ ] `bb_captain_council_ranger` Warder - AW Sharpshooter-style skin + icon + portrait (ships with default Ranger art)
+- [ ] `bb_captain_council_hammer` Rune Lord - the orphaned `BB_Runelord/BB_Runelord.dds` + `BB_Runelord_Portrait.dds` exist but their target model is unverified vs the Hammer ram-rider; confirm in-game, then wire or redo
+- [ ] `bb_captain_council_magelord` Mage Lord - own skin recolor + icon (ships with Ravid Sakeri's art + portrait)
+- [ ] `bb_captain_undead_necromancer` Necromancer - own skin recolor + icon + portrait (ships with default Lich art)
 
 ## 11. Repo / pipeline hygiene
 
@@ -245,14 +250,14 @@ front/support/captain lines gated by politics faction. "Sheet status" is the doc
 | Royalist cavalry | 6 | Champion | Paladin | Captain | Not Implemented | Done 2026-08-14; art debt (xcf exists) | Gold; portrait: Captain all gold |
 | Nationalist infantry | 4 | Crusader | Swordsman | Front/Flank | Not Implemented | Nothing | Ghalen model, silver only |
 | Nationalist infantry | 5 | Warpriest | Swordsman | Support | Not Implemented | Nothing | Ghalen, silver w/ gold trim |
-| Nationalist infantry | 6 | Templar | Swordsman | Captain | Not Implemented | Nothing | Ghalen, dark iron w/ gold trim |
+| Nationalist infantry | 6 | Templar | Swordsman | Captain | Not Implemented | Done 2026-08-14; art debt | Ghalen, dark iron w/ gold trim |
 | Nationalist support | - | Zealot | - | Support | Original | Staging folder only | - |
 | Ceyah ranged | 4 | Stalker | - | Front/Flank | Not Implemented | Nothing | - |
 | Ceyah ranged | 5 | Shadow Hunter | - | Support | Not Implemented | Nothing | - |
 | Ceyah ranged | 6 | (Masked Outcast) | - | Captain | Not Implemented | Nothing | - |
 | Ceyah melee | 4 | Blackguard | Stonewalker | Front/Flank | Not Implemented | Stonewalker skin xcf started | Black armor |
 | Ceyah melee | 5 | Slayer | Stonewalker | Support | Not Implemented | Nothing | Black armor, red trim |
-| Ceyah melee | 6 | Harbinger | Stonewalker | Captain | Not Implemented | Nothing | Black armor, gold trim; portrait: the lich hero |
+| Ceyah melee | 6 | Harbinger | Stonewalker | Captain | Not Implemented | Done 2026-08-14; art debt | Black armor, gold trim; portrait: the lich hero |
 | Ceyah support | - | Prophet | - | Support | Original ("See Lore") | Staging folder only | - |
 | Ceyah support | - | Macabre | - | Support | Not Implemented | Nothing | - |
 
@@ -264,25 +269,43 @@ front/support/captain lines gated by politics faction. "Sheet status" is the doc
 |---|---|---|---|---|---|---|---|
 | Ranged (Haroun) | 4 | Sentry | - | Front/Flank | Not Implemented | Nothing | AW Sharpshooter |
 | Ranged (Haroun) | 5 | Arcane Archer | Ranger | Support | Not Implemented | Nothing | Ranger (white) |
-| Ranged (Haroun) | 6 | Warder | Ranger | Captain | Not Implemented | Nothing | AW Sharpshooter |
+| Ranged (Haroun) | 6 | Warder | Ranger | Captain | Not Implemented | Done 2026-08-14; AW art debt | AW Sharpshooter |
 | Melee (Human) | 4 | Storm Guard | Swordsman | Front/Flank | Not Implemented | Loc string + placeholder art | Swordsman, silver/grey w/ black trim |
 | Melee (Human) | 5 | Eldritch Warrior | Swordsman | Support | UNFINISHED: needs custom spell; cost 24 / iron 1 / mana 1; skin made; needs custom swing effect + ability | Done as `bb_spellsword` (storm shield); swing-VFX rename **VERIFY** (section 4) | Blue/purple trim silver armor |
 | Melee (Human) | 6 | Storm Lord | Swordsman | Captain | Not Implemented | **Done** (`bb_captain_council_swordsman`) | Ghalen, gold w/ blue/purple trim |
 | Cavalry (Gauri) | 4 | Rune Hammer | Hammer | Front/Flank | (blank) | Nothing | - |
 | Cavalry (Gauri) | 5 | Warmage | - | Support | (blank) | Nothing | - |
-| Cavalry (Gauri) | 6 | Rune Lord | - | Captain | (blank) | Loc string + BB_Runelord art | - |
-| Special | 6 | Mage Lord | Ravid Sakeri | Captain | Not Implemented | Nothing | - |
+| Cavalry (Gauri) | 6 | Rune Lord | Hammer | Captain | (blank) | Done 2026-08-14; art debt | - |
+| Special | 6 | Mage Lord | Ravid Sakeri | Captain | Not Implemented | Done 2026-08-14 on Ravid art; protection spells | - |
 
 ### Other
 
 | Faction | Tier | Name | Base unit | Role | Sheet status | Files now |
 |---|---|---|---|---|---|---|
-| Undead | 5 | Necromancer | - | Captain | Not Implemented | Nothing |
+| Undead | 5 | Necromancer | Lich | Captain | Not Implemented | Done 2026-08-14 on Lich model; summon_undead spells; art debt |
 | ? | - | Vanguard | - | - | (name only) | Nothing |
 
 ### Roster additions from existing units
 
 - [ ] Drauga: Fire Wyrm - [ ] Gauri: Mana Construct - [ ] Ceyah: Lightning Dragon - [ ] Fallen: Spiders (all not started)
+
+## 13a. COMMANDER NAMING WORKSHEET (user to fill - user names all unit types)
+
+Vanilla gives each faction its own commander type: Human **Captain**, Drauga **Warlord**,
+Gauri **Leader**, Haroun **Guide**, Undead **Reaper**, Shadow has five (**Banshee, Brute,
+Fiend, Shade, Warlock**); politics factions use heroes. The Human pattern (budget
+"Sergeant" tier + elite line captains + elite supports) has no named equivalents for the
+factions below. Fill in names and I build them:
+
+| Faction | Native commander | Needs names for |
+|---|---|---|
+| Drauga | Warlord | budget commander ("sergeant" tier), elite melee commander (raider line), elite ranged commander (impaler line), elite supports |
+| Gauri | Leader | budget commander, elite commanders/supports (anvil / spear / hammer lines) |
+| Haroun | Guide | budget commander, elite commanders/supports (mistrunner / rainbringer / stonewalker lines) |
+| Shadow | Banshee/Brute/Fiend/Shade/Warlock | budget commander tier (if wanted - Shadow already has five commander types) |
+| Undead | Reaper | budget commanders (skeleton / bone archer lines); Necromancer now exists as the elite captain |
+| Fallen | (heroes) | the Dreadlord-model commander the CUSTOM_DREADLORD_CAPTAIN staging folder was made for |
+| Ceyah ranged | - | confirm or replace the sheet's tentative "(Masked Outcast)" captain name; Stalker/Shadow Hunter fronts are named |
 
 ## 14. Company compositions (sheet's Companies table)
 

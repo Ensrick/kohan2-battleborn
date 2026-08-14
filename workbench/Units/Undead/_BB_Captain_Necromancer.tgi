@@ -1,0 +1,121 @@
+
+;; Necromancer - Undead captain (design tier 5) on the Lich model: floating spectral
+;; caster with summon_undead spells
+;; TEXTURE DEBT: own skin recolor + own icon + portrait (ships with default Lich art)
+
+[Unit template=K2UndeadUnit]
+{
+	IDS = bb_captain_undead_necromancer
+	name = "#bb_captain_undead_necromancer_name"
+
+	[View]
+	resource_prefix = /Units/Undead/Lich/Lich
+
+	[BodyComponent]
+	health = 220 ;; lich 80
+	defense = 2
+
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.5
+
+		[Animation Template=IdleAnimation]
+		IDS = idle
+
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = lich_death
+		}
+
+		[Animation Template=MeleeAttackAnimation]
+		{
+			IDS = melee1
+			key_ratio = 0.6
+
+			[WhenDo template=FXC_PlaySFX]
+			audio_ids = claw_small
+		}
+
+		[Animation Template=AbilityAnimation]
+		IDS = cast
+
+		[Animation Template=CastIdleAnimation]
+		IDS = idlecast
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 30
+
+		[Upkeep]
+		mana = 1
+	}
+
+	[ElementComponent]
+	morale_value = 12
+	required_structures = undead_shrine
+
+	[MoverComponent]
+	speed_max = 3
+
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#lich_AbilityDefinition_name"
+
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 24 ;; lich 16
+			}
+		}
+
+		[Ability template=K2SpellInstantLocal]
+		{
+			ability_IDS = summon_undead
+			required_experience_min = 0
+			required_experience_max = 2
+		}
+
+		[Ability template=K2SpellInstantLocal]
+		{
+			ability_IDS = summon_undead2
+			required_experience_min = 3
+			required_experience_max = 3
+		}
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = captain
+
+		[Property]
+		property_IDS = spellcaster
+
+		[Property]
+		property_IDS = spectral
+
+		[Property]
+		property_IDS = role_summoner
+	}
+}

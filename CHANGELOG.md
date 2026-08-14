@@ -6,6 +6,13 @@ All notable changes to the Battleborn mod. Format follows
 ## [Unreleased]
 
 ### Added
+- Six faction commanders from the design sheet (2026-08-14): Templar
+  (Nationalist, Ghalen model), Harbinger (Ceyah, Stonewalker), Warder
+  (Council ranged), Rune Lord (Council, Gauri Hammer ram-rider), Mage Lord
+  (Council, Ravid Sakeri model with protection spells), Necromancer (Undead,
+  Lich model with summon_undead spells). All on placeholder art (CHECKLIST
+  10a); unnamed faction commander tiers await the naming worksheet
+  (CHECKLIST 13a).
 - Seven new/completed units (2026-08-14): Ranger Sergeant (bowman captain on
   the Aethan Farhyd hero skin), Marksman (elite ranged support), Cavalry
   Sergeant (rebuilt from the broken stub), Engineer Sergeant + Siege Expert

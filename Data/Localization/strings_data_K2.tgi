@@ -5781,6 +5781,15 @@
 	bb_support_council_swordsman_name = "Eldritch Warrior"
 	bb_captain_council_swordsman_name = "Storm Lord"
 	bb_captain_council_hammer_name = "Rune Lord"
+	bb_captain_council_ranger_name = "Warder"
+	bb_captain_council_magelord_name = "Mage Lord"
+
+	;; Politics-faction captains
+	bb_captain_nationalist_swordsman_name = "Templar"
+	bb_captain_ceyah_stonewalker_name = "Harbinger"
+
+	;; Undead Units
+	bb_captain_undead_necromancer_name = "Necromancer"
 
 	;; Militia
 	bb_hillstrider_militia_name = "Hillstrider Militia"

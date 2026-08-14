@@ -1,0 +1,135 @@
+
+;; Mage Lord - Council special captain (design tier 6, Ravid Sakeri hero model)
+;; TEXTURE DEBT: own skin recolor + own icon (ships with Ravid Sakeri's art + portrait)
+
+[Unit template=K2CouncilUnit]
+{
+	IDS = bb_captain_council_magelord
+	name = "#bb_captain_council_magelord_name"
+
+	[View]
+	{
+		resource_prefix = /Units/Council/RavidSakeri/RavidSakeri
+		portrait_ids = Ravid_Sakeri_portrait
+		icon = /Units/Council/RavidSakeri/RavidSakeriIcon.tga
+	}
+
+	[BodyComponent]
+	health = 420
+	defense = 3
+
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.5
+
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+
+		[Animation Template=IdleAnimation]
+		IDS = idle
+
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = warmage_death
+		}
+
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.6
+
+		[Animation Template=CastAnimation]
+		IDS = cast
+		key_ratio = 0.48
+
+		[Animation Template=CastIdleAnimation]
+		IDS = idlecast
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 30
+
+		[Upkeep]
+		mana = 1
+	}
+
+	[ElementComponent]
+	{
+		morale_value = 13
+		required_structures = base_library
+		required_properties = faction_council, good
+	}
+
+	[MoverComponent]
+	{
+		speed_max = 4
+
+		[TrackInfo Template=K2TracksBipedRight]
+
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#ravid_sakeri_AbilityDefinition_name"
+
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 32
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = nonmetal_swing2
+			}
+		}
+
+		[Ability template=K2SpellInstantLocal]
+		{
+			ability_IDS = protection
+			spawn_position = -0.24,-1.56,1.37
+			required_experience_min = 0
+			required_experience_max = 2
+		}
+
+		[Ability template=K2SpellInstantLocal]
+		{
+			ability_IDS = protection2
+			spawn_position = -0.24,-1.56,1.37
+			required_experience_min = 3
+			required_experience_max = 3
+		}
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_kohan
+
+		[Property]
+		property_IDS = captain
+
+		[Property]
+		property_IDS = spellcaster
+	}
+}
