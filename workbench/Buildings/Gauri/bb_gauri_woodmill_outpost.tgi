@@ -3,7 +3,7 @@
 {
 	IDS = bb_gauri_woodmill_outpost
 	name = "#gauri_woodmill_name"
-	name_list_ids = namelist_gauri_outpost
+	name_list_ids = namelist_bb_gauri_woodmill
 
 	[View]
 	{

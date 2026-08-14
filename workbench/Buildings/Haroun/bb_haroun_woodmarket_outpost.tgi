@@ -3,7 +3,7 @@
 {
 	IDS = bb_haroun_woodmarket_outpost
 	name = "#haroun_woodconvert_name"
-	name_list_ids = namelist_haroun_outpost
+	name_list_ids = namelist_bb_haroun_woodmarket
 
 	[View]
 	{

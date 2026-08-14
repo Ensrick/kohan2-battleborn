@@ -3,7 +3,7 @@
 {
 	IDS = bb_undead_sawmill_outpost
 	name = "#undead_sawmill_name"
-	name_list_ids = namelist_undead_outpost
+	name_list_ids = namelist_bb_undead_sawmill
 
 	[View]
 	{

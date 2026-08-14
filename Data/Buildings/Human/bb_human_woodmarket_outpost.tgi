@@ -3,7 +3,7 @@
 {
 	IDS = bb_human_woodmarket_outpost
 	name = "#human_woodexport_name"
-	name_list_ids = namelist_human_outpost
+	name_list_ids = namelist_bb_human_woodmarket
 
 	[View]
 	{

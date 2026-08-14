@@ -1,0 +1,126 @@
+
+[NameList]
+{
+	IDS = namelist_bb_gauri_woodmill
+	name = "#bb_namelist_gauri_woodmill_name"
+
+	[Name] ;; 01
+	name = "#bb_namelist_gauri_woodmill_01"
+
+	[Name] ;; 02
+	name = "#bb_namelist_gauri_woodmill_02"
+
+	[Name] ;; 03
+	name = "#bb_namelist_gauri_woodmill_03"
+
+	[Name] ;; 04
+	name = "#bb_namelist_gauri_woodmill_04"
+
+	[Name] ;; 05
+	name = "#bb_namelist_gauri_woodmill_05"
+
+	[Name] ;; 06
+	name = "#bb_namelist_gauri_woodmill_06"
+
+	[Name] ;; 07
+	name = "#bb_namelist_gauri_woodmill_07"
+
+	[Name] ;; 08
+	name = "#bb_namelist_gauri_woodmill_08"
+
+	[Name] ;; 09
+	name = "#bb_namelist_gauri_woodmill_09"
+
+	[Name] ;; 10
+	name = "#bb_namelist_gauri_woodmill_10"
+
+	[Name] ;; 11
+	name = "#bb_namelist_gauri_woodmill_11"
+
+	[Name] ;; 12
+	name = "#bb_namelist_gauri_woodmill_12"
+}
+
+[NameList]
+{
+	IDS = namelist_bb_gauri_sawmill
+	name = "#bb_namelist_gauri_sawmill_name"
+
+	[Name] ;; 01
+	name = "#bb_namelist_gauri_sawmill_01"
+
+	[Name] ;; 02
+	name = "#bb_namelist_gauri_sawmill_02"
+
+	[Name] ;; 03
+	name = "#bb_namelist_gauri_sawmill_03"
+
+	[Name] ;; 04
+	name = "#bb_namelist_gauri_sawmill_04"
+
+	[Name] ;; 05
+	name = "#bb_namelist_gauri_sawmill_05"
+
+	[Name] ;; 06
+	name = "#bb_namelist_gauri_sawmill_06"
+
+	[Name] ;; 07
+	name = "#bb_namelist_gauri_sawmill_07"
+
+	[Name] ;; 08
+	name = "#bb_namelist_gauri_sawmill_08"
+
+	[Name] ;; 09
+	name = "#bb_namelist_gauri_sawmill_09"
+
+	[Name] ;; 10
+	name = "#bb_namelist_gauri_sawmill_10"
+
+	[Name] ;; 11
+	name = "#bb_namelist_gauri_sawmill_11"
+
+	[Name] ;; 12
+	name = "#bb_namelist_gauri_sawmill_12"
+}
+
+[NameList]
+{
+	IDS = namelist_bb_gauri_woodmarket
+	name = "#bb_namelist_gauri_woodmarket_name"
+
+	[Name] ;; 01
+	name = "#bb_namelist_gauri_woodmarket_01"
+
+	[Name] ;; 02
+	name = "#bb_namelist_gauri_woodmarket_02"
+
+	[Name] ;; 03
+	name = "#bb_namelist_gauri_woodmarket_03"
+
+	[Name] ;; 04
+	name = "#bb_namelist_gauri_woodmarket_04"
+
+	[Name] ;; 05
+	name = "#bb_namelist_gauri_woodmarket_05"
+
+	[Name] ;; 06
+	name = "#bb_namelist_gauri_woodmarket_06"
+
+	[Name] ;; 07
+	name = "#bb_namelist_gauri_woodmarket_07"
+
+	[Name] ;; 08
+	name = "#bb_namelist_gauri_woodmarket_08"
+
+	[Name] ;; 09
+	name = "#bb_namelist_gauri_woodmarket_09"
+
+	[Name] ;; 10
+	name = "#bb_namelist_gauri_woodmarket_10"
+
+	[Name] ;; 11
+	name = "#bb_namelist_gauri_woodmarket_11"
+
+	[Name] ;; 12
+	name = "#bb_namelist_gauri_woodmarket_12"
+}
