@@ -52,9 +52,12 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] `bb_captain_ranger` "Ranger Captain": portrait FIXED 2026-08-13 (skin path -> `_BB_Captain_Ranger/bb_captain_ranger_portrait.dds`, `portrait_ids` -> defined id `captain_ranger_portrait`)
 - [x] `bb_captain_pikeman` "Infantry Sergeant": art refs FIXED 2026-08-13 (skin -> existing `bb_sergeant_infantry.dds`; icon -> vanilla PikemanIcon for now). [ ] Custom sergeant icon still owed (design: gold armor recolor)
 - [x] `bb_captain_pioneer` "Explorer": FIXED 2026-08-13 - pioneer.tgi captain slot now points at `bb_captain_pioneer`. [ ] Its custom art folder still unreferenced (unit uses default Pioneer skin; decide whether to wire `bb_captain_pioneer.dds`)
-- [ ] `bb_captain_lancer`: mid-conversion **STUB**: no `captain` property, duplicates `company_lancer`/`militia_lancer` IDs vs lancer.tgi
-- [ ] Captain/Support Bowman ("Ranger Sergeant"/"Marksman"): **STUB** byte-identical copies of bowman.tgi (would triple-define `bowman` if deployed); names already staged in loc
-- [ ] Captain/Support Engineer: **STUB** untouched vanilla engineer copies
+- [x] `bb_captain_lancer` "Cavalry Sergeant" BUILT 2026-08-14: proper unit-only definition (hp 260, melee 24, recon/archer_foe support props, captain), duplicate company/militia blocks removed. Art debt (section 10)
+- [x] `bb_captain_bowman` "Ranger Sergeant" BUILT 2026-08-14: bowman-based captain on the Aethan Farhyd hero skin/portrait/icon per design (hp 240, ranged 26, swift). Art debt: gold recolor
+- [x] `bb_support_bowman` "Marksman" BUILT 2026-08-14: elite ranged support (hp 240, ranged 26, town-tier requirement). Art debt
+- [x] `bb_captain_engineer` "Engineer Sergeant" + `bb_support_engineer` "Siege Expert" BUILT 2026-08-14: engineer-line captain/support with builder + boosted repair (12/14) and siege damage (10/14); new loc names added. Art debts
+- [x] `bb_front_paladin` "Knight" + `bb_captain_paladin` "Champion" BUILT 2026-08-14 (Royalist line around the playtested Paladin support): Knight = martial front/flank (hp 400, melee 32, 20g), Champion = captain (hp 520, magic 46, morale 13, 36g), both gated on faction_royalist+good like vanilla Paladin. Art debts
+- [ ] **VERIFY in-game:** new captains/supports appear in the company picker (captain/support property + requirements is the assumed mechanism); Knight selectable in front/flank slots
 - [ ] captain.tgi rework (hp 360, melee 38, agile): name key FIXED 2026-08-13 (`#bb_captain_cavalry_name`), but it still **contradicts the design doc:** "The original captain is to remain untouched to keep the campaign intact" (only removed from the recruit pool) - decide which wins
 - [x] lancer.tgi `militia_lancer` name key FIXED 2026-08-13 (`#bb_lancer_militia_name` = "Hobilar Militia"); duplicate-ID stub `_BB_Captain_Lancer.tgi` excluded from `Data/`
 
@@ -131,10 +134,27 @@ crafter, Gauri forge, Haroun caretaker, Shadow nightbringer, Undead boneweaver.
 - [ ] GIMP sources without exported game art: SKIN Haroun Stonewalker (= the Ceyah melee "Blackguard" line base, section 13), SKIN Ranger Model, SKIN Swordsman Model (started, never exported)
 - [ ] Banner icons (Archer/Cavalry/Infantry/Monster/Siege): present + GIMP sources; not diffed vs vanilla - **VERIFY** which are actually reworked
 
+## 10a. TEXTURE MAP DEBTS (units shipping on placeholder/vanilla art)
+
+Every unit below is functional but waiting on custom textures:
+
+- [ ] `bb_captain_bowman` Ranger Sergeant - gold-armor recolor of `AethanFarhydBase.dds` + own icon (ships with Aethan Farhyd's skin/portrait/icon)
+- [ ] `bb_support_bowman` Marksman - gold-trim bowman skin + own icon (ships with default bowman art)
+- [ ] `bb_captain_lancer` Cavalry Sergeant - gold armor on white horse + own icon (ships with default lancer art)
+- [ ] `bb_captain_engineer` Engineer Sergeant - gold-recolor engineer skin + own icon
+- [ ] `bb_support_engineer` Siege Expert - recolored engineer skin + own icon
+- [ ] `bb_front_paladin` Knight - silver-only paladin skin + own icon (ships with the BB Paladinbase retexture)
+- [ ] `bb_captain_paladin` Champion - gold paladin skin + all-gold captain portrait + own icon (`GIMP_Royalist_Files/BB_Champion_Paladin_Knight.xcf` source exists)
+- [ ] `bb_captain_pikeman` Infantry Sergeant - own icon (borrows vanilla PikemanIcon; custom skin `bb_sergeant_infantry.dds` already exists)
+- [ ] `bb_captain_pioneer` Explorer - decide whether to wire the existing `bb_captain_pioneer.dds`
+- [ ] `bb_base_center_city` - placeholder Drauga city model + generic upgrade icon
+- [ ] Storm Guard (Council) - BB_Stormguard folder is placeholder copies; full skin/icon/portrait needed before the unit is authored
+- [ ] Rune Lord (Council) - BB_Runelord art exists, unit not authored yet
+
 ## 11. Repo / pipeline hygiene
 
 - [x] FIXED 2026-08-13: workbench = single source of truth; `Data/` rebuilt as curated superset (95 files), reference-verified. Future promotions: edit workbench, re-copy to `Data/`
-- [x] Duplicate-ID hazard neutralized: stubs (bowman pair, engineer pair, captain lancer) excluded from `Data/`; they remain workbench-only until completed
+- [x] Duplicate-ID hazard RESOLVED 2026-08-14: all five former stubs are now real units shipped in `Data/`; verified no unit-level ID collisions remain
 - [ ] Prune junk: `workbench/UI/3840/UNFINISHED Game/**/Thumbs.db` (widescreen-owned path, Thumbs.db only), ` - Copy` vanilla backups
 - [x] `tools/collect.ps1` / `tools/deploy.ps1` sync scripts; 3 test maps (`BB_Test_2`, `TEST`, `Trial Map Human`)
 
@@ -197,28 +217,28 @@ front/support/captain lines gated by politics faction. "Sheet status" is the doc
 | Infantry | 5 | Infantry Captain | Swordsman | Captain | (goals list) | Done; portrait broken 3 ways | - |
 | Cavalry | 1 | Hobilar | Lancer (rename) | Front/Flank | Original | Rename done (loc override) | - |
 | Cavalry | 2 | Lancer | Lancer | Support | Not Implemented | Loc string only | Silver w/ gold trim, black horse |
-| Cavalry | 3 | Cavalry Sergeant | Lancer | Captain | Not Implemented | Stub tgi + loc | Gold armor, white horse |
+| Cavalry | 3 | Cavalry Sergeant | Lancer | Captain | Not Implemented | Done 2026-08-14; art debt | Gold armor, white horse |
 | Cavalry | 3 | Cavalier | Dragoon (rename) | Front/Flank | Original; cost 10 / wood 0.5 / iron 0.5 | Rename + exact costs done | Silver, no gold |
 | Cavalry | 4 | Cataphract | Dragoon | Support | (blank) | Done | - |
 | Cavalry | 5 | Cavalry Captain | Captain (rename) | Captain | Original | Reworked (violates untouched rule); name key broken | - |
 | Ranged | 2 | Bowman | - | Front/Flank | Original; cost 6 / wood 0.5 | Exact costs done | - |
 | Ranged | 2 | Skirmisher | Bowman | Support | Not Implemented | Nothing | Gold trim on armor |
-| Ranged | 3 | Ranger Sergeant | Bowman | Captain | Not Implemented | Stub tgi + loc | Aethyn Farhyd model, gold armor |
+| Ranged | 3 | Ranger Sergeant | Bowman | Captain | Not Implemented | Done 2026-08-14 on Aethan skin; gold recolor owed | Aethyn Farhyd model, gold armor |
 | Ranged | 3 | Ranger | Ranger | Front/Flank | Not Implemented | Nothing | AW Royal Court Hunter |
-| Ranged | 4 | Marksman | Ranger (rename) | Support | Original | Loc strings only | Ranger |
+| Ranged | 4 | Marksman | Ranger (rename) | Support | Original | Done 2026-08-14 as bowman-based support; art debt | Ranger |
 | Ranged | 5 | Ranger Captain | Ranger | Captain | (blank) | Done; portraits broken | - |
 | Melee | 2 | Swordsman | - | Front/Flank | Original | Rebalanced | - |
-| Siege | 1 | Engineer | - | - | (blank) | Stub copies only | - |
-| Siege | 2 | Siege Expert | Engineer | Support | (blank) | Nothing | - |
-| Siege | 3 | Engineer Sergeant | Engineer | Captain | (blank) | Nothing | - |
+| Siege | 1 | Engineer | - | - | (blank) | Modified (woodmill BuildActor) | - |
+| Siege | 2 | Siege Expert | Engineer | Support | (blank) | Done 2026-08-14; art debt | - |
+| Siege | 3 | Engineer Sergeant | Engineer | Captain | (blank) | Done 2026-08-14; art debt | - |
 
 ### Politics-faction lines (Royalist / Nationalist / Ceyah)
 
 | Line | Tier | Name | Base unit | Role | Sheet status | Files now | Appearance plan |
 |---|---|---|---|---|---|---|---|
-| Royalist cavalry | 4 | Knight | Paladin | Front/Flank | Not Implemented | Nothing | - |
+| Royalist cavalry | 4 | Knight | Paladin | Front/Flank | Not Implemented | Done 2026-08-14; art debt | - |
 | Royalist cavalry | 5 | Paladin | Paladin | Support | Done (Needs Work) | Retexture done (Paladinbase.dds) | Silver w/ gold trim |
-| Royalist cavalry | 6 | Champion | Paladin | Captain | Not Implemented | Staging folder + Champion xcf | Gold; portrait: Captain all gold |
+| Royalist cavalry | 6 | Champion | Paladin | Captain | Not Implemented | Done 2026-08-14; art debt (xcf exists) | Gold; portrait: Captain all gold |
 | Nationalist infantry | 4 | Crusader | Swordsman | Front/Flank | Not Implemented | Nothing | Ghalen model, silver only |
 | Nationalist infantry | 5 | Warpriest | Swordsman | Support | Not Implemented | Nothing | Ghalen, silver w/ gold trim |
 | Nationalist infantry | 6 | Templar | Swordsman | Captain | Not Implemented | Nothing | Ghalen, dark iron w/ gold trim |

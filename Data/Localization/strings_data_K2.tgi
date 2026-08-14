@@ -5767,6 +5767,12 @@
 	bb_support_swordsman_name = "Myrmidon"
 	bb_support_lancer_name = "Lancer"
 	bb_support_dragoon_name = "Cataphract"
+	bb_captain_engineer_name = "Engineer Sergeant"
+	bb_support_engineer_name = "Siege Expert"
+
+	;; Royalist Units
+	bb_front_paladin_name = "Knight"
+	bb_captain_paladin_name = "Champion"
 
 	;; Buildings
 

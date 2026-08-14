@@ -6,6 +6,13 @@ All notable changes to the Battleborn mod. Format follows
 ## [Unreleased]
 
 ### Added
+- Seven new/completed units (2026-08-14): Ranger Sergeant (bowman captain on
+  the Aethan Farhyd hero skin), Marksman (elite ranged support), Cavalry
+  Sergeant (rebuilt from the broken stub), Engineer Sergeant + Siege Expert
+  (engineer-line captain/support with builder and boosted repair/siege), and
+  the Royalist Knight (front/flank) + Champion (captain) around the Paladin.
+  All ship on placeholder/vanilla art - see CHECKLIST section 10a for the
+  texture-map debt tracker.
 - Out-of-town economy outposts for ALL SIX factions: buildable woodmill outpost
   upgrading into sawmill / woodmarket variants (3x in-town cost, 2/3 output,
   capturable + razable, faction outpost-style garrisons, no research trees).
