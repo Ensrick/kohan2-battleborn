@@ -1,26 +1,24 @@
 
 [Thing Template=K2HumanBuilding]
 {
-	IDS = bb_human_woodmill_outpost
-	name = "#human_woodmill_name"
-	;;name_list_ids = namelist_human_outpost
-	
+	IDS = bb_human_woodmarket_outpost
+	name = "#human_woodexport_name"
+
 	[View]
-	resource_prefix = /Structures/Human/HumanWoodmill/humanwoodmill
-	icon = /UI/Game/StructureButtons/WoodmillIcon.png
+	{
+		resource_prefix = /Structures/Human/HumanWoodExport/HumanWoodExport
+		icon = /UI/Game/StructureButtons/WoodConvertIcon.png
+
+		[TextureSearchPath]
+		path = /Structures/Human/HumanWoodmill
+	}
 
 	[BodyComponent]
-	health = 500
+	health = 750
 	captureable = true
 
 	[ConstructionComponent]
 	{
-		[Upgrade]
-		ids = bb_human_sawmill_outpost
-
-		[Upgrade]
-		ids = bb_human_woodmarket_outpost
-
 		can_raze = true
 	}
 
@@ -35,7 +33,7 @@
 		[Organization]
 		organization_ids = militia_bowman
 		behavior = MILITIA_OFFENSIVE
-		
+
 		[Inventory]
 		actor_ids = worker
 		count = 4
@@ -47,14 +45,15 @@
 
 	[DetectionComponent]
 	detection_range = 26
-		
+
 	[EconomyComponent]
 	{
 		[Cost]
-		gold = 225 ;; from 3 * 75
+		gold = 285 ;; from 3 * 95
 
 		[Production]
-		wood = 4 ;; from 2/3 * 6
+		gold = 12 ;; from 2/3 * 18
+		wood = 3 ;; from 2/3 * 4, rounded up
 	}
 
 	[SupplyComponent]

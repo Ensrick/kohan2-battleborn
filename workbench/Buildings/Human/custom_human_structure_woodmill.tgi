@@ -15,8 +15,12 @@
 
 	[ConstructionComponent]
 	{
-		;;[Upgrade]
-		;;ids = bb_human_sawmill_outpost,bb_human_woodmarket_outpost
+		[Upgrade]
+		ids = bb_human_sawmill_outpost
+
+		[Upgrade]
+		ids = bb_human_woodmarket_outpost
+
 		can_raze = true
 	}
 

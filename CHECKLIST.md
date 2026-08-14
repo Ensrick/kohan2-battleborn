@@ -91,7 +91,8 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 ## 7. Buildings (Human)
 
 - [x] Fort + outpost: health x2, captureable, cost 100->250, bigger garrisons, `unit_limit_provided` 3/2 (matches the design targets in section 15 exactly)
-- [ ] `bb_human_woodmill_outpost`: defined (hp 500, wood +4, capturable) but **unbuildable** - zero references, no build list entry; commented [Upgrade] targets `bb_human_sawmill_outpost`/`bb_human_woodmarket_outpost` don't exist. Economy-outpost chain not started
+- [x] `bb_human_woodmill_outpost` chain COMPLETED 2026-08-13: engineer.tgi override adds it to the `BuilderComponent` build list (vanilla out-of-town build mechanism); upgrades `bb_human_sawmill_outpost` (285g, wood 8) and `bb_human_woodmarket_outpost` (285g, gold 12 + wood 3) authored on the 3x-cost / 2/3-output formula, vanilla sawmill/woodexport art + names, capturable + razable, same worker/bowman garrison. **VERIFY in-game:** build via engineer, upgrade paths, and whether the AI ever builds it (design-doc caution)
+- [ ] Out-of-town sawmill/woodmarket intentionally DROP the in-town versions' ranged-tech research trees (reduced efficacy) - revisit if they should carry research
 - [ ] Outpost/fort passes for the other five factions: design tables have Human-only rows filled, Drauga/Haroun/Gauri/Undead/Shadow left blank - not started
 
 ## 8. Game variables
@@ -151,7 +152,7 @@ files actually are as of 2026-08-13.
 
 ### Structures
 
-- [ ] Out-of-town buildable versions of all structures, higher cost / lower efficacy (needs AI testing) - started (woodmill outpost, unbuildable; section 7)
+- [ ] Out-of-town buildable versions of all structures, higher cost / lower efficacy (needs AI testing) - pilot chain DONE 2026-08-13 (woodmill -> sawmill/woodmarket, buildable via engineer; section 7); remaining structures + other factions open. Recipe: clone as K2HumanBuilding, 3x cost / 2/3 output, add one `[BuildActor]` line to the builder unit
 - [ ] Most structures innately repair themselves - not started
 - [ ] Towns require more buildings and higher cost to upgrade - partial (cost x5 done; extra building requirements not started)
 - [ ] Out-of-town buildings always capturable + self-repairing (unless lair) - partial (fort/outpost/woodmill captureable done; self-repair not started)

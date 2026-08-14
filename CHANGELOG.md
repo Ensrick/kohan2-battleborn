@@ -5,6 +5,12 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Added
+- Out-of-town economy pilot completed: the woodmill outpost is now buildable
+  (engineer `BuilderComponent` override) and upgrades into new
+  `bb_human_sawmill_outpost` / `bb_human_woodmarket_outpost` (3x cost, 2/3 output,
+  capturable + razable, no research trees).
+
 ### Fixed
 - All dangling references (2026-08-13 breakage pass): pioneer's captain slot typo
   (`bb_pioneer_captain` -> `bb_captain_pioneer`), Infantry/Ranger Captain portrait wiring

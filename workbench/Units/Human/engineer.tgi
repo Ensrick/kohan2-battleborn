@@ -1,0 +1,316 @@
+
+[Unit template=K2HumanUnit]
+{
+	IDS = engineer
+	name = "#engineer_name"
+	description = "#engineer_description"
+		
+	[View]
+	{
+		resource_prefix = Engineer/Engineer
+
+		[WhenCreated Template=FXC_Equipment]
+		action = UNHIDE
+		location = rhand
+		equipment_type_ids = sword
+
+		[WhenCreated Template=FXC_Equipment]
+		action = UNHIDE
+		location = spine
+		equipment_type_ids = shovel
+
+		[WhenCreated Template=FXC_Equipment]
+		action = UNHIDE
+		location = spine
+		equipment_type_ids = pickaxe
+
+		[WhenCreated Template=FXC_Equipment]
+		action = HIDE
+		location = rhand
+		equipment_type_ids = pickaxe
+
+		[WhenCreated Template=FXC_Equipment]
+		action = HIDE
+		location = rhand
+		equipment_type_ids = shovel
+	}
+	
+	[BodyComponent]
+	health = 220
+	defense = 3
+	
+	[BuilderComponent template=BuilderComponent]
+	{
+		[BuildActor]
+		actor_ids = human_outpost
+
+		[BuildActor]
+		actor_ids = bb_human_woodmill_outpost
+
+		[BuildActor]
+		actor_ids = human_mine_gold
+		
+		[BuildActor]
+		actor_ids = human_mine_stone
+		
+		[BuildActor]
+		actor_ids = human_mine_wood
+		
+		[BuildActor]
+		actor_ids = human_mine_iron
+		
+		[BuildActor]
+		actor_ids = human_mine_mana	
+	}
+	
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.5
+				
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+		
+		[Animation Template=IdleAnimation]
+		IDS = idle
+		
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+		
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+				
+		[Animation Template=FidgetAnimation]
+		IDS = fidget3
+				
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = engineer_death
+		}
+				
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.6
+
+		[Animation Template=BuildAnimation]
+		{	
+			IDS = build1
+			key_ratio = 0.5	
+			
+			[WhenStart Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = sword
+
+			[WhenStart Template=FXC_Equipment]
+			action = HIDE
+			location = spine
+			equipment_type_ids = shovel
+
+			[WhenStart Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = shovel
+
+			[WhenEnd Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = sword
+
+			[WhenEnd Template=FXC_Equipment]
+			action = UNHIDE
+			location = spine
+			equipment_type_ids = shovel
+
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = shovel
+		}
+	
+		[Animation Template=BuildAnimation]
+		{
+			IDS = build2
+			key_ratio = 0.5	
+
+			[WhenStart Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = sword
+
+			[WhenStart Template=FXC_Equipment]
+			action = HIDE
+			location = spine
+			equipment_type_ids = pickaxe
+
+			[WhenStart Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = pickaxe
+
+			[WhenEnd Template=FXC_Equipment]
+			action = UNHIDE
+			location = rhand
+			equipment_type_ids = sword
+
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = spine
+			equipment_type_ids = pickaxe
+
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = rhand
+			equipment_type_ids = pickaxe
+		}
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 15
+		
+		[Upkeep]
+		stone = 1
+	}
+	
+	[ElementComponent]
+	{
+		morale_value = 9
+		required_structures = human_quarry
+		group_priority = 1
+		
+		[SupportProperty]
+		property_IDS = rapid_entrench
+	}
+	
+	[MoverComponent]
+	{
+		speed_max = 3
+		
+		[TrackInfo Template=K2TracksBipedRight]
+		
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+	
+	[PerformerComponent]
+	{	
+		[Ability Template=K2MeleeLocal]
+		{
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#engineer_AbilityDefinition_name"
+							
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 18
+				
+				[Effect Template=AddDamageEffect]
+				damage_type_IDS = siege
+				targets = buildings
+				amount = 8
+				
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = metal_swing1
+			}
+		}
+		
+		[Ability Template=K2RepairLocal]
+		{			
+			animation1 = build1
+			animation2 = build2
+			
+			[AbilityDefinition Template=K2RepairAction]
+			{
+				[Effect Template=HealEffect]
+				amount = 10
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build
+			}
+		}
+		
+		[Ability Template=K2ConstructLocal]
+		{
+			animation1 = build1
+			animation2 = build2
+			
+			[AbilityDefinition Template=K2ConstructAction]
+			{
+				[Effect Template=HealEffect]
+				amount = 5
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = worker_build
+			}
+		}
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_human
+
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = melee
+
+		[Property]
+		property_IDS = role_engineer
+
+		[Property]
+		property_IDS = rapid_entrench
+	}
+}
+
+[Thing template=K2HumanCompany]
+{
+	IDS = company_engineer
+	name = "#engineer_company_engineer_name"
+
+	[View]
+	{
+		resource_prefix = Engineer/Engineer	
+		banner_icon = /Organizations/BannerIcons/EngineerIcon.tga
+ 
+		[WhenSelected Template=FXC_PlaySFX]
+		audio_ids = engineer_select
+
+		[WhenCommanded Template=FXC_PlaySFX]
+		audio_ids = engineer_move
+
+		[WhenCommandedAggressive Template=FXC_PlaySFX]
+		audio_ids = engineer_attack
+	}
+	
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = role_engineer
+	}
+
+	[OrganizationComponent]
+	{
+		layout_IDS = company_engineer
+		entrenchment_time = 60
+		
+		[Slot]	;; front
+		element_IDS = engineer
+		
+		[Slot]	;; flank
+		element_IDS = engineer
+		
+		[Slot]	;; captain
+		element_IDS = captain
+	}	
+}
