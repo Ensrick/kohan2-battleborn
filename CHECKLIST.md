@@ -1,9 +1,9 @@
 # Battleborn feature checklist
 
 **Design doc:** Google Sheet ["Kohan II Kings of War modding"](https://docs.google.com/spreadsheets/d/1OGjwstadLcFT5Wg6ehIgD23KLH5CQd4L6ZH0dnD2jfw/edit)
-(Oct 2024) - goals, tiered unit-design table with per-unit status, town-center target
-values, known bugs, to-do list. Section 12 below summarizes it. Art references marked
-"AW" = the Arcane Wars mod (`D:\Game Mods\Kohan II Kings of War\Arcane_Wars_0.82beta.rar`).
+(Oct 2024). Part II below reproduces its full contents, organized and annotated with
+current file status. Art references marked "AW" = the Arcane Wars mod
+(`D:\Game Mods\Kohan II Kings of War\Arcane_Wars_0.82beta.rar`).
 
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. Two dimensions per item: authored (checkbox) and **[SHIPPED]** =
@@ -12,6 +12,10 @@ shipped; everything else is workbench-only.
 
 Legend: **BROKEN** = dangling reference, will misbehave if deployed as-is. **STUB** =
 placeholder copy, no real content. **VERIFY** = looks intentional but worth an in-game check.
+
+---
+
+# Part I - Implementation status (what is in the files)
 
 ## 1. Settler flank slots [SHIPPED]
 
@@ -61,7 +65,7 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] `bb_captain_council_swordsman` "Storm Lord": complete (Ghalen Mordecai model, lightning casts, xp-gated)
 - [x] `bb_spellsword` "Eldritch Warrior" support: complete (storm shield casts); [ ] **VERIFY** blur-VFX outer-id rename with vanilla inner ids (opposite convention from Infantry Captain's fully-renamed set; one of the two is likely wrong)
 - [ ] Both require `bb_base_center_city` + blacksmith + library: only reachable once section 6's base city ships
-- [ ] "Rune Lord" (`bb_captain_council_hammer`): loc string + BB_Runelord art only, **no unit tgi** - not started
+- [ ] "Rune Lord" (`bb_captain_council_hammer`): loc string + BB_Runelord art only, **no unit tgi** - not started (part of the Council Gauri line, section 13)
 - [ ] "Storm Guard" front unit (`bb_front_council_swordsman`): loc string only; BB_Stormguard folder is 100% placeholder copies of Spellsword art - not started
 
 ## 5. Militia companies
@@ -78,18 +82,18 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] All 6 settlements: `max_structures` flattened to 7 at every tier
 - [x] All 24 center files: health x2, base militia x2-3, cost x5, `unit_limit_provided` -> 7/8/9/10
 - [x] Elite garrisons at city/citadel: berserker x8/x16, juggernaut+maelstrom, hillstrider, swordsman x8/x16, leviathan x1/x2, zombie x60 all tiers + bone golem
-- [ ] **Bug:** `undead_center_village` unit_limit_provided left at 2 (design doc: 7 for all six factions)
-- [ ] **Bug (copy-paste):** Haroun city hillstrider count 24 vs citadel 2 (design doc: city 1, citadel 2 - the 24 is a typo)
-- [ ] Sync remaining center values against the design doc's target tables (per-faction cost/unit-limit/health/denizen counts; e.g. Undead citadel design adds bone archer/skeleton x18, Gauri citadel spear/anvil x24)
-- [ ] **VERIFY:** Undead village bonearcher/skeleton militia+inventory fully commented out (zombie-only garrison), asymmetric vs town/city
+- [ ] **Bug:** `undead_center_village` unit_limit_provided left at 2 (design target: 7 for all six factions, section 15)
+- [ ] **Bug (copy-paste):** Haroun city hillstrider count 24 vs citadel 2 (design target: city 1, citadel 2 - the 24 is a typo)
+- [ ] Sync remaining center values against the design target tables in section 15 (e.g. Undead citadel design adds bone archer/skeleton x18)
+- [ ] **VERIFY:** Undead village bonearcher/skeleton militia+inventory fully commented out (zombie-only garrison), asymmetric vs town/city - but matches the design table, which gives Undead villages zombies only
 - [ ] `bb_base_center_city` faction-choice structure: defined, upgrades into all 6 faction cities, loc OK; placeholder art (Drauga model + generic upgrade icon); nothing can build it yet - decide entry point
 - [ ] Cosmetic: stray indent in undead citadel, missing `;;` old-value annotations (shadow citadel cost, stale human citadel comment)
 
 ## 7. Buildings (Human)
 
-- [x] Fort + outpost: health x2, captureable, cost 100->250, bigger garrisons, `unit_limit_provided` 3/2
+- [x] Fort + outpost: health x2, captureable, cost 100->250, bigger garrisons, `unit_limit_provided` 3/2 (matches the design targets in section 15 exactly)
 - [ ] `bb_human_woodmill_outpost`: defined (hp 500, wood +4, capturable) but **unbuildable** - zero references, no build list entry; commented [Upgrade] targets `bb_human_sawmill_outpost`/`bb_human_woodmarket_outpost` don't exist. Economy-outpost chain not started
-- [ ] Outpost/fort passes for the other five factions: design doc tables have Human-only rows filled, Drauga/Haroun/Gauri/Undead/Shadow left blank - not started
+- [ ] Outpost/fort passes for the other five factions: design tables have Human-only rows filled, Drauga/Haroun/Gauri/Undead/Shadow left blank - not started
 
 ## 8. Game variables
 
@@ -98,8 +102,8 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 
 ## 9. Political-faction captains (staging only)
 
-- [ ] CUSTOM_PROPHET_CAPTAIN (Ceyah), CUSTOM_DREADLORD_CAPTAIN (Fallen), CUSTOM_ZEALOT_CAPTAIN (Nationalist), CUSTOM_PALADIN_CAPTAIN (Royalist): every file hash-identical to vanilla, no tgi, no references - staging for the design doc's politics-faction unit lines (section 12), work not started
-- [x] Royalist Paladin retexture (`Paladinbase.dds` differs from vanilla, loads via vanilla path)
+- [ ] CUSTOM_PROPHET_CAPTAIN (Ceyah), CUSTOM_DREADLORD_CAPTAIN (Fallen), CUSTOM_ZEALOT_CAPTAIN (Nationalist), CUSTOM_PALADIN_CAPTAIN (Royalist): every file hash-identical to vanilla, no tgi, no references - staging of the politics-faction support-unit models for the tiered lines in section 13 (Fallen/Dreadlord has no designed line yet), work not started
+- [x] Royalist Paladin retexture (`Paladinbase.dds` differs from vanilla, loads via vanilla path) - the sheet's "Paladin: Done (Needs Work)"
 
 ## 10. Art status
 
@@ -107,7 +111,7 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] Vanilla-path retextures: PikemanIcon, PioneerIcon, SwordsmanIcon (` - Copy` files are vanilla backups)
 - [ ] **VERIFY:** PikemanIcon.tga (2.1 MB) and PioneerIcon.tga (2.2 MB) are ~300x the size of vanilla icons - likely saved at wrong dimensions/uncompressed
 - [ ] Orphaned: BB_Runelord (unique art, no unit), _BB_Captain_Pioneer art (unit uses default skin), _BB_Sergeant_Pikeman dds (wrong filename), BB_Stormguard (pure placeholder)
-- [ ] GIMP sources without exported game art: SKIN Haroun Stonewalker, SKIN Ranger Model, SKIN Swordsman Model (started, never exported)
+- [ ] GIMP sources without exported game art: SKIN Haroun Stonewalker (= the Ceyah melee "Blackguard" line base, section 13), SKIN Ranger Model, SKIN Swordsman Model (started, never exported)
 - [ ] Banner icons (Archer/Cavalry/Infantry/Monster/Siege): present + GIMP sources; not diffed vs vanilla - **VERIFY** which are actually reworked
 
 ## 11. Repo / pipeline hygiene
@@ -117,22 +121,223 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [ ] Prune junk: `workbench/UI/3840/UNFINISHED Game/**/Thumbs.db` (widescreen-owned path, Thumbs.db only), ` - Copy` vanilla backups
 - [x] `tools/collect.ps1` / `tools/deploy.ps1` sync scripts; 3 test maps (`BB_Test_2`, `TEST`, `Trial Map Human`)
 
-## 12. Design-doc plans not yet in any file (from the Google Sheet)
+---
 
-Tier scheme: 1-3 = line troops + Sergeants (weaker captains, gold-recolored armor),
-4-6 = elite front/support/captain lines gated by politics faction. Statuses below are
-the sheet's own.
+# Part II - Design doc (Oct 2024 Google Sheet, organized)
 
-- [ ] **Royalist cavalry line** (Paladin model): Knight (front) / Paladin (support, "Done (Needs Work)" - the Paladinbase.dds retexture in section 9) / Champion (captain, all-gold)
-- [ ] **Nationalist infantry line** (Ghalen Mordecai model): Crusader (front) / Warpriest (support) / Templar (captain)
-- [ ] **Ceyah ranged line**: Stalker / Shadow Hunter / Masked Outcast; **Ceyah melee line** (Stonewalker model, black armor): Blackguard / Slayer / Harbinger (lich-hero portrait); Macabre support
-- [ ] **Council ranged line** (AW Sharpshooter art): Sentry / Arcane Archer / Warder
-- [ ] **Council Gauri line** (Hammer model): Rune Hammer / Warmage / Rune Lord (partially covered by section 4's Rune Lord strings/art)
-- [ ] **Council Mage Lord** captain (from Ravid Sakeri); **Undead Necromancer** captain; **Human Skirmisher** support + **Ranger Sergeant** captain (Aethyn Farhyd model); **Engineer line**: Siege Expert / Engineer Sergeant; "Vanguard" (unspecified)
-- [ ] Roster additions from existing units: Drauga Fire Wyrm, Gauri Mana Construct, Ceyah Lightning Dragon, Fallen Spiders
-- [ ] Xander Kerai copy as a recruitable Kohan hero; make heroes very durable
-- [ ] Structures: out-of-town buildable versions of all structures (needs AI testing), innate self-repair, towns needing more buildings + higher cost to upgrade
-- [ ] Higher-tier units gated behind higher-tier towns + structures
-- [ ] To-do items from the sheet: spellsword custom ability (matches section 4's Eldritch Warrior "UNFINISHED: Needs Custom Spell"), weapon names + ability names + company compositions for custom units, denizen icons for siege, possibly a new denizen type, captain restrictions by assigned unit type
-- [ ] Long-term reskin-faction ideas (two alternative sets, e.g. Human -> Darklanders or Northern Domain)
-- **KNOWN CRASH (sheet's Bugs tab):** putting regular units in support slots crashes when the AI hires them (invalid layout + memory access violation) - the "allow special slots to contain regular units" goal was abandoned for this reason; keep support slots on support-property units only
+The sheet's own statuses are stale in places; each item below is annotated with where the
+files actually are as of 2026-08-13.
+
+## 12. Goals
+
+### New units and captains
+
+- [ ] Make alternatives to Captains which are standard units - underway (Cataphract, Myrmidon, Praetorian done; see section 13)
+- [ ] Make Captains into new units - underway (Infantry/Ranger Captains authored, portraits broken)
+- [ ] Sergeants concept: weaker captains for lesser units, gold-recolored armor, with higher-tier captains gated late-game - underway (Infantry Sergeant authored; Cavalry/Ranger Sergeants stubs)
+- [ ] Keep the ORIGINAL Captain untouched for campaign integrity, only remove it from the recruit pool - **currently violated** (captain.tgi buffed, section 3) and the recruit-pool removal is not done either
+- [ ] Make a Xander Kerai copy as a recruitable Kohan hero - not started
+- [ ] Make Heroes very durable - not started
+- Sheet's HUMAN CAPTAINS progress list: Cavalry Captain, Ranger Captain, Infantry Captain (no ticks recorded)
+
+### More troops, bigger battles
+
+- [x] Increase units hireable from buildings that provide unit cap - done (`unit_limit_provided` bumps, sections 6-7)
+- [x] Reduce upkeep of troops (or mainly weaker troops) - done for Human roster (section 3)
+- [x] Increase innate structure defenders - done (garrison bumps, sections 6-7)
+- [ ] Consider increasing the Health of all units - not started (only structures got HP x2)
+- [ ] Change default troop hiring groups into bigger ones - not started (company layouts unchanged apart from settler/siege)
+- [x] ~~Allow special unit slots to contain regular units~~ - **abandoned: crashes the AI** (section 18)
+- [ ] Higher-tier units require higher-tier towns AND structures - done for Human (tech shifts, section 3); other factions not started
+
+### Structures
+
+- [ ] Out-of-town buildable versions of all structures, higher cost / lower efficacy (needs AI testing) - started (woodmill outpost, unbuildable; section 7)
+- [ ] Most structures innately repair themselves - not started
+- [ ] Towns require more buildings and higher cost to upgrade - partial (cost x5 done; extra building requirements not started)
+- [ ] Out-of-town buildings always capturable + self-repairing (unless lair) - partial (fort/outpost/woodmill captureable done; self-repair not started)
+
+### Companies, militia, town centers
+
+- [ ] New companies - partial (settler flank + Siege Militia done; per-line companies of section 13 not started)
+- [ ] Bigger militia units - partial (garrisons yes; militia company sizes unchanged)
+- [x] Town centers changed for all six factions (sheet recorded only Human + Drauga as Done - files finished all six; remaining value syncs in section 6)
+  - Target changes: much more militia (Human as the proportionality reference), double health, 5x cost, bigger unit cap each upgrade
+
+## 13. Planned unit roster (the sheet's Unit Stats table)
+
+Tier scheme: 1-3 = line troops with Sergeants as budget captains; 4-6 = elite
+front/support/captain lines gated by politics faction. "Sheet status" is the doc's own;
+"Files now" is current reality.
+
+### Human
+
+| Line | Tier | Name | Base unit | Role | Sheet status | Files now | Appearance plan |
+|---|---|---|---|---|---|---|---|
+| Infantry | 1 | Halberdier | Pikeman (rename) | Front/Flank | Original | Rename done (loc override) | - |
+| Infantry | 2 | Praetorian | Pikeman | Support | Not Implemented | Done + wired; name key broken | Silver armor, gold trim, auburn hair |
+| Infantry | 3 | Infantry Sergeant | Pikeman | Captain | Not Implemented | Done; icon+skin filenames broken | Gold armor, blonde hair |
+| Infantry | 5 | Infantry Captain | Swordsman | Captain | (goals list) | Done; portrait broken 3 ways | - |
+| Cavalry | 1 | Hobilar | Lancer (rename) | Front/Flank | Original | Rename done (loc override) | - |
+| Cavalry | 2 | Lancer | Lancer | Support | Not Implemented | Loc string only | Silver w/ gold trim, black horse |
+| Cavalry | 3 | Cavalry Sergeant | Lancer | Captain | Not Implemented | Stub tgi + loc | Gold armor, white horse |
+| Cavalry | 3 | Cavalier | Dragoon (rename) | Front/Flank | Original; cost 10 / wood 0.5 / iron 0.5 | Rename + exact costs done | Silver, no gold |
+| Cavalry | 4 | Cataphract | Dragoon | Support | (blank) | Done | - |
+| Cavalry | 5 | Cavalry Captain | Captain (rename) | Captain | Original | Reworked (violates untouched rule); name key broken | - |
+| Ranged | 2 | Bowman | - | Front/Flank | Original; cost 6 / wood 0.5 | Exact costs done | - |
+| Ranged | 2 | Skirmisher | Bowman | Support | Not Implemented | Nothing | Gold trim on armor |
+| Ranged | 3 | Ranger Sergeant | Bowman | Captain | Not Implemented | Stub tgi + loc | Aethyn Farhyd model, gold armor |
+| Ranged | 3 | Ranger | Ranger | Front/Flank | Not Implemented | Nothing | AW Royal Court Hunter |
+| Ranged | 4 | Marksman | Ranger (rename) | Support | Original | Loc strings only | Ranger |
+| Ranged | 5 | Ranger Captain | Ranger | Captain | (blank) | Done; portraits broken | - |
+| Melee | 2 | Swordsman | - | Front/Flank | Original | Rebalanced | - |
+| Siege | 1 | Engineer | - | - | (blank) | Stub copies only | - |
+| Siege | 2 | Siege Expert | Engineer | Support | (blank) | Nothing | - |
+| Siege | 3 | Engineer Sergeant | Engineer | Captain | (blank) | Nothing | - |
+
+### Politics-faction lines (Royalist / Nationalist / Ceyah)
+
+| Line | Tier | Name | Base unit | Role | Sheet status | Files now | Appearance plan |
+|---|---|---|---|---|---|---|---|
+| Royalist cavalry | 4 | Knight | Paladin | Front/Flank | Not Implemented | Nothing | - |
+| Royalist cavalry | 5 | Paladin | Paladin | Support | Done (Needs Work) | Retexture done (Paladinbase.dds) | Silver w/ gold trim |
+| Royalist cavalry | 6 | Champion | Paladin | Captain | Not Implemented | Staging folder + Champion xcf | Gold; portrait: Captain all gold |
+| Nationalist infantry | 4 | Crusader | Swordsman | Front/Flank | Not Implemented | Nothing | Ghalen model, silver only |
+| Nationalist infantry | 5 | Warpriest | Swordsman | Support | Not Implemented | Nothing | Ghalen, silver w/ gold trim |
+| Nationalist infantry | 6 | Templar | Swordsman | Captain | Not Implemented | Nothing | Ghalen, dark iron w/ gold trim |
+| Nationalist support | - | Zealot | - | Support | Original | Staging folder only | - |
+| Ceyah ranged | 4 | Stalker | - | Front/Flank | Not Implemented | Nothing | - |
+| Ceyah ranged | 5 | Shadow Hunter | - | Support | Not Implemented | Nothing | - |
+| Ceyah ranged | 6 | (Masked Outcast) | - | Captain | Not Implemented | Nothing | - |
+| Ceyah melee | 4 | Blackguard | Stonewalker | Front/Flank | Not Implemented | Stonewalker skin xcf started | Black armor |
+| Ceyah melee | 5 | Slayer | Stonewalker | Support | Not Implemented | Nothing | Black armor, red trim |
+| Ceyah melee | 6 | Harbinger | Stonewalker | Captain | Not Implemented | Nothing | Black armor, gold trim; portrait: the lich hero |
+| Ceyah support | - | Prophet | - | Support | Original ("See Lore") | Staging folder only | - |
+| Ceyah support | - | Macabre | - | Support | Not Implemented | Nothing | - |
+
+(The CUSTOM_DREADLORD_CAPTAIN staging folder implies a Fallen line the sheet never designed.)
+
+### Council lines
+
+| Line | Tier | Name | Base unit | Role | Sheet status | Files now | Appearance plan |
+|---|---|---|---|---|---|---|---|
+| Ranged (Haroun) | 4 | Sentry | - | Front/Flank | Not Implemented | Nothing | AW Sharpshooter |
+| Ranged (Haroun) | 5 | Arcane Archer | Ranger | Support | Not Implemented | Nothing | Ranger (white) |
+| Ranged (Haroun) | 6 | Warder | Ranger | Captain | Not Implemented | Nothing | AW Sharpshooter |
+| Melee (Human) | 4 | Storm Guard | Swordsman | Front/Flank | Not Implemented | Loc string + placeholder art | Swordsman, silver/grey w/ black trim |
+| Melee (Human) | 5 | Eldritch Warrior | Swordsman | Support | UNFINISHED: needs custom spell; cost 24 / iron 1 / mana 1; skin made; needs custom swing effect + ability | Done as `bb_spellsword` (storm shield); swing-VFX rename **VERIFY** (section 4) | Blue/purple trim silver armor |
+| Melee (Human) | 6 | Storm Lord | Swordsman | Captain | Not Implemented | **Done** (`bb_captain_council_swordsman`) | Ghalen, gold w/ blue/purple trim |
+| Cavalry (Gauri) | 4 | Rune Hammer | Hammer | Front/Flank | (blank) | Nothing | - |
+| Cavalry (Gauri) | 5 | Warmage | - | Support | (blank) | Nothing | - |
+| Cavalry (Gauri) | 6 | Rune Lord | - | Captain | (blank) | Loc string + BB_Runelord art | - |
+| Special | 6 | Mage Lord | Ravid Sakeri | Captain | Not Implemented | Nothing | - |
+
+### Other
+
+| Faction | Tier | Name | Base unit | Role | Sheet status | Files now |
+|---|---|---|---|---|---|---|
+| Undead | 5 | Necromancer | - | Captain | Not Implemented | Nothing |
+| ? | - | Vanguard | - | - | (name only) | Nothing |
+
+### Roster additions from existing units
+
+- [ ] Drauga: Fire Wyrm - [ ] Gauri: Mana Construct - [ ] Ceyah: Lightning Dragon - [ ] Fallen: Spiders (all not started)
+
+## 14. Company compositions (sheet's Companies table)
+
+Only one row was designed:
+
+| Company | Renames | Captain | Front | Flank | Support |
+|---|---|---|---|---|---|
+| Infantry Company (T1, Human) | was Pikeman Company | Infantry Sergeant | Halberdier | Halberdier | Praetorian |
+
+- [ ] Design + implement compositions for the remaining custom lines (also a sheet To Do item, section 18)
+
+## 15. Target value tables (town centers, outposts, forts)
+
+Design targets; **bold** = files currently deviate. Denizen counts are per-center garrisons.
+
+### Village halls (all: unit limit 7)
+
+| Faction | Cost | Health | Garrison |
+|---|---|---|---|
+| Human | 500 | 2600 | Bowman 12, Pikeman 18 |
+| Drauga | 500 | 2400 | Impaler 12, Raider 24 |
+| Haroun | 625 | 2600 | Rainbringer 16, Mistrunner 18 |
+| Gauri | 500 | 3000 | Spear 12, Anvil 18 |
+| Undead | 450 | 2400 | Zombie 60 (**files: unit limit still 2**) |
+| Shadow | 400 | 2800 | Fury 12, Reaver 18 |
+
+### Town halls (all: unit limit 8)
+
+| Faction | Cost | Health | Garrison |
+|---|---|---|---|
+| Human | 600 | 5200 | Bowman 18, Pikeman 24 |
+| Drauga | 550 | 4800 | Impaler 18, Raider 32 |
+| Haroun | 0 | 4200 | Rainbringer 24, Mistrunner 24 |
+| Gauri | 550 | 6000 | Spear 18, Anvil 24 |
+| Undead | 500 | 4800 | Bone Archer 6, Skeleton 12, Zombie 60 |
+| Shadow | 500 | 5600 | Fury 18, Reaver 24 |
+
+### City halls (unit limit 9; sheet has Drauga at 8, likely a typo)
+
+| Faction | Cost | Health | Garrison |
+|---|---|---|---|
+| Human | 1200 | 10400 | Bowman 24, Pikeman 24, Swordsman 8 |
+| Drauga | 1100 | 9600 | Impaler 30, Raider 30, Berserker 10 |
+| Haroun | 0 | 7800 | Rainbringer 30, Mistrunner 24, Hillstrider 1 (**files: 24**) |
+| Gauri | 1100 | 12000 | Spear 24, Anvil 24, Juggernaut 1 |
+| Undead | 900 | 9600 | Bone Archer 12, Skeleton 12, Zombie 60 |
+| Shadow | 800 | 11200 | Fury 24, Reaver 24, Leviathan 1 |
+
+### Citadels (all: unit limit 10)
+
+| Faction | Cost | Health | Garrison |
+|---|---|---|---|
+| Human | 1800 | 15000 | Bowman 24, Pikeman 24, Swordsman 16 |
+| Drauga | 1650 | 14400 | Impaler 30, Raider 38, Berserker 16 |
+| Haroun | 0 | 10400 | Rainbringer 30, Mistrunner 30, Hillstrider 2 |
+| Gauri | 1800 | 16000 | Spear 24, Anvil 24, Juggernaut 1, Maelstrom 1 |
+| Undead | 1500 | 14400 | Bone Archer 18, Skeleton 18, Zombie 60, Bone Golem 1 |
+| Shadow | 1200 | 14000 | Fury 24, Reaver 30, Leviathan 2 |
+
+### Outposts and forts (capturable + razable, stone upkeep)
+
+| Building | Faction | Cost | Unit limit | Health | Garrison | Stone upkeep |
+|---|---|---|---|---|---|---|
+| Outpost | Human | 250 | 2 | 2600 | Pikeman 18, Bowman 18, Swordsman 12 | 4 |
+| Fort | Human | 250 | 3 | 3900 | Pikeman 24, Bowman 24, Swordsman 18 | 6 |
+
+Files match the Human rows exactly. All five other factions' rows were left blank - not designed yet (section 7).
+
+## 16. Ideas backlog (sheet's IDEAS blocks)
+
+- [ ] Unique support unit per company, lightly reskinned with an ability (Praetorian is the pilot; extend to other companies)
+- [ ] Captains restricted to their assigned unit type, OR cost unique resources with unique bonuses (like Shadow captains)
+- [ ] Reskin-faction concept, set A: Human -> Darklanders (undead-allied humans), Haroun -> Dark Elves, Gauri -> Normalish Dwarves, Drauga -> Human Barbarians, Undead -> Wizards (ivory white good town), Shadow -> Fiery Red Demons
+- [ ] Reskin-faction concept, set B: Human -> Northern Human Domain (less advanced, greater numbers, iron/wood structures, mail over plate), Haroun -> Snow Elves, Gauri -> Advanced Middle-Eastern Kingdom, Drauga -> Corrupt Shadow Drauga, Undead -> Dark Dwarves, Shadow -> Winter Demons
+
+## 17. Engine research notes (sheet's Key Values)
+
+Extractor: K2ExtractRWD (archived in `tools/third_party/`).
+
+| File | Key | Value | Note |
+|---|---|---|---|
+| game/world_rules_k2.tgi | Starting resources? | 500 | |
+| game/world_rules.tgi | Starting resources? | 1000 | possibly overrides others |
+| game/Svars.tgi | Starting resources, new + random maps | 500 | |
+| game/SVars_k2.tgi | EconomyLimitedResourceMax | 40 | max unit count - **implemented** (section 8) |
+| game/kingdom_colors.tgi | kingdom colors | | **implemented** (section 8) |
+| Settlements/ | per-tier max structures | | **implemented** (section 6) |
+
+## 18. Known bugs + To Do (sheet's Bugs / To Do tabs)
+
+- **KNOWN CRASH:** putting regular units in support slots crashes when the AI hires them - two errors (invalid layout per source, memory access violation). The "regular units in special slots" goal was abandoned for this reason; keep support slots on support-property units only
+- [x] Custom skins for heroes: Eben Baruch (marked Done in the sheet too)
+- [ ] Weapon names for custom units (partially covered: Khaldunite Sword, Fine Steel Halberd strings exist)
+- [ ] Ability names for custom units
+- [ ] Company compositions for custom units (section 14)
+- [ ] Create the spellsword ability (matches Eldritch Warrior UNFINISHED status, section 13)
+- [ ] Denizen icons for the siege item, maybe (siege militia currently reuses vanilla banner icons)
+- [ ] May need a new denizen type in `game/denizen_types` (files so far reuse `denizen_type_melee`/`denizen_type_ranged`)
+- [ ] Captain restrictions (section 16)
