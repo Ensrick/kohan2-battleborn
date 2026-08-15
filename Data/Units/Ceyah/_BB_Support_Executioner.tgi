@@ -1,6 +1,6 @@
 
-;; Slayer - Ceyah melee support (design tier 5, Stonewalker model, black armor red trim)
-;; NOTE: display name duplicates the vanilla Shadow "Slayer" unit - user to confirm or rename
+;; Executioner - Ceyah melee support (design tier 5, Stonewalker model, black armor red trim)
+;; (sheet name was "Slayer"; renamed by user 2026-08-15 - vanilla Shadow already has a Slayer)
 ;; TEXTURE DEBT: black/red stonewalker skin + own icon
 
 [Unit template=K2CeyahUnit]

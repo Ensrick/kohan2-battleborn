@@ -5792,7 +5792,7 @@
 	bb_support_nationalist_swordsman_name = "Warpriest"
 	bb_captain_nationalist_swordsman_name = "Templar"
 	bb_front_ceyah_stonewalker_name = "Blackguard"
-	bb_support_ceyah_stonewalker_name = "Slayer"
+	bb_support_ceyah_stonewalker_name = "Executioner"
 	bb_captain_ceyah_stonewalker_name = "Harbinger"
 
 	;; Undead Units

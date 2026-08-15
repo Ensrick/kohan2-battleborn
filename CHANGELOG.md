@@ -50,8 +50,9 @@ All notable changes to the Battleborn mod. Format follows
   model; Ceyah Blackguard (T4 front) + Slayer (T5 support) on the Stonewalker
   model; Council Rune Hammer (T4 ram-rider front) + Arcane Archer (T5 ranger
   support). Politics tiers priced under their commanders (fronts 18-22g,
-  supports 22-26g). All on placeholder art (CHECKLIST 10a). Slayer's display
-  name duplicates the vanilla Shadow Slayer - user to confirm or rename.
+  supports 22-26g). All on placeholder art (CHECKLIST 10a). The Ceyah support
+  was renamed Slayer -> Executioner (user, 2026-08-15) since vanilla Shadow
+  already has a Slayer.
 - Fort/outpost passes for the five non-Human factions (2026-08-14, derived -
   the design sheet's rows were blank): Human transformation applied to all 10
   vanilla files. Health x2, captureable, cost x2.5, unit limit 2/3, faction

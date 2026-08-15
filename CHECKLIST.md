@@ -185,7 +185,7 @@ Every unit below is functional but waiting on custom textures:
 - [ ] `bb_front_nationalist_swordsman` Crusader - silver-only Ghalen skin + own icon
 - [ ] `bb_support_nationalist_swordsman` Warpriest - silver w/ gold trim Ghalen skin + own icon
 - [ ] `bb_front_ceyah_stonewalker` Blackguard - black-armor stonewalker skin + own icon (skin xcf started)
-- [ ] `bb_support_ceyah_stonewalker` Slayer - black/red stonewalker skin + own icon
+- [ ] `bb_support_ceyah_stonewalker` Executioner - black/red stonewalker skin + own icon
 - [ ] `bb_front_council_hammer` Rune Hammer - rune hammer skin + own icon (ships with default Hammer art)
 - [ ] `bb_support_council_ranger` Arcane Archer - white ranger skin + own icon
 
@@ -294,7 +294,7 @@ SupportProperty mapping pass.
 | Ceyah ranged | 5 | Shadow Hunter | - | Support | Not Implemented | Nothing | - |
 | Ceyah ranged | 6 | (Masked Outcast) | - | Captain | Not Implemented | Nothing | - |
 | Ceyah melee | 4 | Blackguard | Stonewalker | Front/Flank | Not Implemented | Done 2026-08-15; art debt (skin xcf started) | Black armor |
-| Ceyah melee | 5 | Slayer | Stonewalker | Support | Not Implemented | Done 2026-08-15; art debt; display name duplicates vanilla Shadow "Slayer" - user to confirm or rename | Black armor, red trim |
+| Ceyah melee | 5 | Executioner (was Slayer; renamed by user 2026-08-15, vanilla Shadow has a Slayer) | Stonewalker | Support | Not Implemented | Done 2026-08-15; art debt | Black armor, red trim |
 | Ceyah melee | 6 | Harbinger | Stonewalker | Captain | Not Implemented | Done 2026-08-14; art debt | Black armor, gold trim; portrait: the lich hero |
 | Ceyah support | - | Prophet | - | Support | Original ("See Lore") | Staging folder only | - |
 | Ceyah support | - | Macabre | - | Support | Not Implemented | Nothing | - |
