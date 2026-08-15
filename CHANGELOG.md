@@ -43,6 +43,15 @@ All notable changes to the Battleborn mod. Format follows
   (per design-doc targets).
 
 ### Added
+- Nine sheet-named units (2026-08-15), completing every named non-art-gated
+  roster row: Human Skirmisher (T2 bowman support, archer_foe aura), Lancer
+  support (T2 cavalry, recon+archer_foe), Ranger front/flank (T3, magic bow);
+  Nationalist Crusader (T4 front) + Warpriest (T5 support) on the Ghalen
+  model; Ceyah Blackguard (T4 front) + Slayer (T5 support) on the Stonewalker
+  model; Council Rune Hammer (T4 ram-rider front) + Arcane Archer (T5 ranger
+  support). Politics tiers priced under their commanders (fronts 18-22g,
+  supports 22-26g). All on placeholder art (CHECKLIST 10a). Slayer's display
+  name duplicates the vanilla Shadow Slayer - user to confirm or rename.
 - Fort/outpost passes for the five non-Human factions (2026-08-14, derived -
   the design sheet's rows were blank): Human transformation applied to all 10
   vanilla files. Health x2, captureable, cost x2.5, unit limit 2/3, faction

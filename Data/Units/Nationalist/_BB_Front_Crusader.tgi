@@ -1,0 +1,124 @@
+
+;; Crusader - Nationalist infantry front/flank (design tier 4, Ghalen Mordecai model)
+;; TEXTURE DEBT: silver-only Ghalen skin + own icon (ships with default Ghalen art)
+
+[Unit template=K2NationalistUnit]
+{
+	IDS = bb_front_nationalist_swordsman
+	name = "#bb_front_nationalist_swordsman_name"
+
+	[View]
+	resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai
+
+	[BodyComponent]
+	health = 360
+	defense = 4
+
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.7
+
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+
+		[Animation Template=IdleAnimation]
+		IDS = idle
+
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = swordsman_death
+		}
+
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee1
+		key_ratio = 0.4
+
+		[Animation Template=MeleeAttackAnimation]
+		IDS = melee2
+		key_ratio = 0.55
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 20
+
+		[Upkeep]
+		iron = 0.5
+	}
+
+	[ElementComponent]
+	morale_value = 11
+	required_structures = base_barracks
+	required_properties = faction_nationalist
+	denizen_type = denizen_type_melee
+
+	[MoverComponent]
+	{
+		speed_max = 3.5
+
+		[TrackInfo Template=K2TracksBipedRight]
+
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+
+	[PerformerComponent]
+	{
+		[Ability Template=K2MeleeLocal]
+		{
+			animation1 = melee1
+			animation2 = melee2
+
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#ghalen_mordecai_AbilityDefinition_name"
+
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = melee
+				amount = 30
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = metal_swing3
+			}
+		}
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_human
+
+		[Property]
+		property_IDS = armored
+
+		[Property]
+		property_IDS = shields
+
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = flank
+
+		[Property]
+		property_IDS = melee
+
+		[Property]
+		property_IDS = role_infantry
+	}
+}

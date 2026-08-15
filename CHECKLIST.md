@@ -56,6 +56,11 @@ only in _BB, 2 only in workbench, and identical captains use different key names
 - [x] `bb_captain_bowman` "Ranger Sergeant" BUILT 2026-08-14: bowman-based captain on the Aethan Farhyd hero skin/portrait/icon per design (hp 240, ranged 26, swift). Art debt: gold recolor
 - [x] `bb_support_bowman` "Marksman" BUILT 2026-08-14: elite ranged support (hp 240, ranged 26, town-tier requirement). Art debt
 - [x] `bb_captain_engineer` "Engineer Sergeant" + `bb_support_engineer` "Siege Expert" BUILT 2026-08-14: engineer-line captain/support with builder + boosted repair (12/14) and siege damage (10/14); new loc names added. Art debts
+- [x] `bb_skirmisher` "Skirmisher" + `bb_support_lancer` "Lancer" + `bb_front_ranger` "Ranger"
+  BUILT 2026-08-15: the last three sheet-named Human line units. Skirmisher = T2 bowman
+  support (hp 220, ranged 24, 9g, archer_foe support aura); Lancer = T2 cavalry support
+  (hp 240, melee 20, 4g, recon+archer_foe); Ranger = T3 front/flank on the ranger model
+  (hp 260, magic 26/38, 14g, town-tier). Art debts (section 10a)
 - [x] `bb_front_paladin` "Knight" + `bb_captain_paladin` "Champion" BUILT 2026-08-14 (Royalist line around the playtested Paladin support): Knight = martial front/flank (hp 400, melee 32, 20g), Champion = captain (hp 520, magic 46, morale 13, 36g), both gated on faction_royalist+good like vanilla Paladin. Art debts
 - [ ] **VERIFY in-game:** new captains/supports appear in the company picker (captain/support property + requirements is the assumed mechanism); Knight selectable in front/flank slots
 - [ ] captain.tgi rework (hp 360, melee 38, agile): name key FIXED 2026-08-13 (`#bb_captain_cavalry_name`), but it still **contradicts the design doc:** "The original captain is to remain untouched to keep the campaign intact" (only removed from the recruit pool) - decide which wins
@@ -174,6 +179,15 @@ Every unit below is functional but waiting on custom textures:
 - [ ] `bb_captain_council_hammer` Rune Lord - the orphaned `BB_Runelord/BB_Runelord.dds` + `BB_Runelord_Portrait.dds` exist but their target model is unverified vs the Hammer ram-rider; confirm in-game, then wire or redo
 - [ ] `bb_captain_council_magelord` Mage Lord - own skin recolor + icon (ships with Ravid Sakeri's art + portrait)
 - [ ] `bb_captain_undead_necromancer` Necromancer - own skin recolor + icon + portrait (ships with default Lich art)
+- [ ] `bb_skirmisher` Skirmisher - gold-trim bowman skin + own icon (ships with default bowman art)
+- [ ] `bb_support_lancer` Lancer - silver w/ gold trim, black horse + own icon (ships with default lancer art)
+- [ ] `bb_front_ranger` Ranger - AW Royal Court Hunter-style skin + own icon (ships with default ranger art)
+- [ ] `bb_front_nationalist_swordsman` Crusader - silver-only Ghalen skin + own icon
+- [ ] `bb_support_nationalist_swordsman` Warpriest - silver w/ gold trim Ghalen skin + own icon
+- [ ] `bb_front_ceyah_stonewalker` Blackguard - black-armor stonewalker skin + own icon (skin xcf started)
+- [ ] `bb_support_ceyah_stonewalker` Slayer - black/red stonewalker skin + own icon
+- [ ] `bb_front_council_hammer` Rune Hammer - rune hammer skin + own icon (ships with default Hammer art)
+- [ ] `bb_support_council_ranger` Arcane Archer - white ranger skin + own icon
 
 ## 11. Repo / pipeline hygiene
 
@@ -240,15 +254,15 @@ front/support/captain lines gated by politics faction. "Sheet status" is the doc
 | Infantry | 3 | Infantry Sergeant | Pikeman | Captain | Not Implemented | Done; icon+skin filenames broken | Gold armor, blonde hair |
 | Infantry | 5 | Infantry Captain | Swordsman | Captain | (goals list) | Done; portrait broken 3 ways | - |
 | Cavalry | 1 | Hobilar | Lancer (rename) | Front/Flank | Original | Rename done (loc override) | - |
-| Cavalry | 2 | Lancer | Lancer | Support | Not Implemented | Loc string only | Silver w/ gold trim, black horse |
+| Cavalry | 2 | Lancer | Lancer | Support | Not Implemented | Done 2026-08-15; art debt | Silver w/ gold trim, black horse |
 | Cavalry | 3 | Cavalry Sergeant | Lancer | Captain | Not Implemented | Done 2026-08-14; art debt | Gold armor, white horse |
 | Cavalry | 3 | Cavalier | Dragoon (rename) | Front/Flank | Original; cost 10 / wood 0.5 / iron 0.5 | Rename + exact costs done | Silver, no gold |
 | Cavalry | 4 | Cataphract | Dragoon | Support | (blank) | Done | - |
 | Cavalry | 5 | Cavalry Captain | Captain (rename) | Captain | Original | Reworked (violates untouched rule); name key broken | - |
 | Ranged | 2 | Bowman | - | Front/Flank | Original; cost 6 / wood 0.5 | Exact costs done | - |
-| Ranged | 2 | Skirmisher | Bowman | Support | Not Implemented | Nothing | Gold trim on armor |
+| Ranged | 2 | Skirmisher | Bowman | Support | Not Implemented | Done 2026-08-15; art debt | Gold trim on armor |
 | Ranged | 3 | Ranger Sergeant | Bowman | Captain | Not Implemented | Done 2026-08-14 on Aethan skin; gold recolor owed | Aethyn Farhyd model, gold armor |
-| Ranged | 3 | Ranger | Ranger | Front/Flank | Not Implemented | Nothing | AW Royal Court Hunter |
+| Ranged | 3 | Ranger | Ranger | Front/Flank | Not Implemented | Done 2026-08-15; AW art debt | AW Royal Court Hunter |
 | Ranged | 4 | Marksman | Ranger (rename) | Support | Original | Done 2026-08-14 as bowman-based support; art debt | Ranger |
 | Ranged | 5 | Ranger Captain | Ranger | Captain | (blank) | Done; portraits broken | - |
 | Melee | 2 | Swordsman | - | Front/Flank | Original | Rebalanced | - |
@@ -272,15 +286,15 @@ SupportProperty mapping pass.
 | Royalist cavalry | 4 | Knight | Paladin | Front/Flank | Not Implemented | Done 2026-08-14; art debt | - |
 | Royalist cavalry | 5 | Paladin | Paladin | Support | Done (Needs Work) | Retexture done (Paladinbase.dds) | Silver w/ gold trim |
 | Royalist cavalry | 6 | Champion | Paladin | Captain | Not Implemented | Done 2026-08-14; art debt (xcf exists) | Gold; portrait: Captain all gold |
-| Nationalist infantry | 4 | Crusader | Swordsman | Front/Flank | Not Implemented | Nothing | Ghalen model, silver only |
-| Nationalist infantry | 5 | Warpriest | Swordsman | Support | Not Implemented | Nothing | Ghalen, silver w/ gold trim |
+| Nationalist infantry | 4 | Crusader | Swordsman | Front/Flank | Not Implemented | Done 2026-08-15; art debt | Ghalen model, silver only |
+| Nationalist infantry | 5 | Warpriest | Swordsman | Support | Not Implemented | Done 2026-08-15; art debt | Ghalen, silver w/ gold trim |
 | Nationalist infantry | 6 | Templar | Swordsman | Captain | Not Implemented | Done 2026-08-14; art debt | Ghalen, dark iron w/ gold trim |
 | Nationalist support | - | Zealot | - | Support | Original | Staging folder only | - |
 | Ceyah ranged | 4 | Stalker | - | Front/Flank | Not Implemented | Nothing | - |
 | Ceyah ranged | 5 | Shadow Hunter | - | Support | Not Implemented | Nothing | - |
 | Ceyah ranged | 6 | (Masked Outcast) | - | Captain | Not Implemented | Nothing | - |
-| Ceyah melee | 4 | Blackguard | Stonewalker | Front/Flank | Not Implemented | Stonewalker skin xcf started | Black armor |
-| Ceyah melee | 5 | Slayer | Stonewalker | Support | Not Implemented | Nothing | Black armor, red trim |
+| Ceyah melee | 4 | Blackguard | Stonewalker | Front/Flank | Not Implemented | Done 2026-08-15; art debt (skin xcf started) | Black armor |
+| Ceyah melee | 5 | Slayer | Stonewalker | Support | Not Implemented | Done 2026-08-15; art debt; display name duplicates vanilla Shadow "Slayer" - user to confirm or rename | Black armor, red trim |
 | Ceyah melee | 6 | Harbinger | Stonewalker | Captain | Not Implemented | Done 2026-08-14; art debt | Black armor, gold trim; portrait: the lich hero |
 | Ceyah support | - | Prophet | - | Support | Original ("See Lore") | Staging folder only | - |
 | Ceyah support | - | Macabre | - | Support | Not Implemented | Nothing | - |
@@ -292,12 +306,12 @@ SupportProperty mapping pass.
 | Line | Tier | Name | Base unit | Role | Sheet status | Files now | Appearance plan |
 |---|---|---|---|---|---|---|---|
 | Ranged (Haroun) | 4 | Sentry | - | Front/Flank | Not Implemented | Nothing | AW Sharpshooter |
-| Ranged (Haroun) | 5 | Arcane Archer | Ranger | Support | Not Implemented | Nothing | Ranger (white) |
+| Ranged (Haroun) | 5 | Arcane Archer | Ranger | Support | Not Implemented | Done 2026-08-15; art debt | Ranger (white) |
 | Ranged (Haroun) | 6 | Warder | Ranger | Captain | Not Implemented | Done 2026-08-14; AW art debt | AW Sharpshooter |
 | Melee (Human) | 4 | Storm Guard | Swordsman | Front/Flank | Not Implemented | Loc string + placeholder art | Swordsman, silver/grey w/ black trim |
 | Melee (Human) | 5 | Eldritch Warrior | Swordsman | Support | UNFINISHED: needs custom spell; cost 24 / iron 1 / mana 1; skin made; needs custom swing effect + ability | Done as `bb_spellsword` (storm shield); swing-VFX rename **VERIFY** (section 4) | Blue/purple trim silver armor |
 | Melee (Human) | 6 | Storm Lord | Swordsman | Captain | Not Implemented | **Done** (`bb_captain_council_swordsman`) | Ghalen, gold w/ blue/purple trim |
-| Cavalry (Gauri) | 4 | Rune Hammer | Hammer | Front/Flank | (blank) | Nothing | - |
+| Cavalry (Gauri) | 4 | Rune Hammer | Hammer | Front/Flank | (blank) | Done 2026-08-15; art debt | - |
 | Cavalry (Gauri) | 5 | Warmage | - | Support | (blank) | Nothing | - |
 | Cavalry (Gauri) | 6 | Rune Lord | Hammer | Captain | (blank) | Done 2026-08-14; art debt | - |
 | Special | 6 | Mage Lord | Ravid Sakeri | Captain | Not Implemented | Done 2026-08-14 on Ravid art; protection spells | - |
@@ -339,6 +353,10 @@ Only one row was designed:
 |---|---|---|---|---|---|
 | Infantry Company (T1, Human) | was Pikeman Company | Infantry Sergeant | Halberdier | Halberdier | Praetorian |
 
+- [x] The designed row IS wired (verified 2026-08-15): `company_pikeman` in pikeman.tgi has
+  front/flank=pikeman, support=bb_praetorian x2, captain=bb_captain_pikeman. NOTE: the loc
+  override names it "Halberdier Company", the sheet says "Infantry Company" - both are
+  user-authored; user to pick which display name wins (naming is user territory)
 - [ ] Design + implement compositions for the remaining custom lines (also a sheet To Do item, section 18)
 
 ## 15. Target value tables (town centers, outposts, forts)

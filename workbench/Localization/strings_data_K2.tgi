@@ -5769,6 +5769,7 @@
 	bb_support_dragoon_name = "Cataphract"
 	bb_captain_engineer_name = "Engineer Sergeant"
 	bb_support_engineer_name = "Siege Expert"
+	bb_skirmisher_name = "Skirmisher"
 
 	;; Royalist Units
 	bb_front_paladin_name = "Knight"
@@ -5780,12 +5781,18 @@
 	bb_front_council_swordsman_name = "Storm Guard"
 	bb_support_council_swordsman_name = "Eldritch Warrior"
 	bb_captain_council_swordsman_name = "Storm Lord"
+	bb_front_council_hammer_name = "Rune Hammer"
 	bb_captain_council_hammer_name = "Rune Lord"
+	bb_support_council_ranger_name = "Arcane Archer"
 	bb_captain_council_ranger_name = "Warder"
 	bb_captain_council_magelord_name = "Mage Lord"
 
 	;; Politics-faction captains
+	bb_front_nationalist_swordsman_name = "Crusader"
+	bb_support_nationalist_swordsman_name = "Warpriest"
 	bb_captain_nationalist_swordsman_name = "Templar"
+	bb_front_ceyah_stonewalker_name = "Blackguard"
+	bb_support_ceyah_stonewalker_name = "Slayer"
 	bb_captain_ceyah_stonewalker_name = "Harbinger"
 
 	;; Undead Units

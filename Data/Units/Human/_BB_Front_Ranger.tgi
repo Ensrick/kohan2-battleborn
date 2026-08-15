@@ -1,0 +1,211 @@
+
+;; Ranger - Human ranged front/flank (design tier 3, ranger base)
+;; TEXTURE DEBT: AW Royal Court Hunter-style skin + own icon (ships with default ranger art)
+;; Reuses the ranger_* VFX defined in Units/Human/ranger.tgi
+
+[Unit template=K2HumanUnit]
+{
+	IDS = bb_front_ranger
+	name = "#bb_front_ranger_name"
+
+	[View]
+	{
+		resource_prefix = Ranger/Ranger
+
+		[WhenCreated Template=FXC_Equipment]
+		action = UNHIDE
+		location = LHAND
+		equipment_type_ids = bow
+
+		[WhenCreated Template=FXC_Equipment]
+		action = HIDE
+		location = RHAND
+		equipment_type_ids = arrow
+	}
+
+	[BodyComponent]
+	{
+		health = 260 ;; ranger 240
+		defense = 2 ;; ranger 1
+
+		[WhenHealth Template=FXC_PlayHitEffect]
+		{
+			health_trigger_type = RELATIVE_DECREASE
+			health = 0.035
+
+			pivot = head
+			axis = 0,0,1
+			max_impulse = 500
+			max_damage = 0.20
+			max_angle = 30
+			vel_decay = 1.05
+			stiffness = 15
+		}
+	}
+
+	[CharacterComponent]
+	{
+		[Animation Template=MoveAnimation]
+		IDS = walk
+		walk_distance = 1.5
+
+		[Animation Template=MoveAnimation]
+		IDS = jog
+		walk_distance = 2.5
+
+		[Animation Template=IdleAnimation]
+		IDS = idle
+
+		[Animation Template=MeleeIdleAnimation]
+		IDS = idlemelee
+
+		[Animation Template=RangedIdleAnimation]
+		IDS = idlerange
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget1
+
+		[Animation Template=FidgetAnimation]
+		IDS = fidget2
+
+		[Animation Template=DieAnimation]
+		{
+			IDS = die1
+
+			[WhenStart template=FXC_PlaySFX]
+			audio_ids = ranger_death
+		}
+
+		[Animation Template=MeleeAttackAnimation]
+		{
+			IDS = melee1
+			key_ratio = 0.5
+
+			[WhenStart template=FXC_CreateVFX]
+			VFX_IDS = ranger_sword_effect
+			location = bow_ae
+		}
+
+		[Animation Template=RangedAttackAnimation]
+		{
+			IDS = range
+			key_ratio = 0.65
+
+			[WhenStart Template=FXC_Equipment]
+			action = UNHIDE
+			location = RHAND
+			equipment_type_ids = arrow
+
+			[WhenDo Template=FXC_Equipment]
+			action = HIDE
+			location = RHAND
+			equipment_type_ids = Arrow
+
+			[WhenStart template=FXC_CreateVFX]
+			VFX_IDS = ranger_bow_effect
+			location = bow_ae
+
+			[WhenStart template=FXC_CreateVFX]
+			VFX_IDS = ranger_arrow_effect
+			location = RHAND
+
+			[WhenEnd Template=FXC_Equipment]
+			action = HIDE
+			location = RHAND
+			equipment_type_ids = Arrow
+		}
+
+		[Animation Template=CastAnimation]
+		IDS = cast
+		key_ratio = 0.6
+
+		[Animation Template=IdleAnimation]
+		IDS = idlecast
+	}
+
+	[EconomyComponent]
+	{
+		[Cost]
+		gold = 14 ;; ranger support 20
+
+		[Upkeep]
+		wood = 1
+		mana = 1
+	}
+
+	[ElementComponent]
+	{
+		morale_value = 9 ;; ranger 5
+		required_structures = human_woodmill,human_library,human_center_town
+	}
+
+	[MoverComponent]
+	{
+		speed_max = 4.5
+
+		[TrackInfo Template=K2TracksBipedRight]
+
+		[TrackInfo Template=K2TracksBipedLeft]
+	}
+
+	[PerformerComponent]
+	{
+		cv_bias = 2
+
+		[Ability Template=K2MeleeLocal]
+		{
+			[AbilityDefinition Template=K2MeleeAttack]
+			{
+				name = "#ranger_AbilityDefinition_name"
+				icon = /properties/AbilityIcons/AbilityMagicIcon.png
+
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = magic
+				amount = 26
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = ranger_slash
+			}
+		}
+
+		[Ability Template=K2RangedLocal]
+		{
+			spawn_position = -0.3, 0.05, 1.45
+
+			[AbilityDefinition Template=K2RangedAttack]
+			{
+				projectile_IDS = ranger_arrow
+				name = "#ranger_AbilityDefinition_name_2"
+				icon = /properties/AbilityIcons/AbilityMagicIcon.png
+
+				[Effect Template=MainDamageEffect]
+				damage_type_IDS = magic
+				amount = 38
+
+				[WhenDo template=FXC_PlaySFX]
+				audio_ids = ranger_bow
+			}
+		}
+	}
+
+	[PropertiesComponent]
+	{
+		[Property]
+		property_IDS = race_human
+
+		[Property]
+		property_IDS = front
+
+		[Property]
+		property_IDS = flank
+
+		[Property]
+		property_IDS = ranged
+
+		[Property]
+		property_IDS = role_archer
+
+		[Property]
+		property_IDS = swift
+	}
+}
