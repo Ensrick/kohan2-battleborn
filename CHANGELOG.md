@@ -20,11 +20,11 @@ All notable changes to the Battleborn mod. Format follows
   handshake checksums priority-0 depots by archive stamp and compares mod lists, so a
   Battleborn mismatch is refused at connect. Builds are deterministic, so every player's
   archive (and stamp) is identical.
-- Art containing third-party images with unconfirmed licences (banner icons, two
-  captain portraits and their icons) and three high-resolution icons of unconfirmed
-  origin are held back from the public repository (`private/`, git-ignored) until
-  their licences are confirmed; public builds fall back to the game's own art for the
-  replaced icons.
+- High-resolution icon and portrait art (banner icons, Pikeman/Pioneer/Swordsman
+  icons, Infantry/Ranger Captain icons and portraits) moved out of Battleborn into a
+  separate, unpublished art project (2026-10-11). The two captains now use the game's
+  Ghalen Mordecai and Eben Baruch icon and portrait under their own file names, so a
+  later art pack can replace them without touching Battleborn's data.
 - `tools/deploy.ps1` (loose-file install) and `tools/collect.ps1` (harvested full
   copies) retired; `tools/gen_namelists.ps1` moved out of the repository because it
   embedded name pools harvested from the game's namelists.

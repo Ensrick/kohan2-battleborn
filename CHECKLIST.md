@@ -196,7 +196,7 @@ Every unit below is functional but waiting on custom textures:
 - [ ] Prune junk: `workbench/UI/3840/UNFINISHED Game/**/Thumbs.db` (widescreen-owned path, Thumbs.db only), ` - Copy` vanilla backups
 - [x] ~~`tools/collect.ps1` / `tools/deploy.ps1` sync scripts~~ superseded 2026-10-10 by the patch pipeline (`tools/bb.py`, `Install-Battleborn.ps1`); 3 test maps (`BB_Test_2`, `TEST`, `Trial Map Human`)
 - [x] 2026-10-10: repo holds no game files - `patches/` (our lines + references), `.bbdelta` art deltas, `original/`; `Data/` + `workbench/` removed from the repo (kept locally); installs as `Battleborn.rwd` via `addmod`
-- [ ] Licences for held-back art in `private/`: banner icons (stock images `3903683.png`, horse-head vector, `downloadedImage(3).png`, gear vector 22399816), Infantry/Ranger captain portraits + icons (`downloadedImage(8)`/`(10)` layers), high-res Pikeman/Pioneer/Swordsman icons (origin unrecorded). Publish each once its licence is confirmed
+- [ ] High-res icons/portraits parked in the separate local `kohan2-hires-art` project (2026-10-11); licences for its stock/downloaded images still owed before it is ever published
 
 ---
 
