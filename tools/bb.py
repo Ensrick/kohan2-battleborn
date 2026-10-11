@@ -354,6 +354,29 @@ def cmd_derive(args):
     print(f"{args.path} now ships as a delta against {args.base}")
 
 
+def cmd_package(args):
+    """build/<id>-<version>.k2mod for the Kohan II Mod Manager: mod.json, original/ as files/,
+    patches/ as-is. Public sources only (private/ never ships). Deterministic: same sources,
+    same bytes."""
+    import json
+    import zipfile
+    meta = json.load(open(os.path.join(REPO, "mod.json"), encoding="utf-8"))
+    out = os.path.join(REPO, "build", f"{meta['id']}-{meta['version']}.k2mod")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    entries = [("mod.json", os.path.join(REPO, "mod.json"))]
+    entries += [("files/" + rel, full) for rel, full in sorted(walk(os.path.join(REPO, "original")).items(), key=lambda kv: kv[0].lower())]
+    entries += [("patches/" + rel, full) for rel, full in sorted(walk(os.path.join(REPO, "patches")).items(), key=lambda kv: kv[0].lower())]
+    tmp = out + ".tmp"
+    with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+        for name, full in entries:
+            info = zipfile.ZipInfo(name, date_time=(2000, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            z.writestr(info, open(full, "rb").read())
+    os.replace(tmp, out)
+    print(f"wrote {out}: {len(entries) - 1} files; install it with K2ModManager.exe (or k2mod install)")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Battleborn build tool")
     ap.add_argument("--game", help="Kohan II folder (default: found through Steam)")
@@ -370,9 +393,10 @@ def main():
     p = sub.add_parser("derive", help="ship work/<path> as a delta against a game texture")
     p.add_argument("path")
     p.add_argument("base")
+    sub.add_parser("package", help="build/<id>-<version>.k2mod for the Kohan II Mod Manager")
     args = ap.parse_args()
     {"build": cmd_build, "install": cmd_install, "uninstall": cmd_uninstall, "status": cmd_status,
-     "work": cmd_work, "diff": cmd_diff, "derive": cmd_derive}[args.cmd](args)
+     "work": cmd_work, "diff": cmd_diff, "derive": cmd_derive, "package": cmd_package}[args.cmd](args)
 
 
 if __name__ == "__main__":

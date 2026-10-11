@@ -30,6 +30,9 @@ All notable changes to the Battleborn mod. Format follows
   embedded name pools harvested from the game's namelists.
 
 ### Added
+- `mod.json` and `bb.py package`: builds `build/battleborn-<version>.k2mod` for the Kohan II
+  Mod Manager (public sources only, deterministic). The manager rebuilds it byte-identical
+  to `bb.py build --public`.
 - `Install-Battleborn.ps1` / `.cmd` (2026-10-10): player installer needing only Windows
   PowerShell 5.1; builds the same archive byte-for-byte as the developer tools.
 - `tools/bb.py` (build / install / uninstall / status / work / diff / derive),

@@ -38,6 +38,7 @@ file. Use one at a time.
 | `patches/**.bbpatch` | Our changes to a game file, or a new file built from a game file. Contains only Battleborn's own lines; game text is *referenced* (`= Units/Haroun/windrider.tgi 104-106`), never copied, and removed lines appear only as a count and a hash. Each patch is pinned to the SHA-256 of the retail file it targets. |
 | `patches/**.bbdelta` | Art painted over a game texture, stored as a delta against that texture. Unreadable without your own `Data.rwd`. |
 | `original/` | Files that are entirely ours (namelists, the Battleborn properties file). |
+| `mod.json` | Name, version and rules (incompatible with Immortals) for the Kohan II Mod Manager package. |
 | `maps/` | Authored test maps (`.RMP`). |
 | `Install-Battleborn.ps1` / `.cmd` | Player installer (PowerShell only). |
 | `tools/bb.py` | Developer tool: build, install, `work` / `diff` editing workflow. |
@@ -57,6 +58,7 @@ py -3 tools/bb.py work                # work/ = full, editable files (never comm
 py -3 tools/bb.py diff                # turn your edits back into patches/ and original/
 py -3 tools/bb.py install             # build + install into the game
 py -3 tools/bb.py install --dev       # same, plus wip/ mounted as loose files on top
+py -3 tools/bb.py package             # build/battleborn-<version>.k2mod for the Kohan II Mod Manager
 py -3 tools/validate.py --vanilla "<Data.rwd extract>" --mod build/Battleborn
 py -3 tools/audit_public.py           # before every push
 ```
