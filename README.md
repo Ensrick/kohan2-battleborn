@@ -46,6 +46,7 @@ file. Use one at a time.
 | `tools/bbpatch.py`, `tools/bbdelta.py` | The patch and delta formats. |
 | `tools/validate.py` | Reference check of a build: unresolved IDs, missing strings and art, duplicate IDs. |
 | `tools/load_order.py` | Load-order check, run by every build: no ID used before the file that defines it loads. |
+| `tools/template_fields.py` | Template check, run by every build: every node sets the fields its template requires. |
 | `tools/audit_public.py` | Publication check: no file or run of 4+ lines matches game data. |
 | `tools/bb_import.py` | Converts full-file overrides into patches (used once to migrate). |
 

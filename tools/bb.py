@@ -30,6 +30,7 @@ import bbdelta  # noqa: E402
 import bbpatch  # noqa: E402
 import load_order  # noqa: E402
 import rwd      # noqa: E402
+import template_fields  # noqa: E402
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_ID = "97130"
@@ -179,9 +180,9 @@ def cmd_build(args, quiet=False):
     game = Game(game_dir(args))
     public = getattr(args, "public", False)
     files = produce(game, public)
-    problems = load_order.check(game.arc, files)
+    problems = load_order.check(game.arc, files) + template_fields.check(game.arc, files)
     if problems:
-        print("load-order problems (the game crashes or drops these references at startup):")
+        print("data problems (the game crashes or drops these at startup):")
         for p in problems:
             print("  " + p)
         sys.exit(1)

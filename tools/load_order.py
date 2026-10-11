@@ -23,6 +23,7 @@ import sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import template_fields  # noqa: E402
 import validate  # noqa: E402
 
 ORDERS = (("lower-case", str.lower), ("upper-case", str.upper))
@@ -39,7 +40,7 @@ def _text(data):
 def _scan(data):
     """(ids defined, [(key, id) referenced]) for one TGI file."""
     defs, refs = set(), []
-    for line in _text(data).splitlines():
+    for line in template_fields.BLOCK_COMMENT.sub("", _text(data)).splitlines():
         s = validate.strip_comment(line).strip()
         if not s or s.startswith("["):
             continue

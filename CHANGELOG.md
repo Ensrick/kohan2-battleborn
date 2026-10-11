@@ -13,6 +13,10 @@ All notable changes to the Battleborn mod. Format follows
   (`bb_front_ranger_*_effect`). Same cause, warning only: the Ranger Sergeant, Mage Lord
   and Templar captains referenced hero portraits defined in later-loaded files and showed
   none; each now defines its own portrait entry on the same game art.
+- **Startup crash (0.2.2-dev, 2026-10-11):** "Field 'key_ratio' missing from node using
+  strict template: `_BB_Captain_Necromancer.tgi`/.../Animation" (log-247). The
+  Necromancer's cast animation (AbilityAnimation, which declares `key_ratio` without a
+  default) lost the `key_ratio = 0.6` the stock Lich sets.
 
 ### Changed
 - **No game files in the repository any more (2026-10-10).** Battleborn is now stored
@@ -43,6 +47,8 @@ All notable changes to the Battleborn mod. Format follows
   file uses an effect, portrait or other load-time ID that only a later-loaded file defines
   (game load order simulated from `index_k2.lst`, vanilla's own forward references as
   baseline).
+- `tools/template_fields.py`, also run by every `bb.py build`: fails when a node leaves out
+  a field its template declares without a default (vanilla's own misses as baseline).
 - `mod.json` and `bb.py package`: builds `build/battleborn-<version>.k2mod` for the Kohan II
   Mod Manager (public sources only, deterministic). The manager rebuilds it byte-identical
   to `bb.py build --public`.

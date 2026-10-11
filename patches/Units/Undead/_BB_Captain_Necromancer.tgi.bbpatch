@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Monster/barbariandiabolist.tgi sha256=6a419c296efaa2eb9cc72939c859735a395455958c4a2418fd79f793969bddcf
 ref Units/Undead/lich.tgi sha256=770eb711f16442fa26757a4a6a08bacdce58a6172f0b77273dd88708b7cbc888
-result sha256=aaa9586c150d89a0b1e1c4817440352247e5263e23505e238199f4acf8f44297 bytes=2145
+result sha256=8140bb7718f63995eb143d04b12cf1b2e988a4c13018b225a48f983328114455 bytes=2215
 bom no
 eol lf
 
@@ -45,7 +45,8 @@ eol lf
 +		}
 +
 +		[Animation Template=AbilityAnimation]
-@@ 55 -1:5404d43e +0 @@ [Unit diabolist] > [CharacterComponent] > [Animation cast]
+@@ 55 -1:5404d43e +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation cast]
++		key_ratio = 0.6 ;; required by AbilityAnimation (lich.tgi uses 0.6)
 @@ 58 -1:6f0fdbb0 +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation]
 +		IDS = idlecast
 @@ 64 -1:e52db181 +4 @@ [Unit diabolist] > [EconomyComponent] > [Cost]
