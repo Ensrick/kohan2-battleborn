@@ -28,6 +28,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import bbdelta  # noqa: E402
 import bbpatch  # noqa: E402
+import load_order  # noqa: E402
 import rwd      # noqa: E402
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -178,7 +179,13 @@ def cmd_build(args, quiet=False):
     game = Game(game_dir(args))
     public = getattr(args, "public", False)
     files = produce(game, public)
-    out_dir = os.path.join(REPO, "build", "public") if public else os.path.join(REPO, "build")
+    problems = load_order.check(game.arc, files)
+    if problems:
+        print("load-order problems (the game crashes or drops these references at startup):")
+        for p in problems:
+            print("  " + p)
+        sys.exit(1)
+    out_dir =os.path.join(REPO, "build", "public") if public else os.path.join(REPO, "build")
     loose = os.path.join(out_dir, MOD_DIR)
     if os.path.isdir(loose):
         for rel, full in walk(loose).items():       # clear the previous loose copy, file by file

@@ -1,21 +1,39 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Monster/banditarcane.tgi sha256=79968da7fa804a1703561dff5d49b6f131539ee59ed3c96ec9c0d0d948c51741
-result sha256=b1309fcf904701d720dd3885d96a1746757e07b683f6f4434f08b0dab6bd6f15 bytes=2465
+ref Units/Fallen/daevai.tgi sha256=21e711aed98127edaba9fc2be09e5b4b6012a3a4ff873d418a3df8a39f311b45
+result sha256=ad360866d5443e0fb9207a227f37f2c132807ab073d2334cdb0954478a165d5e bytes=3199
 bom no
 eol lf
 
-@@ 2 -1:2a1b0016 +4 @@
+@@ 2 -1:2a1b0016 +8 @@
 +;; Mage Lord - Council special captain (design tier 6, Ravid Sakeri hero model)
 +;; TEXTURE DEBT: own skin recolor + own icon (ships with Ravid Sakeri's art + portrait)
++;; Own portrait entry: the game reads _BB_ files before ravid_sakeri.tgi, so
++;; Ravid_Sakeri_portrait does not exist yet when this file loads.
 +
-+[Unit template=K2CouncilUnit]
++/******************************************  RAVID SAKERI PORTRAIT  **********************************/
++
++[Thing Template=Portrait]
 @@ 4 -3:da7a0ae3 +3 @@ [Unit]
++	ids = bb_captain_council_magelord_portrait
++	name = "#ravid_sakeri_portrait_name"
++
+@@ 9 -1:120fb544 +1 @@ [Unit arcane] > [View]
++		resource_prefix = /Units/Council/RavidSakeri/RavidSakeriPortrait
+@@ 12 -1:0a4ae4ec +26 @@ [Unit arcane] > [View] > [AspectNormal]
++		{
+= Units/Fallen/daevai.tgi 15-19
++
+= Units/Fallen/daevai.tgi 21-29
++[Unit template=K2CouncilUnit]
++{
 +	IDS = bb_captain_council_magelord
 +	name = "#bb_captain_council_magelord_name"
 +
-@@ 9 -4:527750ce +3 @@ [Unit arcane] > [View]
++	[View]
++	{
 +		resource_prefix = /Units/Council/RavidSakeri/RavidSakeri
-+		portrait_ids = Ravid_Sakeri_portrait
++		portrait_ids = bb_captain_council_magelord_portrait
 +		icon = /Units/Council/RavidSakeri/RavidSakeriIcon.tga
 @@ 16 -3:4c35935a +3 @@ [Unit arcane] > [BodyComponent]
 +	health = 420

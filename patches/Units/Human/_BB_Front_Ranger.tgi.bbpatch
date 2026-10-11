@@ -1,14 +1,29 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
 ref Units/Monster/barbarian.tgi sha256=dc05ee54f9b070c2c252108d808e1a1ba49027fb44383431ca30cea0f39590f6
-result sha256=f7596759c1d2999ba451ff50bfc3262313f694f07ab1e5bf2edbcdaba303f0af bytes=3799
+result sha256=d61ad2eb9e4eabd60e465f789e222a788d46b9d6e7aa5d145493aed39b299543 bytes=4579
 bom no
 eol lf
 
-@@ 2 -27:6be223b3 +3 @@
+@@ 1 -0 +5 @@
++
 +;; Ranger - Human ranged front/flank (design tier 3, ranger base)
 +;; TEXTURE DEBT: AW Royal Court Hunter-style skin + own icon (ships with default ranger art)
-+;; Reuses the ranger_* VFX defined in Units/Human/ranger.tgi
++;; Own copies of the ranger VFX: the game reads _BB_ files before ranger.tgi, so the
++;; stock ranger_* IDs do not exist yet when this file loads (fatal "Could not find vfx data").
+@@ 6 -1:b7bd4d87 +1 @@ [VFX]
++	IDS = bb_front_ranger_bow_effect
+@@ 8 -1:664c03ba +1 @@ [VFX ranger_bow_effect]
++	model = /Units/Human/Ranger/RangerBowEffect.NIF
+@@ 14 -1:d786bcdb +1 @@ [VFX]
++	IDS = bb_front_ranger_arrow_effect
+@@ 16 -1:a336ce9f +1 @@ [VFX ranger_arrow_effect]
++	model = /Units/Human/Ranger/RangerArrowEffect.NIF
+@@ 22 -1:74dbcc14 +1 @@ [VFX]
++	IDS = bb_front_ranger_sword_effect
+@@ 24 -1:68f11a9c +1 @@ [VFX ranger_sword_effect]
++	model = /Units/Human/Ranger/RangerswordEffect.NIF
+@@ 28 -2:9de12650 +0 @@
 @@ 32 -3:6a2f2b3a +3 @@ [Unit]
 +	IDS = bb_front_ranger
 +	name = "#bb_front_ranger_name"
@@ -37,6 +52,8 @@ eol lf
 +
 @@ 102 -1:76a3029a +1 @@ [Unit ranger] > [CharacterComponent]
 +
+@@ 109 -1:7dc64a97 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation melee1] > [WhenStart]
++			VFX_IDS = bb_front_ranger_sword_effect
 @@ 111 -2:5b89adf6 +2 @@ [Unit ranger] > [CharacterComponent] > [Animation melee1] > [WhenStart]
 +		}
 +
@@ -44,6 +61,10 @@ eol lf
 +
 @@ 122 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
 +
+@@ 129 -1:3c73d969 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++			VFX_IDS = bb_front_ranger_bow_effect
+@@ 133 -1:2f1f602e +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++			VFX_IDS = bb_front_ranger_arrow_effect
 @@ 141 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent]
 +
 @@ 147 -1:6f0fdbb0 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation]

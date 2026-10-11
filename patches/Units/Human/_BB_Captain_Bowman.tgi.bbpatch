@@ -1,21 +1,38 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
-result sha256=2780d03034c5456ed2ba23b30227a6926f1d1874506cc66f1554c4cedf6adaa8 bytes=4330
+ref Units/Fallen/daevai.tgi sha256=21e711aed98127edaba9fc2be09e5b4b6012a3a4ff873d418a3df8a39f311b45
+result sha256=725a955743fe76f9d5bd6c94377997eabb9fef03b1533e94d789d36f2f4b16b7 bytes=5033
 bom no
 eol lf
 
-@@ 1 -0 +4 @@
+@@ 1 -0 +34 @@
 +
 +;; Ranger Sergeant - budget ranged captain (design: Aethyn Farhyd model, gold armor)
 +;; TEXTURE DEBT: gold-armor recolor of AethanFarhydBase.dds + own icon
++;; Own portrait entry: Units/Nationalist loads after Units/Human, so aethan_farhyd_portrait
++;; does not exist yet when this file loads.
 +
++/******************************************  AETHAN PORTRAIT  ******************************/
++
++[Thing Template=Portrait]
++{
++	ids = bb_captain_bowman_portrait
++	name = "#aethan_farhyd_portrait_name"
++
++	[View]
++	{
++		resource_prefix = /Units/Nationalist/AethanFarhyd/AethanFarhydPortrait
++
+= Units/Fallen/daevai.tgi 13-19
++
+= Units/Fallen/daevai.tgi 21-29
 @@ 3 -3:9407510b +3 @@ [Unit]
 +	IDS = bb_captain_bowman
 +	name = "#bb_captain_bowman_name"
 +
 @@ 8 -1:1da5a15f +3 @@ [Unit bowman] > [View]
 +		resource_prefix = Bowman/Bowman
-+		portrait_ids = aethan_farhyd_portrait
++		portrait_ids = bb_captain_bowman_portrait
 +		icon = /Units/Nationalist/AethanFarhyd/AethanFarhydIcon.tga
 @@ 11 -2:0fe6994d +2 @@ [Unit bowman] > [View] > [AspectNormal]
 +		skin = /Units/Nationalist/AethanFarhyd/AethanFarhydBase.dds

@@ -5,6 +5,15 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Fixed
+- **Startup crash (0.2.1-dev, 2026-10-11):** "`_BB_Front_Ranger.tgi`: Could not find vfx
+  data: ranger_sword_effect" (log-246, first in-game run of the archive). The game reads
+  `_BB_` files before the stock files of the same folder, so the Front Ranger used the
+  ranger effects before `ranger.tgi` defined them. It now has its own copies
+  (`bb_front_ranger_*_effect`). Same cause, warning only: the Ranger Sergeant, Mage Lord
+  and Templar captains referenced hero portraits defined in later-loaded files and showed
+  none; each now defines its own portrait entry on the same game art.
+
 ### Changed
 - **No game files in the repository any more (2026-10-10).** Battleborn is now stored
   as changes: `patches/*.bbpatch` hold only our lines (game text is referenced by file
@@ -30,6 +39,10 @@ All notable changes to the Battleborn mod. Format follows
   embedded name pools harvested from the game's namelists.
 
 ### Added
+- `tools/load_order.py`, run by every `bb.py build` (2026-10-11): fails the build when a mod
+  file uses an effect, portrait or other load-time ID that only a later-loaded file defines
+  (game load order simulated from `index_k2.lst`, vanilla's own forward references as
+  baseline).
 - `mod.json` and `bb.py package`: builds `build/battleborn-<version>.k2mod` for the Kohan II
   Mod Manager (public sources only, deterministic). The manager rebuilds it byte-identical
   to `bb.py build --public`.
