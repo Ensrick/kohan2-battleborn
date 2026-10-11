@@ -1,0 +1,16 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Properties/properties_support.tgi sha256=ccf263697b62c1f83ae66e7ff4133fd594c07afbebcab6eb570e5b0abb48872d
+result sha256=2b82764a50375f4dfc7597595955df1d0e3c0ebd3bc6fd2ce0e59273eac9fa9d bytes=7034
+bom no
+eol crlf none*1
+
+@@ 224 -0 +12 @@
++[Property Template=SupportProperty]
++{
++	IDS = bb_guardsman
++	name = "#bb_properties_support_guardsman_name"
+= Properties/properties_support.tgi 69-73
++	amount = 1
++}
++
+@@ 293 -1:e3b0c442 +0 @@

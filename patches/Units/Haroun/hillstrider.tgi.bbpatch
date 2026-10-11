@@ -1,0 +1,27 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Haroun/hillstrider.tgi sha256=80463c3a7cd361daae0efeede522491a757f2b7fd6541639d5b79b14cc56781a
+result sha256=eef42f89b5ed168774d17e43e546d4e4947303c331c649b889bc7be31e846c20 bytes=4497
+bom no
+eol crlf none*1
+
+@@ 67 -0 +1 @@ [Unit hillstrider] > [ElementComponent]
++		denizen_type = denizen_type_melee
+@@ 218 -0 +24 @@
++
++[Thing template=K2HarounMilitia]
++{
++	IDS = militia_hillstrider
++	name = "#bb_hillstrider_militia_name"
++	
+= Units/Haroun/hillstrider.tgi 185-191
++	}
++	
++	[OrganizationComponent]
++	{
++		layout_IDS = company_siege_militia
++		entrenchment_time = 300
++		
++		[Slot]	;; siege
++		element_IDS = hillstrider
++	}	
++}

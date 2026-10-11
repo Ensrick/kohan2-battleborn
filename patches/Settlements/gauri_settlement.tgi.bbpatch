@@ -1,0 +1,12 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Settlements/gauri_settlement.tgi sha256=016aaca8b004dd79b1065da3b2cf15a9884274628fe4c7d09b4d24d7feac9891
+result sha256=949e595cc6a521f054c857392ea553f5e90f0d38658d629663bcfbe491ffc465 bytes=4047
+bom no
+eol crlf
+
+@@ 161 -1:70756bbf +1 @@ [Thing gauri_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 166 -1:daaca91b +1 @@ [Thing gauri_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 171 -1:a6b18a2c +1 @@ [Thing gauri_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7

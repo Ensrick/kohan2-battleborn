@@ -1,0 +1,83 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
+ref Units/Monster/barbarian.tgi sha256=dc05ee54f9b070c2c252108d808e1a1ba49027fb44383431ca30cea0f39590f6
+result sha256=f7596759c1d2999ba451ff50bfc3262313f694f07ab1e5bf2edbcdaba303f0af bytes=3799
+bom no
+eol lf
+
+@@ 2 -27:6be223b3 +3 @@
++;; Ranger - Human ranged front/flank (design tier 3, ranger base)
++;; TEXTURE DEBT: AW Royal Court Hunter-style skin + own icon (ships with default ranger art)
++;; Reuses the ranger_* VFX defined in Units/Human/ranger.tgi
+@@ 32 -3:6a2f2b3a +3 @@ [Unit]
++	IDS = bb_front_ranger
++	name = "#bb_front_ranger_name"
++
+@@ 38 -1:31609426 +1 @@ [Unit ranger] > [View]
++
+@@ 52 -3:cc00a79b +3 @@ [Unit ranger] > [BodyComponent]
++		health = 260 ;; ranger 240
++		defense = 2 ;; ranger 1
++
+@@ 59 -1:e740a6fa +1 @@ [Unit ranger] > [BodyComponent] > [WhenHealth]
++
+@@ 75 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation walk]
++
+@@ 79 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation jog]
++
+@@ 82 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idle]
++
+@@ 85 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 88 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idlerange]
++
+@@ 94 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation fidget2]
++
+@@ 98 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation die1]
++
+@@ 102 -1:76a3029a +1 @@ [Unit ranger] > [CharacterComponent]
++
+@@ 111 -2:5b89adf6 +2 @@ [Unit ranger] > [CharacterComponent] > [Animation melee1] > [WhenStart]
++		}
++
+@@ 117 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range]
++
+@@ 122 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++
+@@ 141 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent]
++
+@@ 147 -1:6f0fdbb0 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation]
++		IDS = idlecast
+@@ 153 -2:25746249 +2 @@ [Unit ranger] > [EconomyComponent] > [Cost]
++		gold = 14 ;; ranger support 20
++
+@@ 159 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 162 -2:c88d3877 +3 @@ [Unit ranger] > [ElementComponent]
++		morale_value = 9 ;; ranger 5
++		required_structures = human_woodmill,human_library,human_center_town
++	}
+@@ 165 -4:72fb9993 +0 @@ [Unit ranger] > [ElementComponent]
+@@ 174 -1:31609426 +1 @@ [Unit ranger] > [MoverComponent] > [TrackInfo]
++
+@@ 177 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 181 -1:36a9e7f1 +1 @@ [Unit ranger] > [PerformerComponent]
++
+@@ 188 -1:8493100b +1 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 192 -1:8493100b +1 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++
+@@ 197 -1:31609426 +1 @@ [Unit ranger] > [PerformerComponent]
++
+@@ 211 -1:8493100b +1 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++
+@@ 217 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 224 -2:21764c0a +5 @@ [Unit ranger] > [PropertiesComponent] > [Property]
+= Units/Monster/barbarian.tgi 104-107
++
+@@ 228 -4:aaa694f2 +1 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++
+@@ 234 -1:31609426 +1 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++

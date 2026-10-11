@@ -6,17 +6,41 @@ All notable changes to the Battleborn mod. Format follows
 ## [Unreleased]
 
 ### Changed
-- Install target moved to the user depot `Documents\Kohan2\data\` (2026-10-10):
-  `tools/deploy.ps1` is now a manifest-driven installer (SHA256 per file, verify
-  after copy, `-Uninstall`, `-WhatIf`), refuses to overwrite files owned by another
-  gameplay mod, deletes only unchanged files and backs up depot edits. Keeps the
-  Steam install byte-exact, which the Modern Rebuild beta's update/verify flow wants.
+- **No game files in the repository any more (2026-10-10).** Battleborn is now stored
+  as changes: `patches/*.bbpatch` hold only our lines (game text is referenced by file
+  and line range, removed lines appear as a count and hash, each patch is pinned to the
+  retail file's SHA-256), `patches/*.bbdelta` hold art painted over game textures as
+  deltas, and `original/` holds files that are entirely ours. All 155 previous override
+  files rebuild byte-identical from the retail `Data.rwd`. The old `Data/` and
+  `workbench/` copies were removed from the repository (kept locally).
+- **Installs as an archive the game loads as a mod.** `Battleborn\Battleborn.rwd` plus
+  `startup\autoexec_battleborn.txt` (`addmod Battleborn/Battleborn.rwd`). Reverse-
+  engineered from k2.exe: startup scripts glob `startup/autoexec*.txt`; `addmod` is a
+  mod-flagged depot; equal-priority depots resolve last-added-wins; the multiplayer
+  handshake checksums priority-0 depots by archive stamp and compares mod lists, so a
+  Battleborn mismatch is refused at connect. Builds are deterministic, so every player's
+  archive (and stamp) is identical.
+- Art containing third-party images with unconfirmed licences (banner icons, two
+  captain portraits and their icons) and three high-resolution icons of unconfirmed
+  origin are held back from the public repository (`private/`, git-ignored) until
+  their licences are confirmed; public builds fall back to the game's own art for the
+  replaced icons.
+- `tools/deploy.ps1` (loose-file install) and `tools/collect.ps1` (harvested full
+  copies) retired; `tools/gen_namelists.ps1` moved out of the repository because it
+  embedded name pools harvested from the game's namelists.
 
 ### Added
+- `Install-Battleborn.ps1` / `.cmd` (2026-10-10): player installer needing only Windows
+  PowerShell 5.1; builds the same archive byte-for-byte as the developer tools.
+- `tools/bb.py` (build / install / uninstall / status / work / diff / derive),
+  `tools/rwd.py` (`.rwd` reader/writer, verified by rebuilding Data.rwd, Music.rwd and
+  Warchest.rwd byte-for-byte), `tools/bbpatch.py`, `tools/bbdelta.py`,
+  `tools/audit_public.py` (fails on any file or 4+ line run matching game data),
+  `tools/bb_import.py` (full-file overrides -> patches).
 - `tools/validate.py` offline reference checker (2026-10-10): unresolved `*_ids`,
   missing loc keys, missing art paths and duplicate top-level IDs against a
   pristine `Data.rwd` extract, with vanilla's own dead references as baseline.
-  Current `Data/` (155 files): 0 problems.
+  Full build (155 files): 0 problems.
 - Six faction commanders from the design sheet (2026-08-14): Templar
   (Nationalist, Ghalen model), Harbinger (Ceyah, Stonewalker), Warder
   (Council ranged), Rune Lord (Council, Gauri Hammer ram-rider), Mage Lord

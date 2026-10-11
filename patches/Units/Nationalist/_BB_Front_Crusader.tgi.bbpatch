@@ -1,0 +1,76 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
+result sha256=bad11bed794a1cc12ca64cfe7397b730bdb6bc530778dfbba71ad3fb15bed37c bytes=2134
+bom no
+eol lf
+
+@@ 2 -1:ebaedddd +2 @@
++;; Crusader - Nationalist infantry front/flank (design tier 4, Ghalen Mordecai model)
++;; TEXTURE DEBT: silver-only Ghalen skin + own icon (ships with default Ghalen art)
+@@ 4 -1:3ec1f23a +1 @@
++[Unit template=K2NationalistUnit]
+@@ 6 -2:7e6d4ba3 +2 @@ [VFX]
++	IDS = bb_front_nationalist_swordsman
++	name = "#bb_front_nationalist_swordsman_name"
+@@ 9 -13:1ee5d35b +2 @@ [VFX blur_melee0]
++	[View]
++	resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai
+@@ 23 -4:955534a7 +3 @@ [VFX blur_melee0] > [Extrusion blur_melee0] > [ExtrusionPoint]
++	[BodyComponent]
++	health = 360
++	defense = 4
+@@ 28 -68:45571871 +0 @@ [VFX blur_melee0] > [Extrusion blur_melee0] > [ExtrusionPoint]
+@@ 101 -1:8493100b +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation walk]
++
+@@ 105 -1:31609426 +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation jog]
++
+@@ 108 -1:31609426 +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation idle]
++
+@@ 111 -1:31609426 +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 117 -1:8493100b +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation fidget2]
++
+@@ 121 -1:e740a6fa +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation die1]
++
+@@ 125 -1:76a3029a +1 @@ [Unit swordsman] > [CharacterComponent]
++
+@@ 129 -1:76a3029a +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation melee1]
++
+@@ 138 -2:06ec4b9d +2 @@ [Unit swordsman] > [EconomyComponent] > [Cost]
++		gold = 20
++
+@@ 141 -1:7dbac979 +1 @@ [Unit swordsman] > [EconomyComponent] > [Upkeep]
++		iron = 0.5
+@@ 143 -1:2b4c342f +1 @@ [Unit swordsman]
++
+@@ 146 -1:2715cd22 +2 @@ [Unit swordsman] > [ElementComponent]
++	required_structures = base_barracks
++	required_properties = faction_nationalist
+@@ 148 -2:5adfd295 +1 @@ [Unit swordsman] > [ElementComponent]
++
+@@ 152 -1:9c8ae0bd +1 @@ [Unit swordsman] > [MoverComponent]
++		speed_max = 3.5
+@@ 155 -1:31609426 +1 @@ [Unit swordsman] > [MoverComponent] > [TrackInfo]
++
+@@ 158 -1:2b4c342f +1 @@ [Unit swordsman]
++
+@@ 161 -1:31609426 +0 @@ [Unit swordsman] > [PerformerComponent]
+@@ 166 -1:e740a6fa +1 @@ [Unit swordsman] > [PerformerComponent] > [Ability]
++
+@@ 169 -2:cfb83bf6 +2 @@ [Unit swordsman] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++				name = "#ghalen_mordecai_AbilityDefinition_name"
++
+@@ 173 -2:aa76a23f +2 @@ [Unit swordsman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 30
++
+@@ 176 -1:b8143aba +1 @@ [Unit swordsman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [WhenDo]
++				audio_ids = metal_swing3
+@@ 180 -1:2b4c342f +1 @@ [Unit swordsman]
++
+@@ 194 -1:31609426 +1 @@ [Unit swordsman] > [PropertiesComponent] > [Property]
++
+@@ 197 -1:31609426 +1 @@ [Unit swordsman] > [PropertiesComponent] > [Property]
++
+@@ 200 -1:31609426 +1 @@ [Unit swordsman] > [PropertiesComponent] > [Property]
++
+@@ 205 -70:b91d4ae9 +0 @@

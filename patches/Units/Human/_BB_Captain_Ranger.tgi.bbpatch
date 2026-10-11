@@ -1,0 +1,69 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
+ref Units/Fallen/daevai.tgi sha256=21e711aed98127edaba9fc2be09e5b4b6012a3a4ff873d418a3df8a39f311b45
+ref Units/Human/captain.tgi sha256=5801b3433be417fb6822ce75365aba5219b4ef0f337ddd8b3d639e3693ea5977
+result sha256=10ed643d374a70a507be6e16ca42930ebfa386771bf9310934c6fd20b65e0f8e bytes=5276
+bom no
+eol crlf
+
+@@ 1 -0 +30 @@
++
++/******************************************  EBEN BARUCH PORTRAIT  **********************************/
++
++[Thing Template=Portrait]
++{
++	ids = captain_ranger_portrait
++	name = "#eben_baruch_portrait_name"
++
++	[View]
++	{
++		resource_prefix = /Units/Council/EbenBaruch/EbenBaruchPortrait
++
++		[AspectNormal]
++		{
++			skin = /Units/Human/_BB_Captain_Ranger/bb_captain_ranger_portrait.dds
++
+= Units/Fallen/daevai.tgi 15-28
+@@ 6 -1:b7bd4d87 +1 @@ [VFX]
++	IDS = captain_ranger_bow_effect
+@@ 8 -1:664c03ba +1 @@ [VFX ranger_bow_effect]
++	model = /Units/Human/Ranger/RangerBowEffect.NIF
+@@ 14 -1:d786bcdb +1 @@ [VFX]
++	IDS = captain_ranger_arrow_effect
+@@ 16 -1:a336ce9f +1 @@ [VFX ranger_arrow_effect]
++	model = /Units/Human/Ranger/RangerArrowEffect.NIF
+@@ 22 -1:74dbcc14 +1 @@ [VFX]
++	IDS = captain_ranger_sword_effect
+@@ 24 -1:68f11a9c +1 @@ [VFX ranger_sword_effect]
++	model = /Units/Human/Ranger/RangerswordEffect.NIF
+@@ 32 -2:ec14582f +2 @@ [Unit]
++	IDS = bb_captain_ranger
++	name = "#bb_captain_ranger_name"
+@@ 37 -2:4d3b40cd +8 @@ [Unit ranger] > [View]
++
++		resource_prefix = /Units/Human/Ranger/Ranger
++		portrait_ids = captain_ranger_portrait
++		icon = _BB_Captain_Ranger/BB_CaptainRangerIcon.tga
++
++		[AspectNormal]
++		skin = /Units/Human/_BB_Captain_Ranger/bb_captain_ranger.dds
++
+@@ 52 -2:9fdfdcfd +2 @@ [Unit ranger] > [BodyComponent]
++		health = 340
++		defense = 5
+@@ 109 -1:7dc64a97 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation melee1] > [WhenStart]
++			VFX_IDS = captain_ranger_sword_effect
+@@ 129 -1:3c73d969 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++			VFX_IDS = captain_ranger_bow_effect
+@@ 133 -1:2f1f602e +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++			VFX_IDS = captain_ranger_arrow_effect
+@@ 149 -10:dc94480c +0 @@ [Unit ranger]
+@@ 162 -5:519fae71 +3 @@ [Unit ranger] > [ElementComponent]
++		morale_value = 10
++		required_structures = human_center_village
++		primary_minimum_health = .3
+@@ 222 -3:fe19ff30 +0 @@ [Unit ranger] > [PropertiesComponent] > [Property]
+@@ 228 -1:31609426 +1 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++
+@@ 230 -4:f5f7680f +1 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++		property_IDS = captain

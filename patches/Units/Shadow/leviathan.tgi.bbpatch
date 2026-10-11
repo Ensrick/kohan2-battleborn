@@ -1,0 +1,27 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Shadow/leviathan.tgi sha256=d8b316e00bcd433cbacbc2d8e0a65c05c4a2202d53042b37bb0c17c6f4b8f34f
+result sha256=e13c9c734dcefeb81149218bd8284cd43c23e3141722714ebe75d4baa7a88d0e bytes=4498
+bom no
+eol crlf
+
+@@ 129 -0 +1 @@ [Unit leviathan] > [ElementComponent]
++		denizen_type = denizen_type_melee
+@@ 222 -0 +24 @@
++
++[Thing template=K2ShadowMilitia]
++{
++	IDS = militia_leviathan
++	name = "#bb_leviathan_militia_name"
++	
+= Units/Shadow/leviathan.tgi 189-195
++	}
++	
++	[OrganizationComponent]
++	{
++		layout_IDS = company_siege_militia
++		entrenchment_time = 300
++		
++		[Slot]	;; siege
++		element_IDS = leviathan
++	}	
++}

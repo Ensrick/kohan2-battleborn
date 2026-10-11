@@ -1,0 +1,24 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Base/base_quarry.tgi sha256=449217d18a877b708e9489d2efe19827f601da9652a9422993c56386f0ebf966
+result sha256=b470da6d0acfd665a376d6b745ab2cf1d030a8b9cdaadc25ea9f9e8c381e5b43 bytes=632
+bom no
+eol crlf
+
+@@ 4 -2:42931fcc +2 @@ [Thing]
++	IDS = bb_base_center_city
++	name = "#bb_base_center_city_name"
+@@ 12 -2:fbab4526 +2 @@ [Thing base_quarry] > [View]
++	resource_prefix = /Structures/Drauga/DraugaCenter/DraugaCenterCity
++	icon = /UI/Game/ActionButtons/IconUpgrade.png
+@@ 21 -1:9f65af1a +1 @@ [Thing base_quarry] > [ConstructionComponent] > [Upgrade]
++		ids = drauga_center_city
+@@ 24 -1:3e245ee8 +1 @@ [Thing base_quarry] > [ConstructionComponent] > [Upgrade]
++		ids = gauri_center_city
+@@ 27 -1:ce27be78 +1 @@ [Thing base_quarry] > [ConstructionComponent] > [Upgrade]
++		ids = haroun_center_city
+@@ 30 -1:f8f41e66 +1 @@ [Thing base_quarry] > [ConstructionComponent] > [Upgrade]
++		ids = human_center_city
+@@ 33 -1:439948c5 +1 @@ [Thing base_quarry] > [ConstructionComponent] > [Upgrade]
++		ids = shadow_center_city
+@@ 36 -1:923b91e7 +1 @@ [Thing base_quarry] > [ConstructionComponent] > [Upgrade]
++		ids = undead_center_city

@@ -1,0 +1,28 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Undead/bone_golem.tgi sha256=066dbdc7ea77d49f5de658a6b254b7cfec2707c0ba9753119927ec7fb4b6a8ae
+result sha256=94c05972dee772fe7b05b4368abc4cf920d98dca6023aabd79d0ae3cad645cab bytes=5520
+bom no
+eol crlf none*1
+
+@@ 141 -0 +1 @@ [Thing bone_golem] > [ElementComponent]
++		denizen_type = denizen_type_melee
+@@ 269 -0 +19 @@
++
++[Thing Template=K2UndeadMilitia]
++{
++	IDS = militia_bone_golem
++	name = "#bb_bone_golem_militia_name"
++
++	[View]
++	resource_prefix = BoneGolem/BoneGolem
++	banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
++	
++	[OrganizationComponent]
++	{
++		layout_IDS = company_siege_militia
++		entrenchment_time = 300
++		
++		[Slot]	;; siege
++		element_IDS = bone_golem
++	}	
++}

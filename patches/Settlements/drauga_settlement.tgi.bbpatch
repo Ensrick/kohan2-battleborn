@@ -1,0 +1,12 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Settlements/drauga_settlement.tgi sha256=3536a2809c2ebb09d6a1f25af6506bd7b75ec3b853ca92bcbddfef64b8d22be7
+result sha256=5777855831a6b6e2d9a269f973497bcf95b3c872d02046e292e5e36c000b472c bytes=4115
+bom no
+eol crlf none*1
+
+@@ 161 -1:c882f438 +1 @@ [Thing drauga_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 166 -1:a3340197 +1 @@ [Thing drauga_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 171 -1:d4bcd966 +1 @@ [Thing drauga_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7

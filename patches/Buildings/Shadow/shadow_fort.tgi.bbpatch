@@ -1,0 +1,45 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Shadow/shadow_fort.tgi sha256=5a8da6d02cac447ec83cb1e5a3c8ff1126d69dc9ac52aac4bd9cd4d668cc146f
+ref Structures/Shadow/shadow_center_city.tgi sha256=a85c3b9116fc108862fb0b128fc18eb0915f4c86e8f288ae797b0e8c2e54590d
+result sha256=572fbad8011d1cd0c67957b2ad476dda8563bf5423db2f404261fe6637765bd5 bytes=1271
+bom no
+eol lf
+
+@@ 8 -1:bdb1c82f +1 @@ [Thing shadow_fort]
++	[Flags]
+@@ 10 -1:2b4c342f +1 @@ [Thing shadow_fort] > [Flags]
++
+@@ 15 -1:36a9e7f1 +1 @@ [Thing shadow_fort] > [View]
++
+@@ 24 -1:6207db8b +2 @@ [Thing shadow_fort] > [BodyComponent]
++	health = 2800 ;; 1400
++	captureable = true
+@@ 35 -0 +4 @@ [Thing shadow_fort] > [DenizenComponent] > [Organization]
+= Structures/Shadow/shadow_center_city.tgi 38-41
+@@ 36 -0 +4 @@ [Thing shadow_fort] > [DenizenComponent] > [Organization]
++		behavior = MILITIA_DEFENSIVE
++
++		[Organization]
++		organization_ids = militia_leviathan
+@@ 43 -0 +4 @@ [Thing shadow_fort] > [DenizenComponent] > [Inventory]
++		actor_ids = fury
++		count = 24
++
++		[Inventory]
+@@ 44 -1:5705a4c5 +5 @@ [Thing shadow_fort] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 16
++
++		[Inventory]
++		actor_ids = leviathan
++		count = 1
+@@ 46 -1:2b4c342f +1 @@ [Thing shadow_fort]
++
+@@ 49 -1:2b4c342f +1 @@ [Thing shadow_fort] > [DetectionComponent]
++
+@@ 53 -2:88f3b074 +2 @@ [Thing shadow_fort] > [EconomyComponent] > [Cost]
++		gold = 200 ;; 80
++
+@@ 58 -0 +3 @@ [Thing shadow_fort] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 3

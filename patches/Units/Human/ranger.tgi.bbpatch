@@ -1,0 +1,13 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
+result sha256=580b43429f874e0f39fb1ba2ecefc92954a93d583a01597c6558d98314a4064e bytes=4624
+bom no
+eol crlf
+
+@@ 38 -0 +3 @@ [Unit ranger] > [View]
++
++		[AspectNormal]
++		skin = %sbase.dds
+@@ 163 -1:2c71a32e +2 @@ [Unit ranger] > [ElementComponent]
++		required_structures = human_center_town,human_woodmill,human_library
++		denizen_type = denizen_type_ranged

@@ -1,0 +1,34 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Human/human_outpost.tgi sha256=b3fb0585247b6d56c672dbb87dc2af41befebff844925144f6eca5c7c96a76b2
+result sha256=f5e9161eafe48f5a5d4124c7cc486c9c8b182eee7e1bfeb4b3d936d6ce9c138d bytes=1026
+bom no
+eol crlf
+
+@@ 4 -3:84b2dfec +3 @@ [Thing]
++	IDS = bb_human_woodmill_outpost
++	name = "#human_woodmill_name"
++	name_list_ids = namelist_bb_human_woodmill
+@@ 9 -7:a908941b +2 @@ [Thing human_outpost] > [View]
++	resource_prefix = /Structures/Human/HumanWoodmill/humanwoodmill
++	icon = /UI/Game/StructureButtons/WoodmillIcon.png
+@@ 18 -1:f1894ef7 +2 @@ [Thing human_outpost] > [BodyComponent]
++	health = 500
++	captureable = true
+@@ 23 -1:f8cf53b5 +6 @@ [Thing human_outpost] > [ConstructionComponent] > [Upgrade]
++		ids = bb_human_sawmill_outpost
++
++		[Upgrade]
++		ids = bb_human_woodmarket_outpost
++
++		can_raze = true
+@@ 35 -4:c7cf36fe +0 @@ [Thing human_outpost] > [DenizenComponent] > [Organization]
+@@ 47 -4:4025803e +0 @@ [Thing human_outpost] > [DenizenComponent] > [Inventory]
+@@ 52 -1:10623db3 +1 @@ [Thing human_outpost] > [DenizenComponent] > [Inventory]
++		count = 8
+@@ 61 -1:569f89b4 +1 @@ [Thing human_outpost] > [EconomyComponent] > [Cost]
++		gold = 225 ;; from 3 * 75
+@@ 63 -2:148a4923 +2 @@ [Thing human_outpost] > [EconomyComponent] > [Cost]
++		[Production]
++		wood = 4 ;; from 2/3 * 6
+@@ 68 -1:51967120 +1 @@ [Thing human_outpost] > [SupplyComponent]
++	supply_range = 13

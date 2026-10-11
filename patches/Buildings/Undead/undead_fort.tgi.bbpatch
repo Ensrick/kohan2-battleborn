@@ -1,0 +1,30 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Undead/undead_fort.tgi sha256=959516973485b7a719e957165b47ef999c45a773501afe4696a181d92ad120f7
+result sha256=63c8c00b8186dadb3f3a099585f0e3db9ee19cd7b553177ee4cd96871266aaa1 bytes=1102
+bom no
+eol lf
+
+@@ 7 -1:2b4c342f +1 @@ [Thing undead_fort]
++
+@@ 15 -1:36a9e7f1 +1 @@ [Thing undead_fort] > [View] > [TextureSearchPath]
++
+@@ 21 -1:7b43f78e +2 @@ [Thing undead_fort] > [BodyComponent]
++	health = 3000 ;; 1500
++	captureable = true
+@@ 34 -1:31609426 +1 @@ [Thing undead_fort] > [DenizenComponent] > [Organization]
++
+@@ 45 -1:6a800e01 +1 @@ [Thing undead_fort] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 49 -1:6a800e01 +1 @@ [Thing undead_fort] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 51 -1:2b4c342f +1 @@ [Thing undead_fort]
++
+@@ 54 -1:2b4c342f +1 @@ [Thing undead_fort] > [DetectionComponent]
++
+@@ 58 -2:88f3b074 +2 @@ [Thing undead_fort] > [EconomyComponent] > [Cost]
++		gold = 200 ;; 80
++
+@@ 62 -0 +3 @@ [Thing undead_fort] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 3

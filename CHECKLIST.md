@@ -194,7 +194,9 @@ Every unit below is functional but waiting on custom textures:
 - [x] FIXED 2026-08-13: workbench = single source of truth; `Data/` rebuilt as curated superset (95 files), reference-verified. Future promotions: edit workbench, re-copy to `Data/`
 - [x] Duplicate-ID hazard RESOLVED 2026-08-14: all five former stubs are now real units shipped in `Data/`; verified no unit-level ID collisions remain
 - [ ] Prune junk: `workbench/UI/3840/UNFINISHED Game/**/Thumbs.db` (widescreen-owned path, Thumbs.db only), ` - Copy` vanilla backups
-- [x] `tools/collect.ps1` / `tools/deploy.ps1` sync scripts; 3 test maps (`BB_Test_2`, `TEST`, `Trial Map Human`)
+- [x] ~~`tools/collect.ps1` / `tools/deploy.ps1` sync scripts~~ superseded 2026-10-10 by the patch pipeline (`tools/bb.py`, `Install-Battleborn.ps1`); 3 test maps (`BB_Test_2`, `TEST`, `Trial Map Human`)
+- [x] 2026-10-10: repo holds no game files - `patches/` (our lines + references), `.bbdelta` art deltas, `original/`; `Data/` + `workbench/` removed from the repo (kept locally); installs as `Battleborn.rwd` via `addmod`
+- [ ] Licences for held-back art in `private/`: banner icons (stock images `3903683.png`, horse-head vector, `downloadedImage(3).png`, gear vector 22399816), Infantry/Ranger captain portraits + icons (`downloadedImage(8)`/`(10)` layers), high-res Pikeman/Pioneer/Swordsman icons (origin unrecorded). Publish each once its licence is confirmed
 
 ---
 

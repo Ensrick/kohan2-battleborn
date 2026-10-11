@@ -1,0 +1,28 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/maelstrom.tgi sha256=7c7591ff882cdbce2ac0e8f7b647afb51cbf6514595b7339f1a4485fdaebbd75
+result sha256=a5b56ef19e5e92bb3782b2b26367e923d9e0b31f1c4b89c0c726eea2da8fb8ee bytes=5377
+bom no
+eol crlf none*1
+
+@@ 126 -0 +1 @@ [Unit maelstrom] > [ElementComponent]
++	denizen_type = denizen_type_ranged
+@@ 268 -0 +19 @@
++
++[Thing Template=K2GauriMilitia]
++{
++	IDS = militia_maelstrom
++	name = "#bb_maelstrom_militia_name"
++	
++	[View]
++	resource_prefix = Maelstrom/Maelstrom
++	banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
++	
++	[OrganizationComponent]
++	{
++		layout_IDS = company_siege_militia
++		entrenchment_time = 300
++		
++		[Slot]	;; siege
++		element_IDS = maelstrom
++	}	
++}

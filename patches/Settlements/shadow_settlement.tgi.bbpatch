@@ -1,0 +1,12 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Settlements/shadow_settlement.tgi sha256=d0a4749b3f4611afb7c5e938cd7322276c1d554abb93cb83ce57978eecd18bad
+result sha256=bb8c27520669849b5a77fa0621e445035c03e67ce3c2c48082c70888645b1531 bytes=3737
+bom no
+eol crlf
+
+@@ 143 -1:c882f438 +1 @@ [Thing shadow_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 148 -1:a3340197 +1 @@ [Thing shadow_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 153 -1:d4bcd966 +1 @@ [Thing shadow_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7

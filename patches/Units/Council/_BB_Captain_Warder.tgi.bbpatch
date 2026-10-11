@@ -1,0 +1,92 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
+result sha256=d43bc3594c6d19af98f9417e620e219d3f01d809366de26b6db1a10a4f751036 bytes=3560
+bom no
+eol lf
+
+@@ 2 -1:f244a0e2 +3 @@
++;; Warder - Council ranged captain (design tier 6, from Ranger; AW Sharpshooter art intended)
++;; TEXTURE DEBT: AW Sharpshooter-style skin + own icon + portrait (ships with default Ranger art)
++;; Reuses the captain_ranger_* VFX defined in Units/Human/_BB_Captain_Ranger.tgi
+@@ 4 -1:0a4654aa +1 @@
++[Unit template=K2CouncilUnit]
+@@ 6 -5:ca2b5868 +2 @@ [VFX]
++	IDS = bb_captain_council_ranger
++	name = "#bb_captain_council_ranger_name"
+@@ 12 -23:439f7bc1 +0 @@
+@@ 37 -2:4d3b40cd +2 @@ [Unit ranger] > [View]
++		resource_prefix = /Units/Human/Ranger/Ranger
++
+@@ 51 -18:06c4fc0d +2 @@ [Unit ranger] > [BodyComponent]
++	health = 380
++	defense = 5
+@@ 75 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation walk]
++
+@@ 79 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation jog]
++
+@@ 82 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idle]
++
+@@ 85 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 88 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idlerange]
++
+@@ 94 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation fidget2]
++
+@@ 98 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation die1]
++
+@@ 102 -1:76a3029a +1 @@ [Unit ranger] > [CharacterComponent]
++
+@@ 109 -1:7dc64a97 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation melee1] > [WhenStart]
++			VFX_IDS = captain_ranger_sword_effect
+@@ 111 -2:5b89adf6 +2 @@ [Unit ranger] > [CharacterComponent] > [Animation melee1] > [WhenStart]
++		}
++
+@@ 117 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range]
++
+@@ 122 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++
+@@ 129 -1:3c73d969 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++			VFX_IDS = captain_ranger_bow_effect
+@@ 133 -1:2f1f602e +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++			VFX_IDS = captain_ranger_arrow_effect
+@@ 141 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent]
++
+@@ 147 -1:6f0fdbb0 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation]
++		IDS = idlecast
+@@ 153 -2:25746249 +2 @@ [Unit ranger] > [EconomyComponent] > [Cost]
++		gold = 30 ;; magic-ranged premium
++
+@@ 156 -1:187177e6 +1 @@ [Unit ranger] > [EconomyComponent] > [Upkeep]
++		iron = 1
+@@ 159 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 162 -2:c88d3877 +4 @@ [Unit ranger] > [ElementComponent]
++		morale_value = 12
++		required_structures = base_library
++		required_properties = faction_council, good
++	}
+@@ 165 -4:72fb9993 +0 @@ [Unit ranger] > [ElementComponent]
+@@ 174 -1:31609426 +1 @@ [Unit ranger] > [MoverComponent] > [TrackInfo]
++
+@@ 177 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 181 -1:36a9e7f1 +1 @@ [Unit ranger] > [PerformerComponent]
++
+@@ 188 -1:8493100b +1 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 191 -2:9468c58e +2 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 30
++
+@@ 197 -1:31609426 +1 @@ [Unit ranger] > [PerformerComponent]
++
+@@ 210 -2:fa9e0729 +2 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 42
++
+@@ 217 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 224 -2:21764c0a +2 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++		property_IDS = ranged
++
+@@ 227 -8:4819c5a6 +2 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++		property_IDS = captain
++

@@ -22,9 +22,8 @@ SOFTWARE.
 
 ---
 
-NOTICE: This license covers the original work in this repository (scripts,
-documentation, research files, and authored art sources). Modified game-data
-files derived from Kohan II: Kings of War remain the property of TimeGate
-Studios and its successors and are included solely to make this fan
-modification function. This repository intentionally contains no unmodified
-game data, game archives, or executables.
+NOTICE: This repository contains no data from Kohan II: Kings of War. Battleborn's
+patches and deltas describe changes to the player's own copy of the game; they are
+applied on the player's machine to files from the game's Data.rwd, which remain the
+property of TimeGate Studios and its successors. The MIT license above covers this
+repository's own content only and grants nothing in the game itself.

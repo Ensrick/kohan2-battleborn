@@ -1,0 +1,101 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
+result sha256=2780d03034c5456ed2ba23b30227a6926f1d1874506cc66f1554c4cedf6adaa8 bytes=4330
+bom no
+eol lf
+
+@@ 1 -0 +4 @@
++
++;; Ranger Sergeant - budget ranged captain (design: Aethyn Farhyd model, gold armor)
++;; TEXTURE DEBT: gold-armor recolor of AethanFarhydBase.dds + own icon
++
+@@ 3 -3:9407510b +3 @@ [Unit]
++	IDS = bb_captain_bowman
++	name = "#bb_captain_bowman_name"
++
+@@ 8 -1:1da5a15f +3 @@ [Unit bowman] > [View]
++		resource_prefix = Bowman/Bowman
++		portrait_ids = aethan_farhyd_portrait
++		icon = /Units/Nationalist/AethanFarhyd/AethanFarhydIcon.tga
+@@ 11 -2:0fe6994d +2 @@ [Unit bowman] > [View] > [AspectNormal]
++		skin = /Units/Nationalist/AethanFarhyd/AethanFarhydBase.dds
++
+@@ 30 -3:ef530d91 +3 @@ [Unit bowman] > [BodyComponent]
++	health = 240 ;; bowman 180
++	defense = 3 ;; bowman 2
++
+@@ 38 -1:8493100b +1 @@ [Unit bowman] > [CharacterComponent] > [Animation walk]
++
+@@ 42 -1:31609426 +1 @@ [Unit bowman] > [CharacterComponent] > [Animation jog]
++
+@@ 45 -1:31609426 +1 @@ [Unit bowman] > [CharacterComponent] > [Animation idle]
++
+@@ 60 -1:31609426 +1 @@ [Unit bowman] > [CharacterComponent]
++
+@@ 64 -1:8493100b +1 @@ [Unit bowman] > [CharacterComponent] > [Animation idlerange]
++
+@@ 70 -1:8493100b +1 @@ [Unit bowman] > [CharacterComponent] > [Animation fidget2]
++
+@@ 74 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation die1]
++
+@@ 82 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation die2]
++
+@@ 86 -1:76a3029a +1 @@ [Unit bowman] > [CharacterComponent]
++
+@@ 101 -2:5b89adf6 +2 @@ [Unit bowman] > [CharacterComponent] > [Animation melee1] > [WhenEnd]
++		}
++
+@@ 107 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation range]
++
+@@ 113 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation range] > [WhenDoAtTime]
++
+@@ 119 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation range] > [WhenDoAtTime]
++
+@@ 125 -1:31609426 +1 @@ [Unit bowman] > [CharacterComponent]
++
+@@ 133 -2:6891197e +2 @@ [Unit bowman] > [EconomyComponent] > [Cost]
++		gold = 12 ;; bowman 6
++
+@@ 136 -1:94edaef9 +1 @@ [Unit bowman] > [EconomyComponent] > [Upkeep]
++		wood = 1 ;; bowman 0.5
+@@ 138 -1:2b4c342f +1 @@ [Unit bowman]
++
+@@ 140 -4:af74ae48 +4 @@ [Unit bowman] > [ElementComponent]
++	morale_value = 10 ;; bowman 9
++	required_structures = human_woodmill,human_blacksmith
++	group_priority = 2
++
+@@ 146 -2:3e4755a1 +2 @@ [Unit bowman] > [MoverComponent]
++		speed_max = 3 ;; bowman 2.5
++
+@@ 149 -1:31609426 +1 @@ [Unit bowman] > [MoverComponent] > [TrackInfo]
++
+@@ 152 -1:2b4c342f +1 @@ [Unit bowman]
++
+@@ 160 -1:8493100b +1 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 163 -2:818ad49e +2 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 18 ;; bowman 14
++
+@@ 179 -1:568d3980 +1 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 182 -2:aa76a23f +2 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 26 ;; bowman 20
++
+@@ 198 -1:8493100b +1 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 201 -2:aa76a23f +2 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 26 ;; bowman 20
++
+@@ 207 -1:31609426 +1 @@ [Unit bowman] > [PerformerComponent]
++
+@@ 211 -1:31609426 +1 @@ [Unit bowman]
++
+@@ 218 -1:f7f3b281 +1 @@ [Unit bowman] > [PropertiesComponent] > [Property]
++		property_IDS = captain
+@@ 221 -2:861863ca +2 @@ [Unit bowman] > [PropertiesComponent] > [Property]
++		property_IDS = swift
++
+@@ 225 -1:31609426 +1 @@ [Unit bowman] > [PropertiesComponent] > [Property]
++
+@@ 230 -70:f5b26eee +0 @@

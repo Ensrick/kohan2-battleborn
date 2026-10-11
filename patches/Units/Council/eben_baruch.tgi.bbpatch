@@ -1,0 +1,19 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Council/eben_baruch.tgi sha256=1a6644ecc190ced28c82d737fe16ac71e27f1116f2f4d4bf1a7cd00eec69e7dc
+ref Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
+result sha256=4834cdd3f2253c53346a9af1177c6285916302ca82b9f40a7429d8563755a191 bytes=5583
+bom no
+eol crlf
+
+@@ 15 -0 +2 @@ [Thing Eben_Baruch_portrait] > [View] > [AspectNormal]
++			skin = %sbase.dds
++
+@@ 42 -0 +3 @@ [Thing eben_baruch] > [View]
++
++		[AspectNormal]
++		skin = EbenBaruch/EbenBaruchBase.dds
+@@ 158 -1:e3b0c442 +1 @@ [Thing eben_baruch] > [CharacterComponent] > [Animation range] > [WhenStart]
++			
+@@ 163 -0 +8 @@ [Thing eben_baruch] > [CharacterComponent] > [Animation range] > [WhenDo]
++
+= Units/Human/ranger.tgi 128-134

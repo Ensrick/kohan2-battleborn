@@ -1,0 +1,33 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Drauga/drauga_fort.tgi sha256=9027f3c0056a840903f00010d8651c885c00824c1d37e643ef21f3dab7f0481a
+ref Buildings/LairsTech/encampment.tgi sha256=536ed3864ebbeaa8321201bb10f402d1cef8671f2c5b33580daa7ad3364418c0
+result sha256=f6c25a23e6c913a844c70cc139d70d31c859dcce52b3e73e8ea81d23827ac3ff bytes=1229
+bom no
+eol lf
+
+@@ 7 -1:2b4c342f +1 @@ [Thing drauga_fort]
++
+@@ 12 -1:31609426 +1 @@ [Thing drauga_fort] > [View]
++
+@@ 21 -1:4db09686 +2 @@ [Thing drauga_fort] > [BodyComponent]
++	health = 3600 ;; 1800
++	captureable = true
+@@ 39 -0 +4 @@ [Thing drauga_fort] > [DenizenComponent] > [Organization]
+= Buildings/LairsTech/encampment.tgi 38-41
+@@ 45 -1:6a800e01 +1 @@ [Thing drauga_fort] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 49 -1:6a800e01 +5 @@ [Thing drauga_fort] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
++
++		[Inventory]
++		actor_ids = berserker
++		count = 18
+@@ 54 -1:2b4c342f +1 @@ [Thing drauga_fort] > [DetectionComponent]
++
+@@ 58 -2:88f3b074 +2 @@ [Thing drauga_fort] > [EconomyComponent] > [Cost]
++		gold = 200 ;; 80
++
+@@ 62 -0 +3 @@ [Thing drauga_fort] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 3

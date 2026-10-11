@@ -1,0 +1,75 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/warden.tgi sha256=3800790451e276a3a526afecb9d1cea189ef5f9887092c069688a13b921b988d
+ref Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
+result sha256=931dca9f456f31dd83024514b06dfb5765ee54dfbec95a956d06b1732194fee8 bytes=2120
+bom no
+eol lf
+
+@@ 2 -1:1cdd1f13 +4 @@
++;; Warpriest - Nationalist infantry support (design tier 5, Ghalen Mordecai model)
++;; TEXTURE DEBT: silver w/ gold trim Ghalen skin + own icon (ships with default Ghalen art)
++
++[Unit template=K2NationalistUnit]
+@@ 4 -3:96a7350e +3 @@ [Unit]
++	IDS = bb_support_nationalist_swordsman
++	name = "#bb_support_nationalist_swordsman_name"
++
+@@ 8 -1:8b880b3c +1 @@ [Unit warden] > [View]
++	resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai
+@@ 11 -18:b803df37 +2 @@ [Unit warden] > [BodyComponent]
++	health = 380
++	defense = 4
+@@ 34 -2:1dbe00d4 +2 @@ [Unit warden] > [CharacterComponent] > [Animation walk]
++		walk_distance = 1.7
++
+@@ 38 -2:f110a11a +2 @@ [Unit warden] > [CharacterComponent] > [Animation jog]
++		walk_distance = 2.5
++
+@@ 42 -1:31609426 +1 @@ [Unit warden] > [CharacterComponent] > [Animation idle]
++
+@@ 45 -1:31609426 +1 @@ [Unit warden] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 57 -1:956f6764 +1 @@ [Unit warden] > [CharacterComponent] > [Animation die1] > [WhenStart]
++			audio_ids = swordsman_death
+@@ 59 -1:8493100b +1 @@ [Unit warden] > [CharacterComponent]
++
+@@ 66 -8:0eea5d51 +1 @@ [Unit warden] > [CharacterComponent] > [Animation melee2]
++		key_ratio = 0.55
+@@ 79 -2:28c2ce40 +2 @@ [Unit warden] > [EconomyComponent] > [Cost]
++		gold = 24
++
+@@ 82 -2:43ae724b +1 @@ [Unit warden] > [EconomyComponent] > [Upkeep]
++		iron = 0.5
+@@ 85 -1:2b4c342f +1 @@ [Unit warden]
++
+@@ 87 -3:65825bc7 +4 @@ [Unit warden] > [ElementComponent]
++	morale_value = 12
++	required_structures = base_barracks,base_shrine
++	required_properties = faction_nationalist
++	denizen_type = denizen_type_melee
+@@ 91 -4:ad55cb6d +0 @@ [Unit warden] > [ElementComponent]
+@@ 98 -1:31609426 +1 @@ [Unit warden] > [MoverComponent]
++
+@@ 100 -1:31609426 +1 @@ [Unit warden] > [MoverComponent] > [TrackInfo]
++
+@@ 103 -1:2b4c342f +1 @@ [Unit warden]
++
+@@ 106 -2:fe06042d +0 @@ [Unit warden] > [PerformerComponent]
+@@ 113 -1:96daa47a +1 @@ [Unit warden] > [PerformerComponent] > [Ability]
++			[AbilityDefinition Template=K2MeleeAttack]
+@@ 115 -3:c849e196 +2 @@ [Unit warden] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++				name = "#ghalen_mordecai_AbilityDefinition_name"
++
+@@ 119 -3:b62effe0 +3 @@ [Unit warden] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				damage_type_IDS = melee
++				amount = 34
++
+@@ 123 -1:f7236498 +1 @@ [Unit warden] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [WhenDo]
++				audio_ids = metal_swing3
+@@ 127 -1:31609426 +1 @@ [Unit warden]
++
+@@ 131 -1:8764cd8a +7 @@ [Unit warden] > [PropertiesComponent] > [Property]
+= Units/Human/swordsman.tgi 184-190
+@@ 138 -1:31609426 +1 @@ [Unit warden] > [PropertiesComponent] > [Property]
++
+@@ 141 -3:7c9aad2c +0 @@ [Unit warden] > [PropertiesComponent] > [Property]

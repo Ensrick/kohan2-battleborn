@@ -1,0 +1,10 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/forge.tgi sha256=3dda31a07268350526675df4513f9d06d0abe4e42e26614e263129ec0cfbf174
+result sha256=a1b8e30302da396b8ed05a3e127b3d97db13c79a9869660cc223c241f8e6b0ab bytes=4990
+bom no
+eol crlf*25 lf*1 crlf*258
+
+@@ 24 -0 +3 @@ [Unit forge] > [BuilderComponent] > [BuildActor]
++
++		[BuildActor]
++		actor_ids = bb_gauri_woodmill_outpost

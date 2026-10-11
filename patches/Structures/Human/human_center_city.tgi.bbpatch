@@ -1,0 +1,22 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Human/human_center_city.tgi sha256=d94ec777f1d5cb66495d7f0004210323bb81b582aa880152ec49732938eadaec
+ref Buildings/LairsTech/mage_tower.tgi sha256=7332e386752d506adc44841c654cd9cb139ccc499a99e2c28c4b2eaa7fa5a584
+result sha256=922a0b5b0b238fa7c7f80dbcc8b61da6b95094ba20b9ab23e42fe228a2e0e511 bytes=1231
+bom no
+eol crlf
+
+@@ 16 -1:b3fb7a49 +1 @@ [Thing human_center_city] > [BodyComponent]
++	health = 10400 ;; 5200
+@@ 41 -0 +4 @@ [Thing human_center_city] > [DenizenComponent] > [Organization]
+= Buildings/LairsTech/mage_tower.tgi 41-44
+@@ 47 -1:6a800e01 +1 @@ [Thing human_center_city] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 51 -0 +4 @@ [Thing human_center_city] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
++
++		[Inventory]
++		actor_ids = swordsman
+@@ 57 -1:8bfe1eff +1 @@ [Thing human_center_city] > [EconomyComponent] > [Cost]
++		gold = 1200 ;; 240
+@@ 61 -1:4a3e346c +1 @@ [Thing human_center_city] > [EconomyComponent] > [Production]
++		unit_limit_provided = 9 ;; 4

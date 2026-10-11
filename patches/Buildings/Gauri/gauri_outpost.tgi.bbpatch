@@ -1,0 +1,30 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Gauri/gauri_outpost.tgi sha256=78bd8d3b8269bd31f9cf5b09df05befcf50fe890169d89a47b05cdc0b3c962c3
+result sha256=2cc19bdd0dd21759b32e45a96364e03256fda746a48eb25a4f0733554ed879f9 bytes=1085
+bom no
+eol lf
+
+@@ 7 -1:2b4c342f +1 @@ [Thing gauri_outpost]
++
+@@ 12 -1:36a9e7f1 +1 @@ [Thing gauri_outpost] > [View]
++
+@@ 18 -1:7b43f78e +2 @@ [Thing gauri_outpost] > [BodyComponent]
++	health = 3000 ;; 1500
++	captureable = true
+@@ 29 -1:31609426 +1 @@ [Thing gauri_outpost] > [DenizenComponent]
++
+@@ 45 -1:31609426 +1 @@ [Thing gauri_outpost] > [DenizenComponent] > [Inventory]
++
+@@ 48 -1:10623db3 +1 @@ [Thing gauri_outpost] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 4
+@@ 52 -1:10623db3 +1 @@ [Thing gauri_outpost] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 4
+@@ 54 -1:2b4c342f +1 @@ [Thing gauri_outpost]
++
+@@ 61 -2:17f7bad0 +2 @@ [Thing gauri_outpost] > [EconomyComponent] > [Cost]
++		gold = 250 ;; 100
++
+@@ 65 -0 +3 @@ [Thing gauri_outpost] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 2

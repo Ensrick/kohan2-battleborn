@@ -1,0 +1,14 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Haroun/haroun_center_town.tgi sha256=b9e60efa3bb9b318cee66afead93cd16180cd546f6379fa275c9c9a0c7d1e731
+result sha256=45ea9f7b661406a9bf0477de9fd07238b5a68bccb5d2163b18b1dbe5dea8b98a bytes=969
+bom no
+eol crlf
+
+@@ 16 -1:d02d29ea +1 @@ [Thing haroun_center_town] > [BodyComponent]
++	health = 4200 ;; 2600
+@@ 38 -1:6a800e01 +1 @@ [Thing haroun_center_town] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 42 -1:9ecc2978 +1 @@ [Thing haroun_center_town] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 6
+@@ 53 -1:7352af9a +1 @@ [Thing haroun_center_town] > [EconomyComponent] > [Production]
++		unit_limit_provided = 8 ;; 3

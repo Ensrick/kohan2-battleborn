@@ -1,0 +1,25 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Gauri/gauri_center_city.tgi sha256=3f56f86fdb0dc449968b336ffd734f426929491e992912083f7a9cfa9b4295e9
+result sha256=1237dd7938c83899302cfdb37cc770408fda0b589cb533cb88ed9a6f42e9bc0c bytes=1283
+bom no
+eol crlf
+
+@@ 16 -1:b13e0ae4 +1 @@ [Thing gauri_center_city] > [BodyComponent]
++	health = 12000 ;; 6000
+@@ 40 -0 +4 @@ [Thing gauri_center_city] > [DenizenComponent] > [Organization]
++		[Organization]
++		organization_ids = militia_juggernaut
++		behavior = MILITIA_DEFENSIVE
++
+@@ 46 -1:6a800e01 +1 @@ [Thing gauri_center_city] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 50 -1:6a800e01 +5 @@ [Thing gauri_center_city] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
++
++		[Inventory]
++		actor_ids = juggernaut
++		count = 1
+@@ 59 -1:8f7389c7 +1 @@ [Thing gauri_center_city] > [EconomyComponent] > [Cost]
++		gold = 1100 ;; 220
+@@ 66 -1:4a3e346c +1 @@ [Thing gauri_center_city] > [EconomyComponent] > [Production]
++		unit_limit_provided = 9 ;; 4

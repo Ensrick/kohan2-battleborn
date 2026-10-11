@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/sorceress.tgi sha256=633145b0ea70a3365e2bc47582eb663b4271a0a416b24f110efc04ac93dd8d71
+result sha256=d160b59116de34f6c4faa23f33dd35e94012cd7be1e93377ad30e137229ef359 bytes=2699
+bom no
+eol crlf
+
+@@ 81 -1:3787246b +1 @@ [Unit sorceress] > [ElementComponent]
++	required_structures = human_center_town,human_library

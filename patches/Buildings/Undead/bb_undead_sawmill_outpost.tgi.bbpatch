@@ -1,0 +1,38 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Undead/undead_fort.tgi sha256=959516973485b7a719e957165b47ef999c45a773501afe4696a181d92ad120f7
+result sha256=990df3d9cdfb1171d3984436dbf1e75c7a7234991f3347724065f9a6f42a0abf bytes=1028
+bom no
+eol crlf
+
+@@ 4 -4:6131ee16 +4 @@ [Thing]
++	IDS = bb_undead_sawmill_outpost
++	name = "#undead_sawmill_name"
++	name_list_ids = namelist_bb_undead_sawmill
++
+@@ 10 -2:ca906e19 +2 @@ [Thing undead_fort] > [View]
++		resource_prefix = /Structures/Undead/Undeadsawmill/undeadsawmill
++		icon = /UI/Game/StructureButtons/SawmillIcon.png
+@@ 14 -4:557b591a +1 @@ [Thing undead_fort] > [View] > [TextureSearchPath]
++		path = /Structures/Undead/UndeadWoodmill
+@@ 21 -1:7b43f78e +7 @@ [Thing undead_fort] > [BodyComponent]
++	health = 600
++	captureable = true
++
++	[ConstructionComponent]
++	{
++		can_raze = true
++	}
+@@ 32 -4:557b5574 +0 @@ [Thing undead_fort] > [DenizenComponent] > [Organization]
+@@ 44 -4:6578297d +0 @@ [Thing undead_fort] > [DenizenComponent] > [Inventory]
+@@ 51 -1:2b4c342f +1 @@ [Thing undead_fort]
++
+@@ 53 -2:3362cb6c +2 @@ [Thing undead_fort] > [DetectionComponent]
++	detection_range = 26
++
+@@ 58 -4:7060c3e0 +4 @@ [Thing undead_fort] > [EconomyComponent] > [Cost]
++		gold = 240 ;; from 3 * 80
++
++		[Production]
++		wood = 7 ;; from 2/3 * 11, rounded down
+@@ 65 -1:c5b21db3 +1 @@ [Thing undead_fort] > [SupplyComponent]
++	supply_range = 13

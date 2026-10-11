@@ -1,0 +1,34 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Drauga/drauga_outpost.tgi sha256=8a99ee3330ba93684d8f2c98c4c86ae7608861464cb0d0fe54b9012f6ad2ca01
+ref Structures/Drauga/drauga_woodexport.tgi sha256=23bf3a614df84dbecfbb893980b030b948ac7ef64ecca762a36b24b05701d226
+result sha256=370eefdd03abfa45d74cc1bf7b91f5b7be8e872642b5fa123dcb8a54bc181487 bytes=1068
+bom no
+eol crlf
+
+@@ 4 -4:cfdab15c +4 @@ [Thing]
++	IDS = bb_drauga_woodmarket_outpost
++	name = "#drauga_woodexport_name"
++	name_list_ids = namelist_bb_drauga_woodmarket
++
+@@ 10 -5:8d12d0b7 +5 @@ [Thing drauga_outpost] > [View]
++		resource_prefix = /Structures/Drauga/DraugaWoodExport/draugawoodexport
+= Structures/Drauga/drauga_woodexport.tgi 10-13
+@@ 18 -1:dbf01548 +2 @@ [Thing drauga_outpost] > [BodyComponent]
++	health = 750
++	captureable = true
+@@ 22 -2:875ac0fc +1 @@ [Thing drauga_outpost] > [ConstructionComponent]
++		can_raze = true
+@@ 28 -1:050c9335 +1 @@ [Thing drauga_outpost] > [DenizenComponent]
++		guard_range = 24
+@@ 33 -4:36578f19 +0 @@ [Thing drauga_outpost] > [DenizenComponent] > [Organization]
+@@ 47 -4:5bbdcc98 +0 @@ [Thing drauga_outpost] > [DenizenComponent] > [Inventory]
+@@ 52 -1:10623db3 +1 @@ [Thing drauga_outpost] > [DenizenComponent] > [Inventory]
++		count = 8
+@@ 61 -4:5184070b +5 @@ [Thing drauga_outpost] > [EconomyComponent] > [Cost]
++		gold = 285 ;; from 3 * 95
++
++		[Production]
++		gold = 10 ;; from 2/3 * 15
++		wood = 3 ;; from 2/3 * 5, rounded down
+@@ 68 -1:51967120 +1 @@ [Thing drauga_outpost] > [SupplyComponent]
++	supply_range = 13

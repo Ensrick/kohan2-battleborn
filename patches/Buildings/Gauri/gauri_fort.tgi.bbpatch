@@ -1,0 +1,41 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Gauri/gauri_fort.tgi sha256=dfa70cf6b3a5342b58eaddd884bd5ab62c969a4809a4b17e181ab80cbf3aa4b1
+result sha256=42489f23ba0c83e8db4497f58279c8b73fa61832461a128992b0f582d42d97fd bytes=1212
+bom no
+eol lf
+
+@@ 12 -1:36a9e7f1 +1 @@ [Thing gauri_fort] > [View]
++
+@@ 21 -1:d9703022 +2 @@ [Thing gauri_fort] > [BodyComponent]
++	health = 4500 ;; 2250
++	captureable = true
+@@ 26 -1:31609426 +1 @@ [Thing gauri_fort] > [DenizenComponent]
++
+@@ 30 -1:31609426 +1 @@ [Thing gauri_fort] > [DenizenComponent] > [Organization]
++
+@@ 34 -1:31609426 +1 @@ [Thing gauri_fort] > [DenizenComponent] > [Organization]
++
+@@ 38 -0 +4 @@ [Thing gauri_fort] > [DenizenComponent] > [Organization]
++
++		[Organization]
++		organization_ids = militia_juggernaut
++		behavior = MILITIA_DEFENSIVE
+@@ 45 -1:6a800e01 +1 @@ [Thing gauri_fort] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 49 -1:6a800e01 +5 @@ [Thing gauri_fort] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
++
++		[Inventory]
++		actor_ids = juggernaut
++		count = 1
+@@ 51 -1:2b4c342f +1 @@ [Thing gauri_fort]
++
+@@ 54 -1:2b4c342f +1 @@ [Thing gauri_fort] > [DetectionComponent]
++
+@@ 58 -2:17f7bad0 +2 @@ [Thing gauri_fort] > [EconomyComponent] > [Cost]
++		gold = 250 ;; 100
++
+@@ 62 -0 +3 @@ [Thing gauri_fort] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 3

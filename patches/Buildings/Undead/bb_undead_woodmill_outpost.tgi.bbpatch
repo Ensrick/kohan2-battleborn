@@ -1,0 +1,43 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Undead/undead_outpost.tgi sha256=53f173787dea1b5d779ee9233a67e7c96551da4634617be8b9b79d0e8ce35bf2
+result sha256=d60154a8efe69816a27a1117dc932e5a6ad2a1d0c33eafa8db02b4472276b8b1 bytes=1111
+bom no
+eol crlf
+
+@@ 4 -3:8919834f +3 @@ [Thing]
++	IDS = bb_undead_woodmill_outpost
++	name = "#undead_woodmill_name"
++	name_list_ids = namelist_bb_undead_woodmill
+@@ 8 -1:2b4c342f +0 @@ [Thing undead_outpost]
+@@ 11 -2:f7a6adc4 +2 @@ [Thing undead_outpost] > [View]
++		resource_prefix = /Structures/Undead/UndeadWoodmill/undeadwoodmill
++		icon = /UI/Game/StructureButtons/WoodmillIcon.png
+@@ 16 -3:e5bff961 +0 @@ [Thing undead_outpost] > [View] > [TextureSearchPath]
+@@ 22 -1:c720f9dc +2 @@ [Thing undead_outpost] > [BodyComponent]
++	health = 400
++	captureable = true
+@@ 27 -1:79c37504 +6 @@ [Thing undead_outpost] > [ConstructionComponent] > [Upgrade]
++		ids = bb_undead_sawmill_outpost
++
++		[Upgrade]
++		ids = bb_undead_woodmarket_outpost
++
++		can_raze = true
+@@ 32 -1:050c9335 +1 @@ [Thing undead_outpost] > [DenizenComponent]
++		guard_range = 24
+@@ 38 -4:fe82e906 +0 @@ [Thing undead_outpost] > [DenizenComponent] > [Organization]
+@@ 51 -4:de35e8c4 +0 @@ [Thing undead_outpost] > [DenizenComponent] > [Inventory]
+@@ 56 -1:10623db3 +1 @@ [Thing undead_outpost] > [DenizenComponent] > [Inventory]
++		count = 8
+@@ 58 -1:2b4c342f +1 @@ [Thing undead_outpost]
++
+@@ 60 -2:e2258087 +2 @@ [Thing undead_outpost] > [DetectionComponent]
++	detection_range = 26
++
+@@ 65 -4:5184070b +4 @@ [Thing undead_outpost] > [EconomyComponent] > [Cost]
++		gold = 180 ;; from 3 * 60
++
++		[Production]
++		wood = 4 ;; from 2/3 * 6
+@@ 72 -1:5d33a110 +1 @@ [Thing undead_outpost] > [SupplyComponent]
++	supply_range = 13

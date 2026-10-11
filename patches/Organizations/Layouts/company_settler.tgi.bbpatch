@@ -1,0 +1,42 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Organizations/Layouts/company_settler.tgi sha256=0aa69dd06b2b42024ffef48fd8d6bafd36deb7e87773d5b8d72cd341d6dcfc86
+result sha256=929c9cd94a7ed9d0388df79d0528522f1823e3f9ebe0885e672fbee24035beac bytes=3292
+bom no
+eol crlf
+
+@@ 13 -0 +6 @@ [OrganizationLayout company_settler] > [Slot]
++	property_IDS = bb_settler_flank
++	locked = true
++	number = 2
++	name = "#bb_company_settler_flank_Slot_name"
++
++	[Slot template=LayoutSlot]
+@@ 20 -0 +1 @@ [OrganizationLayout company_settler] > [Slot]
++	locked = true
+@@ 41 -0 +8 @@ [OrganizationLayout company_settler] > [Formation] > [Position]
++
++		[Position template=FormationPosition]
++		property_IDS = bb_settler_flank
++		offset = +4.5,0
++		
++		[Position template=FormationPosition]
++		property_IDS = bb_settler_flank
++		offset = -4.5,0
+@@ 75 -0 +8 @@ [OrganizationLayout company_settler] > [Formation] > [Position]
++		property_IDS = bb_settler_flank
++		offset = +4,0
++		
++		[Position template=FormationPosition]
++		property_IDS = bb_settler_flank
++		offset = -4,0
++
++		[Position template=FormationPosition]
+@@ 107 -0 +8 @@ [OrganizationLayout company_settler] > [Formation] > [Position]
++		property_IDS = bb_settler_flank
++		offset = +1.25,+3
++		
++		[Position template=FormationPosition]
++		property_IDS = bb_settler_flank
++		offset = -1.25,-3
++
++		[Position template=FormationPosition]

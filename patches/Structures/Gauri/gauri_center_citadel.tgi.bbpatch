@@ -1,0 +1,33 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Gauri/gauri_center_citadel.tgi sha256=32cea78c6913fe8f66522d0555d436da240f0dd66ca03a7470bf2d2a4d1af206
+result sha256=d6303d0dbe9301d49e11542826c259e62501e3265b301f4dde253f8614a4b02e bytes=1377
+bom no
+eol crlf
+
+@@ 16 -1:5e2c97af +1 @@ [Thing gauri_center_citadel] > [BodyComponent]
++	health = 16000 ;; 7500
+@@ 34 -0 +8 @@ [Thing gauri_center_citadel] > [DenizenComponent] > [Organization]
++		[Organization]
++		organization_ids = militia_juggernaut
++		behavior = MILITIA_DEFENSIVE
++
++		[Organization]
++		organization_ids = militia_maelstrom
++		behavior = MILITIA_OFFENSIVE
++
+@@ 40 -1:6a800e01 +1 @@ [Thing gauri_center_citadel] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 44 -1:81e56d1a +9 @@ [Thing gauri_center_citadel] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
++
++		[Inventory]
++		actor_ids = juggernaut
++		count = 1
++
++		[Inventory]
++		actor_ids = maelstrom
++		count = 1
+@@ 53 -1:459e717b +1 @@ [Thing gauri_center_citadel] > [EconomyComponent] > [Cost]
++		gold = 1800 ;; 330
+@@ 61 -1:d96b082b +1 @@ [Thing gauri_center_citadel] > [EconomyComponent] > [Production]
++		unit_limit_provided = 10 ;; 5

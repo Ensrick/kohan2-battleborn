@@ -1,0 +1,16 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Shadow/shadow_center_town.tgi sha256=484fddd0b5024169d0e53eb4826cb231f881038b2466ca3e380759ab2de6828a
+result sha256=118fbff779f0e9c203d3f9323f4ba3e8e32f84023b2b9e022747dddb91e502a4 bytes=1124
+bom no
+eol crlf
+
+@@ 17 -1:15aa3c68 +1 @@ [Thing shadow_center_town] > [BodyComponent]
++	health = 5600 ;; 2800
+@@ 45 -1:9ecc2978 +1 @@ [Thing shadow_center_town] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 6
+@@ 49 -1:9ecc2978 +1 @@ [Thing shadow_center_town] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 6
+@@ 58 -1:569f89b4 +1 @@ [Thing shadow_center_town] > [EconomyComponent] > [Cost]
++		gold = 500 ;; 100
+@@ 63 -1:7352af9a +1 @@ [Thing shadow_center_town] > [EconomyComponent] > [Production]
++		unit_limit_provided = 8 ;; 3

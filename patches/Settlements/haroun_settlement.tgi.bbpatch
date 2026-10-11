@@ -1,0 +1,12 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Settlements/haroun_settlement.tgi sha256=796df8432d1ce95a2a320fecc6eb570a61da5f579838f89a79c55cdb0c8b8fcc
+result sha256=4b156787cd60a94a621cfcb82d03c3a88f4d7452e07ccae80bfd22db001d89f0 bytes=4158
+bom no
+eol crlf
+
+@@ 158 -1:70756bbf +1 @@ [Thing haroun_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 163 -1:daaca91b +1 @@ [Thing haroun_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 168 -1:a6b18a2c +1 @@ [Thing haroun_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7

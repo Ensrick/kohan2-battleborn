@@ -1,0 +1,17 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Localization/strings_rtse_data.tgi sha256=d697844236810226dddb5ac6ae2bbc67fc653fdef2f531b97134f7917d0befff
+result sha256=2a8e99b942e4109465f4c36ec58bababacf6c77576aef63ed7fcdaaff360e85d bytes=54721
+bom yes
+eol crlf
+
+@@ 28 -4:303036b4 +4 @@ [Text Localization/strings_rtse_data.tgi]
++	kingdom_colors_orange_name = "Ochre"
++	kingdom_colors_yellow_name = "Saffron"
++	kingdom_colors_purple_name = "Indigo"
++	kingdom_colors_aqua_name = "Teal"
+@@ 33 -5:6ae47d16 +5 @@ [Text Localization/strings_rtse_data.tgi]
++	kingdom_colors_lime_name = "Mint"
++	kingdom_colors_pink_name = "Khaki"
++	kingdom_colors_sky_name = "Azure"
++	kingdom_colors_brown_name = "Umber"
++	kingdom_colors_gold_name = "White"

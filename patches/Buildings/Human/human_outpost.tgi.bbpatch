@@ -1,0 +1,29 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Human/human_outpost.tgi sha256=b3fb0585247b6d56c672dbb87dc2af41befebff844925144f6eca5c7c96a76b2
+result sha256=1f393c0bb5cb3722361f6cf29510733cf4f3aa4c292e84f139f385cf73e677c9 bytes=1319
+bom no
+eol crlf
+
+@@ 18 -1:f1894ef7 +2 @@ [Thing human_outpost] > [BodyComponent]
++	health = 2600 ;; 1300
++	captureable = true
+@@ 39 -0 +4 @@ [Thing human_outpost] > [DenizenComponent] > [Organization]
++		organization_ids = militia_pikeman
++		behavior = MILITIA_OFFENSIVE
++
++		[Organization]
+@@ 47 -0 +4 @@ [Thing human_outpost] > [DenizenComponent] > [Inventory]
++		actor_ids = pikeman
++		count = 18
++
++		[Inventory]
+@@ 48 -1:10623db3 +1 @@ [Thing human_outpost] > [DenizenComponent] > [Inventory]
++		count = 12 ;; 4
+@@ 52 -1:10623db3 +1 @@ [Thing human_outpost] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 4
+@@ 61 -1:569f89b4 +1 @@ [Thing human_outpost] > [EconomyComponent] > [Cost]
++		gold = 250 ;; 100
+@@ 65 -0 +3 @@ [Thing human_outpost] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 2

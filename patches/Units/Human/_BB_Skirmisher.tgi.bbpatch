@@ -1,0 +1,97 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
+ref Units/Drauga/raider.tgi sha256=4d68e5bd0c6f28b1aa75d30784ed050e335997dccd1dfb66e95e35d219b28bb9
+result sha256=c9fe6debe36b6503914b306161de18f998aedb93efe9425c05defbc910c683c5 bytes=4169
+bom no
+eol lf
+
+@@ 1 -0 +4 @@
++
++;; Skirmisher - Human ranged support (design tier 2, bowman base)
++;; TEXTURE DEBT: gold-trim bowman skin + own icon (ships with default bowman art)
++
+@@ 3 -3:9407510b +3 @@ [Unit]
++	IDS = bb_skirmisher
++	name = "#bb_skirmisher_name"
++
+@@ 8 -1:1da5a15f +1 @@ [Unit bowman] > [View]
++		resource_prefix = Bowman/Bowman
+@@ 12 -1:31609426 +1 @@ [Unit bowman] > [View] > [AspectNormal]
++
+@@ 30 -1:0adfcd9d +1 @@ [Unit bowman] > [BodyComponent]
++	health = 220 ;; bowman 180
+@@ 32 -1:2b4c342f +1 @@ [Unit bowman] > [BodyComponent]
++
+@@ 38 -1:8493100b +1 @@ [Unit bowman] > [CharacterComponent] > [Animation walk]
++
+@@ 42 -1:31609426 +1 @@ [Unit bowman] > [CharacterComponent] > [Animation jog]
++
+@@ 45 -1:31609426 +1 @@ [Unit bowman] > [CharacterComponent] > [Animation idle]
++
+@@ 60 -1:31609426 +1 @@ [Unit bowman] > [CharacterComponent]
++
+@@ 64 -1:8493100b +1 @@ [Unit bowman] > [CharacterComponent] > [Animation idlerange]
++
+@@ 70 -1:8493100b +1 @@ [Unit bowman] > [CharacterComponent] > [Animation fidget2]
++
+@@ 74 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation die1]
++
+@@ 82 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation die2]
++
+@@ 86 -1:76a3029a +1 @@ [Unit bowman] > [CharacterComponent]
++
+@@ 101 -2:5b89adf6 +2 @@ [Unit bowman] > [CharacterComponent] > [Animation melee1] > [WhenEnd]
++		}
++
+@@ 107 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation range]
++
+@@ 113 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation range] > [WhenDoAtTime]
++
+@@ 119 -1:e740a6fa +1 @@ [Unit bowman] > [CharacterComponent] > [Animation range] > [WhenDoAtTime]
++
+@@ 125 -1:31609426 +1 @@ [Unit bowman] > [CharacterComponent]
++
+@@ 133 -2:6891197e +2 @@ [Unit bowman] > [EconomyComponent] > [Cost]
++		gold = 9 ;; bowman 6
++
+@@ 136 -1:94edaef9 +1 @@ [Unit bowman] > [EconomyComponent] > [Upkeep]
++		wood = 0.75 ;; bowman 0.5
+@@ 138 -1:2b4c342f +1 @@ [Unit bowman]
++
+@@ 140 -4:af74ae48 +9 @@ [Unit bowman] > [ElementComponent]
++	{
++		morale_value = 10 ;; bowman 9
++		required_structures = human_woodmill,human_blacksmith
+= Units/Drauga/raider.tgi 75-79
++
+@@ 147 -1:31609426 +1 @@ [Unit bowman] > [MoverComponent]
++
+@@ 149 -1:31609426 +1 @@ [Unit bowman] > [MoverComponent] > [TrackInfo]
++
+@@ 152 -1:2b4c342f +1 @@ [Unit bowman]
++
+@@ 160 -1:8493100b +1 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 163 -2:818ad49e +2 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 16 ;; bowman 14
++
+@@ 179 -1:568d3980 +1 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 182 -2:aa76a23f +2 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 24 ;; bowman 20
++
+@@ 198 -1:8493100b +1 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 201 -2:aa76a23f +2 @@ [Unit bowman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 24 ;; bowman 20
++
+@@ 207 -1:31609426 +1 @@ [Unit bowman] > [PerformerComponent]
++
+@@ 211 -1:31609426 +1 @@ [Unit bowman]
++
+@@ 218 -1:f7f3b281 +1 @@ [Unit bowman] > [PropertiesComponent] > [Property]
++		property_IDS = support
+@@ 221 -3:6aca9377 +0 @@ [Unit bowman] > [PropertiesComponent] > [Property]
+@@ 225 -1:31609426 +1 @@ [Unit bowman] > [PropertiesComponent] > [Property]
++
+@@ 230 -70:f5b26eee +0 @@

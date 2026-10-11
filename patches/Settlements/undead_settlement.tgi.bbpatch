@@ -1,0 +1,12 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Settlements/undead_settlement.tgi sha256=f72df4c010933628b7834badbf954d69eff6992c405dd1744e92f7b8bdb01efa
+result sha256=03631d8038a556288d9303c3e06d5f9987e1788d123ff85d207d198d2aa930eb bytes=4185
+bom no
+eol crlf
+
+@@ 171 -1:c882f438 +1 @@ [Thing undead_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 176 -1:a3340197 +1 @@ [Thing undead_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 181 -1:d4bcd966 +1 @@ [Thing undead_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7

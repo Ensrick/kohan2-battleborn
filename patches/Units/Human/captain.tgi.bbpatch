@@ -1,0 +1,16 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/captain.tgi sha256=5801b3433be417fb6822ce75365aba5219b4ef0f337ddd8b3d639e3693ea5977
+result sha256=545d5c0e6541a7d8432561c910fba287b54b988be1b9706ab04bc4edffe34223 bytes=3120
+bom no
+eol crlf
+
+@@ 54 -1:494cdc12 +1 @@ [Unit captain]
++	name = "#bb_captain_cavalry_name"
+@@ 69 -1:b5a8ce1c +1 @@ [Unit captain] > [BodyComponent]
++	health = 360
+@@ 144 -1:38b6ae4a +1 @@ [Unit captain] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 38
+@@ 165 -0 +3 @@ [Unit captain] > [PropertiesComponent] > [Property]
++
++		[Property]
++		property_IDS = agile

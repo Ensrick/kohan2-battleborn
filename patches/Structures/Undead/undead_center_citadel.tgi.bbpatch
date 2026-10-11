@@ -1,0 +1,33 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Undead/undead_center_citadel.tgi sha256=32d3e85d582ce21c67b2dc9c676c30021286a2d1631577517ececcf34fe796e0
+result sha256=aa3cfa7afb918ccf4de2a3168f3540cdb5ce322e3a2c4420b034da36bc19eb4e bytes=1380
+bom no
+eol crlf
+
+@@ 16 -1:fb0e899a +1 @@ [Thing undead_center_citadel] > [BodyComponent]
++	health = 14400 ;; 7200
+@@ 32 -0 +8 @@ [Thing undead_center_citadel] > [DenizenComponent] > [Organization]
++		[Organization]
++		organization_ids = militia_zombie ;; CUSTOM COMPANY!
++		behavior = MILITIA_OFFENSIVE
++
++				[Organization]
++		organization_ids = militia_bone_golem ;; CUSTOM COMPANY!
++		behavior = MILITIA_DEFENSIVE
++
+@@ 38 -1:6a800e01 +1 @@ [Thing undead_center_citadel] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 8
+@@ 42 -1:81e56d1a +9 @@ [Thing undead_center_citadel] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 10
++
++		[Inventory]
++		actor_ids = zombie
++		count = 60
++
++		[Inventory]
++		actor_ids = bone_golem
++		count = 1
+@@ 51 -1:c9da7f35 +1 @@ [Thing undead_center_citadel] > [EconomyComponent] > [Cost]
++		gold = 1500 ;; 300
+@@ 56 -1:d96b082b +1 @@ [Thing undead_center_citadel] > [EconomyComponent] > [Production]
++		unit_limit_provided = 10 ;; 5

@@ -1,0 +1,16 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Drauga/drauga_center_village.tgi sha256=bc553fe0568f375a15e5d4f010fc54317252b58eaa7d80a53641c7848e618fce
+result sha256=3272bb51198306f2df09eac0787a73ff38db86613b8453f53feab722d99ea918 bytes=1113
+bom no
+eol crlf
+
+@@ 16 -1:dbf01548 +1 @@ [Thing drauga_center_village] > [BodyComponent]
++	health = 2400 ;; 1200
+@@ 44 -1:9ecc2978 +1 @@ [Thing drauga_center_village] > [DenizenComponent] > [Inventory]
++		count = 12 ;; 6
+@@ 48 -1:6a800e01 +1 @@ [Thing drauga_center_village] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 57 -1:569f89b4 +1 @@ [Thing drauga_center_village] > [EconomyComponent] > [Cost]
++		gold = 500 ;; 100
+@@ 62 -1:feb48735 +1 @@ [Thing drauga_center_village] > [EconomyComponent] > [Production]
++		unit_limit_provided = 7 ;; 2

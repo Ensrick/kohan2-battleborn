@@ -1,0 +1,83 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/lancer.tgi sha256=8b1de1fba322e7556b49a1b851bdfce0f2be3bc52a163f856b3e763072b0fd82
+result sha256=11fc2b2cd38a4740166ad95ea5774b211de52add8b8c0d5332937ef59ce15420 bytes=2993
+bom no
+eol lf
+
+@@ 1 -0 +3 @@
++
++;; Lancer - Human cavalry support (design tier 2, lancer base)
++;; TEXTURE DEBT: silver w/ gold trim skin, black horse + own icon (ships with default lancer art)
+@@ 4 -3:eee2af49 +3 @@ [Unit]
++	IDS = bb_support_lancer
++	name = "#bb_support_lancer_name"
++
+@@ 14 -1:2b4c342f +1 @@ [Unit lancer]
++
+@@ 17 -1:31609426 +1 @@ [Unit lancer] > [View]
++
+@@ 19 -3:4e95ce1f +3 @@ [Unit lancer] > [BodyComponent]
++	health = 240 ;; lancer 200
++	defense = 3 ;; lancer 2
++
+@@ 27 -1:8493100b +1 @@ [Unit lancer] > [CharacterComponent] > [Animation walk]
++
+@@ 31 -1:31609426 +1 @@ [Unit lancer] > [CharacterComponent] > [Animation jog]
++
+@@ 34 -1:31609426 +1 @@ [Unit lancer] > [CharacterComponent] > [Animation idle]
++
+@@ 58 -1:31609426 +1 @@ [Unit lancer] > [CharacterComponent] > [Animation fidget3]
++
+@@ 66 -2:e3f2b48c +2 @@ [Unit lancer] > [CharacterComponent] > [Animation die1] > [WhenStart]
++		}
++
+@@ 69 -1:bab8787d +1 @@ [Unit lancer] > [CharacterComponent] > [Animation]
++		{
+@@ 71 -2:4901011f +2 @@ [Unit lancer] > [CharacterComponent] > [Animation melee1]
++			key_ratio = 0.6
++
+@@ 82 -1:49f78eb5 +1 @@ [Unit lancer] > [CharacterComponent] > [Animation melee1] > [WhenEnd]
++		}
+@@ 85 -1:bab8787d +1 @@ [Unit lancer] > [CharacterComponent] > [Animation]
++		{
+@@ 87 -2:4901011f +2 @@ [Unit lancer] > [CharacterComponent] > [Animation melee2]
++			key_ratio = 0.6
++
+@@ 98 -1:713446ac +1 @@ [Unit lancer] > [CharacterComponent] > [Animation melee2] > [WhenEnd]
++		}
+@@ 104 -2:d55d5d38 +2 @@ [Unit lancer] > [EconomyComponent] > [Cost]
++		gold = 4 ;; lancer 1
++
+@@ 107 -1:187177e6 +1 @@ [Unit lancer] > [EconomyComponent] > [Upkeep]
++		wood = 0.5 ;; lancer 0.25
+@@ 109 -1:2b4c342f +1 @@ [Unit lancer]
++
+@@ 112 -1:22eb5404 +1 @@ [Unit lancer] > [ElementComponent]
++		morale_value = 11 ;; lancer 10
+@@ 115 -1:31609426 +1 @@ [Unit lancer] > [ElementComponent]
++
+@@ 118 -1:31609426 +1 @@ [Unit lancer] > [ElementComponent] > [SupportProperty]
++
+@@ 122 -1:2b4c342f +1 @@ [Unit lancer]
++
+@@ 128 -1:31609426 +1 @@ [Unit lancer] > [MoverComponent] > [TrackInfo]
++
+@@ 130 -1:31609426 +1 @@ [Unit lancer] > [MoverComponent] > [TrackInfo]
++
+@@ 132 -1:31609426 +1 @@ [Unit lancer] > [MoverComponent] > [TrackInfo]
++
+@@ 135 -1:2b4c342f +1 @@ [Unit lancer]
++
+@@ 145 -1:568d3980 +1 @@ [Unit lancer] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 148 -2:7994ca6e +2 @@ [Unit lancer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 20 ;; lancer 16
++
+@@ 155 -1:2b4c342f +1 @@ [Unit lancer]
++
+@@ 165 -1:f7f3b281 +1 @@ [Unit lancer] > [PropertiesComponent] > [Property]
++		property_IDS = support
+@@ 168 -3:6aca9377 +0 @@ [Unit lancer] > [PropertiesComponent] > [Property]
+@@ 172 -1:8493100b +1 @@ [Unit lancer] > [PropertiesComponent] > [Property]
++
+@@ 177 -48:ac31b7b4 +0 @@

@@ -1,0 +1,78 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Council/wizard.tgi sha256=14e7c2d1fa237faf47137f34dbcf6b506b6ce5f58460007d72f6f636046ab47a
+ref Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
+ref Units/Shadow/fiend.tgi sha256=c5885e12a75ca1c7ff91a142f0798f15fa8df15f3163feff33ee8008aef59f4c
+result sha256=907b0837641e40d8134b107d68f89ee16b6fbe3d43f98a4ed41a4e3d4fd2d884 bytes=2782
+bom no
+eol crlf
+
+@@ 1 -4:3de3a0b8 +1 @@
++[Unit template=K2CouncilUnit]
+@@ 6 -4:ebda8589 +3 @@ [Unit]
++	IDS = bb_captain_council_swordsman
++	name = "#bb_captain_council_swordsman_name"
++	
+@@ 12 -1:511c6dbc +2 @@ [Unit wizard] > [View]
++		resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai ;; Uses Ghalen Mordecai as the base model
++		icon = /Units/Council/BB_Spellsword/BB_Spellsword_Icon.tga
+@@ 15 -1:0a4ae4ec +1 @@ [Unit wizard] > [View] > [AspectNormal]
++		skin = /Units/Council/BB_Spellsword/BB_Spellsword.dds
+@@ 17 -1:e3b0c442 +1 @@ [Unit wizard]
++			
+@@ 19 -2:51b118a3 +2 @@ [Unit wizard] > [BodyComponent]
++	health = 390
++	defense = 5
+@@ 26 -1:06757215 +1 @@ [Unit wizard] > [CharacterComponent] > [Animation walk]
++		walk_distance = 1.7
+@@ 43 -1:2b4c342f +1 @@ [Unit wizard] > [CharacterComponent] > [Animation fidget2]
++				
+@@ 47 -1:e3b0c442 +1 @@ [Unit wizard] > [CharacterComponent] > [Animation die1]
++			
+@@ 49 -1:cde161b3 +1 @@ [Unit wizard] > [CharacterComponent] > [Animation die1] > [WhenStart]
++			audio_ids = swordsman_death
+@@ 51 -1:8493100b +1 @@ [Unit wizard] > [CharacterComponent]
++						
+@@ 54 -8:c0e1fa54 +5 @@ [Unit wizard] > [CharacterComponent] > [Animation melee1]
+= Units/Human/swordsman.tgi 128-132
+@@ 67 -2:63281db0 +2 @@ [Unit wizard] > [EconomyComponent] > [Cost]
++		gold = 28 ;; was 24 - aligned to politics-commander tier
++		
+@@ 70 -1:f02ccd5e +2 @@ [Unit wizard] > [EconomyComponent] > [Upkeep]
++		iron = 1
++		mana = 2 ;; was 1 - caster tax
+@@ 74 -2:c49e5d48 +2 @@ [Unit wizard] > [ElementComponent]
++	morale_value = 11
++	required_structures = bb_base_center_city,base_blacksmith,base_library
+@@ 77 -0 +1 @@ [Unit wizard] > [ElementComponent]
++	denizen_type = denizen_type_melee
+@@ 80 -2:c0b5bff1 +2 @@ [Unit wizard] > [MoverComponent]
++		speed_max = 3.5
++
+@@ 89 -2:5978ca61 +1 @@ [Unit wizard] > [PerformerComponent]
++		
+@@ 93 -0 +3 @@ [Unit wizard] > [PerformerComponent] > [Ability]
++			animation1 = melee1
++			animation2 = melee2
++			
+@@ 95 -2:2f0e8abf +2 @@ [Unit wizard] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++				name = "#bb_spellsword_AbilityDefinition_name"
++							
+@@ 98 -2:d7c6ecff +2 @@ [Unit wizard] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				damage_type_IDS = khaldunite
++				amount = 45
+@@ 102 -1:97d79b82 +1 @@ [Unit wizard] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [WhenDo]
++				audio_ids = metal_swing3				
+@@ 121 -10:ade8034d +0 @@ [Unit wizard] > [PerformerComponent]
+@@ 132 -1:31609426 +1 @@ [Unit wizard]
++	
+@@ 139 -1:468a1662 +1 @@ [Unit wizard] > [PropertiesComponent] > [Property]
++		property_IDS = armored
+@@ 142 -1:eada2a40 +1 @@ [Unit wizard] > [PropertiesComponent] > [Property]
++		property_IDS = shields
+@@ 145 -1:97c21bb9 +7 @@ [Unit wizard] > [PropertiesComponent] > [Property]
+= Units/Shadow/fiend.tgi 204-204
++		
+= Units/Shadow/fiend.tgi 206-207
++		
+= Units/Shadow/fiend.tgi 209-209
++		property_IDS = role_infantry

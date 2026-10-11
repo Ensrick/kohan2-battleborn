@@ -1,0 +1,75 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Haroun/stonewalker.tgi sha256=105690ea2fc7b95b2823c5cf9b86ab386623501fea2abfb8b0a182f41a7c0327
+result sha256=085bad38f573ef5c77a56d7f12cff7b878e4eb7a72b5cf65b0a4a3e5a7476a50 bytes=2409
+bom no
+eol lf
+
+@@ 2 -1:4c4347d1 +5 @@
++;; Blackguard - Ceyah melee front/flank (design tier 4, Stonewalker model, black armor)
++;; TEXTURE DEBT: black-armor stonewalker skin + own icon (GIMP source started:
++;; __GIMP FILES - Units/SKIN - Haroun - Stonewalker Model.xcf)
++
++[Unit template=K2CeyahUnit]
+@@ 4 -3:8c6a10da +3 @@ [Unit]
++	IDS = bb_front_ceyah_stonewalker
++	name = "#bb_front_ceyah_stonewalker_name"
++
+@@ 8 -1:cb932a13 +1 @@ [Unit stonewalker] > [View]
++	resource_prefix = /Units/Haroun/Stonewalker/Stonewalker
+@@ 11 -3:3f69d634 +3 @@ [Unit stonewalker] > [BodyComponent]
++	health = 300 ;; stonewalker 220
++	defense = 4 ;; stonewalker 3
++
+@@ 19 -1:8493100b +1 @@ [Unit stonewalker] > [CharacterComponent] > [Animation walk]
++
+@@ 23 -1:31609426 +1 @@ [Unit stonewalker] > [CharacterComponent] > [Animation jog]
++
+@@ 26 -1:31609426 +1 @@ [Unit stonewalker] > [CharacterComponent] > [Animation idle]
++
+@@ 29 -1:31609426 +1 @@ [Unit stonewalker] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 35 -1:8493100b +1 @@ [Unit stonewalker] > [CharacterComponent] > [Animation fidget2]
++
+@@ 51 -1:8493100b +1 @@ [Unit stonewalker] > [CharacterComponent]
++
+@@ 55 -1:76a3029a +1 @@ [Unit stonewalker] > [CharacterComponent] > [Animation melee1]
++
+@@ 62 -1:72360539 +1 @@ [Unit stonewalker] > [CharacterComponent] > [Animation melee3]
++		key_ratio = 0.6
+@@ 68 -2:7a96e8ac +2 @@ [Unit stonewalker] > [EconomyComponent] > [Cost]
++		gold = 18
++
+@@ 71 -1:7dbac979 +1 @@ [Unit stonewalker] > [EconomyComponent] > [Upkeep]
++		iron = 0.5
+@@ 73 -1:2b4c342f +1 @@ [Unit stonewalker]
++
+@@ 75 -7:f2b880ef +5 @@ [Unit stonewalker] > [ElementComponent]
++	morale_value = 11 ;; stonewalker 10
++	required_structures = base_blacksmith
++	required_properties = faction_ceyah, evil
++	denizen_type = denizen_type_melee
++
+@@ 85 -1:31609426 +1 @@ [Unit stonewalker] > [MoverComponent]
++
+@@ 87 -1:31609426 +1 @@ [Unit stonewalker] > [MoverComponent] > [TrackInfo]
++
+@@ 90 -1:2b4c342f +1 @@ [Unit stonewalker]
++
+@@ 97 -2:b14644ad +1 @@ [Unit stonewalker] > [PerformerComponent] > [Ability]
++
+@@ 102 -1:568d3980 +1 @@ [Unit stonewalker] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 105 -2:aa76a23f +2 @@ [Unit stonewalker] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 26 ;; stonewalker 20
++
+@@ 108 -1:f7236498 +1 @@ [Unit stonewalker] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [WhenDo]
++				audio_ids = metal_swing3
+@@ 112 -1:2b4c342f +1 @@ [Unit stonewalker]
++
+@@ 116 -1:1e6edc1c +1 @@ [Unit stonewalker] > [PropertiesComponent] > [Property]
++		property_IDS = race_undead
+@@ 126 -1:31609426 +1 @@ [Unit stonewalker] > [PropertiesComponent] > [Property]
++
+@@ 129 -1:31609426 +1 @@ [Unit stonewalker] > [PropertiesComponent] > [Property]
++
+@@ 134 -76:3a533df0 +0 @@

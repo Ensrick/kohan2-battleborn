@@ -1,0 +1,40 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Shadow/shadow_center_city.tgi sha256=a85c3b9116fc108862fb0b128fc18eb0915f4c86e8f288ae797b0e8c2e54590d
+result sha256=6f43315f25fe6f0a52fc45734d95ccab335fbb1923dce4196b87f8bd765568fe bytes=1018
+bom no
+eol crlf
+
+@@ 2 -1:d4f69517 +1 @@
++[Thing Template=K2ShadowBuilding]
+@@ 4 -7:76551678 +3 @@ [Thing]
++	IDS = bb_shadow_sawmill_outpost
++	name = "#shadow_sawmill_name"
++	name_list_ids = namelist_bb_shadow_sawmill
+@@ 14 -2:b6d93cc3 +2 @@ [Thing shadow_center_city] > [View]
++		resource_prefix = /Structures/Shadow/ShadowSawmill/ShadowSawmill
++		icon = /UI/Game/StructureButtons/SawmillIcon.png
+@@ 18 -2:46c3da61 +1 @@ [Thing shadow_center_city] > [View] > [TextureSearchPath]
++		path = /Structures/Shadow/ShadowWoodmill
+@@ 23 -1:376d6dd2 +2 @@ [Thing shadow_center_city] > [BodyComponent]
++	health = 600
++	captureable = true
+@@ 27 -2:41b47889 +1 @@ [Thing shadow_center_city] > [ConstructionComponent]
++		can_raze = true
+@@ 30 -1:2b4c342f +1 @@ [Thing shadow_center_city]
++
+@@ 33 -0 +2 @@ [Thing shadow_center_city] > [DenizenComponent]
++		guard_range = 24
++
+@@ 41 -4:dea436ef +0 @@ [Thing shadow_center_city] > [DenizenComponent] > [Organization]
+@@ 52 -4:126cf72c +0 @@ [Thing shadow_center_city] > [DenizenComponent] > [Inventory]
+@@ 57 -3:d611f957 +3 @@ [Thing shadow_center_city]
++
++	[DetectionComponent]
++	detection_range = 26
+@@ 64 -2:25e92458 +2 @@ [Thing shadow_center_city] > [EconomyComponent] > [Cost]
++		gold = 240 ;; from 3 * 80
++
+@@ 67 -3:9a587998 +1 @@ [Thing shadow_center_city] > [EconomyComponent] > [Production]
++		wood = 7 ;; from 2/3 * 11, rounded down
+@@ 73 -1:4fca7d9a +1 @@ [Thing shadow_center_city] > [SupplyComponent]
++	supply_range = 13

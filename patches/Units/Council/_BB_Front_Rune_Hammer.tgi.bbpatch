@@ -1,0 +1,87 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
+result sha256=5089959ab9684bbf682dc16a0c942d88fcbc029d558b676247b2a00353644eb5 bytes=2420
+bom no
+eol lf
+
+@@ 2 -1:1cdd1f13 +5 @@
++;; Rune Hammer - Council cavalry front/flank (design tier 4, Gauri Hammer ram-rider model)
++;; TEXTURE DEBT: rune skin + own icon (ships with default Hammer art; see Rune Lord's
++;; BB_Runelord art note in _BB_Captain_Rune_Lord.tgi)
++
++[Unit template=K2CouncilUnit]
+@@ 4 -11:7b179489 +3 @@ [Unit]
++	IDS = bb_front_council_hammer
++	name = "#bb_front_council_hammer_name"
++
+@@ 16 -2:876e6207 +2 @@ [Unit hammer] > [View]
++	resource_prefix = /Units/Gauri/Hammer/Hammer
++
+@@ 19 -1:b57b6084 +1 @@ [Unit hammer] > [BodyComponent]
++	health = 360 ;; hammer 320
+@@ 21 -1:2b4c342f +1 @@ [Unit hammer] > [BodyComponent]
++
+@@ 26 -2:c6953cd3 +2 @@ [Unit hammer] > [CharacterComponent] > [Animation walk]
++		walk_distance = 1.75
++
+@@ 31 -1:31609426 +1 @@ [Unit hammer] > [CharacterComponent] > [Animation jog]
++
+@@ 34 -1:31609426 +1 @@ [Unit hammer] > [CharacterComponent] > [Animation idle]
++
+@@ 37 -1:31609426 +1 @@ [Unit hammer] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 43 -1:8493100b +1 @@ [Unit hammer] > [CharacterComponent] > [Animation fidget2]
++
+@@ 47 -2:2db2be14 +1 @@ [Unit hammer] > [CharacterComponent] > [Animation die1]
++
+@@ 56 -2:2db2be14 +1 @@ [Unit hammer] > [CharacterComponent] > [Animation die2]
++
+@@ 61 -1:568d3980 +1 @@ [Unit hammer] > [CharacterComponent]
++
+@@ 64 -2:def71c96 +2 @@ [Unit hammer] > [CharacterComponent] > [Animation melee1]
++		key_ratio = 0.6
++
+@@ 68 -4:fd8e806f +1 @@ [Unit hammer] > [CharacterComponent] > [Animation melee2]
++		key_ratio = 0.6
+@@ 77 -2:25746249 +2 @@ [Unit hammer] > [EconomyComponent] > [Cost]
++		gold = 22
++
+@@ 80 -1:187177e6 +0 @@ [Unit hammer] > [EconomyComponent] > [Upkeep]
+@@ 83 -1:2b4c342f +1 @@ [Unit hammer]
++
+@@ 85 -4:fb0bce69 +5 @@ [Unit hammer] > [ElementComponent]
++	morale_value = 13 ;; hammer 13
++	required_structures = base_blacksmith
++	required_properties = faction_council, good
++	denizen_type = denizen_type_melee
++
+@@ 92 -1:2b4c342f +1 @@ [Unit hammer] > [MoverComponent]
++
+@@ 94 -1:e740a6fa +1 @@ [Unit hammer] > [MoverComponent] > [TrackInfo]
++
+@@ 96 -1:e740a6fa +1 @@ [Unit hammer] > [MoverComponent] > [TrackInfo]
++
+@@ 98 -1:e740a6fa +1 @@ [Unit hammer] > [MoverComponent] > [TrackInfo]
++
+@@ 101 -1:2b4c342f +1 @@ [Unit hammer]
++
+@@ 108 -2:3e8262c3 +2 @@ [Unit hammer] > [PerformerComponent] > [Ability]
++
++			[AbilityDefinition Template=K2MeleeAttack]
+@@ 112 -1:568d3980 +1 @@ [Unit hammer] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 115 -2:62f36589 +2 @@ [Unit hammer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 28 ;; hammer 24
++
+@@ 118 -1:97d79b82 +1 @@ [Unit hammer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [WhenDo]
++				audio_ids = metal_swing3
+@@ 121 -3:df4754d3 +0 @@ [Unit hammer] > [PerformerComponent]
+@@ 125 -1:2b4c342f +1 @@ [Unit hammer]
++
+@@ 136 -1:31609426 +1 @@ [Unit hammer] > [PropertiesComponent] > [Property]
++
+@@ 139 -1:2b4c342f +1 @@ [Unit hammer] > [PropertiesComponent] > [Property]
++
+@@ 142 -1:31609426 +1 @@ [Unit hammer] > [PropertiesComponent] > [Property]
++
+@@ 147 -48:f83fcc98 +0 @@

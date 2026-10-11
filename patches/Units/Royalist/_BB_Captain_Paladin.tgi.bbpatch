@@ -1,0 +1,69 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Royalist/paladin.tgi sha256=2fd9a1732e4056431d38acffe13fe26991ec294460f28e50b01e0c15851867f8
+result sha256=8919bbdbc0d0ce6311520800e02dd29a3e0d215df5d2392a44e730b7476a00bc bytes=2469
+bom no
+eol lf
+
+@@ 2 -1:366284ac +3 @@
++;; Champion - Royalist cavalry captain (design tier 6, from Paladin, all gold)
++;; TEXTURE DEBT: gold paladin skin + all-gold captain portrait + own icon
++;; (GIMP source exists: GIMP_Royalist_Files/BB_Champion_Paladin_Knight.xcf)
+@@ 6 -4:108a97df +3 @@ [Unit]
++	IDS = bb_captain_paladin
++	name = "#bb_captain_paladin_name"
++
+@@ 17 -1:2b4c342f +1 @@ [Unit paladin]
++
+@@ 19 -2:e8552636 +2 @@ [Unit paladin] > [View]
++	resource_prefix = Paladin/Paladin
++
+@@ 22 -3:bfd4cad2 +3 @@ [Unit paladin] > [BodyComponent]
++	health = 520 ;; paladin 460
++	defense = 6 ;; paladin 5
++
+@@ 30 -1:8493100b +1 @@ [Unit paladin] > [CharacterComponent] > [Animation walk]
++
+@@ 34 -1:31609426 +1 @@ [Unit paladin] > [CharacterComponent] > [Animation jog]
++
+@@ 37 -1:31609426 +1 @@ [Unit paladin] > [CharacterComponent] > [Animation idle]
++
+@@ 40 -1:31609426 +1 @@ [Unit paladin] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 46 -1:8493100b +1 @@ [Unit paladin] > [CharacterComponent] > [Animation fidget2]
++
+@@ 54 -1:8493100b +1 @@ [Unit paladin] > [CharacterComponent]
++
+@@ 62 -1:8493100b +1 @@ [Unit paladin] > [CharacterComponent]
++
+@@ 66 -1:76a3029a +1 @@ [Unit paladin] > [CharacterComponent] > [Animation melee1]
++
+@@ 70 -7:6f38190c +0 @@ [Unit paladin] > [CharacterComponent] > [Animation melee2]
+@@ 82 -2:959bc377 +2 @@ [Unit paladin] > [EconomyComponent] > [Cost]
++		gold = 36 ;; paladin 28
++
+@@ 88 -1:2b4c342f +1 @@ [Unit paladin]
++
+@@ 91 -1:9cb153ce +1 @@ [Unit paladin] > [ElementComponent]
++		morale_value = 13 ;; paladin 12
+@@ 94 -0 +1 @@ [Unit paladin] > [ElementComponent]
++	}
+@@ 95 -4:a51eb856 +0 @@ [Unit paladin] > [ElementComponent]
+@@ 104 -1:31609426 +1 @@ [Unit paladin] > [MoverComponent] > [TrackInfo]
++
+@@ 106 -1:31609426 +1 @@ [Unit paladin] > [MoverComponent] > [TrackInfo]
++
+@@ 108 -1:31609426 +1 @@ [Unit paladin] > [MoverComponent] > [TrackInfo]
++
+@@ 111 -1:2b4c342f +1 @@ [Unit paladin]
++
+@@ 115 -1:5323c19d +1 @@ [Unit paladin] > [PerformerComponent]
++
+@@ 125 -1:e740a6fa +1 @@ [Unit paladin] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 128 -2:5484f653 +2 @@ [Unit paladin] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 46 ;; paladin 40
++
+@@ 135 -1:2b4c342f +1 @@ [Unit paladin]
++
+@@ 139 -1:468a1662 +1 @@ [Unit paladin] > [PropertiesComponent] > [Property]
++		property_IDS = captain

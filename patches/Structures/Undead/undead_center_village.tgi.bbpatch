@@ -1,0 +1,34 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Undead/undead_center_village.tgi sha256=b2986f2d37c0e8bc4ed4ca16a09e6c47b073db6f803d5f4c62c46cad7312f84f
+result sha256=6cd5b87f9f3a94c63d70f851b470ec9ddbc3e5fcb6af193f627d7e09bfef2b57 bytes=1299
+bom no
+eol crlf
+
+@@ 16 -1:dbf01548 +1 @@ [Thing undead_center_village] > [BodyComponent]
++	health = 2400 ;; 1200
+@@ 30 -3:6d7cf8d4 +7 @@ [Thing undead_center_village] > [DenizenComponent] > [Organization]
++		;;[Organization]
++		;;organization_ids = militia_bonearcher
++		;;behavior = MILITIA_OFFENSIVE
++
++		;;[Organization]
++		;;organization_ids = militia_skeleton
++		;;behavior = MILITIA_DEFENSIVE
+@@ 35 -2:2fc1cb11 +2 @@ [Thing undead_center_village] > [DenizenComponent] > [Organization]
++		organization_ids = militia_zombie ;; CUSTOM ORGANIZATION
++		behavior = MILITIA_OFFENSIVE
+@@ 42 -3:3863c261 +7 @@ [Thing undead_center_village] > [DenizenComponent] > [Inventory]
++		;;[Inventory]
++		;;actor_ids = bonearcher
++		;;count = 12 ;; 6
++
++		;;[Inventory]
++		;;actor_ids = skeleton
++		;;count = 18 ;; 6
+@@ 47 -2:baef2022 +2 @@ [Thing undead_center_village] > [DenizenComponent] > [Inventory]
++		actor_ids = zombie
++		count = 60
+@@ 57 -1:2dddeaa9 +1 @@ [Thing undead_center_village] > [EconomyComponent] > [Cost]
++		gold = 450 ;; 90
+@@ 61 -1:feb48735 +1 @@ [Thing undead_center_village] > [EconomyComponent] > [Production]
++		unit_limit_provided = 7 ;; 2

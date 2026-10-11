@@ -1,0 +1,21 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/dragoon.tgi sha256=b35b9fdb8d4d69e0936c3e627306489ada78744c50ecba2489e69244733d47c6
+result sha256=0ddcefb6cd54a75932433186f5f09255836572fb5403dd6b9615514ecc236715 bytes=2418
+bom no
+eol crlf none*1
+
+@@ 4 -2:3858da81 +2 @@ [Unit]
++	IDS = bb_support_dragoon
++	name = "#bb_support_dragoon_name"
+@@ 17 -1:0a02f28f +1 @@ [Unit dragoon] > [View]
++		resource_prefix = Dragoon/Dragoon
+@@ 76 -1:1801596b +1 @@ [Unit dragoon] > [EconomyComponent] > [Cost]
++		gold = 10 ;; 20
+@@ 79 -2:aed581d9 +2 @@ [Unit dragoon] > [EconomyComponent] > [Upkeep]
++		wood = 0.5 ;; 1
++		iron = 0.5 ;; 1
+@@ 85 -1:51a7500a +1 @@ [Unit dragoon] > [ElementComponent]
++	required_structures = human_center_city
+@@ 131 -4:edc90a73 +1 @@ [Unit dragoon] > [PropertiesComponent] > [Property]
++		property_IDS = support
+@@ 146 -96:99576ab5 +0 @@

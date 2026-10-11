@@ -1,0 +1,16 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Gauri/gauri_center_town.tgi sha256=c2b222b87d455f58eae9ba5cee9f62eaddd8b6909eaf7ec7d8b1dc408972c7b6
+result sha256=75768f95d593af1ee33041de9bfe3a6ec458ad4233b744f8c65817253185fe65 bytes=1119
+bom no
+eol crlf
+
+@@ 16 -1:41423f7f +1 @@ [Thing gauri_center_town] > [BodyComponent]
++	health = 6000 ;; 3000
+@@ 46 -1:9ecc2978 +1 @@ [Thing gauri_center_town] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 6
+@@ 50 -1:9ecc2978 +1 @@ [Thing gauri_center_town] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 6
+@@ 59 -1:1ec671ac +1 @@ [Thing gauri_center_town] > [EconomyComponent] > [Cost]
++		gold = 550 ;; 110
+@@ 65 -1:7352af9a +1 @@ [Thing gauri_center_town] > [EconomyComponent] > [Production]
++		unit_limit_provided = 8 ;; 3

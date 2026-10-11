@@ -1,0 +1,28 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/pikeman.tgi sha256=5d0e74126a896abd40a909846c8769a811306ac45c5747708b34ba685c9c3674
+result sha256=604897484ea154bf89dc63c7ceca404b8397fe5512557a819bc4ad29ea6113ec bytes=3527
+bom no
+eol crlf
+
+@@ 8 -1:e5a7bb92 +7 @@ [Unit pikeman] > [View]
++	{
++		resource_prefix = Pikeman/Pikeman
++
++		[AspectNormal]
++		skin = %sbase.dds
++	}
++
+@@ 56 -1:3d77d193 +1 @@ [Unit pikeman] > [EconomyComponent] > [Cost]
++		gold = 2 ;; 8
+@@ 59 -1:ae381f5f +1 @@ [Unit pikeman] > [EconomyComponent] > [Upkeep]
++		iron = 0.125 ;; 0.5
+@@ 126 -1:4b6adb2d +1 @@ [Unit pikeman] > [PropertiesComponent] > [Property]
++		property_IDS = role_infantry
+@@ 165 -1:07282191 +1 @@ [Thing company_pikeman] > [OrganizationComponent] > [Slot]
++		element_IDS = pikeman
+@@ 168 -1:07282191 +1 @@ [Thing company_pikeman] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_praetorian
+@@ 171 -1:07282191 +1 @@ [Thing company_pikeman] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_praetorian
+@@ 174 -1:9d5db578 +1 @@ [Thing company_pikeman] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_captain_pikeman

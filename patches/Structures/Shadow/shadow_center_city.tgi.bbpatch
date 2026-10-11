@@ -1,0 +1,25 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Shadow/shadow_center_city.tgi sha256=a85c3b9116fc108862fb0b128fc18eb0915f4c86e8f288ae797b0e8c2e54590d
+result sha256=6f058dc998c34cb1dcb27a487fdf09fde4adb5bfce51b5d0aa6d0b562cf1a9ce bytes=1344
+bom no
+eol crlf
+
+@@ 23 -1:376d6dd2 +1 @@ [Thing shadow_center_city] > [BodyComponent]
++	health = 11200 ;; 5600
+@@ 44 -0 +4 @@ [Thing shadow_center_city] > [DenizenComponent] > [Organization]
++
++		[Organization]
++		organization_ids = militia_leviathan
++		behavior = MILITIA_DEFENSIVE
+@@ 51 -1:6a800e01 +1 @@ [Thing shadow_center_city] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 55 -1:6a800e01 +5 @@ [Thing shadow_center_city] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
++
++		[Inventory]
++		actor_ids = leviathan
++		count = 1
+@@ 64 -1:ebc36e76 +1 @@ [Thing shadow_center_city] > [EconomyComponent] > [Cost]
++		gold = 800 ;; 160
+@@ 69 -1:4a3e346c +1 @@ [Thing shadow_center_city] > [EconomyComponent] > [Production]
++		unit_limit_provided = 9 ;; 4

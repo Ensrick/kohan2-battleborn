@@ -1,0 +1,83 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
+result sha256=50b4760552e7f13418c173634e80ec9d816d268a7a82951562ba167f3af6834c bytes=3552
+bom no
+eol lf
+
+@@ 2 -1:f244a0e2 +3 @@
++;; Arcane Archer - Council ranged support (design tier 5, Ranger model, white skin planned)
++;; TEXTURE DEBT: white ranger skin + own icon (ships with default Ranger art)
++;; Reuses the ranger_* VFX defined in Units/Human/ranger.tgi
+@@ 4 -1:0a4654aa +1 @@
++[Unit template=K2CouncilUnit]
+@@ 6 -5:ca2b5868 +2 @@ [VFX]
++	IDS = bb_support_council_ranger
++	name = "#bb_support_council_ranger_name"
+@@ 12 -23:439f7bc1 +0 @@
+@@ 37 -2:4d3b40cd +2 @@ [Unit ranger] > [View]
++		resource_prefix = /Units/Human/Ranger/Ranger
++
+@@ 51 -18:06c4fc0d +2 @@ [Unit ranger] > [BodyComponent]
++	health = 280 ;; ranger 240
++	defense = 2 ;; ranger 1
+@@ 75 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation walk]
++
+@@ 79 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation jog]
++
+@@ 82 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idle]
++
+@@ 85 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 88 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation idlerange]
++
+@@ 94 -1:8493100b +1 @@ [Unit ranger] > [CharacterComponent] > [Animation fidget2]
++
+@@ 98 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation die1]
++
+@@ 102 -1:76a3029a +1 @@ [Unit ranger] > [CharacterComponent]
++
+@@ 111 -2:5b89adf6 +2 @@ [Unit ranger] > [CharacterComponent] > [Animation melee1] > [WhenStart]
++		}
++
+@@ 117 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range]
++
+@@ 122 -1:e740a6fa +1 @@ [Unit ranger] > [CharacterComponent] > [Animation range] > [WhenStart]
++
+@@ 141 -1:31609426 +1 @@ [Unit ranger] > [CharacterComponent]
++
+@@ 147 -1:6f0fdbb0 +1 @@ [Unit ranger] > [CharacterComponent] > [Animation]
++		IDS = idlecast
+@@ 153 -2:25746249 +2 @@ [Unit ranger] > [EconomyComponent] > [Cost]
++		gold = 26
++
+@@ 159 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 162 -2:c88d3877 +4 @@ [Unit ranger] > [ElementComponent]
++		morale_value = 11
++		required_structures = base_library
++		required_properties = faction_council, good
++	}
+@@ 165 -4:72fb9993 +0 @@ [Unit ranger] > [ElementComponent]
+@@ 174 -1:31609426 +1 @@ [Unit ranger] > [MoverComponent] > [TrackInfo]
++
+@@ 177 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 181 -1:36a9e7f1 +1 @@ [Unit ranger] > [PerformerComponent]
++
+@@ 188 -1:8493100b +1 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 192 -1:8493100b +1 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++
+@@ 197 -1:31609426 +1 @@ [Unit ranger] > [PerformerComponent]
++
+@@ 210 -2:fa9e0729 +2 @@ [Unit ranger] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 40 ;; ranger 38
++
+@@ 217 -1:2b4c342f +1 @@ [Unit ranger]
++
+@@ 225 -1:31609426 +1 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++
+@@ 228 -4:aaa694f2 +1 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++
+@@ 234 -1:31609426 +1 @@ [Unit ranger] > [PropertiesComponent] > [Property]
++

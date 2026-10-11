@@ -1,0 +1,95 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/dragoon_cutscene.tgi sha256=157a13857c5a692f6318a1611c36821133f1c2c33cfc43b7c512a9a50d19ad6d
+ref Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
+ref Units/Monster/spiderling_arctic.tgi sha256=de994b889446f6f4d8463ab1ada5700f4b776c2eae5c07aed6e8c476d469fe79
+result sha256=dd142e9972c30e16d909b9988a261b25392aff601a833f089ebe982f83992537 bytes=2575
+bom no
+eol lf
+
+@@ 2 -1:d9751621 +6 @@
++;; Rune Lord - Council cavalry captain (design tier 6, Gauri Hammer ram-rider model)
++;; TEXTURE DEBT: rune skin + own icon + portrait. NOTE: orphaned BB_Runelord art exists
++;; (Units/Council/BB_Runelord/BB_Runelord.dds + BB_Runelord_Portrait.dds) but its target
++;; model is unverified - wire it here once confirmed in-game to fit the Hammer model.
++
++[Unit template=K2CouncilUnit]
+@@ 4 -13:7ed06151 +2 @@ [Unit]
++	IDS = bb_captain_council_hammer
++	name = "#bb_captain_council_hammer_name"
+@@ 19 -2:7b1ae17a +1 @@ [Unit dragoon_cutscene] > [View]
++	resource_prefix = /Units/Gauri/Hammer/Hammer
+@@ 22 -4:97f66cc0 +0 @@ [Unit dragoon_cutscene] > [View]
+@@ 27 -3:d603e281 +3 @@ [Unit dragoon_cutscene] > [BodyComponent]
++	health = 420 ;; hammer 320
++	defense = 7 ;; hammer 6
++
+@@ 35 -1:8493100b +1 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation walk]
++
+@@ 39 -1:31609426 +1 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation jog]
++
+@@ 42 -1:31609426 +1 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation idle]
++
+@@ 45 -1:31609426 +1 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 51 -1:8493100b +1 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation fidget2]
++
+@@ 55 -2:2db2be14 +1 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation die1]
++
+@@ 58 -1:f2e780ba +1 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation die1] > [WhenStart]
++			audio_ids = hammer_death
+@@ 60 -1:8493100b +9 @@ [Unit dragoon_cutscene] > [CharacterComponent]
++
+= Units/Monster/spiderling_arctic.tgi 66-70
++			audio_ids = hammer_death
++		}
++
+@@ 64 -1:76a3029a +1 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation melee1]
++
+@@ 68 -5:26649a07 +0 @@ [Unit dragoon_cutscene] > [CharacterComponent] > [Animation melee2]
+@@ 78 -2:25746249 +2 @@ [Unit dragoon_cutscene] > [EconomyComponent] > [Cost]
++		gold = 32 ;; tankiest commander, morale 14
++
+@@ 81 -1:39315599 +2 @@ [Unit dragoon_cutscene] > [EconomyComponent] > [Upkeep]
++		iron = 1
++		mana = 1
+@@ 83 -1:2b4c342f +1 @@ [Unit dragoon_cutscene]
++
+@@ 85 -2:161f5914 +5 @@ [Unit dragoon_cutscene] > [ElementComponent]
++	morale_value = 14 ;; hammer 13
++	required_structures = base_blacksmith,base_library
++	required_properties = faction_council, good
++	denizen_type = denizen_type_melee
++
+@@ 90 -8:9984be00 +8 @@ [Unit dragoon_cutscene] > [MoverComponent]
++
+= Units/Gauri/hammer.tgi 93-93
++
+= Units/Gauri/hammer.tgi 95-95
++
+= Units/Gauri/hammer.tgi 97-97
++
+= Units/Gauri/hammer.tgi 99-99
+@@ 99 -1:2b4c342f +1 @@ [Unit dragoon_cutscene]
++
+@@ 106 -2:aa4ab21f +2 @@ [Unit dragoon_cutscene] > [PerformerComponent] > [Ability]
++
++			[AbilityDefinition Template=K2MeleeAttack]
+@@ 109 -2:a98b356f +2 @@ [Unit dragoon_cutscene] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++				name = "#hammer_AbilityDefinition_name"
++
+@@ 113 -2:aa76a23f +2 @@ [Unit dragoon_cutscene] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 34 ;; hammer 24
++
+@@ 120 -1:2b4c342f +1 @@ [Unit dragoon_cutscene]
++
+@@ 124 -1:34d154b4 +4 @@ [Unit dragoon_cutscene] > [PropertiesComponent] > [Property]
++		property_IDS = race_gauri
++
++		[Property]
++		property_IDS = captain
+@@ 128 -1:31609426 +1 @@ [Unit dragoon_cutscene] > [PropertiesComponent] > [Property]
++
+@@ 131 -0 +3 @@ [Unit dragoon_cutscene] > [PropertiesComponent] > [Property]
++
++		[Property]
++		property_IDS = agile

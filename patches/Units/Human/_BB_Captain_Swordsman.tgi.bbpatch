@@ -1,0 +1,93 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
+ref Units/Fallen/daevai.tgi sha256=21e711aed98127edaba9fc2be09e5b4b6012a3a4ff873d418a3df8a39f311b45
+ref Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
+ref Units/Nationalist/ghalen_mordecai.tgi sha256=4c17fed77a8998820f4ded8c2c02dec8ffd7941c95ab21707a7e42b5007286bf
+result sha256=2dd8293b91eefeb535f1ad0851a5bd224a5af387668b9d98ca2c21c0be9d28e2 bytes=4945
+bom no
+eol crlf
+
+@@ 2 -1:ebaedddd +56 @@
++/******************************************  INFANTRY CAPTAIN PORTRAIT  ******************************/
++
++[Thing Template=Portrait]
++{
++	ids = captain_infantry_talk
++	name = "#ghalen_mordecai_talk_name"
++
++	[View]
++	{
++		resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecaiTalk
++
+= Units/Nationalist/ghalen_mordecai.tgi 13-26
++/******************************************  INFANTRY CAPTAIN PORTRAIT  ******************************/
++
++[Thing Template=Portrait]
++{
++	ids = captain_infantry_portrait
++	name = "#ghalen_mordecai_portrait_name"
++
++	[View]
++	{
++		resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecaiPortrait
++
++		[AspectNormal]
++		{
++			skin = /Units/Human/_BB_Captain_Infantry/bb_captain_infantry_portrait.dds
++
+= Units/Fallen/daevai.tgi 15-29
++/******************************************  INFANTRY CAPTAIN VFX  **********************************/
+@@ 6 -1:52443ed4 +1 @@ [VFX]
++	ids = blur_melee0_infantry_captain
+@@ 13 -1:c1408784 +1 @@ [VFX blur_melee0] > [Extrusion]
++		ids = blur_melee0_infantry_captain
+@@ 45 -1:783bfb14 +1 @@ [VFX]
++	ids = blur_melee1_infantry_captain
+@@ 52 -1:47f2cc8d +1 @@ [VFX blur_melee1] > [Extrusion]
++		ids = blur_melee1_infantry_captain
+@@ 82 -1:eb69caf8 +1 @@
++/******************************************  INFANTRY CAPTAIN UNIT  **********************************/
+@@ 86 -2:84bf54f6 +10 @@ [Unit]
++	IDS = bb_captain_infantry
++	name = "#bb_captain_infantry_name"
++	
+= Units/Gauri/hammer.tgi 7-13
+@@ 90 -2:7ef55087 +10 @@ [Unit swordsman] > [View]
++	{
++		resource_prefix = Swordsman/Swordsman
++		portrait_ids = captain_infantry_portrait
++		icon = _BB_Captain_Infantry/BB_CaptainInfantryIcon.tga
++
++		[AspectNormal]
++		skin = /Units/Human/_BB_Captain_Infantry/bb_captain_infantry.dds
++	}
++
++		
+@@ 93 -2:be5c767a +2 @@ [Unit swordsman] > [BodyComponent]
++	health = 340
++	defense = 5
+@@ 135 -9:768610c1 +0 @@ [Unit swordsman]
+@@ 145 -4:4da951ae +4 @@ [Unit swordsman] > [ElementComponent]
++	morale_value = 11 ;; 10
++	required_structures = human_center_village
++	primary_minimum_health = .3
++
+@@ 152 -1:9c8ae0bd +1 @@ [Unit swordsman] > [MoverComponent]
++		speed_max = 4.5
+@@ 158 -1:2b4c342f +1 @@ [Unit swordsman]
++
+@@ 161 -1:31609426 +0 @@ [Unit swordsman] > [PerformerComponent]
+@@ 167 -1:5694c396 +1 @@ [Unit swordsman] > [PerformerComponent] > [Ability]
++			[AbilityDefinition Template=K2meleeAttack]
+@@ 169 -1:38df3a49 +1 @@ [Unit swordsman] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++				name = "#captain_AbilityDefinition_name"
+@@ 173 -1:38b6ae4a +1 @@ [Unit swordsman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 32
+@@ 176 -1:b8143aba +1 @@ [Unit swordsman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [WhenDo]
++				audio_ids = metal_swing3		
+@@ 190 -1:480b0997 +1 @@ [Unit swordsman] > [PropertiesComponent] > [Property]
++		property_IDS = captain
+@@ 193 -4:02d93d2f +1 @@ [Unit swordsman] > [PropertiesComponent] > [Property]
++		property_IDS = shields
+@@ 200 -3:ff9af241 +0 @@ [Unit swordsman] > [PropertiesComponent] > [Property]
+@@ 205 -70:b91d4ae9 +0 @@

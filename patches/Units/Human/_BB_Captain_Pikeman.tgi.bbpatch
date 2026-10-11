@@ -1,0 +1,41 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/pikeman.tgi sha256=5d0e74126a896abd40a909846c8769a811306ac45c5747708b34ba685c9c3674
+result sha256=e741069f96c181cbe3696dc48ab38425f52d53cc6f573cfbd83c74702dcb3d46 bytes=2420
+bom no
+eol crlf none*1
+
+@@ 4 -2:768a7ac4 +2 @@ [Unit]
++	IDS = bb_captain_pikeman
++	name = "#bb_captain_pikeman_name"
+@@ 8 -1:e5a7bb92 +8 @@ [Unit pikeman] > [View]
++	{
++		resource_prefix = Pikeman/Pikeman
++		icon = /Units/Human/Pikeman/PikemanIcon.tga
++
++		[AspectNormal]
++		skin = /Units/Human/_BB_Sergeant_Pikeman/bb_sergeant_infantry.dds
++	}
++	
+@@ 11 -1:0adfcd9d +1 @@ [Unit pikeman] > [BodyComponent]
++	health = 240
+@@ 56 -1:3d77d193 +1 @@ [Unit pikeman] > [EconomyComponent] > [Cost]
++		gold = 5 ;; pikeman 2
+@@ 59 -1:ae381f5f +1 @@ [Unit pikeman] > [EconomyComponent] > [Upkeep]
++		iron = 0.25 ;; Pikeman 0.125
+@@ 64 -1:bb6e38a1 +1 @@ [Unit pikeman] > [ElementComponent]
++		morale_value = 10 ;; pikeman 9
+@@ 71 -0 +3 @@ [Unit pikeman] > [ElementComponent] > [SupportProperty]
++
++		[SupportProperty]
++		property_IDS = bb_guardsman
+@@ 75 -1:18f897da +1 @@ [Unit pikeman] > [MoverComponent]
++		speed_max = 3.5 ;; Pikeman 3
+@@ 95 -1:fccf7290 +1 @@ [Unit pikeman] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 21 ;; Pikeman 14
+@@ 114 -1:447c45cf +1 @@ [Unit pikeman] > [PropertiesComponent] > [Property]
++		property_IDS = captain
+@@ 117 -4:edc90a73 +1 @@ [Unit pikeman] > [PropertiesComponent] > [Property]
++		property_IDS = agile
+@@ 126 -1:4b6adb2d +1 @@ [Unit pikeman] > [PropertiesComponent] > [Property]
++		property_IDS = role_infantry
+@@ 129 -70:5dc2fc48 +0 @@

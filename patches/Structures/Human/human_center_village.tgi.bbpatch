@@ -1,0 +1,16 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Human/human_center_village.tgi sha256=7ab3b5d8b36a7bb10d703f0d664554b9cb0d17006d5d6c8fd56a1207e2128d12
+result sha256=4af42e6c91367017df07a8adc03b2a5a87ecc60b76173bfeaa8be7ce616c0e6f bytes=1090
+bom no
+eol crlf
+
+@@ 16 -1:f1894ef7 +1 @@ [Thing human_center_village] > [BodyComponent]
++	health = 2600 ;; 1300
+@@ 44 -1:9ecc2978 +1 @@ [Thing human_center_village] > [DenizenComponent] > [Inventory]
++		count = 12 ;; 6
+@@ 48 -1:9ecc2978 +1 @@ [Thing human_center_village] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 6
+@@ 57 -1:569f89b4 +1 @@ [Thing human_center_village] > [EconomyComponent] > [Cost]
++		gold = 500 ;; 100
+@@ 61 -1:feb48735 +1 @@ [Thing human_center_village] > [EconomyComponent] > [Production]
++		unit_limit_provided = 7 ;; 2

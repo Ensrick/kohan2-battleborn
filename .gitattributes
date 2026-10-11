@@ -1,0 +1,6 @@
+# Patch files are LF-only text; bytes inside them are hashed, so no line-ending conversion.
+*.bbpatch text eol=lf
+*.bbdelta binary
+*.tga binary
+*.dds binary
+*.RMP binary

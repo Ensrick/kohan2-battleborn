@@ -1,0 +1,33 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Shadow/shadow_outpost.tgi sha256=ea3280530659c8c40ec0fab2690f247c09badb3af4fc19227128ee834379a355
+ref Structures/Shadow/shadow_center_city.tgi sha256=a85c3b9116fc108862fb0b128fc18eb0915f4c86e8f288ae797b0e8c2e54590d
+result sha256=a71d70b7977a8808e8b45f641be3507fc2af336a25f2aecbbba493da58a20440 bytes=1105
+bom no
+eol lf
+
+@@ 12 -1:36a9e7f1 +1 @@ [Thing shadow_outpost] > [View]
++
+@@ 18 -1:afd8c0ce +2 @@ [Thing shadow_outpost] > [BodyComponent]
++	health = 1400 ;; 700
++	captureable = true
+@@ 35 -0 +4 @@ [Thing shadow_outpost] > [DenizenComponent] > [Organization]
+= Structures/Shadow/shadow_center_city.tgi 38-41
+@@ 41 -1:31609426 +5 @@ [Thing shadow_outpost] > [DenizenComponent] > [Inventory]
++
++		[Inventory]
++		actor_ids = fury
++		count = 18
++
+@@ 44 -1:6a800e01 +1 @@ [Thing shadow_outpost] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 8
+@@ 46 -1:2b4c342f +1 @@ [Thing shadow_outpost]
++
+@@ 49 -1:2b4c342f +1 @@ [Thing shadow_outpost] > [DetectionComponent]
++
+@@ 53 -2:88f3b074 +2 @@ [Thing shadow_outpost] > [EconomyComponent] > [Cost]
++		gold = 200 ;; 80
++
+@@ 58 -0 +3 @@ [Thing shadow_outpost] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 2

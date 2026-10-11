@@ -1,0 +1,39 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Haroun/haroun_fort.tgi sha256=0943394085bed06425d18ec03542df680eb2c6ff09b9d009729cb15880fadb47
+result sha256=45c75c8b46745c0a9dafd1e01cfd1b2ea7164b5bd9d717d73c591fa5fd282f47 bytes=963
+bom no
+eol crlf
+
+@@ 4 -3:7490725a +3 @@ [Thing]
++	IDS = bb_haroun_woodmarket_outpost
++	name = "#haroun_woodconvert_name"
++	name_list_ids = namelist_bb_haroun_woodmarket
+@@ 8 -3:4ad3784d +0 @@ [Thing haroun_fort]
+@@ 13 -3:76b85a25 +3 @@ [Thing haroun_fort] > [View]
++		resource_prefix = /Structures/Haroun/HarounWoodConvert/harounwoodconvert
++		icon = /UI/Game/StructureButtons/WoodtoManaConvertIcon.png
++
+@@ 17 -4:1096582a +1 @@ [Thing haroun_fort] > [View] > [TextureSearchPath]
++		path = /Shared/SharedTextures, /Structures/Haroun/HarounWoodmill
+@@ 24 -1:15b6d557 +7 @@ [Thing haroun_fort] > [BodyComponent]
++	health = 750
++	captureable = true
++
++	[ConstructionComponent]
++	{
++		can_raze = true
++	}
+@@ 31 -4:23aad6db +0 @@ [Thing haroun_fort] > [DenizenComponent] > [Organization]
+@@ 37 -4:58babeb0 +0 @@ [Thing haroun_fort] > [DenizenComponent] > [Organization]
+@@ 46 -1:2b4c342f +1 @@ [Thing haroun_fort]
++
+@@ 48 -1:7c98b2a1 +1 @@ [Thing haroun_fort] > [DetectionComponent]
++	detection_range = 26
+@@ 53 -4:46242d2d +5 @@ [Thing haroun_fort] > [EconomyComponent] > [Cost]
++		gold = 300 ;; from 3 * 100
++
++		[Production]
++		wood = 8 ;; from 2/3 * 12
++		mana = 2 ;; from 2/3 * 3
+@@ 60 -1:112e51a4 +1 @@ [Thing haroun_fort] > [SupplyComponent]
++	supply_range = 13

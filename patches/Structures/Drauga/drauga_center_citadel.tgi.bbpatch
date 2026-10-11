@@ -1,0 +1,23 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Drauga/drauga_center_citadel.tgi sha256=1524e91ae61725b8dabd7efeefb8152cc7f0c3c8dcd8b19e991dc5e75f8831b3
+ref Buildings/LairsTech/encampment.tgi sha256=536ed3864ebbeaa8321201bb10f402d1cef8671f2c5b33580daa7ad3364418c0
+result sha256=506b5a58d6bb5593a557fbc0faf02f49e8f41ff00fc34cc005bee8542e805166 bytes=1189
+bom no
+eol crlf
+
+@@ 16 -1:fb0e899a +1 @@ [Thing drauga_center_citadel] > [BodyComponent]
++	health = 14400 ;; 7200
+@@ 32 -0 +4 @@ [Thing drauga_center_citadel] > [DenizenComponent] > [Organization]
+= Buildings/LairsTech/encampment.tgi 38-41
+@@ 38 -1:81e56d1a +1 @@ [Thing drauga_center_citadel] > [DenizenComponent] > [Inventory]
++		count = 30 ;; 10
+@@ 42 -1:5db2b71b +5 @@ [Thing drauga_center_citadel] > [DenizenComponent] > [Inventory]
++		count = 38 ;; 12
++
++		[Inventory]
++		actor_ids = berserker
++		count = 16
+@@ 51 -1:459e717b +1 @@ [Thing drauga_center_citadel] > [EconomyComponent] > [Cost]
++		gold = 1650 ;; 330
+@@ 56 -1:d96b082b +1 @@ [Thing drauga_center_citadel] > [EconomyComponent] > [Production]
++		unit_limit_provided = 10 ;; 5

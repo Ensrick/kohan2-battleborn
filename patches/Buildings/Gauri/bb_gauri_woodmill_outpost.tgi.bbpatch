@@ -1,0 +1,42 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Gauri/gauri_outpost.tgi sha256=78bd8d3b8269bd31f9cf5b09df05befcf50fe890169d89a47b05cdc0b3c962c3
+result sha256=7d72c9b6a433e602761cc1a13f344f7a0893d9071d77099b1b64cf72b2c9aa54 bytes=1040
+bom no
+eol crlf
+
+@@ 4 -4:40ccdc6c +4 @@ [Thing]
++	IDS = bb_gauri_woodmill_outpost
++	name = "#gauri_woodmill_name"
++	name_list_ids = namelist_bb_gauri_woodmill
++
+@@ 10 -5:6df8ba5c +2 @@ [Thing gauri_outpost] > [View]
++		resource_prefix = /Structures/Gauri/GauriWoodmill/gauriwoodmill
++		icon = /UI/Game/StructureButtons/WoodmillIcon.png
+@@ 18 -1:7b43f78e +2 @@ [Thing gauri_outpost] > [BodyComponent]
++	health = 600
++	captureable = true
+@@ 23 -1:f200d0bc +6 @@ [Thing gauri_outpost] > [ConstructionComponent] > [Upgrade]
++		ids = bb_gauri_sawmill_outpost
++
++		[Upgrade]
++		ids = bb_gauri_woodmarket_outpost
++
++		can_raze = true
+@@ 28 -2:042dff13 +2 @@ [Thing gauri_outpost] > [DenizenComponent]
++		guard_range = 24
++
+@@ 33 -4:3390aba2 +0 @@ [Thing gauri_outpost] > [DenizenComponent] > [Organization]
+@@ 45 -4:05a4ad9b +0 @@ [Thing gauri_outpost] > [DenizenComponent] > [Inventory]
+@@ 52 -1:10623db3 +1 @@ [Thing gauri_outpost] > [DenizenComponent] > [Inventory]
++		count = 8
+@@ 54 -1:2b4c342f +1 @@ [Thing gauri_outpost]
++
+@@ 56 -1:7c98b2a1 +1 @@ [Thing gauri_outpost] > [DetectionComponent]
++	detection_range = 26
+@@ 61 -4:2d694127 +4 @@ [Thing gauri_outpost] > [EconomyComponent] > [Cost]
++		gold = 225 ;; from 3 * 75
++
++		[Production]
++		wood = 5 ;; from 2/3 * 7, rounded up
+@@ 68 -1:112e51a4 +1 @@ [Thing gauri_outpost] > [SupplyComponent]
++	supply_range = 13

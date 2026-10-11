@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Game/SVars_k2.tgi sha256=04141ea65525e719b84bedf16611614f9bbfcb116392c19fd2eb69b24a4ff533
+result sha256=2d672fa52dabacffaf97c244aee4f508dcc05753d0d147b016c4ee6812decebe bytes=1503
+bom no
+eol crlf none*1
+
+@@ 43 -1:3011a606 +1 @@ [SVars]
++	int	EconomyLimitedResourceMax = 40 ;; 20

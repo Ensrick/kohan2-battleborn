@@ -1,0 +1,18 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
+result sha256=527a6c14b67e95a4aebca917eb597a38b1fdb29cd28a29dfb58772215350326f bytes=5506
+bom no
+eol crlf
+
+@@ 8 -1:1da5a15f +1 @@ [Unit bowman] > [View]
++		resource_prefix = Bowman/Bowman
+@@ 133 -1:f9bf3576 +1 @@ [Unit bowman] > [EconomyComponent] > [Cost]
++		gold = 6 ;; 12
+@@ 136 -1:94edaef9 +1 @@ [Unit bowman] > [EconomyComponent] > [Upkeep]
++		wood = 0.5 ;; 1.5
+@@ 141 -1:31451480 +1 @@ [Unit bowman] > [ElementComponent]
++	required_structures = human_woodmill,human_blacksmith
+@@ 266 -1:07282191 +1 @@ [Thing company_bowman] > [OrganizationComponent] > [Slot]
++		element_IDS = bowman
+@@ 275 -1:9d5db578 +1 @@ [Thing company_bowman] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_captain_ranger

@@ -1,0 +1,18 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Undead/boneweaver.tgi sha256=d0b94706a76daaad6d4ba1aa05489eb41730ab5517a9b7163b04a1e1067f10bd
+result sha256=468f837374790f3e3c67d59f17e76a0d96d86f3acb6b688b0b678d880019076d bytes=5514
+bom no
+eol crlf*23 lf*1 crlf*271
+
+@@ 22 -0 +3 @@ [Unit boneweaver] > [BuilderComponent] > [BuildActor]
++
++		[BuildActor]
++		actor_ids = bb_undead_woodmill_outpost
+@@ 209 -0 +3 @@ [Unit boneweaver] > [PropertiesComponent] > [Property]
++		
++		[Property]
++		property_IDS = bb_settler_flank
+@@ 260 -0 +3 @@ [Thing company_boneweaver] > [OrganizationComponent] > [Slot]
++
++		[Slot]	;; bb_settler_flank
++		element_IDS = boneweaver

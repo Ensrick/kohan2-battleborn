@@ -1,0 +1,28 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/juggernaut.tgi sha256=24ecfc0e26ddefdf578672c79e26bd2c192b25a782d08f754f7e3046fd3e9204
+result sha256=e5418ee465142469d0dc57633849f49eed78e896120fdd05cc95a93b257ddfed bytes=4603
+bom no
+eol crlf none*1
+
+@@ 116 -0 +1 @@ [Unit juggernaut] > [ElementComponent]
++		denizen_type = denizen_type_melee
+@@ 229 -0 +19 @@
++
++[Thing Template=K2GauriMilitia]
++{
++	IDS = militia_juggernaut
++	name = "#bb_juggernaut_militia_name"
++	
++	[View]
++	resource_prefix = Juggernaut/Juggernaut
++	banner_icon = /Organizations/BannerIcons/SiegeIcon.tga
++	
++	[OrganizationComponent]
++	{
++		layout_IDS = company_siege_militia
++		entrenchment_time = 300
++		
++		[Slot]	;; siege
++		element_IDS = juggernaut
++	}	
++}

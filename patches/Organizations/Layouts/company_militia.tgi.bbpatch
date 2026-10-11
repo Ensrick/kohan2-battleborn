@@ -1,0 +1,26 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Organizations/Layouts/company_militia.tgi sha256=c97d713b877bb892e658bd6e351661bb348170b536ae0905ec0ac7837a527bf8
+result sha256=25f6768223e59b090272444f6e5b70907ab3754d9e967cfd57c591ba1f96b8e3 bytes=3900
+bom no
+eol crlf none*1
+
+@@ 170 -0 +21 @@
++
++[OrganizationLayout template=K2OrganizationLayout]
++{
++	IDS = company_siege_militia
++	name = "#company_militia_company_short_militia_name"
++	
++	[Slot template=LayoutSlot]
++	property_IDS = siege
++	locked = true
++	number = 1
++	name = "#company_militia_Slot_name"
++
+= Organizations/Layouts/company_militia.tgi 18-20
++
+= Organizations/Layouts/company_militia.tgi 22-22
++		property_IDS = siege
++		offset = 0,-0
++	}
++}

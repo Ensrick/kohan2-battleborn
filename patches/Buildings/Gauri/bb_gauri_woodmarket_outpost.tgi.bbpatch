@@ -1,0 +1,42 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Gauri/gauri_fort.tgi sha256=dfa70cf6b3a5342b58eaddd884bd5ab62c969a4809a4b17e181ab80cbf3aa4b1
+result sha256=940a75f0d809e300b0388f295312d379f21e54ce970aada315e7528faffd7513 bytes=1036
+bom no
+eol crlf
+
+@@ 4 -3:cd36ddee +3 @@ [Thing]
++	IDS = bb_gauri_woodmarket_outpost
++	name = "#gauri_woodexport_name"
++	name_list_ids = namelist_bb_gauri_woodmarket
+@@ 10 -5:ace0e277 +2 @@ [Thing gauri_fort] > [View]
++		resource_prefix = /Structures/Gauri/GauriWoodExport/gauriwoodexport
++		icon = /UI/Game/StructureButtons/WoodConvertIcon.png
+@@ 16 -2:b8343be1 +2 @@ [Thing gauri_fort] > [View] > [AspectNormal]
++		[TextureSearchPath]
++		path = /Structures/Gauri/GauriWoodmill
+@@ 21 -1:d9703022 +7 @@ [Thing gauri_fort] > [BodyComponent]
++	health = 800
++	captureable = true
++
++	[ConstructionComponent]
++	{
++		can_raze = true
++	}
+@@ 26 -1:31609426 +1 @@ [Thing gauri_fort] > [DenizenComponent]
++
+@@ 30 -5:e33a82a5 +1 @@ [Thing gauri_fort] > [DenizenComponent] > [Organization]
++
+@@ 44 -4:5caf253f +0 @@ [Thing gauri_fort] > [DenizenComponent] > [Inventory]
+@@ 51 -1:2b4c342f +1 @@ [Thing gauri_fort]
++
+@@ 53 -2:9c9488cb +2 @@ [Thing gauri_fort] > [DetectionComponent]
++	detection_range = 26
++
+@@ 58 -4:4da81bd4 +5 @@ [Thing gauri_fort] > [EconomyComponent] > [Cost]
++		gold = 285 ;; from 3 * 95
++
++		[Production]
++		gold = 8 ;; from 2/3 * 12
++		wood = 4 ;; from 2/3 * 6
+@@ 65 -1:bcf25c30 +1 @@ [Thing gauri_fort] > [SupplyComponent]
++	supply_range = 13

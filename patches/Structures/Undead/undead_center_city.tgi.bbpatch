@@ -1,0 +1,25 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Structures/Undead/undead_center_city.tgi sha256=f5690999ed1b032dbb1f92acd5bc5952d1b1d7e22fdbadcbdc7c3d3adb8bf1f6
+result sha256=59ea2ff137a09697ef7f996e2014bca4776f0b6cdc1c0e5803a7509db11d2508 bytes=1275
+bom no
+eol crlf
+
+@@ 16 -1:5cabb100 +1 @@ [Thing undead_center_city] > [BodyComponent]
++	health = 9600 ;; 4800
+@@ 38 -0 +4 @@ [Thing undead_center_city] > [DenizenComponent] > [Organization]
++		[Organization]
++		organization_ids = militia_zombie ;; CUSTOM COMPANY!
++		behavior = MILITIA_OFFENSIVE
++
+@@ 44 -1:6a800e01 +1 @@ [Thing undead_center_city] > [DenizenComponent] > [Inventory]
++		count = 12 ;; 8
+@@ 48 -1:6a800e01 +5 @@ [Thing undead_center_city] > [DenizenComponent] > [Inventory]
++		count = 12 ;; 8
++
++		[Inventory]
++		actor_ids = zombie
++		count = 60
+@@ 57 -1:3a309ac3 +1 @@ [Thing undead_center_city] > [EconomyComponent] > [Cost]
++		gold = 900 ;; 180
+@@ 62 -1:4a3e346c +1 @@ [Thing undead_center_city] > [EconomyComponent] > [Production]
++		unit_limit_provided = 9 ;; 4

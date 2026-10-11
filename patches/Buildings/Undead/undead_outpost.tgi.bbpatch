@@ -1,0 +1,30 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Undead/undead_outpost.tgi sha256=53f173787dea1b5d779ee9233a67e7c96551da4634617be8b9b79d0e8ce35bf2
+result sha256=fa9c237a1f677194a4a449240c0131018ffde6440728fcc7774db37b4942c117 bytes=1169
+bom no
+eol lf
+
+@@ 8 -1:2b4c342f +0 @@ [Thing undead_outpost]
+@@ 16 -1:36a9e7f1 +1 @@ [Thing undead_outpost] > [View] > [TextureSearchPath]
++
+@@ 22 -1:c720f9dc +2 @@ [Thing undead_outpost] > [BodyComponent]
++	health = 2000 ;; 1000
++	captureable = true
+@@ 41 -1:31609426 +1 @@ [Thing undead_outpost] > [DenizenComponent] > [Organization]
++
+@@ 52 -2:454da186 +2 @@ [Thing undead_outpost] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 4
++
+@@ 56 -1:10623db3 +1 @@ [Thing undead_outpost] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 4
+@@ 58 -1:2b4c342f +1 @@ [Thing undead_outpost]
++
+@@ 61 -1:2b4c342f +1 @@ [Thing undead_outpost] > [DetectionComponent]
++
+@@ 65 -2:88f3b074 +2 @@ [Thing undead_outpost] > [EconomyComponent] > [Cost]
++		gold = 200 ;; 80
++
+@@ 69 -0 +3 @@ [Thing undead_outpost] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 2

@@ -1,0 +1,18 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Drauga/settler.tgi sha256=e2bbb2e43c9b52d9f48da6d10cc263715505c05769282272c7fa2dacad7cf1b1
+result sha256=520ceba0eaa532c8fb3adb5726e3497d38e65e3a37df192ea711a397716ef139 bytes=4404
+bom no
+eol crlf
+
+@@ 128 -1:7000d9e4 +1 @@ [Unit settler] > [EconomyComponent] > [Cost]
++		gold = 2 ;; 5
+@@ 131 -1:736f7308 +1 @@ [Unit settler] > [EconomyComponent] > [Upkeep]
++		stone = 0.5 ;; 1
+@@ 189 -0 +3 @@ [Unit settler] > [PropertiesComponent] > [Property]
++		property_IDS = bb_settler_flank
++
++		[Property]
+@@ 227 -0 +3 @@ [Thing company_settler] > [OrganizationComponent] > [Slot]
++		[Slot]	;; bb_settler_flank
++		element_IDS = settler
++

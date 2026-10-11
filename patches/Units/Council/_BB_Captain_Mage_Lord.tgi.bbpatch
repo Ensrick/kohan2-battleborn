@@ -1,0 +1,93 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Monster/banditarcane.tgi sha256=79968da7fa804a1703561dff5d49b6f131539ee59ed3c96ec9c0d0d948c51741
+result sha256=b1309fcf904701d720dd3885d96a1746757e07b683f6f4434f08b0dab6bd6f15 bytes=2465
+bom no
+eol lf
+
+@@ 2 -1:2a1b0016 +4 @@
++;; Mage Lord - Council special captain (design tier 6, Ravid Sakeri hero model)
++;; TEXTURE DEBT: own skin recolor + own icon (ships with Ravid Sakeri's art + portrait)
++
++[Unit template=K2CouncilUnit]
+@@ 4 -3:da7a0ae3 +3 @@ [Unit]
++	IDS = bb_captain_council_magelord
++	name = "#bb_captain_council_magelord_name"
++
+@@ 9 -4:527750ce +3 @@ [Unit arcane] > [View]
++		resource_prefix = /Units/Council/RavidSakeri/RavidSakeri
++		portrait_ids = Ravid_Sakeri_portrait
++		icon = /Units/Council/RavidSakeri/RavidSakeriIcon.tga
+@@ 16 -3:4c35935a +3 @@ [Unit arcane] > [BodyComponent]
++	health = 420
++	defense = 3
++
+@@ 24 -1:8493100b +1 @@ [Unit arcane] > [CharacterComponent] > [Animation walk]
++
+@@ 28 -1:31609426 +1 @@ [Unit arcane] > [CharacterComponent] > [Animation jog]
++
+@@ 31 -1:31609426 +1 @@ [Unit arcane] > [CharacterComponent] > [Animation idle]
++
+@@ 34 -1:31609426 +1 @@ [Unit arcane] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 40 -1:2b4c342f +1 @@ [Unit arcane] > [CharacterComponent] > [Animation fidget2]
++
+@@ 44 -1:e740a6fa +1 @@ [Unit arcane] > [CharacterComponent] > [Animation die1]
++
+@@ 48 -1:76a3029a +1 @@ [Unit arcane] > [CharacterComponent]
++
+@@ 52 -1:31609426 +1 @@ [Unit arcane] > [CharacterComponent] > [Animation melee1]
++
+@@ 55 -1:5404d43e +1 @@ [Unit arcane] > [CharacterComponent] > [Animation cast]
++		key_ratio = 0.48
+@@ 58 -1:6f0fdbb0 +1 @@ [Unit arcane] > [CharacterComponent] > [Animation]
++		IDS = idlecast
+@@ 64 -1:e52db181 +4 @@ [Unit arcane] > [EconomyComponent] > [Cost]
++		gold = 32 ;; Wizard-tier casting + captain body
++
++		[Upkeep]
++		mana = 2 ;; caster tax
+@@ 66 -1:2b4c342f +1 @@ [Unit arcane]
++
+@@ 68 -3:8e5a8371 +6 @@ [Unit arcane] > [ElementComponent]
++	{
++		morale_value = 13
++		required_structures = base_library
++		required_properties = faction_council, good
++	}
++
+@@ 73 -2:c0b5bff1 +2 @@ [Unit arcane] > [MoverComponent]
++		speed_max = 4
++
+@@ 76 -1:31609426 +1 @@ [Unit arcane] > [MoverComponent] > [TrackInfo]
++
+@@ 79 -1:2b4c342f +1 @@ [Unit arcane]
++
+@@ 82 -2:5978ca61 +0 @@ [Unit arcane] > [PerformerComponent]
+@@ 86 -0 +2 @@ [Unit arcane] > [PerformerComponent] > [Ability]
++			animation1 = melee1
++
+@@ 88 -2:6c140e87 +2 @@ [Unit arcane] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++				name = "#ravid_sakeri_AbilityDefinition_name"
++
+@@ 92 -2:91a34af6 +2 @@ [Unit arcane] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 32
++
+@@ 100 -9:7ef7e95a +6 @@ [Unit arcane] > [PerformerComponent] > [Ability]
++		{
++			ability_IDS = protection
++			spawn_position = -0.24,-1.56,1.37
++			required_experience_min = 0
++			required_experience_max = 2
++		}
+@@ 111 -9:7f93a696 +6 @@ [Unit arcane] > [PerformerComponent] > [Ability]
++		{
++			ability_IDS = protection2
++			spawn_position = -0.24,-1.56,1.37
++			required_experience_min = 3
++			required_experience_max = 3
++		}
+@@ 125 -1:34d154b4 +1 @@ [Unit arcane] > [PropertiesComponent] > [Property]
++		property_IDS = race_kohan
+@@ 128 -1:468a1662 +1 @@ [Unit arcane] > [PropertiesComponent] > [Property]
++		property_IDS = captain
+@@ 132 -3:a4387510 +0 @@ [Unit arcane] > [PropertiesComponent] > [Property]

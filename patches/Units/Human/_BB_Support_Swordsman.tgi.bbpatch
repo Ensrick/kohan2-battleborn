@@ -1,0 +1,26 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
+result sha256=a07006897ee53957126ff00c81740e92cf401852e4a55407049306b6c95bd5c1 bytes=2090
+bom no
+eol crlf none*1
+
+@@ 1 -83:6c5fd4e1 +0 @@
+@@ 86 -2:84bf54f6 +2 @@ [Unit]
++	IDS = bb_support_swordsman
++	name = "#bb_support_swordsman_name"
+@@ 90 -1:34450972 +6 @@ [Unit swordsman] > [View]
++	{
++		resource_prefix = Swordsman/Swordsman
++
++		[AspectNormal]
++		skin = %sbase.dds
++	}
+@@ 138 -1:8a0d33a3 +1 @@ [Unit swordsman] > [EconomyComponent] > [Cost]
++		gold = 8 ;; 16
+@@ 141 -1:7dbac979 +1 @@ [Unit swordsman] > [EconomyComponent] > [Upkeep]
++		iron = 0.5 ;; 1
+@@ 146 -1:2715cd22 +1 @@ [Unit swordsman] > [ElementComponent]
++	required_structures = human_center_town
+@@ 193 -4:02d93d2f +1 @@ [Unit swordsman] > [PropertiesComponent] > [Property]
++		property_IDS = support
+@@ 205 -70:b91d4ae9 +0 @@

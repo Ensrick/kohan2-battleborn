@@ -1,3 +1,13 @@
 Thumbs.db
 Desktop.ini
 *.bak
+__pycache__/
+
+# Built output - contains game-derived files; never commit.
+build/
+# Full files for editing (bb.py work) - contains game-derived files; never commit.
+work/
+# Loose work-in-progress files mounted in developer mode.
+wip/
+# Material we may not publish (third-party or unconfirmed licences, game-art sources).
+private/

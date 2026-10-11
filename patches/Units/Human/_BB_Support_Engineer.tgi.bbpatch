@@ -1,0 +1,108 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/engineer.tgi sha256=dcf298fbd3f4eb91388544ec1ddbb60116fa39beb543230b9832eb2c5b3938b5
+result sha256=879c8acee83daa5c0cfc1ba2d1fc2be0469acd0649c43656375a9ed9fea77eec bytes=5028
+bom no
+eol lf
+
+@@ 1 -0 +3 @@
++
++;; Siege Expert - engineer-line support, building-breaker and field repairman
++;; TEXTURE DEBT: recolored engineer skin + own icon (currently default engineer art)
+@@ 4 -4:d017490d +3 @@ [Unit]
++	IDS = bb_support_engineer
++	name = "#bb_support_engineer_name"
++
+@@ 37 -1:2b4c342f +1 @@ [Unit engineer]
++
+@@ 39 -1:0516e633 +1 @@ [Unit engineer] > [BodyComponent]
++	health = 260 ;; engineer 220
+@@ 41 -1:2b4c342f +1 @@ [Unit engineer] > [BodyComponent]
++
+@@ 46 -1:2b4c342f +4 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
++
++		[BuildActor]
++		actor_ids = bb_human_woodmill_outpost
++
+@@ 49 -1:31609426 +1 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
++
+@@ 52 -1:31609426 +1 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
++
+@@ 55 -1:31609426 +1 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
++
+@@ 58 -1:31609426 +1 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
++
+@@ 60 -1:ca3632ed +1 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
++		actor_ids = human_mine_mana
+@@ 62 -1:2b4c342f +1 @@ [Unit engineer]
++
+@@ 68 -1:8493100b +1 @@ [Unit engineer] > [CharacterComponent] > [Animation walk]
++
+@@ 72 -1:31609426 +1 @@ [Unit engineer] > [CharacterComponent] > [Animation jog]
++
+@@ 75 -1:31609426 +1 @@ [Unit engineer] > [CharacterComponent] > [Animation idle]
++
+@@ 78 -1:31609426 +1 @@ [Unit engineer] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 81 -1:31609426 +1 @@ [Unit engineer] > [CharacterComponent] > [Animation fidget1]
++
+@@ 84 -1:8493100b +1 @@ [Unit engineer] > [CharacterComponent] > [Animation fidget2]
++
+@@ 87 -1:8493100b +1 @@ [Unit engineer] > [CharacterComponent] > [Animation fidget3]
++
+@@ 95 -1:8493100b +1 @@ [Unit engineer] > [CharacterComponent]
++
+@@ 101 -1:bab8787d +1 @@ [Unit engineer] > [CharacterComponent] > [Animation]
++		{
+@@ 103 -2:f72a57a6 +2 @@ [Unit engineer] > [CharacterComponent] > [Animation build1]
++			key_ratio = 0.5
++
+@@ 135 -1:2b4c342f +1 @@ [Unit engineer] > [CharacterComponent]
++
+@@ 139 -1:eb133889 +1 @@ [Unit engineer] > [CharacterComponent] > [Animation build2]
++			key_ratio = 0.5
+@@ 176 -2:8bdf3767 +2 @@ [Unit engineer] > [EconomyComponent] > [Cost]
++		gold = 20 ;; engineer 15
++
+@@ 181 -1:2b4c342f +1 @@ [Unit engineer]
++
+@@ 184 -1:bb6e38a1 +1 @@ [Unit engineer] > [ElementComponent]
++		morale_value = 10 ;; engineer 9
+@@ 187 -1:31609426 +1 @@ [Unit engineer] > [ElementComponent]
++
+@@ 191 -1:2b4c342f +1 @@ [Unit engineer]
++
+@@ 195 -1:31609426 +1 @@ [Unit engineer] > [MoverComponent]
++
+@@ 197 -1:31609426 +1 @@ [Unit engineer] > [MoverComponent] > [TrackInfo]
++
+@@ 200 -1:2b4c342f +1 @@ [Unit engineer]
++
+@@ 202 -1:7236e350 +1 @@ [Unit engineer] > [PerformerComponent]
++	{
+@@ 208 -1:568d3980 +1 @@ [Unit engineer] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++
+@@ 211 -2:e9e4d919 +2 @@ [Unit engineer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 20 ;; engineer 18
++
+@@ 216 -2:5f9b8ba6 +2 @@ [Unit engineer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 14 ;; engineer 8
++
+@@ 222 -1:31609426 +1 @@ [Unit engineer] > [PerformerComponent]
++
+@@ 224 -1:c9188e8e +1 @@ [Unit engineer] > [PerformerComponent] > [Ability]
++		{
+@@ 227 -1:e740a6fa +1 @@ [Unit engineer] > [PerformerComponent] > [Ability]
++
+@@ 231 -1:02b7c2dc +1 @@ [Unit engineer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 14 ;; engineer 10
+@@ 237 -1:31609426 +1 @@ [Unit engineer] > [PerformerComponent]
++
+@@ 242 -1:e740a6fa +1 @@ [Unit engineer] > [PerformerComponent] > [Ability]
++
+@@ 246 -1:e32b3167 +1 @@ [Unit engineer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 7 ;; engineer 5
+@@ 253 -1:2b4c342f +1 @@ [Unit engineer]
++
+@@ 260 -1:f7f3b281 +1 @@ [Unit engineer] > [PropertiesComponent] > [Property]
++		property_IDS = support
+@@ 272 -42:aa77532f +0 @@

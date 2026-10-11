@@ -1,0 +1,20 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/pioneer.tgi sha256=463abe221db658fdccec80317b400565d321a822fc906a38b7ac7066674299d9
+result sha256=bff57ab3e93b26c3aa91f119aed0490f3df414cb4ed77234b66006c384500391 bytes=3425
+bom no
+eol crlf none*1
+
+@@ 4 -1:f8341abc +1 @@ [Unit]
++	IDS = bb_captain_pioneer
+@@ 121 -9:443e8032 +0 @@ [Unit pioneer]
+@@ 132 -1:5673fadb +1 @@ [Unit pioneer] > [ElementComponent]
++	morale_value = 9
+@@ 137 -1:18f897da +1 @@ [Unit pioneer] > [MoverComponent]
++		speed_max = 4.5
+@@ 154 -1:02b7c2dc +1 @@ [Unit pioneer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount =  22 ;; Pioneer is 10
+@@ 169 -1:38b6ae4a +1 @@ [Unit pioneer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 30 ;; 20
+@@ 183 -1:f7f3b281 +1 @@ [Unit pioneer] > [PropertiesComponent] > [Property]
++		property_IDS = captain
+@@ 189 -42:0fac65fa +0 @@

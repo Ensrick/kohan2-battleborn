@@ -1,0 +1,28 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Haroun/haroun_outpost.tgi sha256=82a35b306699eed29468fcf949eb4f63e41a8c2881160d53520496d83a70283f
+result sha256=46f7cb0e17fd9784119a8cde8983e5899e6ade3cfde00e00036a8371c62943f2 bytes=1031
+bom no
+eol lf
+
+@@ 8 -1:bdb1c82f +1 @@ [Thing haroun_outpost]
++	[Flags]
+@@ 10 -1:2b4c342f +1 @@ [Thing haroun_outpost] > [Flags]
++
+@@ 15 -1:36a9e7f1 +1 @@ [Thing haroun_outpost] > [View]
++
+@@ 21 -1:f1894ef7 +2 @@ [Thing haroun_outpost] > [BodyComponent]
++	health = 2600 ;; 1300
++	captureable = true
+@@ 46 -1:10623db3 +1 @@ [Thing haroun_outpost] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 4
+@@ 50 -1:10623db3 +1 @@ [Thing haroun_outpost] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 4
+@@ 52 -1:2b4c342f +1 @@ [Thing haroun_outpost]
++
+@@ 56 -2:17f7bad0 +2 @@ [Thing haroun_outpost] > [EconomyComponent] > [Cost]
++		gold = 250 ;; 100
++
+@@ 60 -0 +3 @@ [Thing haroun_outpost] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 2

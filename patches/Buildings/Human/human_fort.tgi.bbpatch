@@ -1,0 +1,34 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Human/human_fort.tgi sha256=2c47f96e03ae9aab60214eaa84a004480a3298ff4eafae2e2f826941c71b985b
+result sha256=e4fe61769dfd60c9f5dbe9dd94f06f82e18dd2e2f790f058e8556671ecdbcde2 bytes=1303
+bom no
+eol crlf none*1
+
+@@ 21 -1:15b6d557 +2 @@ [Thing human_fort] > [BodyComponent]
++	health = 3900 ;; 1950
++	captureable = true
+@@ 26 -1:31609426 +1 @@ [Thing human_fort] > [DenizenComponent]
++
+@@ 36 -0 +4 @@ [Thing human_fort] > [DenizenComponent] > [Organization]
++		organization_ids = militia_pikeman
++		behavior = MILITIA_OFFENSIVE
++
++		[Organization]
+@@ 38 -1:e3b0c442 +1 @@ [Thing human_fort] > [DenizenComponent] > [Organization]
++		
+@@ 42 -1:31609426 +5 @@ [Thing human_fort] > [DenizenComponent] > [Inventory]
++
++		[Inventory]
++		actor_ids = pikeman
++		count = 24
++
+@@ 45 -1:6a800e01 +1 @@ [Thing human_fort] > [DenizenComponent] > [Inventory]
++		count = 18 ;; 8
+@@ 49 -1:6a800e01 +1 @@ [Thing human_fort] > [DenizenComponent] > [Inventory]
++		count = 24 ;; 8
+@@ 58 -1:569f89b4 +1 @@ [Thing human_fort] > [EconomyComponent] > [Cost]
++		gold = 250 ;; 100
+@@ 62 -0 +3 @@ [Thing human_fort] > [EconomyComponent] > [Upkeep]
++
++		[Production]
++		unit_limit_provided = 3

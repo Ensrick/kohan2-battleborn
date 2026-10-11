@@ -1,0 +1,28 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/lancer.tgi sha256=8b1de1fba322e7556b49a1b851bdfce0f2be3bc52a163f856b3e763072b0fd82
+ref Units/Gauri/anvil.tgi sha256=801b555fe17fdabc2dc54bc4a14bce6479e67cb001f77fb9c3997e0de9231591
+result sha256=c3679abcf9bde420b44b245319c74544d009fcd4817a6b7ded347c28c659bec3 bytes=4345
+bom no
+eol crlf none*1
+
+@@ 104 -1:ab19883e +1 @@ [Unit lancer] > [EconomyComponent] > [Cost]
++		gold = 1 ;; 6
+@@ 107 -1:187177e6 +1 @@ [Unit lancer] > [EconomyComponent] > [Upkeep]
++		wood = 0.25 ;; 1
+@@ 225 -0 +27 @@
++
++[Thing template=K2HumanMilitia]
++{
++	IDS = militia_lancer
++	name = "#bb_lancer_militia_name"
++	
+= Units/Human/lancer.tgi 183-189
++ 	}
++	
+= Units/Gauri/anvil.tgi 197-202
++		element_IDS = lancer
++		
++		[Slot]	;; support
++		element_IDS = null
++	}	
++}

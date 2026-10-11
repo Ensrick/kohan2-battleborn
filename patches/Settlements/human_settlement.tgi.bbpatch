@@ -1,0 +1,12 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Settlements/human_settlement.tgi sha256=b234494b2075ecbb1b77486fe30e055fdceaae8289a483f559bcf1bb60d5c933
+result sha256=f32b2dff98d8d0ad097a7f926330a3c7edc74c07dcbcb740890a7ddf2713e458 bytes=4083
+bom no
+eol crlf
+
+@@ 164 -1:c882f438 +1 @@ [Thing human_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 169 -1:a3340197 +1 @@ [Thing human_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7
+@@ 174 -1:d4bcd966 +1 @@ [Thing human_settlement] > [SettlementComponent] > [Levels] > [Level]
++			max_structures = 7

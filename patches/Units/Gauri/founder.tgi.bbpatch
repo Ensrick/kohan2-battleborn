@@ -1,0 +1,18 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/founder.tgi sha256=e363c0f94df973d448ff9bccc71dd90b2912eb2825d8868c07415df0b3e2cf5e
+result sha256=b40d191b61b317eedea9908375a51ba1360757ebfba0bce07fb33b328515d668 bytes=3303
+bom no
+eol crlf
+
+@@ 75 -1:7000d9e4 +1 @@ [Unit founder] > [EconomyComponent] > [Cost]
++		gold = 2 ;; 5
+@@ 78 -1:736f7308 +1 @@ [Unit founder] > [EconomyComponent] > [Upkeep]
++		stone = 0.5 ;; 1
+@@ 138 -0 +3 @@ [Unit founder] > [PropertiesComponent] > [Property]
++		property_IDS = bb_settler_flank
++
++		[Property]
+@@ 175 -0 +3 @@ [Thing company_founder] > [OrganizationComponent] > [Slot]
++
++		[Slot]	;; bb_settler_flank
++		element_IDS = founder

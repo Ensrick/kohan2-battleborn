@@ -1,0 +1,91 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Monster/barbariandiabolist.tgi sha256=6a419c296efaa2eb9cc72939c859735a395455958c4a2418fd79f793969bddcf
+ref Units/Undead/lich.tgi sha256=770eb711f16442fa26757a4a6a08bacdce58a6172f0b77273dd88708b7cbc888
+result sha256=aaa9586c150d89a0b1e1c4817440352247e5263e23505e238199f4acf8f44297 bytes=2145
+bom no
+eol lf
+
+@@ 2 -1:2a1b0016 +5 @@
++;; Necromancer - Undead captain (design tier 5) on the Lich model: floating spectral
++;; caster with summon_undead spells
++;; TEXTURE DEBT: own skin recolor + own icon + portrait (ships with default Lich art)
++
++[Unit template=K2UndeadUnit]
+@@ 4 -3:1b3f2080 +3 @@ [Unit]
++	IDS = bb_captain_undead_necromancer
++	name = "#bb_captain_undead_necromancer_name"
++
+@@ 8 -6:4e53fe19 +1 @@ [Unit diabolist] > [View]
++	resource_prefix = /Units/Undead/Lich/Lich
+@@ 16 -3:a6ce277c +3 @@ [Unit diabolist] > [BodyComponent]
++	health = 220 ;; lich 80
++	defense = 2
++
+@@ 24 -5:857edbbb +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation walk]
++
+@@ 31 -1:31609426 +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation idle]
++
+@@ 34 -1:31609426 +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation idlemelee]
++
+@@ 40 -1:2b4c342f +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation fidget2]
++
+@@ 44 -1:e740a6fa +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation die1]
++
+@@ 46 -1:37417dc5 +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation die1] > [WhenStart]
++			audio_ids = lich_death
+@@ 48 -1:76a3029a +1 @@ [Unit diabolist] > [CharacterComponent]
++
+@@ 50 -4:04b58f36 +9 @@ [Unit diabolist] > [CharacterComponent] > [Animation]
++		{
++			IDS = melee1
++			key_ratio = 0.6
++
++			[WhenDo template=FXC_PlaySFX]
++			audio_ids = claw_small
++		}
++
++		[Animation Template=AbilityAnimation]
+@@ 55 -1:5404d43e +0 @@ [Unit diabolist] > [CharacterComponent] > [Animation cast]
+@@ 58 -1:6f0fdbb0 +1 @@ [Unit diabolist] > [CharacterComponent] > [Animation]
++		IDS = idlecast
+@@ 64 -1:e52db181 +4 @@ [Unit diabolist] > [EconomyComponent] > [Cost]
++		gold = 30
++
++		[Upkeep]
++		mana = 3 ;; summoner tax - summons are free units over time
+@@ 66 -1:2b4c342f +1 @@ [Unit diabolist]
++
+@@ 68 -3:c19a695f +3 @@ [Unit diabolist] > [ElementComponent]
++	morale_value = 12
++	required_structures = undead_shrine
++
+@@ 72 -8:29321655 +2 @@ [Unit diabolist] > [MoverComponent]
++	speed_max = 3
++
+@@ 82 -2:1745f1f3 +0 @@ [Unit diabolist] > [PerformerComponent]
+@@ 86 -0 +2 @@ [Unit diabolist] > [PerformerComponent] > [Ability]
++			animation1 = melee1
++
+@@ 88 -2:9ff2f2e8 +2 @@ [Unit diabolist] > [PerformerComponent] > [Ability] > [AbilityDefinition]
++				name = "#lich_AbilityDefinition_name"
++
+@@ 92 -4:3240f4a2 +1 @@ [Unit diabolist] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 24 ;; lich 16
+@@ 99 -5:af2c1c81 +0 @@ [Unit diabolist] > [PerformerComponent]
+@@ 105 -3:96934d7a +5 @@ [Unit diabolist] > [PerformerComponent] > [Ability]
++		{
+= Units/Undead/lich.tgi 195-198
+@@ 109 -5:cae60be1 +0 @@ [Unit diabolist] > [PerformerComponent] > [Ability]
+@@ 115 -5:a526716a +7 @@ [Unit diabolist] > [PerformerComponent] > [Ability]
++		{
+= Units/Undead/lich.tgi 208-212
++
+@@ 123 -4:49b7dfa9 +1 @@ [Unit diabolist] > [PropertiesComponent] > [Property]
++		property_IDS = captain
+@@ 130 -1:31609426 +4 @@ [Unit diabolist] > [PropertiesComponent] > [Property]
++
++		[Property]
++		property_IDS = spectral
++
+@@ 133 -1:e513dd93 +1 @@ [Unit diabolist] > [PropertiesComponent] > [Property]
++	}
