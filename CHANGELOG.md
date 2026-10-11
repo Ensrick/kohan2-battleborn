@@ -5,7 +5,18 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Changed
+- Install target moved to the user depot `Documents\Kohan2\data\` (2026-10-10):
+  `tools/deploy.ps1` is now a manifest-driven installer (SHA256 per file, verify
+  after copy, `-Uninstall`, `-WhatIf`), refuses to overwrite files owned by another
+  gameplay mod, deletes only unchanged files and backs up depot edits. Keeps the
+  Steam install byte-exact, which the Modern Rebuild beta's update/verify flow wants.
+
 ### Added
+- `tools/validate.py` offline reference checker (2026-10-10): unresolved `*_ids`,
+  missing loc keys, missing art paths and duplicate top-level IDs against a
+  pristine `Data.rwd` extract, with vanilla's own dead references as baseline.
+  Current `Data/` (155 files): 0 problems.
 - Six faction commanders from the design sheet (2026-08-14): Templar
   (Nationalist, Ghalen model), Harbinger (Ceyah, Stonewalker), Warder
   (Council ranged), Rune Lord (Council, Gauri Hammer ram-rider), Mage Lord
