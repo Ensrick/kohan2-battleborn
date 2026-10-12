@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/Drauga/drauga_outpost.tgi sha256=8a99ee3330ba93684d8f2c98c4c86ae7608861464cb0d0fe54b9012f6ad2ca01
-result sha256=c454aa64d8163a4d5b3660c48277a143534a01a77b95618c8b41071ccd4f8256 bytes=1045
+result sha256=6a2b40626acb49df45a9cf9bfbf3214c61a6aabc808bfada2fac49b48a15b758 bytes=1045
 bom no
 eol crlf
 
@@ -15,13 +15,14 @@ eol crlf
 @@ 18 -1:dbf01548 +2 @@ [Thing drauga_outpost] > [BodyComponent]
 +	health = 500
 +	captureable = true
-@@ 23 -1:adf6aa7a +6 @@ [Thing drauga_outpost] > [ConstructionComponent] > [Upgrade]
+@@ 22 -0 +2 @@ [Thing drauga_outpost] > [ConstructionComponent]
++		can_raze = true
++
+@@ 23 -1:adf6aa7a +4 @@ [Thing drauga_outpost] > [ConstructionComponent] > [Upgrade]
 +		ids = bb_drauga_sawmill_outpost
 +
 +		[Upgrade]
 +		ids = bb_drauga_woodmarket_outpost
-+
-+		can_raze = true
 @@ 28 -1:050c9335 +1 @@ [Thing drauga_outpost] > [DenizenComponent]
 +		guard_range = 24
 @@ 33 -4:36578f19 +0 @@ [Thing drauga_outpost] > [DenizenComponent] > [Organization]

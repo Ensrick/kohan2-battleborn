@@ -1,7 +1,8 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
 ref Units/Council/wizard.tgi sha256=14e7c2d1fa237faf47137f34dbcf6b506b6ce5f58460007d72f6f636046ab47a
-result sha256=41c5c910bb9c438fdb5082487cecf39ffc85b36868384d5e5b219c20c91bc673 bytes=4167
+ref Units/Haroun/harvester.tgi sha256=4e964db7ccc3d0e457f7f12e4d85e6672fae7a7ffacb57b34f80fad16d6b024f
+result sha256=a265a5de215978d954a02f591100077cd41862342a21fadd992ccb03d25551fd bytes=4464
 bom no
 eol crlf
 
@@ -31,6 +32,11 @@ eol crlf
 @@ 93 -2:be5c767a +2 @@ [Unit swordsman] > [BodyComponent]
 +	health = 390
 +	defense = 5
+@@ 133 -0 +9 @@ [Unit swordsman] > [CharacterComponent] > [Animation melee2]
++
++		;; the storm_shield spells (K2SpellEnchantmentLocal) play 'cast' and idle on 'idlecast';
++		;; same entries as ghalen_mordecai.tgi, whose model this unit uses
+= Units/Haroun/harvester.tgi 62-67
 @@ 138 -1:8a0d33a3 +1 @@ [Unit swordsman] > [EconomyComponent] > [Cost]
 +		gold = 24
 @@ 142 -0 +1 @@ [Unit swordsman] > [EconomyComponent] > [Upkeep]

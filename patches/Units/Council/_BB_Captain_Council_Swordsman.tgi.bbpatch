@@ -2,7 +2,7 @@
 base Units/Council/wizard.tgi sha256=14e7c2d1fa237faf47137f34dbcf6b506b6ce5f58460007d72f6f636046ab47a
 ref Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
 ref Units/Shadow/fiend.tgi sha256=c5885e12a75ca1c7ff91a142f0798f15fa8df15f3163feff33ee8008aef59f4c
-result sha256=907b0837641e40d8134b107d68f89ee16b6fbe3d43f98a4ed41a4e3d4fd2d884 bytes=2782
+result sha256=082395d720df8fae9e8134331f7f1c6a0a8cc7f3549ba6425175686815c1c1ad bytes=3075
 bom no
 eol crlf
 
@@ -32,8 +32,15 @@ eol crlf
 +			audio_ids = swordsman_death
 @@ 51 -1:8493100b +1 @@ [Unit wizard] > [CharacterComponent]
 +						
-@@ 54 -8:c0e1fa54 +5 @@ [Unit wizard] > [CharacterComponent] > [Animation melee1]
+@@ 54 -2:5a6add54 +8 @@ [Unit wizard] > [CharacterComponent] > [Animation melee1]
 = Units/Human/swordsman.tgi 128-132
++
++		;; the lightning spells (K2SpellInstantLocal) play 'cast' and idle on 'idlecast';
++		;; same entries as ghalen_mordecai.tgi, whose model this captain uses
+@@ 58 -1:5404d43e +1 @@ [Unit wizard] > [CharacterComponent] > [Animation cast]
++		key_ratio = 0.6
+@@ 61 -1:6f0fdbb0 +1 @@ [Unit wizard] > [CharacterComponent] > [Animation]
++		IDS = idlecast
 @@ 67 -2:63281db0 +2 @@ [Unit wizard] > [EconomyComponent] > [Cost]
 +		gold = 28 ;; was 24 - aligned to politics-commander tier
 +		

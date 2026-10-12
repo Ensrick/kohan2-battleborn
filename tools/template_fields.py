@@ -25,6 +25,7 @@ HEADER = re.compile(r"^\[\s*([^\]]*?)\s*\]\s*(\{)?\s*$")
 DECL = re.compile(r"^([A-Za-z_]\w*)\s+([A-Za-z_][\w|]*)\s*(=.*)?$")
 ASSIGN = re.compile(r"^([A-Za-z_][\w|]*)\s*=")
 TEMPLATE_ARG = re.compile(r"\btemplate\s*=\s*([\w]+)", re.I)
+PARENT_ARG = re.compile(r"\b(?:template|inherit)\s*=\s*([\w]+)", re.I)   # [template X inherit=Y]
 
 
 BLOCK_COMMENT = re.compile(r"/\*.*?\*/", re.S)
@@ -99,8 +100,14 @@ def template_of(header):
     return m.group(1).lower() if m else None
 
 
+def _value(rhs):
+    v = rhs.split("=", 1)[1].strip()
+    return v.strip('"') if v.startswith('"') else v.split()[0] if v else ""
+
+
 def collect_templates(trees):
-    """name -> (parent, [(field, has_value)]) from every [Template Name Template=Parent]."""
+    """name -> (parent, [(field, has_value, value)], node) from every
+    [Template Name Template=Parent] / [template Name inherit=Parent]."""
     out = {}
     for tree in trees:
         for node in tree.children:
@@ -108,32 +115,48 @@ def collect_templates(trees):
             if len(words) < 2 or words[0].lower() != "template":
                 continue
             name = words[1].lower()
-            parent = template_of(" ".join(words[2:]))
+            m = PARENT_ARG.search(" ".join(words[2:]))
+            parent = m.group(1).lower() if m else None
             fields = []
             for s in node.items:
                 d = DECL.match(s)
                 if d and d.group(1).lower() not in ("list",):
-                    fields.append((d.group(2).lower(), d.group(3) is not None))
+                    fields.append((d.group(2).lower(), d.group(3) is not None,
+                                   _value(d.group(3)) if d.group(3) else None))
                     continue
                 a = ASSIGN.match(s)
                 if a:
-                    fields.append((a.group(1).lower(), True))
-            out[name] = (parent, fields)
+                    fields.append((a.group(1).lower(), True, _value(s)))
+            out[name] = (parent, fields, node)
     return out
+
+
+def chain(templates, name):
+    """[name, parent, grandparent, ...] as far as the templates are known."""
+    out, seen = [], set()
+    while name in templates and name not in seen:
+        seen.add(name)
+        out.append(name)
+        name = templates[name][0]
+    return out
+
+
+def values(templates, name):
+    """field -> value a node of this template gets when it does not set the field."""
+    state = {}
+    for t in reversed(chain(templates, name)):
+        for field, has_value, value in templates[t][1]:
+            state[field] = value if has_value else None
+    return state
 
 
 def required(templates, name, _cache={}):
     key = (id(templates), name)
     if key in _cache:
         return _cache[key]
-    chain, seen = [], set()
-    while name in templates and name not in seen:
-        seen.add(name)
-        chain.append(name)
-        name = templates[name][0]
     state = {}
-    for t in reversed(chain):
-        for field, has_value in templates[t][1]:
+    for t in reversed(chain(templates, name)):
+        for field, has_value, _ in templates[t][1]:
             state[field] = has_value
     _cache[key] = {f for f, v in state.items() if not v}
     return _cache[key]
@@ -157,6 +180,88 @@ def misses(templates, files):
     return out
 
 
+def _def_name(node):
+    words = [w for w in node.header.split() if "=" not in w]
+    if words and words[0].lower() == "list":
+        words = words[1:]
+    return words[0].lower() if words else ""
+
+
+def _parent_of_def(node):
+    """Template a definition node builds on: [Template X Template=Y] / [template X inherit=Y] /
+    [list Sub Template=Y] / [Sub Template=Y]."""
+    words = node.header.split()
+    rest = " ".join(words[2:]) if words and words[0].lower() == "template" else node.header
+    m = PARENT_ARG.search(rest)
+    return m.group(1).lower() if m else None
+
+
+def _expand(templates, defs):
+    out, seen, stack = [], set(), list(defs)
+    while stack:
+        d = stack.pop()
+        if id(d) in seen:
+            continue
+        seen.add(id(d))
+        out.append(d)
+        t = _parent_of_def(d)
+        if t in templates:
+            stack.append(templates[t][2])
+    return out
+
+
+def _known_fields(defs, _cache={}):
+    key = tuple(sorted(id(d) for d in defs))
+    if key not in _cache:
+        known = set()
+        for d in defs:
+            for s in d.items:
+                m = DECL.match(s) or ASSIGN.match(s)
+                if m:
+                    known.add((m.group(2) if DECL.match(s) else m.group(1)).split("|")[0].lower())
+        _cache[key] = known
+    return _cache[key]
+
+
+def unknown_fields(templates, files):
+    """[(file, line, node path, field)] for fields that no definition of the node declares
+    (the engine: "Field not found in template. Expression: '<field>'"). A node's
+    definitions are its own Template= chain plus the sub-node of that name declared by its
+    parent's definitions; nodes whose definition cannot be found are skipped."""
+    out = []
+
+    def visit(name, node, parent_defs, path):
+        defs = []
+        t = template_of(node.header)
+        if t in templates:
+            defs.append(templates[t][2])
+        nm = _def_name(node)
+        if nm in templates:             # [BodyComponent] uses [template BodyComponent]
+            defs.append(templates[nm][2])
+        for d in parent_defs:
+            defs.extend(c for c in d.children if _def_name(c) == nm)
+        defs = _expand(templates, defs)
+        if not defs:
+            return
+        known = _known_fields(defs)
+        here = f"{path}/{nm}" if path else nm
+        for s in node.items:
+            a = ASSIGN.match(s)
+            if a and a.group(1).split("|")[0].lower() not in known:
+                out.append((name, node.line, here, a.group(1)))
+        for c in node.children:
+            visit(name, c, defs, here)
+
+    for name, tree in files.items():
+        if name.lower().startswith("templates/"):
+            continue
+        for node in tree.children:
+            if node.header.split()[0].lower() == "template":
+                continue
+            visit(name, node, [], "")
+    return out
+
+
 def _trees(entries):
     return {name: parse(data) for name, data in entries if name.lower().endswith(".tgi")}
 
@@ -176,6 +281,11 @@ def check(game_arc, mod_files):
     for name, line, t, f in misses(templates, {n: merged[n.lower()] for n in mod}):
         if (t, f) not in noise:
             problems.append(f"{name}({line}): [{t}] node does not set '{f}', which that template requires")
+    vnoise = {(p, f.lower()) for _, _, p, f in unknown_fields(collect_templates(vanilla.values()), vanilla)}
+    for name, line, p, f in unknown_fields(templates, {n: merged[n.lower()] for n in mod}):
+        if (p, f.lower()) not in vnoise:
+            problems.append(f"{name}({line}): '{f}' is not a field of {p} (a brace-less [node] owns every "
+                            f"line up to the next [node], so a field placed after one lands inside it)")
     return sorted(problems)
 
 

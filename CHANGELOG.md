@@ -17,6 +17,17 @@ All notable changes to the Battleborn mod. Format follows
   strict template: `_BB_Captain_Necromancer.tgi`/.../Animation" (log-247). The
   Necromancer's cast animation (AbilityAnimation, which declares `key_ratio` without a
   default) lost the `key_ratio = 0.6` the stock Lich sets.
+- **Startup crash (0.2.3-dev):** "Unknown idle animation 'idlecast' loading actor
+  'bb_captain_council_swordsman'" (log-248). Its lightning spells (K2SpellInstantLocal)
+  play `cast` and idle on `idlecast`, which the unit never defined; the Spellsword support
+  (storm_shield spells) had the same gap. Both now define Ghalen Mordecai's cast and
+  idlecast animations, whose model they use.
+- **Startup crash (0.2.4-dev):** "Field not found in template. Expression: 'can_raze'"
+  (log-250, Drauga woodmill outpost). In all six woodmill outposts `can_raze = true` sat
+  after the brace-less `[Upgrade]` entries, so the game read it as part of the last
+  `[Upgrade]`. It now comes first in `[ConstructionComponent]`.
+- **0.2.4-dev reaches the main menu** with Battleborn loaded (log-251, log-252); its new
+  warnings are display-name duplicates only (the outposts reuse stock building names).
 
 ### Changed
 - **No game files in the repository any more (2026-10-10).** Battleborn is now stored
@@ -48,7 +59,11 @@ All notable changes to the Battleborn mod. Format follows
   (game load order simulated from `index_k2.lst`, vanilla's own forward references as
   baseline).
 - `tools/template_fields.py`, also run by every `bb.py build`: fails when a node leaves out
-  a field its template declares without a default (vanilla's own misses as baseline).
+  a field its template declares without a default, or sets a field no definition of that
+  node declares (schema = the node's template chain, the same-named component template and
+  the sub-node its parent's definitions declare; vanilla: 4 such fields, 0 required misses).
+- `tools/animations.py`, also run by every build: every animation an ability plays or idles
+  on (including template defaults) must exist on the actor (vanilla: 0 misses).
 - `mod.json` and `bb.py package`: builds `build/battleborn-<version>.k2mod` for the Kohan II
   Mod Manager (public sources only, deterministic). The manager rebuilds it byte-identical
   to `bb.py build --public`.

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Structures/Shadow/shadow_center_city.tgi sha256=a85c3b9116fc108862fb0b128fc18eb0915f4c86e8f288ae797b0e8c2e54590d
-result sha256=d3b7111c2c915d370cfece5191dd50bbd48f1558e155b9dfbdfbe0747f065e4f bytes=1043
+result sha256=b568d8d80a630dfa286b6b5c4c5e6f10db23ad2c40cd2c853aa6ecc78ff7267a bytes=1043
 bom no
 eol crlf
 
@@ -16,13 +16,14 @@ eol crlf
 @@ 23 -1:376d6dd2 +2 @@ [Thing shadow_center_city] > [BodyComponent]
 +	health = 400
 +	captureable = true
-@@ 28 -1:d2ff9619 +6 @@ [Thing shadow_center_city] > [ConstructionComponent] > [Upgrade]
+@@ 27 -0 +2 @@ [Thing shadow_center_city] > [ConstructionComponent]
++		can_raze = true
++
+@@ 28 -1:d2ff9619 +4 @@ [Thing shadow_center_city] > [ConstructionComponent] > [Upgrade]
 +		ids = bb_shadow_sawmill_outpost
 +
 +		[Upgrade]
 +		ids = bb_shadow_woodmarket_outpost
-+
-+		can_raze = true
 @@ 30 -1:2b4c342f +1 @@ [Thing shadow_center_city]
 +
 @@ 33 -0 +2 @@ [Thing shadow_center_city] > [DenizenComponent]

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/Gauri/gauri_outpost.tgi sha256=78bd8d3b8269bd31f9cf5b09df05befcf50fe890169d89a47b05cdc0b3c962c3
-result sha256=7d72c9b6a433e602761cc1a13f344f7a0893d9071d77099b1b64cf72b2c9aa54 bytes=1040
+result sha256=516d3aa13b6ec2b8c30f1b6953b2bd4066f0c7c4ee814f089d7b247293843c3e bytes=1040
 bom no
 eol crlf
 
@@ -15,13 +15,14 @@ eol crlf
 @@ 18 -1:7b43f78e +2 @@ [Thing gauri_outpost] > [BodyComponent]
 +	health = 600
 +	captureable = true
-@@ 23 -1:f200d0bc +6 @@ [Thing gauri_outpost] > [ConstructionComponent] > [Upgrade]
+@@ 22 -0 +2 @@ [Thing gauri_outpost] > [ConstructionComponent]
++		can_raze = true
++
+@@ 23 -1:f200d0bc +4 @@ [Thing gauri_outpost] > [ConstructionComponent] > [Upgrade]
 +		ids = bb_gauri_sawmill_outpost
 +
 +		[Upgrade]
 +		ids = bb_gauri_woodmarket_outpost
-+
-+		can_raze = true
 @@ 28 -2:042dff13 +2 @@ [Thing gauri_outpost] > [DenizenComponent]
 +		guard_range = 24
 +

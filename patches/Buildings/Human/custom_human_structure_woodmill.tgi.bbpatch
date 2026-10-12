@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/Human/human_outpost.tgi sha256=b3fb0585247b6d56c672dbb87dc2af41befebff844925144f6eca5c7c96a76b2
-result sha256=f5e9161eafe48f5a5d4124c7cc486c9c8b182eee7e1bfeb4b3d936d6ce9c138d bytes=1026
+result sha256=69fc8255b54ee3a2c92ee7cf31c30438827f4593d75ca883e72d82f03a989fa6 bytes=1026
 bom no
 eol crlf
 
@@ -14,13 +14,14 @@ eol crlf
 @@ 18 -1:f1894ef7 +2 @@ [Thing human_outpost] > [BodyComponent]
 +	health = 500
 +	captureable = true
-@@ 23 -1:f8cf53b5 +6 @@ [Thing human_outpost] > [ConstructionComponent] > [Upgrade]
+@@ 22 -0 +2 @@ [Thing human_outpost] > [ConstructionComponent]
++		can_raze = true
++
+@@ 23 -1:f8cf53b5 +4 @@ [Thing human_outpost] > [ConstructionComponent] > [Upgrade]
 +		ids = bb_human_sawmill_outpost
 +
 +		[Upgrade]
 +		ids = bb_human_woodmarket_outpost
-+
-+		can_raze = true
 @@ 35 -4:c7cf36fe +0 @@ [Thing human_outpost] > [DenizenComponent] > [Organization]
 @@ 47 -4:4025803e +0 @@ [Thing human_outpost] > [DenizenComponent] > [Inventory]
 @@ 52 -1:10623db3 +1 @@ [Thing human_outpost] > [DenizenComponent] > [Inventory]

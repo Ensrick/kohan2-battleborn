@@ -26,6 +26,7 @@ import shutil
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import animations  # noqa: E402
 import bbdelta  # noqa: E402
 import bbpatch  # noqa: E402
 import load_order  # noqa: E402
@@ -180,7 +181,8 @@ def cmd_build(args, quiet=False):
     game = Game(game_dir(args))
     public = getattr(args, "public", False)
     files = produce(game, public)
-    problems = load_order.check(game.arc, files) + template_fields.check(game.arc, files)
+    problems = (load_order.check(game.arc, files) + template_fields.check(game.arc, files)
+                + animations.check(game.arc, files))
     if problems:
         print("data problems (the game crashes or drops these at startup):")
         for p in problems:
