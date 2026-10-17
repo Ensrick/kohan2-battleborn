@@ -1,0 +1,15 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/LairsMonster/bandit_lair.tgi sha256=358a1735557b9e418c307e84f65e5272fb8d20f21801fd3448a78be1a8a0307c
+result sha256=5223010ab8de406d946f18c7fdc9ad845eaddd807f065ae078f164f0aab0c4cc bytes=1365
+bom no
+eol crlf
+
+@@ 54 -1:d5db0f56 +6 @@ [Thing lair_bandit_lair] > [LairComponent]
++		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
++		;; lair (lair_bandit_lair) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
++		spawn_max = 1		;; vanilla 0
++		spawn_ids = lair_bandit_lair
++		spawn_distance = 32,64
++
+@@ 57 -1:5bc85027 +1 @@ [Thing lair_bandit_lair] > [LairComponent]
++		marauder_chance = 0.5		;; vanilla 1

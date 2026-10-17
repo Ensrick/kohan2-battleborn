@@ -139,6 +139,21 @@ crafter, Gauri forge, Haroun caretaker, Shadow nightbringer, Undead boneweaver.
 - [ ] Playtest knobs deliberately left open: guard counts (8 vs "large amount"), building HP (in-town parity vs the mod's x2-tanky doctrine)
 - [ ] Beyond wood: decide which other in-town producers get outpost versions (quarry, foundry, market, library chains exist for all six factions in vanilla)
 
+## 7a. Spreading lairs (0.2.5-dev, user 2026-10-17)
+
+User ask: "In the same way Raksha hives, bandits, and barbarians spread and build new
+locations, I want most all destructible structures to spread." Mechanism (k2.exe 1.3.68,
+lair tick 0x6114cf, child spawner 0x61182c): full denizens -> `event_time` -> `event_chance`
+-> `marauder_chance` (marauders, needs offensive militia) -> upgrade -> child `spawn_ids`
+at `spawn_distance` while children < `spawn_max` -> fallback marauders. Stock spreaders:
+barbarian camp/encampment/garrison, Rhaksha nest. Stock bandit lairs and the hive only
+sent marauders.
+
+- [x] 13 lairs spread (`patches/Buildings/LairsMonster/`): bandit hideout/lair/redoubt, Rhaksha hive, haunted ruin (skeleton, lich), spider lair x3, scorpion nest x3, snow wolf den; each spawns its own kind (load-order rule), `spawn_max = 1`
+- [x] Tuning: bandits vanilla timing + marauders 0.5 (barbarian split); hive vanilla timing + marauders 0.75, 32-64; defensive lairs 300 s x 0.15, marauders 0; animal nests 16-30 away, bandits/ruins/hive 32-64
+- [ ] **VERIFY in-game:** new lairs appear over a long match (save at 20/40/60 min; count `DYNAMIC_THINGS` per lair IDS); no flooding on large maps; log noise from defensive lairs after their child ("needs offensive militia" each later event)
+- [ ] Not spreading by design (revisit with the user): dragon lair, storm drake crag, dark rift (boss guardians), elemental temples (scenario-only), settlement camps (need markers), tutorial redoubt; tech/artifact lairs are capturable, not razable
+
 ## 8. Game variables
 
 - [x] `EconomyLimitedResourceMax` 20 -> 40

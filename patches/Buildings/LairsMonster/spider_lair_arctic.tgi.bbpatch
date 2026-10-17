@@ -1,0 +1,19 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/LairsMonster/spider_lair_arctic.tgi sha256=2b5708622e952a098e4de4f0a6f5b5a376b5f2f9d0f499993c00614d7bce6834
+result sha256=86529401c2dcdba6f841cebed1cb6179ca58f6a444efcc1ae371b8c3143f8365 bytes=1863
+bom no
+eol crlf
+
+@@ 70 -1:52710469 +12 @@ [Thing lair_spider_lair_arctic] > [LairComponent]
++	{
++		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
++		;; lair (lair_spider_lair_arctic) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
++		spawn_max = 1		;; vanilla: unset
++		spawn_ids = lair_spider_lair_arctic
++		spawn_distance = 16,30
++
++		event_time = 300		;; vanilla: unset
++		event_chance = 0.15		;; vanilla: unset
++		marauder_chance = 0		;; vanilla: unset
++		reward = 60,90
++	}

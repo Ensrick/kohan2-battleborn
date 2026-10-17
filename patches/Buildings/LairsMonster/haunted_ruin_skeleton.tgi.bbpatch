@@ -1,0 +1,19 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/LairsMonster/haunted_ruin_skeleton.tgi sha256=29ed231eb9e6accd19b1bb02085c250704ae6fc5f2abd176becebcf3f4a00157
+result sha256=cb97faad6641333e8d4a93d62fbc525a925a9701ee052eeea8b5ed8ad12c2840 bytes=1374
+bom no
+eol crlf
+
+@@ 49 -1:faddde31 +12 @@ [Thing lair_hauntedruin] > [LairComponent]
++	{
++		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
++		;; lair (lair_hauntedruin) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
++		spawn_max = 1		;; vanilla: unset
++		spawn_ids = lair_hauntedruin
++		spawn_distance = 32,64
++
++		event_time = 300		;; vanilla: unset
++		event_chance = 0.15		;; vanilla: unset
++		marauder_chance = 0		;; vanilla: unset
++		reward = 30,50
++	}

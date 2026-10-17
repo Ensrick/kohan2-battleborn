@@ -1,0 +1,15 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/LairsMonster/rhaksha_hive.tgi sha256=8de61769600643cb67397907dec265558cd4d0badedb5ff0cb9a8d80cf000705
+result sha256=1ab32cf95e1bebbc073f5053191331cb0331328e83c6021bec474a36d09c7ea6 bytes=1592
+bom no
+eol crlf
+
+@@ 66 -1:d5db0f56 +6 @@ [Thing lair_rhakshahive] > [LairComponent]
++		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
++		;; lair (lair_rhakshahive) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
++		spawn_max = 1		;; vanilla 0
++		spawn_ids = lair_rhakshahive
++		spawn_distance = 32,64
++
+@@ 69 -1:5bc85027 +1 @@ [Thing lair_rhakshahive] > [LairComponent]
++		marauder_chance = 0.75		;; vanilla 1

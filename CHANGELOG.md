@@ -54,6 +54,23 @@ All notable changes to the Battleborn mod. Format follows
   embedded name pools harvested from the game's namelists.
 
 ### Added
+- **Spreading lairs (0.2.5-dev, 2026-10-17; in-game verify owed).** Like the stock barbarian
+  camps and Rhaksha nests, 13 more monster lairs now found new copies of themselves: the three
+  bandit lairs, the Rhaksha hive, both haunted ruins, the three spider lairs, the three
+  scorpion nests and the snow wolf den. The game drives this from each lair's
+  `[LairComponent]` (traced in k2.exe 1.3.68): once the lair's denizens are full it waits
+  `event_time`, rolls `event_chance`, then `marauder_chance`; an event that sends no
+  marauders tries an upgrade, then creates one `spawn_ids` lair `spawn_distance` away
+  (`spawn_max` children, `LairSpawnChildRetries` placements), else falls back to marauders.
+  No worker company is needed for that. Tuning: bandits keep their vanilla event timing and
+  now split events 50/50 like the barbarian camps (vanilla: always marauders); the hive
+  keeps its timing with marauders 75% (a rare clone 32-64 away); the defensive lairs (no
+  marauders possible) get one event every 300 s at 15%. Each lair makes one child; children
+  spread again, as stock spreaders do. Children are the lair's own kind because a lair may
+  only name a lair from its own or an earlier-loading file. Not changed: dragon lairs, storm
+  drake crag and dark rift (single boss guardians), the elemental temples (scenario maps
+  only), settlement camps (need a settlement marker), the tutorial redoubt, and tech or
+  artifact lairs (capturable, not razable).
 - `tools/load_order.py`, run by every `bb.py build` (2026-10-11): fails the build when a mod
   file uses an effect, portrait or other load-time ID that only a later-loaded file defines
   (game load order simulated from `index_k2.lst`, vanilla's own forward references as

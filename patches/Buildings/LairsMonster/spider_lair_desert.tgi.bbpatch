@@ -1,0 +1,19 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/LairsMonster/spider_lair_desert.tgi sha256=583ef0de1acf3edbddaa106c7451adb51c81d0dafd7d2dd0d8ce89cae6835e4a
+result sha256=b259af59f0a975ff83408fbf1147432cc63099982caf828ed8b9c5e56530a20f bytes=1863
+bom no
+eol crlf
+
+@@ 70 -1:52710469 +12 @@ [Thing lair_spider_lair_desert] > [LairComponent]
++	{
++		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
++		;; lair (lair_spider_lair_desert) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
++		spawn_max = 1		;; vanilla: unset
++		spawn_ids = lair_spider_lair_desert
++		spawn_distance = 16,30
++
++		event_time = 300		;; vanilla: unset
++		event_chance = 0.15		;; vanilla: unset
++		marauder_chance = 0		;; vanilla: unset
++		reward = 60,90
++	}
