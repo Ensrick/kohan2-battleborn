@@ -1,0 +1,12 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Camps/barbarian_settlementcamp.tgi sha256=569338df46968422ec6eb9304fa63a8b15733a4ddf1e6b537036705e7cd6704e
+result sha256=dfc149895a182e8d694c70896b3ce484ffa2922431c95a62884f7df8571e9abc bytes=1414
+bom no
+eol crlf
+
+@@ 51 -3:fc3db548 +5 @@ [Thing barbarian_settlementcamp] > [LairComponent]
++		spawn_distance = 32,64		;; Battleborn lairs 2026-10-19
++		spawn_ids = lair_barbarian_garrison		;; Battleborn lairs 2026-10-19
++		spawn_max = 2		;; lairs 2026-10-19: was 0
++		event_time = 150		;; lairs 2026-10-19: was 0
++		event_chance = 0.5		;; lairs 2026-10-19: was 0.0

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/pioneer.tgi sha256=463abe221db658fdccec80317b400565d321a822fc906a38b7ac7066674299d9
-result sha256=82f5dace200eeb410e3f7886a57a7a55a5845146ff2b7358f4429f7c174878e9 bytes=4368
+result sha256=82c4f16486bf1b04102783ec1af0c53d7b23f682e0a4af05a6fac91a2db4d235 bytes=4388
 bom no
 eol crlf
 
@@ -8,10 +8,12 @@ eol crlf
 +		gold = 2 ;; 5
 @@ 128 -1:70dad19c +1 @@ [Unit pioneer] > [EconomyComponent] > [Upkeep]
 +		Stone = 0.5 ;; 1
-@@ 186 -0 +3 @@ [Unit pioneer] > [PropertiesComponent] > [Property]
-+		property_IDS = bb_settler_flank
+@@ 169 -1:38b6ae4a +1 @@ [Unit pioneer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 5 ;; 20, build time x4
+@@ 184 -0 +3 @@ [Unit pioneer] > [PropertiesComponent] > [Property]
 +
 +		[Property]
++		property_IDS = bb_settler_flank
 @@ 223 -0 +3 @@ [Thing company_pioneer] > [OrganizationComponent] > [Slot]
 +
 +		[Slot]	;; bb_settler_flank

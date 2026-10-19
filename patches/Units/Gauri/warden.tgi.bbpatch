@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/warden.tgi sha256=3800790451e276a3a526afecb9d1cea189ef5f9887092c069688a13b921b988d
+result sha256=ac377a88f968fedaf3422fa0ac9f169d7f936850d81266fb54da3afc4eba8020 bytes=2481
+bom no
+eol crlf*88 lf*1 crlf*56
+
+@@ 89 -1:2eee53fa +1 @@ [Unit warden] > [ElementComponent]
++		required_structures = gauri_library,gauri_center_town ;; tiers: was gauri_library

@@ -2,9 +2,9 @@
 base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
 ref Units/Council/wizard.tgi sha256=14e7c2d1fa237faf47137f34dbcf6b506b6ce5f58460007d72f6f636046ab47a
 ref Units/Haroun/harvester.tgi sha256=4e964db7ccc3d0e457f7f12e4d85e6672fae7a7ffacb57b34f80fad16d6b024f
-result sha256=a265a5de215978d954a02f591100077cd41862342a21fadd992ccb03d25551fd bytes=4464
+result sha256=7664db6022c7f53abd67279c0f861a189b5554311a60a1f7bbfa73db7f9d9170 bytes=4526
 bom no
-eol crlf
+eol crlf*161 lf*1 crlf*65
 
 @@ 2 -1:ebaedddd +1 @@
 +/******************************************  SPELLSWORD VFX  **********************************/
@@ -42,7 +42,7 @@ eol crlf
 @@ 142 -0 +1 @@ [Unit swordsman] > [EconomyComponent] > [Upkeep]
 +		mana = 1
 @@ 146 -1:2715cd22 +2 @@ [Unit swordsman] > [ElementComponent]
-+	required_structures = bb_base_center_city,base_blacksmith,base_library
++	required_structures = human_blacksmith,human_library,human_center_city ;; tiers: was bb_base_center_city,base_blacksmith,base_library
 +	required_properties = faction_council, good
 @@ 148 -1:0ea969d0 +0 @@ [Unit swordsman] > [ElementComponent]
 @@ 152 -1:9c8ae0bd +1 @@ [Unit swordsman] > [MoverComponent]

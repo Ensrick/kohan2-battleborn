@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/anvil.tgi sha256=801b555fe17fdabc2dc54bc4a14bce6479e67cb001f77fb9c3997e0de9231591
+result sha256=50e340e90942db38a02893474e818598d5261c3a94b7e43e32eb839c94638895 bytes=3567
+bom no
+eol crlf*79 lf*1 crlf*128
+
+@@ 80 -1:ae381fe6 +1 @@ [Unit anvil] > [ElementComponent]
++	required_structures = gauri_blacksmith,gauri_center_village ;; tiers: was gauri_blacksmith

@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Haroun/rainbringer.tgi sha256=9c2a50af8ca7ad0f52758fe43bc285554c61e76391058799391fa0db28ea2fd2
+result sha256=7a41af6e6bd7f675695ff078fa8450558a4ad78d1ca06d58a072f74fdf59d33d bytes=5668
+bom no
+eol crlf*136 lf*1 crlf*165
+
+@@ 137 -1:4af3aa47 +1 @@ [Unit rainbringer] > [ElementComponent]
++	required_structures = haroun_woodmill,haroun_center_village ;; tiers: was haroun_woodmill

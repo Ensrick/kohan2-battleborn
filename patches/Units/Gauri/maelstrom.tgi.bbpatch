@@ -1,10 +1,11 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Gauri/maelstrom.tgi sha256=7c7591ff882cdbce2ac0e8f7b647afb51cbf6514595b7339f1a4485fdaebbd75
-result sha256=a5b56ef19e5e92bb3782b2b26367e923d9e0b31f1c4b89c0c726eea2da8fb8ee bytes=5377
+result sha256=8fb59234d344bedb6503a44c0681214bb75773404123ba50a1e154c3f1a0b114 bytes=5437
 bom no
-eol crlf none*1
+eol crlf*124 lf*1 crlf*161 none*1
 
-@@ 126 -0 +1 @@ [Unit maelstrom] > [ElementComponent]
+@@ 125 -1:4fc3a94d +2 @@ [Unit maelstrom] > [ElementComponent]
++	required_structures = gauri_woodmill,gauri_library,gauri_center_city ;; tiers: was gauri_woodmill,gauri_library
 +	denizen_type = denizen_type_ranged
 @@ 268 -0 +19 @@
 +

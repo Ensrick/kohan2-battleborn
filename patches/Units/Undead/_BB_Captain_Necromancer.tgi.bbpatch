@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Monster/barbariandiabolist.tgi sha256=6a419c296efaa2eb9cc72939c859735a395455958c4a2418fd79f793969bddcf
 ref Units/Undead/lich.tgi sha256=770eb711f16442fa26757a4a6a08bacdce58a6172f0b77273dd88708b7cbc888
-result sha256=8140bb7718f63995eb143d04b12cf1b2e988a4c13018b225a48f983328114455 bytes=2215
+result sha256=dae41f65362faedd2ee41c469b57821302a509324141bdce90738bcc63390308 bytes=2262
 bom no
 eol lf
 
@@ -58,7 +58,7 @@ eol lf
 +
 @@ 68 -3:c19a695f +3 @@ [Unit diabolist] > [ElementComponent]
 +	morale_value = 12
-+	required_structures = undead_shrine
++	required_structures = undead_shrine,undead_center_city ;; tiers: was undead_shrine
 +
 @@ 72 -8:29321655 +2 @@ [Unit diabolist] > [MoverComponent]
 +	speed_max = 3

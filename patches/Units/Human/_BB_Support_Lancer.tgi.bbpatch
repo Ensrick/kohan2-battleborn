@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/lancer.tgi sha256=8b1de1fba322e7556b49a1b851bdfce0f2be3bc52a163f856b3e763072b0fd82
-result sha256=11fc2b2cd38a4740166ad95ea5774b211de52add8b8c0d5332937ef59ce15420 bytes=2993
+result sha256=c9a9e698b26a840b838c9a13967d2ea299b5e74c040dd6ce2e88394a53aff6e5 bytes=3040
 bom no
 eol lf
 
@@ -52,8 +52,9 @@ eol lf
 +		wood = 0.5 ;; lancer 0.25
 @@ 109 -1:2b4c342f +1 @@ [Unit lancer]
 +
-@@ 112 -1:22eb5404 +1 @@ [Unit lancer] > [ElementComponent]
+@@ 112 -2:1fdb6423 +2 @@ [Unit lancer] > [ElementComponent]
 +		morale_value = 11 ;; lancer 10
++		required_structures = human_woodmill,human_center_town ;; tiers: was human_center_village
 @@ 115 -1:31609426 +1 @@ [Unit lancer] > [ElementComponent]
 +
 @@ 118 -1:31609426 +1 @@ [Unit lancer] > [ElementComponent] > [SupportProperty]

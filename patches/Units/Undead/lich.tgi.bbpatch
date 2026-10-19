@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Undead/lich.tgi sha256=770eb711f16442fa26757a4a6a08bacdce58a6172f0b77273dd88708b7cbc888
+result sha256=5123b0e13b0ea4159126aedf15173f0a4d6cc12335bb4d49c9e2fc7731c99d06 bytes=4105
+bom no
+eol crlf*158 lf*1 crlf*69
+
+@@ 159 -1:d1acb5f3 +1 @@ [Unit lich] > [ElementComponent]
++	required_structures = undead_shrine,undead_center_town ;; tiers: was undead_shrine

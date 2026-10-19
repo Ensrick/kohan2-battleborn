@@ -54,6 +54,63 @@ All notable changes to the Battleborn mod. Format follows
   embedded name pools harvested from the game's namelists.
 
 ### Added
+- **Recruit tiers for every race (0.2.6-dev, 2026-10-19; in-game verify owed).** The user's
+  rule: every unit needs a building, and the town center's level is its tier (pikemen =
+  blacksmith + village, swordsmen = blacksmith + town, lancers = woodmill + village, bowmen =
+  woodmill + town). Applied to all six races by role in `tools/tiers.py` (the whole table, with
+  the reasons, in one place): the cheapest melee unit needs a blacksmith and the cheapest fast
+  or ranged unit a woodmill at village level, the main melee and ranged units the same at town
+  level, heavy cavalry, barracks units and siege monsters their buildings at city level,
+  casters and supports their building at town level; sergeants follow their line, native
+  captains, builders and settlers are unchanged. Praetorians stay at village level because the
+  sheet's T1 Infantry Company has them as supports. A center requirement is met by that center
+  and its upgrades, as the game's own settler requirement is. `tiers.py check` lists companies
+  whose default units need more than their front unit (none outside campaign companies).
+- **Faction lines (0.2.6-dev).** The three Council lines are race lines, as the design sheet
+  says and as the Council races are (Gauri cavalry, Haroun ranged, Human melee), so they now
+  need their race's buildings and a city: before, a Haroun Council player was offered the
+  Gauri Rune Hammer, and the Human Storm Lord and Eldritch Warrior needed
+  `bb_base_center_city`, which no settlement can map. Royalist, Nationalist and Ceyah lines stay
+  open to every race of the faction (Haroun cannot be Ceyah, so the Stonewalker-based Ceyah
+  line cannot be a Haroun line) and need a barracks and a blacksmith; the game has no
+  race-neutral center requirement that can be relied on, so they have no town level.
+- **Faction units can lead companies (0.2.6-dev).** The company editor's front slot is locked to
+  the company type, and a unit no company leads can only fill flank and support slots (user:
+  "it showed them as available for the front line, but I could only use them in the flank and
+  support slots"). The Knight, Crusader, Blackguard and Rune Hammer now each lead a company type
+  of their faction (Knight Company, Crusader Company, Blackguard Company, Rune Hammer Company),
+  with their line's captain as the default captain.
+- **Buildings take four times as long to build (0.2.6-dev).** Construction is healing a
+  structure to full health. Builder companies (engineer, crafter, forge, caretaker, nightbringer,
+  boneweaver, the engineer sergeant and siege expert) build at a quarter of their old rate and
+  repair as before; settlers found settlements at a quarter of the rate. Town builders' combined
+  build-and-repair ability is at a quarter too; the Human worker and Drauga laborer have only that
+  one, so their repairs are four times slower as well (the Gauri forge, Shadow nightbringer and
+  Undead boneweaver also have a repair-only ability at the old rate). Haroun structures build themselves with
+  `haroun_autoheal` (15 -> 3.75; village 5 -> 1.25; Rapid Growth 10 -> 2.5); the Hillstrider and
+  Harvester, which share that heal, get `bb_haroun_unit_regen` (11.25) and keep their 15.
+- **Lairs spread faster, raid more often and with more (0.2.6-dev).** User: they "spread way way
+  too slowly" and should attack more often with bigger forces. Every spreading lair checks
+  twice as often at twice the chance (so about four times as many events) and may found two
+  children instead of one. Raiding lairs have twice the defenders, which the game sends as
+  twice the raiding companies (militia companies hold 4 + 1); Rhaksha hives 1.5 times (24 + 6),
+  since hives spread too. Bandits now spread their other kinds, as the stock barbarian
+  garrison -> encampment -> camp chain does: redoubts found bandit lairs, bandit lairs found
+  hideouts (a lair may only name lairs that load before it). Settlement camps on settlement
+  sites, which never acted, now found the normal lairs of their kind (bandit redoubts,
+  barbarian garrisons, Rhaksha hives).
+- **Settlements upgrade with open structure slots (0.2.6-dev, 2026-10-18; in-game verify owed).**
+  The game enables a settlement's Upgrade only when it has built exactly as many structures as
+  its level allows ("All structure slots must be filled before upgrading", traced in k2.exe
+  1.3.68: the check compares the settlement's structure count with the level's
+  `max_structures`, which also caps building), and Battleborn gives every level 7 slots, so a
+  village needed all 7. Data alone cannot separate the two, so Battleborn declares the SVar
+  `BattlebornUpgradeWithOpenSlots = true` and the sandbox module (single player) drops the
+  count comparison while it is set: an upgrade then waits only for structures under
+  construction. Cost, siege and every other check are unchanged; the upgrade stays as
+  expensive as before. The town centers' and the Upgrade button's disabled text now say
+  "Cannot upgrade while a structure is under construction." Without the sandbox module the
+  game keeps its own rule (and that text is then wrong).
 - **Spreading lairs (0.2.5-dev, 2026-10-17; in-game verify owed).** Like the stock barbarian
   camps and Rhaksha nests, 13 more monster lairs now found new copies of themselves: the three
   bandit lairs, the Rhaksha hive, both haunted ruins, the three spider lairs, the three

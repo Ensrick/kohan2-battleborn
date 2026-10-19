@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
 ref Units/Fallen/daevai.tgi sha256=21e711aed98127edaba9fc2be09e5b4b6012a3a4ff873d418a3df8a39f311b45
-result sha256=725a955743fe76f9d5bd6c94377997eabb9fef03b1533e94d789d36f2f4b16b7 bytes=5033
+result sha256=ac21046dfeae9861e095240db76c37f4c455171a8f6d4dd8f7c00e2d00741d78 bytes=5080
 bom no
 eol lf
 
@@ -79,7 +79,7 @@ eol lf
 +
 @@ 140 -4:af74ae48 +4 @@ [Unit bowman] > [ElementComponent]
 +	morale_value = 10 ;; bowman 9
-+	required_structures = human_woodmill,human_blacksmith
++	required_structures = human_woodmill,human_center_town ;; tiers: was human_woodmill,human_blacksmith
 +	group_priority = 2
 +
 @@ 146 -2:3e4755a1 +2 @@ [Unit bowman] > [MoverComponent]

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Undead/boneweaver.tgi sha256=d0b94706a76daaad6d4ba1aa05489eb41730ab5517a9b7163b04a1e1067f10bd
-result sha256=468f837374790f3e3c67d59f17e76a0d96d86f3acb6b688b0b678d880019076d bytes=5514
+result sha256=d4aeda2fe779671b5b52a0ec3b83b1b27869ba9acc90cfa4cbc9753bff4ad32c bytes=5601
 bom no
 eol crlf*23 lf*1 crlf*271
 
@@ -8,6 +8,14 @@ eol crlf*23 lf*1 crlf*271
 +
 +		[BuildActor]
 +		actor_ids = bb_undead_woodmill_outpost
+@@ 144 -1:02b7c2dc +1 @@ [Unit boneweaver] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 2.5 ;; 10, build time x4
+@@ 148 -1:638393ee +1 @@ [Unit boneweaver] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 12.5 ;; 50, build time x4
+@@ 178 -1:e32b3167 +1 @@ [Unit boneweaver] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 1.25 ;; 5, build time x4
+@@ 194 -1:e32b3167 +1 @@ [Unit boneweaver] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 1.25 ;; 5, build time x4
 @@ 209 -0 +3 @@ [Unit boneweaver] > [PropertiesComponent] > [Property]
 +		
 +		[Property]

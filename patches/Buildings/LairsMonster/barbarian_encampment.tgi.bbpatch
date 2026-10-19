@@ -1,0 +1,15 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/LairsMonster/barbarian_encampment.tgi sha256=61993763bf0bc1e63ded03283b76efebf7fcdf765cb544380d4cfeafca4bc696
+result sha256=731b63f4a240091f6eba6301ff906788e30a260b4182fa798938bf3d53f8c421 bytes=1471
+bom no
+eol crlf
+
+@@ 52 -1:10623db3 +1 @@ [Thing lair_barbarian_encampment] > [DenizenComponent] > [Inventory]
++		count = 8		;; lairs 2026-10-19: was 4 (raiding companies x2)
+@@ 56 -1:831d46bb +1 @@ [Thing lair_barbarian_encampment] > [DenizenComponent] > [Inventory]
++		count = 2		;; lairs 2026-10-19: was 1 (raiding companies x2)
+@@ 61 -1:2e41771b +1 @@ [Thing lair_barbarian_encampment] > [LairComponent]
++		spawn_max = 2		;; lairs 2026-10-19: was 1
+@@ 65 -2:01a690de +2 @@ [Thing lair_barbarian_encampment] > [LairComponent]
++		event_time = 120		;; lairs 2026-10-19: was 240
++		event_chance = 0.6		;; lairs 2026-10-19: was 0.3

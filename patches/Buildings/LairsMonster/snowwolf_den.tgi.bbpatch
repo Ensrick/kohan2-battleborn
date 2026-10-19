@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/snowwolf_den.tgi sha256=b065318f65da2db37dd48b251681da8ee5b13ba7890c2e603e385191fe5b0211
-result sha256=88cd8a2d9a5704b3e96a9d955c20c829e1ac33e4dff1e20602b947a15d767ded bytes=1128
+result sha256=ef5748722f3e52b16c61b99e8443c2e1a85a2026f3406b5430e2c8e1306f11e6 bytes=1210
 bom no
 eol crlf
 
@@ -8,12 +8,12 @@ eol crlf
 +	{
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
 +		;; lair (snow_wolf_den) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
-+		spawn_max = 1		;; vanilla: unset
++		spawn_max = 2		;; lairs 2026-10-19: was 1 (vanilla: unset)
 +		spawn_ids = snow_wolf_den
 +		spawn_distance = 16,30
 +
-+		event_time = 300		;; vanilla: unset
-+		event_chance = 0.15		;; vanilla: unset
++		event_time = 150		;; lairs 2026-10-19: was 300 (vanilla: unset)
++		event_chance = 0.3		;; lairs 2026-10-19: was 0.15 (vanilla: unset)
 +		marauder_chance = 0		;; vanilla: unset
 +		reward = 30,50
 +	}

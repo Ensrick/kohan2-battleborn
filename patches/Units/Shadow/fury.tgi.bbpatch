@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Shadow/fury.tgi sha256=359cb82fab7f662e8ce0313471960574a2642d25557a7075fc1fadff6ac7c304
+result sha256=e9888a1905643bdf604bf415e8702c9bfce86b525b317fa0669fa0e9d827678e bytes=4540
+bom no
+eol crlf*90 lf*1 crlf*157
+
+@@ 91 -1:66792fdd +1 @@ [Unit fury] > [ElementComponent]
++	required_structures = shadow_woodmill,shadow_center_village ;; tiers: was shadow_woodmill

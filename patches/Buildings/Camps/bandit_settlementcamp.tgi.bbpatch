@@ -1,0 +1,12 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/Camps/bandit_settlementcamp.tgi sha256=9d95a3326ad72409972d35bad5d8a434dc47ac4757ce574af6e9ffcfcf08aaa8
+result sha256=e2ac0ca7bda0a767c019256e6151cd34b8f84977da0827df4ca3059fc46c3c50 bytes=1388
+bom no
+eol crlf
+
+@@ 51 -3:fc3db548 +5 @@ [Thing bandit_settlementcamp] > [LairComponent]
++		spawn_distance = 32,64		;; Battleborn lairs 2026-10-19
++		spawn_ids = lair_bandit_redoubt		;; Battleborn lairs 2026-10-19
++		spawn_max = 2		;; lairs 2026-10-19: was 0
++		event_time = 150		;; lairs 2026-10-19: was 0
++		event_chance = 0.5		;; lairs 2026-10-19: was 0.0

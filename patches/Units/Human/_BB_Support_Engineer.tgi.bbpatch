@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/engineer.tgi sha256=dcf298fbd3f4eb91388544ec1ddbb60116fa39beb543230b9832eb2c5b3938b5
-result sha256=879c8acee83daa5c0cfc1ba2d1fc2be0469acd0649c43656375a9ed9fea77eec bytes=5028
+result sha256=2fea214ffb6f34a00752d996e28cc229d1605019d29b1825df5f29ebc099251e bytes=5095
 bom no
 eol lf
 
@@ -65,8 +65,9 @@ eol lf
 +
 @@ 181 -1:2b4c342f +1 @@ [Unit engineer]
 +
-@@ 184 -1:bb6e38a1 +1 @@ [Unit engineer] > [ElementComponent]
+@@ 184 -2:a5f5e1b5 +2 @@ [Unit engineer] > [ElementComponent]
 +		morale_value = 10 ;; engineer 9
++		required_structures = human_quarry,human_center_town ;; tiers: was human_quarry
 @@ 187 -1:31609426 +1 @@ [Unit engineer] > [ElementComponent]
 +
 @@ 191 -1:2b4c342f +1 @@ [Unit engineer]
@@ -100,7 +101,7 @@ eol lf
 @@ 242 -1:e740a6fa +1 @@ [Unit engineer] > [PerformerComponent] > [Ability]
 +
 @@ 246 -1:e32b3167 +1 @@ [Unit engineer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
-+				amount = 7 ;; engineer 5
++				amount = 1.75 ;; 7, build time x4 (engineer 5)
 @@ 253 -1:2b4c342f +1 @@ [Unit engineer]
 +
 @@ 260 -1:f7f3b281 +1 @@ [Unit engineer] > [PropertiesComponent] > [Property]

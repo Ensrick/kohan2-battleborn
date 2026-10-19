@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Drauga/berserker.tgi sha256=387c90a2cff372ebbaae4654058f88045227262e8b9f699b70ad5040719b1b0f
+result sha256=328de453e7d945decf2f39961b7d1d949b9b42804009ad40d87c41e785e5ef3b bytes=3657
+bom no
+eol crlf*72 lf*1 crlf*129
+
+@@ 73 -1:3d8093a4 +1 @@ [Unit berserker] > [ElementComponent]
++	required_structures = drauga_blacksmith,drauga_center_town ;; tiers: was drauga_blacksmith

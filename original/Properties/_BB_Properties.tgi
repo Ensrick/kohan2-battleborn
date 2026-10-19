@@ -4,3 +4,17 @@
 IDS = bb_settler_flank
 name = "#bb_properties_organization_settler_flank_name"
 icon = NULL
+
+/* 	BUILD TIME x4 (2026-10-19): Haroun structures build themselves with haroun_autoheal, now 3.75 instead of 15;
+	the Haroun units that share it get the rest back here, so they still regenerate 15.	*/
+
+[Property Template=SharedProperty]
+{
+	IDS = bb_haroun_unit_regen
+	name = "#properties_intrinsic_haroun_autoheal_name"	;; shown under the game's own name
+	icon = /Properties/%s/PropertyIcons/IconPropertyLivingWood.png	;; and icon for that heal
+	performer_cv_bias = 0	;; adds nothing to the AI's strength estimate
+
+	[Modifier template=PeriodicHealModifier]	;; with haroun_autoheal (3.75): the old 15
+	amount = 11.25
+}

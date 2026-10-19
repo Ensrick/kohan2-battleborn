@@ -1,11 +1,16 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Haroun/hillstrider.tgi sha256=80463c3a7cd361daae0efeede522491a757f2b7fd6541639d5b79b14cc56781a
-result sha256=eef42f89b5ed168774d17e43e546d4e4947303c331c649b889bc7be31e846c20 bytes=4497
+result sha256=f57731349a2612773434fd8fcc4c364158d03785ccf64ab14985940d207ec21b bytes=4691
 bom no
-eol crlf none*1
+eol crlf*65 lf*1 crlf*178 none*1
 
-@@ 67 -0 +1 @@ [Unit hillstrider] > [ElementComponent]
+@@ 66 -1:58c1472c +2 @@ [Unit hillstrider] > [ElementComponent]
++		required_structures = haroun_barracks,haroun_library,haroun_center_city ;; tiers: was haroun_barracks, haroun_library
 +		denizen_type = denizen_type_melee
+@@ 126 -0 +3 @@ [Unit hillstrider] > [PropertiesComponent] > [Property]
++
++		[Property]
++		property_IDS = bb_haroun_unit_regen ;; with haroun_autoheal (3.75 since Battleborn's build time x4): its old 15
 @@ 218 -0 +24 @@
 +
 +[Thing template=K2HarounMilitia]

@@ -1,7 +1,9 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Royalist/paladin.tgi sha256=2fd9a1732e4056431d38acffe13fe26991ec294460f28e50b01e0c15851867f8
+ref Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
+ref Units/Human/dragoon.tgi sha256=b35b9fdb8d4d69e0936c3e627306489ada78744c50ecba2489e69244733d47c6
 ref Units/Monster/barbarian.tgi sha256=dc05ee54f9b070c2c252108d808e1a1ba49027fb44383431ca30cea0f39590f6
-result sha256=0e2a06de968a3e1561ce80fd877d4b876f974f3ed68a490f6562a68fbbcba8f3 bytes=2337
+result sha256=8884db7d802cffc1ae9c78a74fd93795b822877b8ec4294d01e6374272632ab3 bytes=3334
 bom no
 eol lf
 
@@ -46,7 +48,7 @@ eol lf
 +
 @@ 91 -2:371acb95 +2 @@ [Unit paladin] > [ElementComponent]
 +		morale_value = 11 ;; paladin 12
-+		required_structures = base_barracks
++		required_structures = base_barracks,base_blacksmith ;; tiers: was base_barracks
 @@ 94 -0 +1 @@ [Unit paladin] > [ElementComponent]
 +	}
 @@ 95 -4:a51eb856 +0 @@ [Unit paladin] > [ElementComponent]
@@ -69,3 +71,35 @@ eol lf
 +
 @@ 139 -1:468a1662 +4 @@ [Unit paladin] > [PropertiesComponent] > [Property]
 = Units/Monster/barbarian.tgi 104-107
+@@ 151 -0 +49 @@
++
++;; Battleborn: a company type led by bb_front_paladin (the company editor's front slot is locked to the company type)
++[Thing template=K2RoyalistCompany]
++{
++	IDS = company_bb_front_paladin
++	name = "#bb_company_bb_front_paladin_name"
++
++	[View]
++	{
++		resource_prefix = Paladin/Paladin
+= Units/Human/dragoon.tgi 155-155
++
+= Units/Human/dragoon.tgi 157-165
++
+= Units/Human/dragoon.tgi 167-171
++
+= Units/Human/dragoon.tgi 173-176
++
+= Units/Human/dragoon.tgi 178-178
++		element_IDS = bb_front_paladin
++
+= Units/Gauri/hammer.tgi 182-183
++
+= Units/Gauri/hammer.tgi 185-186
++
+= Units/Gauri/hammer.tgi 188-189
++
+= Units/Gauri/hammer.tgi 191-191
++		element_IDS = bb_captain_paladin
++	}
++}

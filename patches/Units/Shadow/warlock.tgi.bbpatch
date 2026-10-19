@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Shadow/warlock.tgi sha256=69c70ed24cee9df6ea3752b07ee81194c0a117be57b05d8ffa8b1b21f2cad356
+result sha256=09941cb8f68f74780dc90801469effb0edf5da0255dec28c69d6d14cddd0a658 bytes=3742
+bom no
+eol crlf*133 lf*1 crlf*62
+
+@@ 134 -1:dca171bd +1 @@ [Unit warlock] > [ElementComponent]
++		required_structures = shadow_shrine,shadow_library,shadow_center_town ;; tiers: was shadow_shrine,shadow_library

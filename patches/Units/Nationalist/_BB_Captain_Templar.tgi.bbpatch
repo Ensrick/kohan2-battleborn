@@ -2,7 +2,7 @@
 base Units/Human/dragoon_cutscene.tgi sha256=157a13857c5a692f6318a1611c36821133f1c2c33cfc43b7c512a9a50d19ad6d
 ref Units/Fallen/daevai.tgi sha256=21e711aed98127edaba9fc2be09e5b4b6012a3a4ff873d418a3df8a39f311b45
 ref Units/Gauri/anvil.tgi sha256=801b555fe17fdabc2dc54bc4a14bce6479e67cb001f77fb9c3997e0de9231591
-result sha256=aec585bcea66e47a11a036897c107b1dcefc66bdc913a953a8a03678bafe2143 bytes=2961
+result sha256=b39af103786b2894542486ea788cdb69b37e554ba978262f74d41cedacef1ec5 bytes=3005
 bom no
 eol lf
 
@@ -72,7 +72,7 @@ eol lf
 +
 @@ 85 -2:161f5914 +5 @@ [Unit dragoon_cutscene] > [ElementComponent]
 +	morale_value = 12
-+	required_structures = base_barracks,base_shrine
++	required_structures = base_barracks,base_blacksmith ;; tiers: was base_barracks,base_shrine
 +	required_properties = faction_nationalist
 +	denizen_type = denizen_type_melee
 +

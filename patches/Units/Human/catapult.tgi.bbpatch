@@ -1,8 +1,8 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/catapult.tgi sha256=768935a59783c86d58dbbc4f24b67a1dab02bff46161ebc278d54dd6a6131ea5
-result sha256=b71933b577bfd344e6a261b497dae4975a0fa47ed48a6837d74125f25fa491c6 bytes=4787
+result sha256=0b5ca98cc15477530507b1b2741a995553f210ac3869ca9da7600ced8ab0458c bytes=4846
 bom no
-eol crlf
+eol crlf*131 lf*1 crlf*132
 
 @@ 132 -1:54e1d9b2 +1 @@ [Unit catapult] > [ElementComponent]
-+	required_structures = human_center_town
++	required_structures = human_quarry,human_barracks,human_center_town ;; tiers: was human_center_town

@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Undead/skeleton.tgi sha256=ca18b643cc8c5f96181345cbe559b9cdfef0ba85230682f76619dbeb349b76ad
+result sha256=6d0a4bb53261d9091d7919b8b0712a8bab81595a28e8c73d1d22d64a733ae8b4 bytes=4809
+bom no
+eol crlf*75 lf*1 crlf*192 none*1
+
+@@ 76 -1:f5bf20dc +1 @@ [Unit skeleton] > [ElementComponent]
++		required_structures = undead_blacksmith,undead_center_town ;; tiers: was undead_blacksmith

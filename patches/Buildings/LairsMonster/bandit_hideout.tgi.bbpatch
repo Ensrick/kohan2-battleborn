@@ -1,15 +1,20 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/bandit_hideout.tgi sha256=e3ab919f44a46d0459aef278cfb221d5f1856c1ffa6d4850c4c0723011e67787
-result sha256=1d20fedfa040f09d37c4f4e9d4bc02d10fb41b5e0e101cea0d2b6e34895e012d bytes=1379
+result sha256=8fede6ee2dddf713f26f338abc093bd2dd2bf219842f23ef4230b7e9936eee0c bytes=1567
 bom no
 eol crlf
 
-@@ 54 -1:d5db0f56 +6 @@ [Thing lair_bandit_hideout] > [LairComponent]
+@@ 45 -1:10623db3 +1 @@ [Thing lair_bandit_hideout] > [DenizenComponent] > [Inventory]
++		count = 8		;; lairs 2026-10-19: was 4 (raiding companies x2)
+@@ 49 -1:831d46bb +1 @@ [Thing lair_bandit_hideout] > [DenizenComponent] > [Inventory]
++		count = 2		;; lairs 2026-10-19: was 1 (raiding companies x2)
+@@ 54 -4:c7211233 +9 @@ [Thing lair_bandit_hideout] > [LairComponent]
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
 +		;; lair (lair_bandit_hideout) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
-+		spawn_max = 1		;; vanilla 0
++		spawn_max = 2		;; lairs 2026-10-19: was 1 (vanilla 0)
 +		spawn_ids = lair_bandit_hideout
 +		spawn_distance = 32,64
 +
-@@ 57 -1:5bc85027 +1 @@ [Thing lair_bandit_hideout] > [LairComponent]
++		event_time = 150		;; lairs 2026-10-19: was 300
++		event_chance = 0.6		;; lairs 2026-10-19: was 0.3
 +		marauder_chance = 0.5		;; vanilla 1

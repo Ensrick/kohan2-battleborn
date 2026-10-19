@@ -3,9 +3,9 @@ base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b359
 ref Units/Fallen/daevai.tgi sha256=21e711aed98127edaba9fc2be09e5b4b6012a3a4ff873d418a3df8a39f311b45
 ref Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
 ref Units/Nationalist/ghalen_mordecai.tgi sha256=4c17fed77a8998820f4ded8c2c02dec8ffd7941c95ab21707a7e42b5007286bf
-result sha256=2dd8293b91eefeb535f1ad0851a5bd224a5af387668b9d98ca2c21c0be9d28e2 bytes=4945
+result sha256=46cf6e3bdaf650b267b44068ddf3423b66e2cc927add8ada899a6626c8ecd44c bytes=4993
 bom no
-eol crlf
+eol crlf*207 lf*1 crlf*51
 
 @@ 2 -1:ebaedddd +56 @@
 +/******************************************  INFANTRY CAPTAIN PORTRAIT  ******************************/
@@ -69,7 +69,7 @@ eol crlf
 @@ 135 -9:768610c1 +0 @@ [Unit swordsman]
 @@ 145 -4:4da951ae +4 @@ [Unit swordsman] > [ElementComponent]
 +	morale_value = 11 ;; 10
-+	required_structures = human_center_village
++	required_structures = human_blacksmith,human_center_town ;; tiers: was human_center_village
 +	primary_minimum_health = .3
 +
 @@ 152 -1:9c8ae0bd +1 @@ [Unit swordsman] > [MoverComponent]

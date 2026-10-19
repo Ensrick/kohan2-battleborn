@@ -1,11 +1,12 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Shadow/leviathan.tgi sha256=d8b316e00bcd433cbacbc2d8e0a65c05c4a2202d53042b37bb0c17c6f4b8f34f
-result sha256=e13c9c734dcefeb81149218bd8284cd43c23e3141722714ebe75d4baa7a88d0e bytes=4498
+result sha256=ff787e9a5815616b2c403c23c6ca35bd5cb94a17e049ebf4e12c82e83b083a67 bytes=4563
 bom no
-eol crlf
+eol crlf*129 lf*1 crlf*116
 
-@@ 129 -0 +1 @@ [Unit leviathan] > [ElementComponent]
+@@ 129 -1:7fc88307 +2 @@ [Unit leviathan] > [ElementComponent]
 +		denizen_type = denizen_type_melee
++		required_structures = shadow_manafocus,shadow_barracks,shadow_center_city ;; tiers: was shadow_manafocus,shadow_barracks
 @@ 222 -0 +24 @@
 +
 +[Thing template=K2ShadowMilitia]

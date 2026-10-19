@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/scorpion_nest_arctic.tgi sha256=3e42cdfe2f3e79bee5f75cdc7aaf25257d5451ae53db497fba505c371d5a8fb9
-result sha256=089475c71f67ae62a6eb547077ee4350b98b90111100ca61b04046e21ff25bbb bytes=1257
+result sha256=f1e01cbff1d510e40447410a49f7d380051a1bda2e9a4c616b6c05fd8f7c6751 bytes=1339
 bom no
 eol crlf
 
@@ -8,12 +8,12 @@ eol crlf
 +	{
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
 +		;; lair (scorpion_nest_arctic) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
-+		spawn_max = 1		;; vanilla: unset
++		spawn_max = 2		;; lairs 2026-10-19: was 1 (vanilla: unset)
 +		spawn_ids = scorpion_nest_arctic
 +		spawn_distance = 16,30
 +
-+		event_time = 300		;; vanilla: unset
-+		event_chance = 0.15		;; vanilla: unset
++		event_time = 150		;; lairs 2026-10-19: was 300 (vanilla: unset)
++		event_chance = 0.3		;; lairs 2026-10-19: was 0.15 (vanilla: unset)
 +		marauder_chance = 0		;; vanilla: unset
 +		reward = 60,90
 +	}

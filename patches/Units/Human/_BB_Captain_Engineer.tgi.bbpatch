@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/engineer.tgi sha256=dcf298fbd3f4eb91388544ec1ddbb60116fa39beb543230b9832eb2c5b3938b5
-result sha256=488e0c1fb5392f15b0778797dd4735071aa4390dd4ce0a84111a4b118ac5bbaa bytes=5046
+result sha256=91b2199f53819123f8ab00ad2f1b3ab36323db47f42a2883361705e8144e5e51 bytes=5067
 bom no
 eol lf
 
@@ -101,7 +101,7 @@ eol lf
 @@ 242 -1:e740a6fa +1 @@ [Unit engineer] > [PerformerComponent] > [Ability]
 +
 @@ 246 -1:e32b3167 +1 @@ [Unit engineer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
-+				amount = 6 ;; engineer 5
++				amount = 1.5 ;; 6, build time x4 (engineer 5)
 @@ 253 -1:2b4c342f +1 @@ [Unit engineer]
 +
 @@ 260 -1:f7f3b281 +1 @@ [Unit engineer] > [PropertiesComponent] > [Property]

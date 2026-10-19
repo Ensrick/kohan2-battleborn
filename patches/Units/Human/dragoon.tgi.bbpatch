@@ -1,8 +1,8 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/dragoon.tgi sha256=b35b9fdb8d4d69e0936c3e627306489ada78744c50ecba2489e69244733d47c6
-result sha256=1deff453a477b8d6bb950b1ff1a662739c94069751cef528073a32f8d919e8d8 bytes=4186
+result sha256=69dac732a26a7ec9a5de40b821550cae3882139941c706abc9061cd291bf7321 bytes=4249
 bom no
-eol crlf none*1
+eol crlf*84 lf*1 crlf*155 none*1
 
 @@ 17 -1:0a02f28f +1 @@ [Unit dragoon] > [View]
 +		resource_prefix = Dragoon/Dragoon
@@ -12,6 +12,6 @@ eol crlf none*1
 +		wood = 0.5 ;; 1
 +		iron = 0.5 ;; 1
 @@ 85 -1:51a7500a +1 @@ [Unit dragoon] > [ElementComponent]
-+	required_structures = human_center_city
++	required_structures = human_blacksmith,human_barracks,human_center_city ;; tiers: was human_center_city
 @@ 182 -1:07282191 +1 @@ [Thing company_dragoon] > [OrganizationComponent] > [Slot]
 +		element_IDS = dragoon

@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Haroun/stonewalker.tgi sha256=105690ea2fc7b95b2823c5cf9b86ab386623501fea2abfb8b0a182f41a7c0327
+result sha256=d6aa9ad005017201db6cf4c10868f041f3b95e0d31add32ffe99a8d7d59236af bytes=3748
+bom no
+eol crlf*76 lf*1 crlf*132
+
+@@ 77 -1:1396f9d5 +1 @@ [Unit stonewalker] > [ElementComponent]
++		required_structures = haroun_blacksmith,haroun_center_town ;; tiers: was haroun_blacksmith

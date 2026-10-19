@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/spear.tgi sha256=bbaf824f5fc307670892a33ba939b65a6493f759228a64fe36a44b2e1fbc00cf
+result sha256=42da89df7e591ae6f83884ae2a8e5ef87c2d96ad28b8b2cfd7d5a0bdd511512e bytes=5582
+bom no
+eol crlf*139 lf*1 crlf*161
+
+@@ 140 -1:5f59303d +1 @@ [Unit spear] > [ElementComponent]
++	required_structures = gauri_woodmill,gauri_center_village ;; tiers: was gauri_woodmill

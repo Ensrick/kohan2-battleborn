@@ -1,0 +1,10 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Drauga/laborer.tgi sha256=7cfab7d8ff023fdeef8a9ccbea93d63386f305cd38ed9e1f9843cb347ed6fae0
+result sha256=97b761f7c6d272a92e83dcd86cfe2f1c666d4161767c97863ca759dd3f849772 bytes=3250
+bom no
+eol crlf
+
+@@ 139 -1:02b7c2dc +1 @@ [Unit laborer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 2.5 ;; 10, build time x4
+@@ 143 -1:638393ee +1 @@ [Unit laborer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 12.5 ;; 50, build time x4

@@ -1,8 +1,12 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Game/SVars_k2.tgi sha256=04141ea65525e719b84bedf16611614f9bbfcb116392c19fd2eb69b24a4ff533
-result sha256=2d672fa52dabacffaf97c244aee4f508dcc05753d0d147b016c4ee6812decebe bytes=1503
+result sha256=f43a3e782f653e82428082d04f9f7f6556b88d47699cd6f2344b0a5dfccb066e bytes=1775
 bom no
 eol crlf none*1
 
-@@ 43 -1:3011a606 +1 @@ [SVars]
+@@ 43 -1:3011a606 +5 @@ [SVars]
 +	int	EconomyLimitedResourceMax = 40 ;; 20
++
++	;; Battleborn: a settlement may upgrade before every structure slot of its level is built (only a structure
++	;; under construction blocks it). Needs the sandbox module, which applies it; the game alone keeps its own rule.
++	bool	BattlebornUpgradeWithOpenSlots = true

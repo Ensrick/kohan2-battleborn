@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/pioneer.tgi sha256=463abe221db658fdccec80317b400565d321a822fc906a38b7ac7066674299d9
-result sha256=bff57ab3e93b26c3aa91f119aed0490f3df414cb4ed77234b66006c384500391 bytes=3425
+result sha256=178e679b1d9d0a2376b50a03e1c236c1475119566adba523e04670f24b07ef55 bytes=3446
 bom no
 eol crlf none*1
 
@@ -14,7 +14,7 @@ eol crlf none*1
 @@ 154 -1:02b7c2dc +1 @@ [Unit pioneer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
 +				amount =  22 ;; Pioneer is 10
 @@ 169 -1:38b6ae4a +1 @@ [Unit pioneer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
-+				amount = 30 ;; 20
++				amount = 7.5 ;; 30, build time x4 (20)
 @@ 183 -1:f7f3b281 +1 @@ [Unit pioneer] > [PropertiesComponent] > [Property]
 +		property_IDS = captain
 @@ 189 -42:0fac65fa +0 @@

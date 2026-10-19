@@ -240,13 +240,13 @@ files actually are as of 2026-08-13.
 - [ ] Consider increasing the Health of all units - not started (only structures got HP x2)
 - [ ] Change default troop hiring groups into bigger ones - not started (company layouts unchanged apart from settler/siege)
 - [x] ~~Allow special unit slots to contain regular units~~ - **abandoned: crashes the AI** (section 18)
-- [ ] Higher-tier units require higher-tier towns AND structures - done for Human (tech shifts, section 3); other factions not started
+- [x] Higher-tier units require higher-tier towns AND structures - all six races + faction lines 2026-10-19 (0.2.6-dev, `tools/tiers.py` holds the table). **VERIFY in-game**
 
 ### Structures
 
 - [ ] Out-of-town buildable versions of all structures, higher cost / lower efficacy (needs AI testing) - pilot chain DONE 2026-08-13 (woodmill -> sawmill/woodmarket, buildable via engineer; section 7); remaining structures + other factions open. Recipe: clone as K2HumanBuilding, 3x cost / 2/3 output, add one `[BuildActor]` line to the builder unit
 - [ ] Most structures innately repair themselves - not started
-- [ ] Towns require more buildings and higher cost to upgrade - partial (cost x5 done; extra building requirements not started)
+- [x] ~~Towns require more buildings and higher cost to upgrade~~ - superseded 2026-10-18 by the user: towns upgrade regardless of the number of buildings, and stay very expensive (cost x5). 0.2.6-dev: SVar `BattlebornUpgradeWithOpenSlots`, applied by the sandbox module (single player only); the stock game cannot do it from data. **VERIFY in-game**
 - [ ] Out-of-town buildings always capturable + self-repairing (unless lair) - partial (fort/outpost/woodmill captureable done; self-repair not started)
 
 ### Companies, militia, town centers

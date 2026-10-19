@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Drauga/beastrider.tgi sha256=cfee3b448c64e763b030a0a1ac2d4251a3a1254171a1bc7b65a928edd4a15b2d
+result sha256=6d6c2ced467afa427b0b6e662ba5a3f8d83bf7c0c669f83b2c0b25ff6fe269d6 bytes=3245
+bom no
+eol crlf*36 lf*1 crlf*144
+
+@@ 37 -1:5d70a2c2 +1 @@ [Unit beastrider] > [ElementComponent]
++	required_structures = drauga_blacksmith,drauga_barracks,drauga_center_city ;; tiers: was drauga_blacksmith,drauga_barracks

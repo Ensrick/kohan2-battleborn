@@ -1,0 +1,10 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Human/worker.tgi sha256=6b32421d56129a808a2b21c0084610deadc590a275549873f5a98cddeab38cd6
+result sha256=074fcf28e1988d9c64412c915bec29d05d57d428da28a71224faa3179b55f1bf bytes=3624
+bom no
+eol crlf
+
+@@ 156 -1:02b7c2dc +1 @@ [Unit worker] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 2.5 ;; 10, build time x4
+@@ 160 -1:ec0264df +1 @@ [Unit worker] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 12.5 ;; 50, build time x4

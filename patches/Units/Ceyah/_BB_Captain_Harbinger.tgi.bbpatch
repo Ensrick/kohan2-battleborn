@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Haroun/stonewalker.tgi sha256=105690ea2fc7b95b2823c5cf9b86ab386623501fea2abfb8b0a182f41a7c0327
-result sha256=1183a43e54ef28cde99805d275f4c21008432187119596bb21461521f53df30d bytes=2411
+result sha256=2c1200ca999049ec04eb384e1a5b1818aa59b55352f3bb74210e505b46121507 bytes=2455
 bom no
 eol lf
 
@@ -43,7 +43,7 @@ eol lf
 +
 @@ 75 -7:f2b880ef +5 @@ [Unit stonewalker] > [ElementComponent]
 +	morale_value = 12 ;; stonewalker 10
-+	required_structures = base_blacksmith
++	required_structures = base_barracks,base_blacksmith ;; tiers: was base_blacksmith
 +	required_properties = faction_ceyah, evil
 +	denizen_type = denizen_type_melee
 +

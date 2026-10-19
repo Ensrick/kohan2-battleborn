@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
-result sha256=5089959ab9684bbf682dc16a0c942d88fcbc029d558b676247b2a00353644eb5 bytes=2420
+result sha256=1e2684d4587e4552ec9e2b6fad8953c85321add89a0bdd5e4c9d846d39e48c29 bytes=3479
 bom no
 eol lf
 
@@ -51,7 +51,7 @@ eol lf
 +
 @@ 85 -4:fb0bce69 +5 @@ [Unit hammer] > [ElementComponent]
 +	morale_value = 13 ;; hammer 13
-+	required_structures = base_blacksmith
++	required_structures = gauri_blacksmith,gauri_barracks,gauri_center_city ;; tiers: was base_blacksmith
 +	required_properties = faction_council, good
 +	denizen_type = denizen_type_melee
 +
@@ -84,4 +84,31 @@ eol lf
 +
 @@ 142 -1:31609426 +1 @@ [Unit hammer] > [PropertiesComponent] > [Property]
 +
-@@ 147 -48:f83fcc98 +0 @@
+@@ 148 -1:727023ca +2 @@
++;; Battleborn: a company type led by bb_front_council_hammer (the company editor's front slot is locked to the company type)
++[Thing template=K2CouncilCompany]
+@@ 150 -2:85f73683 +2 @@ [Thing]
++	IDS = company_bb_front_council_hammer
++	name = "#bb_company_bb_front_council_hammer_name"
+@@ 155 -1:a5e87b5d +1 @@ [Thing company_hammer] > [View]
++		resource_prefix = /Units/Gauri/Hammer/Hammer
+@@ 157 -1:36a9e7f1 +1 @@ [Thing company_hammer] > [View]
++
+@@ 167 -1:2b4c342f +1 @@ [Thing company_hammer]
++
+@@ 173 -1:2b4c342f +1 @@ [Thing company_hammer]
++
+@@ 178 -1:31609426 +1 @@ [Thing company_hammer] > [OrganizationComponent]
++
+@@ 180 -2:e70b9ca2 +2 @@ [Thing company_hammer] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_front_council_hammer
++
+@@ 184 -1:31609426 +1 @@ [Thing company_hammer] > [OrganizationComponent] > [Slot]
++
+@@ 187 -1:31609426 +1 @@ [Thing company_hammer] > [OrganizationComponent] > [Slot]
++
+@@ 190 -1:31609426 +1 @@ [Thing company_hammer] > [OrganizationComponent] > [Slot]
++
+@@ 192 -2:47598e2d +2 @@ [Thing company_hammer] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_captain_council_hammer
++	}

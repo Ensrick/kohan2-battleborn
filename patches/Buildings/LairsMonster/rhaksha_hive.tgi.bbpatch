@@ -1,15 +1,20 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/rhaksha_hive.tgi sha256=8de61769600643cb67397907dec265558cd4d0badedb5ff0cb9a8d80cf000705
-result sha256=1ab32cf95e1bebbc073f5053191331cb0331328e83c6021bec474a36d09c7ea6 bytes=1592
+result sha256=746286246d4eb1268168190c23c5fe87c081c33bb320d0c796de7831dd0157d3 bytes=1820
 bom no
 eol crlf
 
-@@ 66 -1:d5db0f56 +6 @@ [Thing lair_rhakshahive] > [LairComponent]
+@@ 57 -1:5705a4c5 +1 @@ [Thing lair_rhakshahive] > [DenizenComponent] > [Inventory]
++		count = 24		;; lairs 2026-10-19: was 16 (raiding companies x1.5: hives spread too)
+@@ 61 -1:10623db3 +1 @@ [Thing lair_rhakshahive] > [DenizenComponent] > [Inventory]
++		count = 6		;; lairs 2026-10-19: was 4 (raiding companies x1.5: hives spread too)
+@@ 66 -4:8d57fd4f +9 @@ [Thing lair_rhakshahive] > [LairComponent]
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
 +		;; lair (lair_rhakshahive) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
-+		spawn_max = 1		;; vanilla 0
++		spawn_max = 2		;; lairs 2026-10-19: was 1 (vanilla 0)
 +		spawn_ids = lair_rhakshahive
 +		spawn_distance = 32,64
 +
-@@ 69 -1:5bc85027 +1 @@ [Thing lair_rhakshahive] > [LairComponent]
++		event_time = 60		;; lairs 2026-10-19: was 120
++		event_chance = 0.5		;; lairs 2026-10-19: was 0.25
 +		marauder_chance = 0.75		;; vanilla 1

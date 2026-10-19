@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Properties/properties_technologies.tgi sha256=c1ca8937a328bdba7391941d48d8cbaed68c1d8a8c6985e6664e1e871d0ea5fe
+result sha256=52904a78b06b58303c0f8e6ba7e6d24cb64beb95c6b35eac526c44d4af19fab8 bytes=60577
+bom no
+eol crlf
+
+@@ 1823 -1:5401fffe +1 @@ [Property rapid_growth] > [Modifier]
++	amount = 2.5 ;; 10, Battleborn build time x4

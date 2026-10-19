@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Drauga/warmonger.tgi sha256=f5219e8f908eb903f12abb2550640fcc1aa0947eea03aac5246090a03f0a54fe
+result sha256=fe780ca79998c2f14b8b445c98ddfe12a3f29c40b6176b77ed0ab894546e78fb bytes=2684
+bom no
+eol crlf*84 lf*1 crlf*61
+
+@@ 85 -1:ace70f48 +1 @@ [Unit warmonger] > [ElementComponent]
++		required_structures = drauga_barracks,drauga_blacksmith,drauga_center_town ;; tiers: was drauga_barracks, drauga_blacksmith

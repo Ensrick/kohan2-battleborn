@@ -1,10 +1,11 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Gauri/juggernaut.tgi sha256=24ecfc0e26ddefdf578672c79e26bd2c192b25a782d08f754f7e3046fd3e9204
-result sha256=e5418ee465142469d0dc57633849f49eed78e896120fdd05cc95a93b257ddfed bytes=4603
+result sha256=4901f108666acc1b9e87ea4482633e073a305b42ac681d412ea9337dfa6264f4 bytes=4665
 bom no
-eol crlf none*1
+eol crlf*114 lf*1 crlf*132 none*1
 
-@@ 116 -0 +1 @@ [Unit juggernaut] > [ElementComponent]
+@@ 115 -1:89534ef3 +2 @@ [Unit juggernaut] > [ElementComponent]
++		required_structures = gauri_library,gauri_blacksmith,gauri_center_city ;; tiers: was gauri_library,gauri_blacksmith
 +		denizen_type = denizen_type_melee
 @@ 229 -0 +19 @@
 +

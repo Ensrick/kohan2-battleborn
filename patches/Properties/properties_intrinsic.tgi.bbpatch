@@ -1,0 +1,10 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Properties/properties_intrinsic.tgi sha256=0015d0dec416997c2c6865a18ebd2414ffe73a517748acb34a39332dfed6d553
+result sha256=f8b0f8bfafb6bb835061df799ac1185f60e69f06f9d8f2e3ffb492d79a1814ef bytes=15992
+bom no
+eol crlf
+
+@@ 281 -1:ed7ac781 +1 @@ [Property haroun_autoheal] > [Modifier]
++	amount = 3.75 ;; 15, Battleborn build time x4 (Haroun structures build themselves with this heal)
+@@ 292 -1:d59c2eab +1 @@ [Property haroun_village_autoheal] > [Modifier]
++	amount = 1.25 ;; 5, Battleborn build time x4 (Haroun structures build themselves with this heal)

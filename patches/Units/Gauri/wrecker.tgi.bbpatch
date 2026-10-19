@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/wrecker.tgi sha256=28c6589313a006dfabb5c0874212448abd8ddf1c11b3fdbcc6be8402ad9fb07d
+result sha256=fca096532f1cfe91f6e588106727ddac82220f4dba9ba024df7c4d6af2a074bc bytes=2747
+bom no
+eol crlf*86 lf*1 crlf*66
+
+@@ 87 -1:6dd66085 +1 @@ [Unit wrecker] > [ElementComponent]
++		required_structures = gauri_quarry,gauri_barracks,gauri_center_town ;; tiers: was gauri_quarry, gauri_barracks

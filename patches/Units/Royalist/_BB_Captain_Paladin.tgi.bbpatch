@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Royalist/paladin.tgi sha256=2fd9a1732e4056431d38acffe13fe26991ec294460f28e50b01e0c15851867f8
-result sha256=8919bbdbc0d0ce6311520800e02dd29a3e0d215df5d2392a44e730b7476a00bc bytes=2469
+result sha256=e51beceb5b87020d4d568410b0dd1613983689a30327c08e6ee369b134617067 bytes=2513
 bom no
 eol lf
 
@@ -43,8 +43,9 @@ eol lf
 +
 @@ 88 -1:2b4c342f +1 @@ [Unit paladin]
 +
-@@ 91 -1:9cb153ce +1 @@ [Unit paladin] > [ElementComponent]
+@@ 91 -2:371acb95 +2 @@ [Unit paladin] > [ElementComponent]
 +		morale_value = 13 ;; paladin 12
++		required_structures = base_barracks,base_blacksmith ;; tiers: was base_barracks, base_shrine
 @@ 94 -0 +1 @@ [Unit paladin] > [ElementComponent]
 +	}
 @@ 95 -4:a51eb856 +0 @@ [Unit paladin] > [ElementComponent]

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Haroun/stonewalker.tgi sha256=105690ea2fc7b95b2823c5cf9b86ab386623501fea2abfb8b0a182f41a7c0327
-result sha256=085bad38f573ef5c77a56d7f12cff7b878e4eb7a72b5cf65b0a4a3e5a7476a50 bytes=2409
+result sha256=cd1ddbb72e0daf7c40148146d009e7586f6542f3544d569c8f0eb8169a124449 bytes=3489
 bom no
 eol lf
 
@@ -45,7 +45,7 @@ eol lf
 +
 @@ 75 -7:f2b880ef +5 @@ [Unit stonewalker] > [ElementComponent]
 +	morale_value = 11 ;; stonewalker 10
-+	required_structures = base_blacksmith
++	required_structures = base_barracks,base_blacksmith ;; tiers: was base_blacksmith
 +	required_properties = faction_ceyah, evil
 +	denizen_type = denizen_type_melee
 +
@@ -72,4 +72,32 @@ eol lf
 +
 @@ 129 -1:31609426 +1 @@ [Unit stonewalker] > [PropertiesComponent] > [Property]
 +
-@@ 134 -76:3a533df0 +0 @@
+@@ 135 -1:8a16f7c0 +2 @@
++;; Battleborn: a company type led by bb_front_ceyah_stonewalker (the company editor's front slot is locked to the company type)
++[Thing template=K2CeyahCompany]
+@@ 137 -3:e61e7a00 +3 @@ [Thing]
++	IDS = company_bb_front_ceyah_stonewalker
++	name = "#bb_company_bb_front_ceyah_stonewalker_name"
++
+@@ 142 -1:5b33eb8e +1 @@ [Thing company_stonewalker] > [View]
++		resource_prefix = /Units/Haroun/Stonewalker/Stonewalker
+@@ 144 -1:36a9e7f1 +1 @@ [Thing company_stonewalker] > [View]
++
+@@ 160 -1:2b4c342f +1 @@ [Thing company_stonewalker]
++
+@@ 164 -2:f2121d87 +2 @@ [Thing company_stonewalker] > [OrganizationComponent]
++		entrenchment_time = 300
++
+@@ 167 -2:7764d7eb +2 @@ [Thing company_stonewalker] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_front_ceyah_stonewalker
++
+@@ 171 -1:31609426 +1 @@ [Thing company_stonewalker] > [OrganizationComponent] > [Slot]
++
+@@ 174 -1:31609426 +1 @@ [Thing company_stonewalker] > [OrganizationComponent] > [Slot]
++
+@@ 177 -1:31609426 +1 @@ [Thing company_stonewalker] > [OrganizationComponent] > [Slot]
++
+@@ 179 -2:0c38ea48 +2 @@ [Thing company_stonewalker] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_captain_ceyah_stonewalker
++	}
+@@ 182 -28:e77275b0 +0 @@

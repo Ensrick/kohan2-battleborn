@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/haunted_ruin_lich.tgi sha256=56f2b9c910059cd4dc776ce6afe59b90dbccfa7abc6feb78ea3d50096e068753
-result sha256=cc6657e295af172629bb0d8ee742e966a03b4099ff12fe26cd91f43e5bc95739 bytes=1411
+result sha256=168ed1f39d3fd37d94080b4e7b911974cca2df5f86b43dbfbec3438b8d99f87f bytes=1493
 bom no
 eol crlf
 
@@ -8,12 +8,12 @@ eol crlf
 +	{
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
 +		;; lair (haunted_ruin_lich) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
-+		spawn_max = 1		;; vanilla: unset
++		spawn_max = 2		;; lairs 2026-10-19: was 1 (vanilla: unset)
 +		spawn_ids = haunted_ruin_lich
 +		spawn_distance = 32,64
 +
-+		event_time = 300		;; vanilla: unset
-+		event_chance = 0.15		;; vanilla: unset
++		event_time = 150		;; lairs 2026-10-19: was 300 (vanilla: unset)
++		event_chance = 0.3		;; lairs 2026-10-19: was 0.15 (vanilla: unset)
 +		marauder_chance = 0		;; vanilla: unset
 +		reward = 40,60
 +	}

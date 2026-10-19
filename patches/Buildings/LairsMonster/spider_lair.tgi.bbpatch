@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/spider_lair.tgi sha256=ea8e43566f38ec7afbd469029458001879327d85b18c269c3846e7cdee6027d5
-result sha256=ed709879955017088fb13c040111c9374c741f2c71059ef1feb51135ac762255 bytes=1780
+result sha256=b3cdc5ec1987799a753106fe70182a14a560d00a39b5c0980c13c05b38bf7486 bytes=1862
 bom no
 eol crlf
 
@@ -8,12 +8,12 @@ eol crlf
 +	{
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
 +		;; lair (lair_spider_lair) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
-+		spawn_max = 1		;; vanilla: unset
++		spawn_max = 2		;; lairs 2026-10-19: was 1 (vanilla: unset)
 +		spawn_ids = lair_spider_lair
 +		spawn_distance = 16,30
 +
-+		event_time = 300		;; vanilla: unset
-+		event_chance = 0.15		;; vanilla: unset
++		event_time = 150		;; lairs 2026-10-19: was 300 (vanilla: unset)
++		event_chance = 0.3		;; lairs 2026-10-19: was 0.15 (vanilla: unset)
 +		marauder_chance = 0		;; vanilla: unset
 +		reward = 60,90
 +	}

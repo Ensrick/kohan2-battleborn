@@ -1,0 +1,15 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Buildings/LairsMonster/rhaksha_nest.tgi sha256=160cc72af54fdbb8bf28b02fc5fee4737da9089d3812b5c624193ab4a417183d
+result sha256=05dfeb1d1c8f160246c2d7995b939390365329c4275a8398380ff14066ffa2e6 bytes=1568
+bom no
+eol crlf
+
+@@ 57 -1:10623db3 +1 @@ [Thing lair_rhakshanest] > [DenizenComponent] > [Inventory]
++		count = 8		;; lairs 2026-10-19: was 4 (raiding companies x2)
+@@ 61 -1:831d46bb +1 @@ [Thing lair_rhakshanest] > [DenizenComponent] > [Inventory]
++		count = 2		;; lairs 2026-10-19: was 1 (raiding companies x2)
+@@ 66 -1:2e41771b +1 @@ [Thing lair_rhakshanest] > [LairComponent]
++		spawn_max = 2		;; lairs 2026-10-19: was 1
+@@ 70 -2:e4ab7dc2 +2 @@ [Thing lair_rhakshanest] > [LairComponent]
++		event_time = 60		;; lairs 2026-10-19: was 120
++		event_chance = 0.66		;; lairs 2026-10-19: was 0.33

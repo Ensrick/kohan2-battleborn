@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Shadow/shadeling.tgi sha256=353d7a423acf00fe7caf7c7840c58f05a342f1fac193e3bbd2d45d6bfc1c5680
+result sha256=b57b5bdc24d5f32224ea6d87282f395496c358c3d571775c5b06ddf7ec09365d bytes=5100
+bom no
+eol crlf*87 lf*1 crlf*188 none*1
+
+@@ 88 -1:4d356b56 +1 @@ [Unit shadeling] > [ElementComponent]
++		required_structures = shadow_blacksmith,shadow_center_village ;; tiers: was shadow_center_village

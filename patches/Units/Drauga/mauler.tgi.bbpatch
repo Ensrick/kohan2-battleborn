@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Drauga/mauler.tgi sha256=f5075c9c4bada07351ed833828e6ad96369f95ab1d5fd5ff93847de6be80a501
+result sha256=c12bb487cfe546a472fb4c22491cc643e6bbb7e495d57d961379df494840f787 bytes=4251
+bom no
+eol crlf*88 lf*1 crlf*151
+
+@@ 89 -1:e638a2a3 +1 @@ [Unit mauler] > [ElementComponent]
++		required_structures = drauga_woodmill,drauga_center_village ;; tiers: was drauga_center_village

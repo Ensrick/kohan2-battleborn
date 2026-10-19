@@ -1,8 +1,8 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/pikeman.tgi sha256=5d0e74126a896abd40a909846c8769a811306ac45c5747708b34ba685c9c3674
-result sha256=e741069f96c181cbe3696dc48ab38425f52d53cc6f573cfbd83c74702dcb3d46 bytes=2420
+result sha256=a4e53477fa5e87a5c06074400e6f02983747d1380c9e8fcc4ee12864036c1269 bytes=2471
 bom no
-eol crlf none*1
+eol crlf*71 lf*1 crlf*62 none*1
 
 @@ 4 -2:768a7ac4 +2 @@ [Unit]
 +	IDS = bb_captain_pikeman
@@ -22,8 +22,9 @@ eol crlf none*1
 +		gold = 5 ;; pikeman 2
 @@ 59 -1:ae381f5f +1 @@ [Unit pikeman] > [EconomyComponent] > [Upkeep]
 +		iron = 0.25 ;; Pikeman 0.125
-@@ 64 -1:bb6e38a1 +1 @@ [Unit pikeman] > [ElementComponent]
+@@ 64 -2:5d40af47 +2 @@ [Unit pikeman] > [ElementComponent]
 +		morale_value = 10 ;; pikeman 9
++		required_structures = human_blacksmith,human_center_village ;; tiers: was human_center_village
 @@ 71 -0 +3 @@ [Unit pikeman] > [ElementComponent] > [SupportProperty]
 +
 +		[SupportProperty]

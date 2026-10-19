@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Gauri/healer.tgi sha256=0d7d776032a0c4e660fd453e68c7d41025596c51270e3c34e279747f5a295a69
+result sha256=4170515d33d72ff574053e44480dcf18a6d5d31789fc59d0c52e58ea891fd506 bytes=2690
+bom no
+eol crlf*78 lf*1 crlf*68
+
+@@ 79 -1:2b9f0e72 +1 @@ [Unit healer] > [ElementComponent]
++	required_structures = gauri_shrine,gauri_center_town ;; tiers: was gauri_shrine

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
-result sha256=d43bc3594c6d19af98f9417e620e219d3f01d809366de26b6db1a10a4f751036 bytes=3560
+result sha256=3289c2b35f3736678d4bc8431c79a34c43c2ac766a7788f42cfdc63ca52e278d bytes=3624
 bom no
 eol lf
 
@@ -62,7 +62,7 @@ eol lf
 +
 @@ 162 -2:c88d3877 +4 @@ [Unit ranger] > [ElementComponent]
 +		morale_value = 12
-+		required_structures = base_library
++		required_structures = haroun_woodmill,haroun_library,haroun_center_city ;; tiers: was base_library
 +		required_properties = faction_council, good
 +	}
 @@ 165 -4:72fb9993 +0 @@ [Unit ranger] > [ElementComponent]

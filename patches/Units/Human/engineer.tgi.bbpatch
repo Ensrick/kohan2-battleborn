@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/engineer.tgi sha256=dcf298fbd3f4eb91388544ec1ddbb60116fa39beb543230b9832eb2c5b3938b5
-result sha256=6ea6e1847d87415c7ffa3581e277a47b8397584b0087c9ac87f3c3987af9fadd bytes=5915
+result sha256=ca708ba5ac18bd5007f86a9921cce06bd8b0027101ac5bc5c53c5ea99f6116c7 bytes=5938
 bom no
 eol crlf
 
@@ -9,3 +9,5 @@ eol crlf
 +		[BuildActor]
 +		actor_ids = bb_human_woodmill_outpost
 +
+@@ 246 -1:e32b3167 +1 @@ [Unit engineer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
++				amount = 1.25 ;; 5, build time x4

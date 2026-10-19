@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Haroun/windrider.tgi sha256=842650d9f6f61a8a32e19408bf1b49bbd1ac02cc6dd3fab410c0e124fe19c50d
+result sha256=bb476f205f9b819d3324296928e32bbad29f435a503bd057748c5c4b1815cb42 bytes=6011
+bom no
+eol crlf*190 lf*1 crlf*124
+
+@@ 191 -1:a322de29 +1 @@ [Unit windrider] > [ElementComponent]
++	required_structures = haroun_woodmill,haroun_barracks,haroun_center_city ;; tiers: was haroun_woodmill,haroun_barracks

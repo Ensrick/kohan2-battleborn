@@ -2,7 +2,7 @@
 base Units/Human/dragoon_cutscene.tgi sha256=157a13857c5a692f6318a1611c36821133f1c2c33cfc43b7c512a9a50d19ad6d
 ref Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
 ref Units/Monster/spiderling_arctic.tgi sha256=de994b889446f6f4d8463ab1ada5700f4b776c2eae5c07aed6e8c476d469fe79
-result sha256=dd142e9972c30e16d909b9988a261b25392aff601a833f089ebe982f83992537 bytes=2575
+result sha256=92915cb7990acf6cf24b601fa2287bf67f24cd333d32d7ed27a6d65a414d5112 bytes=2639
 bom no
 eol lf
 
@@ -56,7 +56,7 @@ eol lf
 +
 @@ 85 -2:161f5914 +5 @@ [Unit dragoon_cutscene] > [ElementComponent]
 +	morale_value = 14 ;; hammer 13
-+	required_structures = base_blacksmith,base_library
++	required_structures = gauri_blacksmith,gauri_barracks,gauri_center_city ;; tiers: was base_blacksmith,base_library
 +	required_properties = faction_council, good
 +	denizen_type = denizen_type_melee
 +

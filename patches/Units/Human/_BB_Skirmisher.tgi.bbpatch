@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
 ref Units/Drauga/raider.tgi sha256=4d68e5bd0c6f28b1aa75d30784ed050e335997dccd1dfb66e95e35d219b28bb9
-result sha256=c9fe6debe36b6503914b306161de18f998aedb93efe9425c05defbc910c683c5 bytes=4169
+result sha256=48b23861a4bb410cae75fe29e6452bec23f8e03b902fc3b4771a30a211110f56 bytes=4216
 bom no
 eol lf
 
@@ -61,7 +61,7 @@ eol lf
 @@ 140 -4:af74ae48 +9 @@ [Unit bowman] > [ElementComponent]
 +	{
 +		morale_value = 10 ;; bowman 9
-+		required_structures = human_woodmill,human_blacksmith
++		required_structures = human_woodmill,human_center_town ;; tiers: was human_woodmill,human_blacksmith
 = Units/Drauga/raider.tgi 75-79
 +
 @@ 147 -1:31609426 +1 @@ [Unit bowman] > [MoverComponent]

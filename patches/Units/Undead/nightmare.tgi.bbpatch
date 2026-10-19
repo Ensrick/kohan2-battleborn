@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Undead/nightmare.tgi sha256=7a83cdb7c6d75bb5d29eba32723c905f20befb708fa9599e43d3ca6b4f1d2fc6
+result sha256=117dd735c7e9b5c3c6ce6f081d88714a9d0f43073e53d15e75a4c3ce2351b878 bytes=4198
+bom no
+eol crlf*76 lf*1 crlf*157
+
+@@ 77 -1:fc66885a +1 @@ [Unit nightmare] > [ElementComponent]
++	required_structures = undead_blacksmith,undead_barracks,undead_center_city ;; tiers: was undead_blacksmith,undead_barracks

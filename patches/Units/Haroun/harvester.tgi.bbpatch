@@ -1,0 +1,10 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Haroun/harvester.tgi sha256=4e964db7ccc3d0e457f7f12e4d85e6672fae7a7ffacb57b34f80fad16d6b024f
+result sha256=7f56325be34c23574f37a263e2a646e7cea71f20e72c846615195eb74f6eb564 bytes=2879
+bom no
+eol crlf
+
+@@ 147 -0 +3 @@ [Unit harvester] > [PropertiesComponent] > [Property]
++
++		[Property]
++		property_IDS = bb_haroun_unit_regen ;; with haroun_autoheal (3.75 since Battleborn's build time x4): its old 15

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
-result sha256=bad11bed794a1cc12ca64cfe7397b730bdb6bc530778dfbba71ad3fb15bed37c bytes=2134
+result sha256=c6a13a0aee47c23d039719c30980c4b27aa85bdadd17a104522c09a882648470 bytes=3245
 bom no
 eol lf
 
@@ -44,7 +44,7 @@ eol lf
 @@ 143 -1:2b4c342f +1 @@ [Unit swordsman]
 +
 @@ 146 -1:2715cd22 +2 @@ [Unit swordsman] > [ElementComponent]
-+	required_structures = base_barracks
++	required_structures = base_barracks,base_blacksmith ;; tiers: was base_barracks
 +	required_properties = faction_nationalist
 @@ 148 -2:5adfd295 +1 @@ [Unit swordsman] > [ElementComponent]
 +
@@ -73,4 +73,29 @@ eol lf
 +
 @@ 200 -1:31609426 +1 @@ [Unit swordsman] > [PropertiesComponent] > [Property]
 +
-@@ 205 -70:b91d4ae9 +0 @@
+@@ 206 -1:e39aafec +2 @@
++;; Battleborn: a company type led by bb_front_nationalist_swordsman (the company editor's front slot is locked to the company type)
++[Thing template=K2NationalistCompany]
+@@ 208 -2:b649da77 +2 @@ [Thing]
++	IDS = company_bb_front_nationalist_swordsman
++	name = "#bb_company_bb_front_nationalist_swordsman_name"
+@@ 213 -1:dd2ef9da +1 @@ [Thing company_swordsman] > [View]
++		resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai
+@@ 215 -1:36a9e7f1 +1 @@ [Thing company_swordsman] > [View]
++
+@@ 235 -2:f2121d87 +2 @@ [Thing company_swordsman] > [OrganizationComponent]
++		entrenchment_time = 300
++
+@@ 238 -2:1d414a0d +2 @@ [Thing company_swordsman] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_front_nationalist_swordsman
++
+@@ 242 -1:31609426 +1 @@ [Thing company_swordsman] > [OrganizationComponent] > [Slot]
++
+@@ 245 -1:31609426 +1 @@ [Thing company_swordsman] > [OrganizationComponent] > [Slot]
++
+@@ 248 -1:31609426 +1 @@ [Thing company_swordsman] > [OrganizationComponent] > [Slot]
++
+@@ 250 -2:29ccd632 +2 @@ [Thing company_swordsman] > [OrganizationComponent] > [Slot]
++		element_IDS = bb_captain_nationalist_swordsman
++	}
+@@ 253 -22:014ebe9a +0 @@

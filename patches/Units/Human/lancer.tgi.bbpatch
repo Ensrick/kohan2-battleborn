@@ -1,14 +1,16 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/lancer.tgi sha256=8b1de1fba322e7556b49a1b851bdfce0f2be3bc52a163f856b3e763072b0fd82
 ref Units/Gauri/anvil.tgi sha256=801b555fe17fdabc2dc54bc4a14bce6479e67cb001f77fb9c3997e0de9231591
-result sha256=c3679abcf9bde420b44b245319c74544d009fcd4817a6b7ded347c28c659bec3 bytes=4345
+result sha256=37915ac86a27b2df4d3e4427aebaf24fa6d6fdc01f4a806c6248f9b52f96b622 bytes=4394
 bom no
-eol crlf none*1
+eol crlf*112 lf*1 crlf*137 none*1
 
 @@ 104 -1:ab19883e +1 @@ [Unit lancer] > [EconomyComponent] > [Cost]
 +		gold = 1 ;; 6
 @@ 107 -1:187177e6 +1 @@ [Unit lancer] > [EconomyComponent] > [Upkeep]
 +		wood = 0.25 ;; 1
+@@ 113 -1:70a4dbd6 +1 @@ [Unit lancer] > [ElementComponent]
++		required_structures = human_woodmill,human_center_village ;; tiers: was human_center_village
 @@ 225 -0 +27 @@
 +
 +[Thing template=K2HumanMilitia]

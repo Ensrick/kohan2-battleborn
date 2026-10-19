@@ -1,0 +1,8 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Units/Shadow/beast.tgi sha256=a16854af197f607653456cf6b9fb6d5179f745d578002b12f153e9bb2896fb69
+result sha256=d49debaeef1fe6fe5f8a74f333fe9b6f8cb4b0168ed7236d490b9ef69c9c74d7 bytes=5947
+bom no
+eol crlf*100 lf*1 crlf*227 none*1
+
+@@ 101 -1:631c7f21 +1 @@ [Unit beast] > [ElementComponent]
++	required_structures = shadow_barracks,shadow_blacksmith,shadow_center_city ;; tiers: was shadow_barracks, shadow_blacksmith

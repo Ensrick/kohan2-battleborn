@@ -1,11 +1,12 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Undead/zombie.tgi sha256=c273f1266e72dff1c2ef974fa20c0ff82268cd4e5632c74329043a0304e263a9
 ref Units/Gauri/anvil.tgi sha256=801b555fe17fdabc2dc54bc4a14bce6479e67cb001f77fb9c3997e0de9231591
-result sha256=1cd5c3daa9bf9a6c5bd7c5be958fa47b2752df90b31b209898d74068bb7d7c43 bytes=4376
+result sha256=f77428315c5d62f32438f70da433a7d4b6e7b366e53c5fdcddd08a51e07ca4c4 bytes=4429
 bom no
-eol crlf none*1
+eol crlf*65 lf*1 crlf*169 none*1
 
-@@ 67 -0 +1 @@ [Unit zombie] > [ElementComponent]
+@@ 66 -1:16a8f33f +2 @@ [Unit zombie] > [ElementComponent]
++		required_structures = undead_blacksmith,undead_center_village ;; tiers: was undead_center_village
 +		denizen_type = denizen_type_melee
 @@ 214 -0 +22 @@
 +
