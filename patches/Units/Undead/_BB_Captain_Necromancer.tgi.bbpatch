@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Monster/barbariandiabolist.tgi sha256=6a419c296efaa2eb9cc72939c859735a395455958c4a2418fd79f793969bddcf
 ref Units/Undead/lich.tgi sha256=770eb711f16442fa26757a4a6a08bacdce58a6172f0b77273dd88708b7cbc888
-result sha256=dae41f65362faedd2ee41c469b57821302a509324141bdce90738bcc63390308 bytes=2262
+result sha256=1662f3ccf0bf7db69cc4a80165d38a6b0012fc1b4fe6a337da043f8b46a46700 bytes=2361
 bom no
 eol lf
 
@@ -15,8 +15,10 @@ eol lf
 +	IDS = bb_captain_undead_necromancer
 +	name = "#bb_captain_undead_necromancer_name"
 +
-@@ 8 -6:4e53fe19 +1 @@ [Unit diabolist] > [View]
-+	resource_prefix = /Units/Undead/Lich/Lich
+@@ 9 -1:b0dfc6e7 +1 @@ [Unit diabolist] > [View]
++		resource_prefix = /Units/Undead/Lich/Lich
+@@ 12 -1:0a4ae4ec +1 @@ [Unit diabolist] > [View] > [AspectNormal]
++		skin = /Units/Undead/_BB_Captain_Necromancer/bb_captain_necromancer.dds
 @@ 16 -3:a6ce277c +3 @@ [Unit diabolist] > [BodyComponent]
 +	health = 220 ;; lich 80
 +	defense = 2

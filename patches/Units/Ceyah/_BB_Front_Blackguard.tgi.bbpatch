@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Haroun/stonewalker.tgi sha256=105690ea2fc7b95b2823c5cf9b86ab386623501fea2abfb8b0a182f41a7c0327
-result sha256=cd1ddbb72e0daf7c40148146d009e7586f6542f3544d569c8f0eb8169a124449 bytes=3489
+result sha256=c149ac8de1c9ec6d68cc49a5ab76b7568df4dfec8f066c11685368594e9689be bytes=3581
 bom no
 eol lf
 
@@ -14,8 +14,13 @@ eol lf
 +	IDS = bb_front_ceyah_stonewalker
 +	name = "#bb_front_ceyah_stonewalker_name"
 +
-@@ 8 -1:cb932a13 +1 @@ [Unit stonewalker] > [View]
-+	resource_prefix = /Units/Haroun/Stonewalker/Stonewalker
+@@ 8 -1:cb932a13 +6 @@ [Unit stonewalker] > [View]
++	{
++		resource_prefix = /Units/Haroun/Stonewalker/Stonewalker
++
++		[AspectNormal]
++		skin = /Units/Ceyah/_BB_Front_Blackguard/bb_front_blackguard.dds
++	}
 @@ 11 -3:3f69d634 +3 @@ [Unit stonewalker] > [BodyComponent]
 +	health = 300 ;; stonewalker 220
 +	defense = 4 ;; stonewalker 3

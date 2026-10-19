@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
 ref Units/Drauga/raider.tgi sha256=4d68e5bd0c6f28b1aa75d30784ed050e335997dccd1dfb66e95e35d219b28bb9
-result sha256=48b23861a4bb410cae75fe29e6452bec23f8e03b902fc3b4771a30a211110f56 bytes=4216
+result sha256=5d3c51977b5715aa15fbf80fb327655998f253b6cdaaeabda78b4c6835d6fc9e bytes=4251
 bom no
 eol lf
 
@@ -16,7 +16,8 @@ eol lf
 +
 @@ 8 -1:1da5a15f +1 @@ [Unit bowman] > [View]
 +		resource_prefix = Bowman/Bowman
-@@ 12 -1:31609426 +1 @@ [Unit bowman] > [View] > [AspectNormal]
+@@ 11 -2:0fe6994d +2 @@ [Unit bowman] > [View] > [AspectNormal]
++		skin = /Units/Human/_BB_Skirmisher/bb_skirmisher.dds
 +
 @@ 30 -1:0adfcd9d +1 @@ [Unit bowman] > [BodyComponent]
 +	health = 220 ;; bowman 180

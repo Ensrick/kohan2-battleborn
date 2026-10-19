@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/lancer.tgi sha256=8b1de1fba322e7556b49a1b851bdfce0f2be3bc52a163f856b3e763072b0fd82
-result sha256=1ae818b66deb767870448a26188d1530505149ca97fb26b6e7e79d9200e3bbbe bytes=3032
+result sha256=e6fc8ff6d5b9cec076d60298afc4c5553f62019a6899afbff6f16a81dcb47872 bytes=3120
 bom no
 eol lf
 
@@ -14,7 +14,13 @@ eol lf
 +
 @@ 14 -1:2b4c342f +1 @@ [Unit lancer]
 +
-@@ 17 -1:31609426 +1 @@ [Unit lancer] > [View]
+@@ 16 -2:5edc282b +7 @@ [Unit lancer] > [View]
++	{
++		resource_prefix = Lancer/Lancer
++
++		[AspectNormal]
++		skin = /Units/Human/_BB_Captain_Lancer/bb_captain_lancer.dds
++	}
 +
 @@ 19 -3:4e95ce1f +3 @@ [Unit lancer] > [BodyComponent]
 +	health = 260 ;; lancer 200

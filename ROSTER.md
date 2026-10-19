@@ -4,27 +4,27 @@ Written by `tools/roster.py` on every `bb.py build`; do not edit by hand.
 
 ## Skins
 
-87 company units, 8 on Battleborn skins. Of the 31 units Battleborn adds, 23 still wear stock art. **Battleborn** = a texture this mod ships; stock = the unit's own game art; borrowed = another unit's or a hero's game art.
+87 company units, 31 on Battleborn skins. Of the 31 units Battleborn adds, 0 still wear stock art. **Battleborn** = a texture this mod ships; stock = the unit's own game art; borrowed = another unit's or a hero's game art.
 
 ### Human
 
 | Unit | IDS | Slots | Skin | Icon |
 |---|---|---|---|---|
-| Ranger Sergeant | `bb_captain_bowman` | captain | borrowed: AethanFarhydBase.dds | borrowed: AethanFarhydIcon.tga |
-| Engineer Sergeant | `bb_captain_engineer` | captain | borrowed: Engineerbase.dds | borrowed: EngineerIcon.tga |
+| Ranger Sergeant | `bb_captain_bowman` | captain | **Battleborn** | borrowed: AethanFarhydIcon.tga |
+| Engineer Sergeant | `bb_captain_engineer` | captain | **Battleborn** | borrowed: EngineerIcon.tga |
 | Infantry Captain | `bb_captain_infantry` | captain | **Battleborn** | **Battleborn** |
-| Cavalry Sergeant | `bb_captain_lancer` | captain | borrowed: Lancerbase.dds | borrowed: LancerIcon.tga |
+| Cavalry Sergeant | `bb_captain_lancer` | captain | **Battleborn** | borrowed: LancerIcon.tga |
 | Infantry Sergeant | `bb_captain_pikeman` | captain | **Battleborn** | borrowed: PikemanIcon.tga |
-| Pioneer | `bb_captain_pioneer` | captain | borrowed: Pioneerbase.dds | borrowed: PioneerIcon.tga |
+| Pioneer | `bb_captain_pioneer` | captain | **Battleborn** | borrowed: PioneerIcon.tga |
 | Ranger Captain | `bb_captain_ranger` | captain | **Battleborn** | **Battleborn** |
-| Ranger | `bb_front_ranger` | front, flank | borrowed: Rangerbase.dds | borrowed: RangerIcon.tga |
+| Ranger | `bb_front_ranger` | front, flank | **Battleborn** | borrowed: RangerIcon.tga |
 | Praetorian | `bb_praetorian` | support | **Battleborn** | **Battleborn** |
-| Skirmisher | `bb_skirmisher` | support | borrowed: Bowmanbase.dds | borrowed: BowmanIcon.tga |
-| Marksman | `bb_support_bowman` | support | borrowed: Bowmanbase.dds | borrowed: BowmanIcon.tga |
-| Cataphract | `bb_support_dragoon` | support | borrowed: Dragoonbase.dds | borrowed: DragoonIcon.tga |
-| Siege Expert | `bb_support_engineer` | support | borrowed: Engineerbase.dds | borrowed: EngineerIcon.tga |
-| Lancer | `bb_support_lancer` | support | borrowed: Lancerbase.dds | borrowed: LancerIcon.tga |
-| Myrmidon | `bb_support_swordsman` | support | borrowed: Swordsmanbase.dds | borrowed: SwordsmanIcon.tga |
+| Skirmisher | `bb_skirmisher` | support | **Battleborn** | borrowed: BowmanIcon.tga |
+| Marksman | `bb_support_bowman` | support | **Battleborn** | borrowed: BowmanIcon.tga |
+| Cataphract | `bb_support_dragoon` | support | **Battleborn** | borrowed: DragoonIcon.tga |
+| Siege Expert | `bb_support_engineer` | support | **Battleborn** | borrowed: EngineerIcon.tga |
+| Lancer | `bb_support_lancer` | support | **Battleborn** | borrowed: LancerIcon.tga |
+| Myrmidon | `bb_support_swordsman` | support | **Battleborn** | borrowed: SwordsmanIcon.tga |
 | Bowman | `bowman` | front, flank | stock | stock |
 | Cavalry Captain | `captain` | captain | stock | stock |
 | Catapult | `catapult` | front | stock | stock |
@@ -93,7 +93,7 @@ Written by `tools/roster.py` on every `bb.py build`; do not edit by hand.
 
 | Unit | IDS | Slots | Skin | Icon |
 |---|---|---|---|---|
-| Necromancer | `bb_captain_undead_necromancer` | captain | borrowed: Lichbase.dds | borrowed: LichIcon.tga |
+| Necromancer | `bb_captain_undead_necromancer` | captain | **Battleborn** | borrowed: LichIcon.tga |
 | Bone Archer | `bonearcher` | front, flank | stock | stock |
 | Boneweaver | `boneweaver` | front | stock | stock |
 | Lich | `lich` | support | stock | stock |
@@ -114,30 +114,30 @@ Written by `tools/roster.py` on every `bb.py build`; do not edit by hand.
 
 | Unit | IDS | Slots | Skin | Icon |
 |---|---|---|---|---|
-| Templar | `bb_captain_nationalist_swordsman` | captain | borrowed: GhalenMordecaibase.dds | borrowed: GhalenMordecaiIcon.tga |
-| Crusader | `bb_front_nationalist_swordsman` | front, flank | borrowed: GhalenMordecaibase.dds | borrowed: GhalenMordecaiIcon.tga |
-| Warpriest | `bb_support_nationalist_swordsman` | support | borrowed: GhalenMordecaibase.dds | borrowed: GhalenMordecaiIcon.tga |
+| Templar | `bb_captain_nationalist_swordsman` | captain | **Battleborn** | borrowed: GhalenMordecaiIcon.tga |
+| Crusader | `bb_front_nationalist_swordsman` | front, flank | **Battleborn** | borrowed: GhalenMordecaiIcon.tga |
+| Warpriest | `bb_support_nationalist_swordsman` | support | **Battleborn** | borrowed: GhalenMordecaiIcon.tga |
 
 ### Council
 
 | Unit | IDS | Slots | Skin | Icon |
 |---|---|---|---|---|
-| Rune Lord | `bb_captain_council_hammer` | captain | borrowed: Hammerbase.dds | borrowed: HammerIcon.tga |
-| Mage Lord | `bb_captain_council_magelord` | captain | borrowed: RavidSakeribase.dds | borrowed: RavidSakeriIcon.tga |
-| Warder | `bb_captain_council_ranger` | captain | borrowed: Rangerbase.dds | borrowed: RangerIcon.tga |
+| Rune Lord | `bb_captain_council_hammer` | captain | **Battleborn** | borrowed: HammerIcon.tga |
+| Mage Lord | `bb_captain_council_magelord` | captain | **Battleborn** | borrowed: RavidSakeriIcon.tga |
+| Warder | `bb_captain_council_ranger` | captain | **Battleborn** | borrowed: RangerIcon.tga |
 | Storm Lord | `bb_captain_council_swordsman` | captain | **Battleborn** | **Battleborn** |
-| Rune Hammer | `bb_front_council_hammer` | front, flank | borrowed: Hammerbase.dds | borrowed: HammerIcon.tga |
+| Rune Hammer | `bb_front_council_hammer` | front, flank | **Battleborn** | borrowed: HammerIcon.tga |
 | Eldritch Warrior | `bb_spellsword` | support | **Battleborn** | **Battleborn** |
-| Arcane Archer | `bb_support_council_ranger` | support | borrowed: Rangerbase.dds | borrowed: RangerIcon.tga |
+| Arcane Archer | `bb_support_council_ranger` | support | **Battleborn** | borrowed: RangerIcon.tga |
 | Wizard | `wizard` | support | stock | stock |
 
 ### Ceyah
 
 | Unit | IDS | Slots | Skin | Icon |
 |---|---|---|---|---|
-| Harbinger | `bb_captain_ceyah_stonewalker` | captain | borrowed: Stonewalkerbase.dds | borrowed: StonewalkerIcon.tga |
-| Blackguard | `bb_front_ceyah_stonewalker` | front, flank | borrowed: Stonewalkerbase.dds | borrowed: StonewalkerIcon.tga |
-| Executioner | `bb_support_ceyah_stonewalker` | support | borrowed: Stonewalkerbase.dds | borrowed: StonewalkerIcon.tga |
+| Harbinger | `bb_captain_ceyah_stonewalker` | captain | **Battleborn** | borrowed: StonewalkerIcon.tga |
+| Blackguard | `bb_front_ceyah_stonewalker` | front, flank | **Battleborn** | borrowed: StonewalkerIcon.tga |
+| Executioner | `bb_support_ceyah_stonewalker` | support | **Battleborn** | borrowed: StonewalkerIcon.tga |
 
 ### Fallen
 

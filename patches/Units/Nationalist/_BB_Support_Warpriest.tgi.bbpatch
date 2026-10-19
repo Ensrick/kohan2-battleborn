@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Gauri/warden.tgi sha256=3800790451e276a3a526afecb9d1cea189ef5f9887092c069688a13b921b988d
 ref Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
-result sha256=931dca9f456f31dd83024514b06dfb5765ee54dfbec95a956d06b1732194fee8 bytes=2120
+result sha256=bbcb27ed3aaed7a3d2f6c4bf925e82c233b753b4d9ff8bce3b4c02f413b1348c bytes=2220
 bom no
 eol lf
 
@@ -14,8 +14,13 @@ eol lf
 +	IDS = bb_support_nationalist_swordsman
 +	name = "#bb_support_nationalist_swordsman_name"
 +
-@@ 8 -1:8b880b3c +1 @@ [Unit warden] > [View]
-+	resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai
+@@ 8 -1:8b880b3c +6 @@ [Unit warden] > [View]
++	{
++		resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai
++
++		[AspectNormal]
++		skin = /Units/Nationalist/_BB_Support_Warpriest/bb_support_warpriest.dds
++	}
 @@ 11 -18:b803df37 +2 @@ [Unit warden] > [BodyComponent]
 +	health = 380
 +	defense = 4

@@ -2,7 +2,7 @@
 base Units/Human/dragoon_cutscene.tgi sha256=157a13857c5a692f6318a1611c36821133f1c2c33cfc43b7c512a9a50d19ad6d
 ref Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
 ref Units/Monster/spiderling_arctic.tgi sha256=de994b889446f6f4d8463ab1ada5700f4b776c2eae5c07aed6e8c476d469fe79
-result sha256=92915cb7990acf6cf24b601fa2287bf67f24cd333d32d7ed27a6d65a414d5112 bytes=2639
+result sha256=9930b4273f8e278ea1a6cf6977b7b0d61165255ffe9e17210e5c7f142b28aa64 bytes=2735
 bom no
 eol lf
 
@@ -16,9 +16,12 @@ eol lf
 @@ 4 -13:7ed06151 +2 @@ [Unit]
 +	IDS = bb_captain_council_hammer
 +	name = "#bb_captain_council_hammer_name"
-@@ 19 -2:7b1ae17a +1 @@ [Unit dragoon_cutscene] > [View]
-+	resource_prefix = /Units/Gauri/Hammer/Hammer
-@@ 22 -4:97f66cc0 +0 @@ [Unit dragoon_cutscene] > [View]
+@@ 20 -1:0a02f28f +1 @@ [Unit dragoon_cutscene] > [View]
++		resource_prefix = /Units/Gauri/Hammer/Hammer
+@@ 23 -3:0f479868 +3 @@ [Unit dragoon_cutscene] > [View] > [AspectNormal]
++		skin = /Units/Council/_BB_Captain_Rune_Lord/bb_captain_rune_lord.dds
++	}
++
 @@ 27 -3:d603e281 +3 @@ [Unit dragoon_cutscene] > [BodyComponent]
 +	health = 420 ;; hammer 320
 +	defense = 7 ;; hammer 6

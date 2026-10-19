@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
-result sha256=c6a13a0aee47c23d039719c30980c4b27aa85bdadd17a104522c09a882648470 bytes=3245
+result sha256=96421d33624f40d8e19d5ee5ed5d0a13429911a51d90413d9932928d5c4e6060 bytes=3339
 bom no
 eol lf
 
@@ -12,14 +12,19 @@ eol lf
 @@ 6 -2:7e6d4ba3 +2 @@ [VFX]
 +	IDS = bb_front_nationalist_swordsman
 +	name = "#bb_front_nationalist_swordsman_name"
-@@ 9 -13:1ee5d35b +2 @@ [VFX blur_melee0]
+@@ 9 -3:a0ea6bf5 +1 @@ [VFX blur_melee0]
 +	[View]
-+	resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai
+@@ 13 -9:cd6ad8aa +1 @@ [VFX blur_melee0] > [Extrusion]
++		resource_prefix = /Units/Nationalist/GhalenMordecai/GhalenMordecai
 @@ 23 -4:955534a7 +3 @@ [VFX blur_melee0] > [Extrusion blur_melee0] > [ExtrusionPoint]
++		[AspectNormal]
++		skin = /Units/Nationalist/_BB_Front_Crusader/bb_front_crusader.dds
++	}
+@@ 28 -8:7b5a13fe +3 @@ [VFX blur_melee0] > [Extrusion blur_melee0] > [ExtrusionPoint]
 +	[BodyComponent]
 +	health = 360
 +	defense = 4
-@@ 28 -68:45571871 +0 @@ [VFX blur_melee0] > [Extrusion blur_melee0] > [ExtrusionPoint]
+@@ 37 -59:aab5e56c +0 @@ [VFX blur_melee0] > [Extrusion blur_melee0] > [Connectivity]
 @@ 101 -1:8493100b +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation walk]
 +
 @@ 105 -1:31609426 +1 @@ [Unit swordsman] > [CharacterComponent] > [Animation jog]

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/engineer.tgi sha256=dcf298fbd3f4eb91388544ec1ddbb60116fa39beb543230b9832eb2c5b3938b5
-result sha256=2fea214ffb6f34a00752d996e28cc229d1605019d29b1825df5f29ebc099251e bytes=5095
+result sha256=b84a9b862189a2d3ea0aabebd6398f31f7aa4701ed438dd7afae16c9821270b6 bytes=5180
 bom no
 eol lf
 
@@ -12,6 +12,10 @@ eol lf
 +	IDS = bb_support_engineer
 +	name = "#bb_support_engineer_name"
 +
+@@ 36 -0 +3 @@ [Unit engineer] > [View] > [WhenCreated]
++
++		[AspectNormal]
++		skin = /Units/Human/_BB_Support_Engineer/bb_support_engineer.dds
 @@ 37 -1:2b4c342f +1 @@ [Unit engineer]
 +
 @@ 39 -1:0516e633 +1 @@ [Unit engineer] > [BodyComponent]

@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Gauri/hammer.tgi sha256=74ea8a9d8159aa3bd098425116666e3ea0f098dafdcb7aea898ae762705a673c
-result sha256=1e2684d4587e4552ec9e2b6fad8953c85321add89a0bdd5e4c9d846d39e48c29 bytes=3479
+result sha256=b76ad73881a972cecae04c374a94891e04adee879dcb4222150bb0501caa5591 bytes=3575
 bom no
 eol lf
 
@@ -10,12 +10,17 @@ eol lf
 +;; BB_Runelord art note in _BB_Captain_Rune_Lord.tgi)
 +
 +[Unit template=K2CouncilUnit]
-@@ 4 -11:7b179489 +3 @@ [Unit]
+@@ 4 -4:f62db258 +4 @@ [Unit]
 +	IDS = bb_front_council_hammer
 +	name = "#bb_front_council_hammer_name"
 +
-@@ 16 -2:876e6207 +2 @@ [Unit hammer] > [View]
-+	resource_prefix = /Units/Gauri/Hammer/Hammer
++	[View]
+@@ 9 -4:510eea79 +4 @@ [Unit hammer] > [Size]
++		resource_prefix = /Units/Gauri/Hammer/Hammer
++
++		[AspectNormal]
++		skin = /Units/Council/_BB_Front_Rune_Hammer/bb_front_rune_hammer.dds
+@@ 14 -4:6423b533 +1 @@ [Unit hammer]
 +
 @@ 19 -1:b57b6084 +1 @@ [Unit hammer] > [BodyComponent]
 +	health = 360 ;; hammer 320

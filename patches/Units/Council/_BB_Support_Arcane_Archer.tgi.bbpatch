@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
-result sha256=5a430c3d07914ec9118b16f18ad1228b114958afd10f69c6c5ada3b22fc0e901 bytes=3616
+result sha256=e67309dfb14e87a05d38fa6c277bdb0ad8d3be1256f546fada8203e3399eaeaa bytes=3713
 bom no
 eol lf
 
@@ -17,6 +17,10 @@ eol lf
 @@ 37 -2:4d3b40cd +2 @@ [Unit ranger] > [View]
 +		resource_prefix = /Units/Human/Ranger/Ranger
 +
+@@ 48 -0 +3 @@ [Unit ranger] > [View] > [WhenCreated]
++
++		[AspectNormal]
++		skin = /Units/Council/_BB_Support_Arcane_Archer/bb_support_arcane_archer.dds
 @@ 51 -18:06c4fc0d +2 @@ [Unit ranger] > [BodyComponent]
 +	health = 280 ;; ranger 240
 +	defense = 2 ;; ranger 1

@@ -5,6 +5,26 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Added
+- **Simple retextures for the 23 Battleborn units still on borrowed game art (0.2.8-dev, 2026-10-19;
+  user: "Can you help with simple retextures for those that are not complete?").** Each unit now has
+  its own skin, a recolour of the game texture it borrowed, with its team-colour areas unchanged.
+  Looks follow the design sheet where it gives one, otherwise gold for sergeants and captains,
+  gold trim for supports and silver for front units:
+  - Human: Cavalry Sergeant gold armour and a white horse; Lancer silver with a black horse;
+    Engineer Sergeant gold; Siege Expert dark iron; Ranger Sergeant (Aethan Farhyd) gold armour;
+    Skirmisher gold trim; Marksman ranger green; Cataphract dark iron; Myrmidon bronze; Pioneer
+    captain blue coat; Ranger crimson cloak.
+  - Nationalist (Ghalen Mordecai model): Crusader silver; Warpriest silver with gold trim; Templar
+    dark iron with gold trim.
+  - Ceyah (Stonewalker model): Blackguard black armour; Executioner black with red trim; Harbinger
+    black with gold trim.
+  - Council: Rune Hammer slate blue; Rune Lord gold; Mage Lord (Ravid Sakeri) Council blue; Warder
+    charcoal cloak; Arcane Archer white cloak.
+  - Undead: Necromancer purple robes and dark iron.
+  Made by `tools/recolor.py` (recipes per unit); they ship as deltas against the game textures, so the
+  repo carries no game art. Ranger and Warder are stand-ins for the Arcane Wars looks in the design.
+
 ### Fixed
 - **Founded lairs never finished building (0.2.7-dev, 2026-10-19; user: "those big rhaksha hives
   are all I see them building ... they're all like 1hp. They never finish being built").** The

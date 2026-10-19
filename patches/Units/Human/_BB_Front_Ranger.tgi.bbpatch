@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/ranger.tgi sha256=091d1bfdb2aba86c5046c735269266bf5d7b5ae4cae3fba946ad026143e28643
 ref Units/Monster/barbarian.tgi sha256=dc05ee54f9b070c2c252108d808e1a1ba49027fb44383431ca30cea0f39590f6
-result sha256=d61ad2eb9e4eabd60e465f789e222a788d46b9d6e7aa5d145493aed39b299543 bytes=4579
+result sha256=df36d0e2c4e3a534c67c90daa7f1b85cd5b75eb007b58f2a457ed0a050a0e4f0 bytes=4656
 bom no
 eol lf
 
@@ -30,6 +30,10 @@ eol lf
 +
 @@ 38 -1:31609426 +1 @@ [Unit ranger] > [View]
 +
+@@ 48 -0 +3 @@ [Unit ranger] > [View] > [WhenCreated]
++
++		[AspectNormal]
++		skin = /Units/Human/_BB_Front_Ranger/bb_front_ranger.dds
 @@ 52 -3:cc00a79b +3 @@ [Unit ranger] > [BodyComponent]
 +		health = 260 ;; ranger 240
 +		defense = 2 ;; ranger 1

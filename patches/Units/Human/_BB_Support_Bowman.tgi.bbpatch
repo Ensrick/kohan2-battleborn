@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
-result sha256=504fff73d2b0ec47e52442856dba460ac60b340da8cf0e507175abe0e6f82d0a bytes=4162
+result sha256=ce8c4107e5edbacf2c92f50db2e5ecdb9e030c3179639e06701470dd2f213dab bytes=4205
 bom no
 eol lf
 
@@ -15,7 +15,8 @@ eol lf
 +
 @@ 8 -1:1da5a15f +1 @@ [Unit bowman] > [View]
 +		resource_prefix = Bowman/Bowman
-@@ 12 -1:31609426 +1 @@ [Unit bowman] > [View] > [AspectNormal]
+@@ 11 -2:0fe6994d +2 @@ [Unit bowman] > [View] > [AspectNormal]
++		skin = /Units/Human/_BB_Support_Bowman/bb_support_bowman.dds
 +
 @@ 30 -3:ef530d91 +3 @@ [Unit bowman] > [BodyComponent]
 +	health = 240 ;; bowman 180

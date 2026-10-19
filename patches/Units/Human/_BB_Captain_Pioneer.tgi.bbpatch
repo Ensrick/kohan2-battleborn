@@ -1,11 +1,15 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/pioneer.tgi sha256=463abe221db658fdccec80317b400565d321a822fc906a38b7ac7066674299d9
-result sha256=178e679b1d9d0a2376b50a03e1c236c1475119566adba523e04670f24b07ef55 bytes=3446
+result sha256=03b181a679c81d0f08f4bda98e8262ccf56eb6b274574282b917ae63061e5c01 bytes=3532
 bom no
 eol crlf none*1
 
 @@ 4 -1:f8341abc +1 @@ [Unit]
 +	IDS = bb_captain_pioneer
+@@ 26 -0 +3 @@ [Unit pioneer] > [View] > [WhenCreated]
++
++		[AspectNormal]
++		skin = /Units/Human/_BB_Captain_Pioneer/bb_captain_pioneer.dds
 @@ 121 -9:443e8032 +0 @@ [Unit pioneer]
 @@ 132 -1:5673fadb +1 @@ [Unit pioneer] > [ElementComponent]
 +	morale_value = 9

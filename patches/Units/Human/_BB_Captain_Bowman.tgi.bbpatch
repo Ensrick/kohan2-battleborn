@@ -1,7 +1,7 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/bowman.tgi sha256=5c5f2c1d8b869062f70a27d6bd61c33584720a43a43793c915d7f5bb875ecd01
 ref Units/Fallen/daevai.tgi sha256=21e711aed98127edaba9fc2be09e5b4b6012a3a4ff873d418a3df8a39f311b45
-result sha256=ac21046dfeae9861e095240db76c37f4c455171a8f6d4dd8f7c00e2d00741d78 bytes=5080
+result sha256=5431132732abb6435c177ef5605108fc91ef24f51cbfbe8110587da73aa25173 bytes=5081
 bom no
 eol lf
 
@@ -35,7 +35,7 @@ eol lf
 +		portrait_ids = bb_captain_bowman_portrait
 +		icon = /Units/Nationalist/AethanFarhyd/AethanFarhydIcon.tga
 @@ 11 -2:0fe6994d +2 @@ [Unit bowman] > [View] > [AspectNormal]
-+		skin = /Units/Nationalist/AethanFarhyd/AethanFarhydBase.dds
++		skin = /Units/Human/_BB_Captain_Bowman/bb_captain_bowman.dds
 +
 @@ 30 -3:ef530d91 +3 @@ [Unit bowman] > [BodyComponent]
 +	health = 240 ;; bowman 180

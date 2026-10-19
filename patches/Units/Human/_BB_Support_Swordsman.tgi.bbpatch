@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/swordsman.tgi sha256=8aa98482f35780b8d6ae4f79725c0bc827e070b3590c342056916515d86cc22d
-result sha256=557b9e34b9d92847355a2c26eb4ed20a3c309bcf02c8d3656f6e2f5222dac9c5 bytes=2138
+result sha256=0d73088859170cf5b7a1b588f05313512f0512678f5b1bbea33183040c7ec6f3 bytes=2187
 bom no
 eol crlf*67 lf*1 crlf*54 none*1
 
@@ -13,7 +13,7 @@ eol crlf*67 lf*1 crlf*54 none*1
 +		resource_prefix = Swordsman/Swordsman
 +
 +		[AspectNormal]
-+		skin = %sbase.dds
++		skin = /Units/Human/_BB_Support_Swordsman/bb_support_swordsman.dds
 +	}
 @@ 138 -1:8a0d33a3 +1 @@ [Unit swordsman] > [EconomyComponent] > [Cost]
 +		gold = 8 ;; 16
