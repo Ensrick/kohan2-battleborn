@@ -31,6 +31,7 @@ import bbdelta  # noqa: E402
 import bbpatch  # noqa: E402
 import load_order  # noqa: E402
 import rwd      # noqa: E402
+import roster   # noqa: E402
 import template_fields  # noqa: E402
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -202,6 +203,8 @@ def cmd_build(args, quiet=False):
     stamp = write_archive(files, path)
     if not quiet:
         print(f"built {path}: {len(files)} files, stamp {stamp:08x}")
+    if not public and roster.write(game, files) and not quiet:
+        print("ROSTER.md updated (skins, sergeants and captains)")
     return path, stamp
 
 

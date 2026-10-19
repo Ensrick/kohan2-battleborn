@@ -175,6 +175,8 @@ sent marauders.
 
 ## 10a. TEXTURE MAP DEBTS (units shipping on placeholder/vanilla art)
 
+The full, always-current list of which units wear Battleborn skins and icons, and which sergeant or captain each company starts with, is `ROSTER.md` (rewritten by every `bb.py build`).
+
 Every unit below is functional but waiting on custom textures:
 
 - [ ] `bb_captain_bowman` Ranger Sergeant - gold-armor recolor of `AethanFarhydBase.dds` + own icon (ships with Aethan Farhyd's skin/portrait/icon)
@@ -226,7 +228,7 @@ files actually are as of 2026-08-13.
 
 - [ ] Make alternatives to Captains which are standard units - underway (Cataphract, Myrmidon, Praetorian done; see section 13)
 - [ ] Make Captains into new units - underway (Infantry/Ranger Captains authored, portraits broken)
-- [ ] Sergeants concept: weaker captains for lesser units, gold-recolored armor, with higher-tier captains gated late-game - underway (Infantry Sergeant authored; Cavalry/Ranger Sergeants stubs)
+- [ ] Sergeants concept: weaker captains for lesser units, gold-recolored armor, with higher-tier captains gated late-game - underway. 2026-10-19 (ROSTER.md): halberdiers start with the Infantry Sergeant (Pikeman model) and swordsmen with the Infantry Captain (Swordsman model); the Cavalry, Ranger and Engineer Sergeants are built but hobilar, bowman and engineer companies still start with the Cavalry Captain, Ranger Captain and Cavalry Captain. No other race has sergeants yet
 - [ ] Keep the ORIGINAL Captain untouched for campaign integrity, only remove it from the recruit pool - **currently violated** (captain.tgi buffed, section 3) and the recruit-pool removal is not done either
 - [ ] Make a Xander Kerai copy as a recruitable Kohan hero - not started
 - [ ] Make Heroes very durable - not started

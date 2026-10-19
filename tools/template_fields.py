@@ -85,6 +85,13 @@ def parse(data):
                 stack.pop()
             flat = None
             continue
+        if s.startswith("{") and flat is not None:
+            # a brace after the node's first lines still opens that node ([Animation] IDS = die1 { ... })
+            stack.append(flat)
+            flat = None
+            s = s[1:].strip()
+            if not s:
+                continue
         (flat or stack[-1]).items.append(s)
     return root
 
