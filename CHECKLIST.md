@@ -177,6 +177,8 @@ sent marauders.
 
 The full, always-current list of which units wear Battleborn skins and icons, and which sergeant or captain each company starts with, is `ROSTER.md` (rewritten by every `bb.py build`).
 
+0.2.8-dev (2026-10-19): every unit below now has a simple recolour skin from `tools/recolor.py` (recipes per unit); the items stay open for hand-painted art, own icons and portraits. Icons are still borrowed (ROSTER.md).
+
 Every unit below is functional but waiting on custom textures:
 
 - [ ] `bb_captain_bowman` Ranger Sergeant - gold-armor recolor of `AethanFarhydBase.dds` + own icon (ships with Aethan Farhyd's skin/portrait/icon)
