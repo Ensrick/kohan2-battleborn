@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/rhaksha_nest.tgi sha256=160cc72af54fdbb8bf28b02fc5fee4737da9089d3812b5c624193ab4a417183d
-result sha256=05dfeb1d1c8f160246c2d7995b939390365329c4275a8398380ff14066ffa2e6 bytes=1568
+result sha256=4134ec63760704e590a50c498cda0ab0eaa856905461585f55c32c66fd8826f9 bytes=1792
 bom no
 eol crlf
 
@@ -8,6 +8,16 @@ eol crlf
 +		count = 8		;; lairs 2026-10-19: was 4 (raiding companies x2)
 @@ 61 -1:831d46bb +1 @@ [Thing lair_rhakshanest] > [DenizenComponent] > [Inventory]
 +		count = 2		;; lairs 2026-10-19: was 1 (raiding companies x2)
+@@ 64 -0 +9 @@ [Thing lair_rhakshanest]
++	[PropertiesComponent]	;; Battleborn lairs 2026-10-19: object_building as in the K2Lair template, plus self-build
++	{
++		[Property]
++		property_IDS = object_building
++
++		[Property]
++		property_IDS = bb_lair_regrowth
++	}
++
 @@ 66 -1:2e41771b +1 @@ [Thing lair_rhakshanest] > [LairComponent]
 +		spawn_max = 2		;; lairs 2026-10-19: was 1
 @@ 70 -2:e4ab7dc2 +2 @@ [Thing lair_rhakshanest] > [LairComponent]

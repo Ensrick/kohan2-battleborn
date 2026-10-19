@@ -1,9 +1,19 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/spider_lair_desert.tgi sha256=583ef0de1acf3edbddaa106c7451adb51c81d0dafd7d2dd0d8ce89cae6835e4a
-result sha256=86e0c258434f70f58b143a66e906efc7ee2185759df783ae455b72c8ac190763 bytes=1945
+result sha256=a76f28356107840a11bad6770036a08294015e4400526d94ffea2cbfaa94da35 bytes=2169
 bom no
 eol crlf
 
+@@ 69 -0 +9 @@ [Thing lair_spider_lair_desert]
++	[PropertiesComponent]	;; Battleborn lairs 2026-10-19: object_building as in the K2Lair template, plus self-build
++	{
++		[Property]
++		property_IDS = object_building
++
++		[Property]
++		property_IDS = bb_lair_regrowth
++	}
++
 @@ 70 -1:52710469 +12 @@ [Thing lair_spider_lair_desert] > [LairComponent]
 +	{
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child

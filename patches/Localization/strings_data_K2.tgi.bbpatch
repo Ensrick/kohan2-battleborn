@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Localization/strings_data_K2.tgi sha256=1de5c400a207659c6209831b88b23ac9a857ba0a159aa8b9e4b907fda40b4ea5
-result sha256=32eaa258637660f6465cb650bffdc3e19d32984056e4297d7827ad7a3512ba60 bytes=421231
+result sha256=4161c192a60f42da1f0c35584c28a8ac708e1d8a181931c728497c018543be6e bytes=421268
 bom yes
 eol crlf
 
@@ -40,7 +40,7 @@ eol crlf
 +	pikeman_AbilityDefinition_name = "Halberd"
 +	pikeman_company_pikeman_name = "Halberdier Company"
 +	pikeman_militia_pikeman_name = "Halberdier Militia"
-@@ 5755 -0 +1007 @@ [Text Localization/strings_data_K2.tgi]
+@@ 5755 -0 +1008 @@ [Text Localization/strings_data_K2.tgi]
 +
 +;; Custom Mod strings 
 +
@@ -1048,3 +1048,4 @@ eol crlf
 +	bb_company_bb_front_nationalist_swordsman_name = "Crusader Company"
 +	bb_company_bb_front_ceyah_stonewalker_name = "Blackguard Company"
 +	bb_company_bb_front_council_hammer_name = "Rune Hammer Company"
++	bb_lair_regrowth_name = "Regrowth"

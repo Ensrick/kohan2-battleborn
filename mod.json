@@ -2,7 +2,7 @@
   "format": 1,
   "id": "battleborn",
   "name": "Battleborn",
-  "version": "0.2.6-dev",
+  "version": "0.2.7-dev",
   "author": "Ensrick",
   "description": "Gameplay overhaul for Kohan II: Kings of War. Unit renames and rebalances across all six factions, settler-company flank slots, militia companies, settlement and town-center tuning, out-of-town economy outposts, and new captains and commanders with their own skins.",
   "website": "https://github.com/Ensrick/kohan2-battleborn",

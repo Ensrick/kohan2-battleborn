@@ -1,11 +1,20 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/barbarian_camp.tgi sha256=22fe5de249a9263f07d1bcd0eadf22392cc4309c4eef976b7e097acd2a0a838f
-result sha256=a8a7ab0d00acac79a576e600e9ff734443d3af12e24180f49f0a9251b4b8d0a4 bytes=1354
+result sha256=e55a4f1e84962ae61424eb8bf3c7fc8a9f0d17cc55b0faab581b2bcba36ee43f bytes=1578
 bom no
 eol crlf
 
-@@ 52 -1:6a800e01 +1 @@ [Thing lair_barbarian_camp] > [DenizenComponent] > [Inventory]
+@@ 52 -1:6a800e01 +10 @@ [Thing lair_barbarian_camp] > [DenizenComponent] > [Inventory]
 +		count = 16		;; lairs 2026-10-19: was 8 (raiding companies x2)
++	}
++
++	[PropertiesComponent]	;; Battleborn lairs 2026-10-19: object_building as in the K2Lair template, plus self-build
++	{
++		[Property]
++		property_IDS = object_building
++
++		[Property]
++		property_IDS = bb_lair_regrowth
 @@ 57 -1:2e41771b +1 @@ [Thing lair_barbarian_camp] > [LairComponent]
 +		spawn_max = 2		;; lairs 2026-10-19: was 1
 @@ 61 -2:8bc56682 +2 @@ [Thing lair_barbarian_camp] > [LairComponent]

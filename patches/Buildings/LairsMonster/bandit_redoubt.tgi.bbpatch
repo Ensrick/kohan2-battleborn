@@ -1,11 +1,20 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/bandit_redoubt.tgi sha256=68c21f25a56f012272796ebb335a604aaaf0003cc3539dcc4aeefcbca7943366
-result sha256=b0c6fbab445428c8da4a0c4c57049c7ffdaa410ce4655077704b5f8c99ca87ce bytes=1502
+result sha256=1dd4e6008e5faeec85775ada58292897222b4d011d0ffbbc5ee39dec29132fc3 bytes=1726
 bom no
 eol crlf
 
-@@ 45 -1:6a800e01 +1 @@ [Thing lair_bandit_redoubt] > [DenizenComponent] > [Inventory]
+@@ 45 -1:6a800e01 +10 @@ [Thing lair_bandit_redoubt] > [DenizenComponent] > [Inventory]
 +		count = 16		;; lairs 2026-10-19: was 8 (raiding companies x2)
++	}
++
++	[PropertiesComponent]	;; Battleborn lairs 2026-10-19: object_building as in the K2Lair template, plus self-build
++	{
++		[Property]
++		property_IDS = object_building
++
++		[Property]
++		property_IDS = bb_lair_regrowth
 @@ 50 -4:f7da0558 +9 @@ [Thing lair_bandit_redoubt] > [LairComponent]
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
 +		;; lair (lair_bandit_redoubt) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).

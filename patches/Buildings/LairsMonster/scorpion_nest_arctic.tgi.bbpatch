@@ -1,9 +1,19 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/scorpion_nest_arctic.tgi sha256=3e42cdfe2f3e79bee5f75cdc7aaf25257d5451ae53db497fba505c371d5a8fb9
-result sha256=f1e01cbff1d510e40447410a49f7d380051a1bda2e9a4c616b6c05fd8f7c6751 bytes=1339
+result sha256=28d179e6123bfb0d1bfb394e8174afa9c1af670d0f62d6a56326433caf1ebd60 bytes=1563
 bom no
 eol crlf
 
+@@ 41 -0 +9 @@ [Thing scorpion_nest_arctic]
++	[PropertiesComponent]	;; Battleborn lairs 2026-10-19: object_building as in the K2Lair template, plus self-build
++	{
++		[Property]
++		property_IDS = object_building
++
++		[Property]
++		property_IDS = bb_lair_regrowth
++	}
++
 @@ 42 -1:52710469 +12 @@ [Thing scorpion_nest_arctic] > [LairComponent]
 +	{
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child

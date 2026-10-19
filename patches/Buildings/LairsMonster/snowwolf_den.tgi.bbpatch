@@ -1,9 +1,19 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/snowwolf_den.tgi sha256=b065318f65da2db37dd48b251681da8ee5b13ba7890c2e603e385191fe5b0211
-result sha256=ef5748722f3e52b16c61b99e8443c2e1a85a2026f3406b5430e2c8e1306f11e6 bytes=1210
+result sha256=2a9495378d519a6fa9a6e7fd7d4e53952019377b626e6907abca0d00dfad50cc bytes=1434
 bom no
 eol crlf
 
+@@ 37 -0 +9 @@ [Thing snow_wolf_den]
++	[PropertiesComponent]	;; Battleborn lairs 2026-10-19: object_building as in the K2Lair template, plus self-build
++	{
++		[Property]
++		property_IDS = object_building
++
++		[Property]
++		property_IDS = bb_lair_regrowth
++	}
++
 @@ 38 -1:faddde31 +12 @@ [Thing snow_wolf_den] > [LairComponent]
 +	{
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child

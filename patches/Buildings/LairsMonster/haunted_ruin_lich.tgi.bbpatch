@@ -1,9 +1,19 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/haunted_ruin_lich.tgi sha256=56f2b9c910059cd4dc776ce6afe59b90dbccfa7abc6feb78ea3d50096e068753
-result sha256=168ed1f39d3fd37d94080b4e7b911974cca2df5f86b43dbfbec3438b8d99f87f bytes=1493
+result sha256=d9e41c9d6ae0880ab0448c89906cfb17f7eb5bb1960c00f71ecf41183bd9eb41 bytes=1717
 bom no
 eol crlf
 
+@@ 52 -0 +9 @@ [Thing haunted_ruin_lich]
++	[PropertiesComponent]	;; Battleborn lairs 2026-10-19: object_building as in the K2Lair template, plus self-build
++	{
++		[Property]
++		property_IDS = object_building
++
++		[Property]
++		property_IDS = bb_lair_regrowth
++	}
++
 @@ 53 -1:d2e296c9 +12 @@ [Thing haunted_ruin_lich] > [LairComponent]
 +	{
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child

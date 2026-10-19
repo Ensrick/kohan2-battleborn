@@ -6,6 +6,16 @@ All notable changes to the Battleborn mod. Format follows
 ## [Unreleased]
 
 ### Fixed
+- **Founded lairs never finished building (0.2.7-dev, 2026-10-19; user: "those big rhaksha hives
+  are all I see them building ... they're all like 1hp. They never finish being built").** The
+  game places a lair's child as a 1 HP construction site that only workers build; the stock
+  spreaders (barbarian camps, Rhaksha nests) bring workers, the lairs Battleborn made spread do
+  not. Every lair that can be founded now has `bb_lair_regrowth` (a periodic heal of 5, the way
+  Haroun buildings build themselves): a 750 HP site builds in about 2.5 minutes, and afterwards
+  a damaged lair slowly regrows. Rhaksha hives no longer found hives (stock: they do not); their
+  events are raids instead. Rhaksha settlement camps found nests, not hives.
+
+### Fixed
 - **Startup crash (0.2.1-dev, 2026-10-11):** "`_BB_Front_Ranger.tgi`: Could not find vfx
   data: ranger_sword_effect" (log-246, first in-game run of the archive). The game reads
   `_BB_` files before the stock files of the same folder, so the Front Ranger used the

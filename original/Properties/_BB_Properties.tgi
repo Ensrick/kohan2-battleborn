@@ -18,3 +18,18 @@ icon = NULL
 	[Modifier template=PeriodicHealModifier]	;; with haroun_autoheal (3.75): the old 15
 	amount = 11.25
 }
+
+/* 	LAIR SELF-BUILD (2026-10-19): a lair founded by another lair starts as a 1 HP site that only workers build;
+	most lairs have none (user: "they're all like 1hp. They never finish being built"). This heal builds it, and
+	afterwards slowly regrows a damaged lair.	*/
+
+[Property Template=SharedProperty]
+{
+	IDS = bb_lair_regrowth
+	name = "#bb_lair_regrowth_name"	;; Battleborn text
+	icon = /Properties/%s/PropertyIcons/IconPropertyGeneric.png	;; generic property icon
+	performer_cv_bias = 0	;; no change to the AI's strength estimate
+
+	[Modifier template=PeriodicHealModifier]	;; builds a 750 HP site in about 2.5 minutes
+	amount = 5
+}

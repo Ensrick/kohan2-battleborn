@@ -1,12 +1,12 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/Camps/rhaksha_settlementcamp.tgi sha256=62c94563036805b0252eddb6dff5798080ff1c030345101356c59274acfb475e
-result sha256=82ae5045d246ff7e9f5f69930b8a2b035573936861d98a826d959d5629d5342f bytes=1456
+result sha256=7f9145d3b7e9d6031e9548207fdfce159b74468df19499e1d8519e9c8841f0a5 bytes=1456
 bom no
 eol crlf
 
 @@ 55 -3:fc3db548 +5 @@ [Thing rhaksha_settlementcamp] > [LairComponent]
 +		spawn_distance = 32,64		;; Battleborn lairs 2026-10-19
-+		spawn_ids = lair_rhakshahive		;; Battleborn lairs 2026-10-19
++		spawn_ids = lair_rhakshanest		;; Battleborn lairs 2026-10-19
 +		spawn_max = 2		;; lairs 2026-10-19: was 0
 +		event_time = 150		;; lairs 2026-10-19: was 0
 +		event_chance = 0.5		;; lairs 2026-10-19: was 0.0

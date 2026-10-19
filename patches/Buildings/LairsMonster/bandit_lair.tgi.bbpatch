@@ -1,13 +1,22 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Buildings/LairsMonster/bandit_lair.tgi sha256=358a1735557b9e418c307e84f65e5272fb8d20f21801fd3448a78be1a8a0307c
-result sha256=6c9410740b31bd8e348e1d63fa33de52c2982682937abfb5afab5512d8afd97d bytes=1599
+result sha256=62520838a2e5748daf3f185533654a118ee2443ee3f970f03306d12640876325 bytes=1823
 bom no
 eol crlf
 
 @@ 45 -1:10623db3 +1 @@ [Thing lair_bandit_lair] > [DenizenComponent] > [Inventory]
 +		count = 8		;; lairs 2026-10-19: was 4 (raiding companies x2)
-@@ 49 -1:831d46bb +1 @@ [Thing lair_bandit_lair] > [DenizenComponent] > [Inventory]
+@@ 49 -1:831d46bb +10 @@ [Thing lair_bandit_lair] > [DenizenComponent] > [Inventory]
 +		count = 2		;; lairs 2026-10-19: was 1 (raiding companies x2)
++	}
++
++	[PropertiesComponent]	;; Battleborn lairs 2026-10-19: object_building as in the K2Lair template, plus self-build
++	{
++		[Property]
++		property_IDS = object_building
++
++		[Property]
++		property_IDS = bb_lair_regrowth
 @@ 54 -4:e9aa00ab +9 @@ [Thing lair_bandit_lair] > [LairComponent]
 +		;; Battleborn: this lair spreads. At an event that sends no marauders the game creates one child
 +		;; lair (lair_bandit_lair) within spawn_distance (engine: KKC_LairComponent, k2.exe 1.3.68).
