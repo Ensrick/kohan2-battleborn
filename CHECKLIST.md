@@ -8,6 +8,15 @@ current file status. Art references marked "AW" = the Arcane Wars mod, a referen
 the new units correctly, and we use Arcane Wars just for reference, not taking anything from it
 directly." The vision is not final: the 0.2.8 recolours are placeholders until the look is agreed.
 
+**Company leaders (author, 2026-10-20):** "every company type gets a unique captain", and the company's
+front unit decides who may lead it: "Pikeman can only be led by Infantry Captain or Infantry Sergeant
+... Cavalry Sergeant can't lead pikemen. Infantry Sergeant can't lead Cavalry. The Sergeants are
+available at tier 1 and 2. Captains are available at tiers 3 and 4. The strongest captains only at
+tier 4. The captains also require certain buildings." Mechanism: each layout slot accepts only units
+carrying its `property_IDS` (`template_organization_layout.tgi`), so each line gets its own layout
+with its own leader property, as the settler flank slot does. Open: heroes (all carry `captain`),
+support slots, whether sergeants should leave the list at tier 3, and how the AI picks leaders.
+
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. **2026-08-13 fix pass:** workbench is now the single source of
 truth and `Data/` was rebuilt as the curated deployable superset (stubs + orphaned art
