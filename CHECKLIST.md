@@ -2,8 +2,11 @@
 
 **Design doc:** Google Sheet ["Kohan II Kings of War modding"](https://docs.google.com/spreadsheets/d/1OGjwstadLcFT5Wg6ehIgD23KLH5CQd4L6ZH0dnD2jfw/edit)
 (Oct 2024). Part II below reproduces its full contents, organized and annotated with
-current file status. Art references marked "AW" = the Arcane Wars mod
-(`D:\Game Mods\Kohan II Kings of War\Arcane_Wars_0.82beta.rar`).
+current file status. Art references marked "AW" = the Arcane Wars mod, a reference only.
+
+**Vision rules (author, 2026-10-20):** "Everything has to fit a nice thematic look. The AI has to use
+the new units correctly, and we use Arcane Wars just for reference, not taking anything from it
+directly." The vision is not final: the 0.2.8 recolours are placeholders until the look is agreed.
 
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. **2026-08-13 fix pass:** workbench is now the single source of
