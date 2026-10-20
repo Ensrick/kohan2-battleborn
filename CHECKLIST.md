@@ -14,8 +14,11 @@ front unit decides who may lead it: "Pikeman can only be led by Infantry Captain
 available at tier 1 and 2. Captains are available at tiers 3 and 4. The strongest captains only at
 tier 4. The captains also require certain buildings." Mechanism: each layout slot accepts only units
 carrying its `property_IDS` (`template_organization_layout.tgi`), so each line gets its own layout
-with its own leader property, as the settler flank slot does. Open: heroes (all carry `captain`),
-support slots, whether sergeants should leave the list at tier 3, and how the AI picks leaders.
+with its own leader property, as the settler flank slot does. Answers (same day): "Heroes can lead
+any company type"; sergeants stay available at higher tiers ("It's about cost too. I want the better
+captains to cost more."); "I want symmetry, every faction should have a sort of dynamic like this.
+Shadow already does to some extent, as their support units are captains." Still open: support
+slots, and how the AI picks leaders.
 
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. **2026-08-13 fix pass:** workbench is now the single source of
