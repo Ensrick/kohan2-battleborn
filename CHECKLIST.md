@@ -20,6 +20,15 @@ captains to cost more."); "I want symmetry, every faction should have a sort of 
 Shadow already does to some extent, as their support units are captains." Still open: support
 slots, and how the AI picks leaders.
 
+**Leader strength (author, 2026-10-21):** "for humans it's Sergeant to Captain for less powerful
+commander's to more powerful. The thing is, we can't have them be too weak or too strong, because
+just like vanilla captains, they're an anchor for the group. They're often fast or pretty tough to
+make it easier to keep the group alive." Measured band (unit files, 0.2.8-dev): vanilla race captains
+are all speed 4.5 with 280-400 health (Captain 360/def 5, Warlord 400/1, Leader 300/6, Guide 280/2,
+Reaper 340/3); the Battleborn commanders are 340-520 health, speed 3.5-4.5; heroes are 600-1000
+health, speed 5. Human Sergeants today: Infantry 240 hp speed 3.5, Cavalry 260/4.5, Ranger 240/3,
+Engineer 280/3, so three of four lack the anchor's speed.
+
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. **2026-08-13 fix pass:** workbench is now the single source of
 truth and `Data/` was rebuilt as the curated deployable superset (stubs + orphaned art
