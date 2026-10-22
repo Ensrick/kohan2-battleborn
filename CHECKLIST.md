@@ -27,7 +27,10 @@ make it easier to keep the group alive." Measured band (unit files, 0.2.8-dev): 
 are all speed 4.5 with 280-400 health (Captain 360/def 5, Warlord 400/1, Leader 300/6, Guide 280/2,
 Reaper 340/3); the Battleborn commanders are 340-520 health, speed 3.5-4.5; heroes are 600-1000
 health, speed 5. Human Sergeants today: Infantry 240 hp speed 3.5, Cavalry 260/4.5, Ranger 240/3,
-Engineer 280/3, so three of four lack the anchor's speed.
+Engineer 280/3, so three of four lack the anchor's speed. Same day: "sergeants also cost upkeep
+and gold, and so do captains. Vanilla captains don't cost anything. So we want to make sure that
+they are maybe a tad stronger than vanilla." So the floor for every paid leader is the free vanilla
+captain of its race, and the ceiling stays below the heroes.
 
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. **2026-08-13 fix pass:** workbench is now the single source of
