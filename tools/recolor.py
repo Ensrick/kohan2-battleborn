@@ -60,7 +60,7 @@ HORSE = [(160, 34, 256, 128), (128, 52, 160, 128), (128, 0, 200, 34)]
 RECIPES = {
     "bb_captain_lancer": ("Units/Human/_BB_Captain_Lancer/bb_captain_lancer.dds", L, "gold armour, white horse",
                           [("steel", "gold", {"outside": HORSE}), ("leather", "pale", {"inside": HORSE})]),
-    "bb_support_lancer": ("Units/Human/_BB_Support_Lancer/bb_support_lancer.dds", L, "silver, gold trim, black horse",
+    "bb_support_lancer": ("Units/Human/_BB_Support_Lancer/bb_support_lancer.dds", L, "silver, grey leather, black horse",
                           [("steel", "silver", {}), ("leather", "black", {"inside": HORSE})]),
     "bb_captain_engineer": ("Units/Human/_BB_Captain_Engineer/bb_captain_engineer.dds", E, "gold armour",
                             [("steel", "gold", {})]),
@@ -216,6 +216,22 @@ def recolor(img, base, steps):
     return Image.fromarray(res, "RGBA")
 
 
+def grey_lancer_leather(img):
+    """Approved Lancer finish: desaturate rider leather and tack, preserving the coat and skin."""
+    rgba = np.asarray(img.convert("RGBA")).copy()
+    rgb = rgba[..., :3].astype(float)
+    h, s, v = hsv(rgb)
+    regions = [(0, 30, 58, 80), (60, 0, 94, 12), (0, 90, 40, 128),
+               (162, 42, 180, 76), (204, 42, 213, 77), (149, 69, 244, 78),
+               (185, 54, 205, 66), (190, 77, 202, 90), (228, 34, 256, 66)]
+    protect = boxes(v.shape, [(0, 0, 58, 30), (40, 20, 64, 32), (58, 28, 96, 45)])
+    mask = boxes(v.shape, regions) & ~protect & (h >= 5) & (h <= 82) & (s >= .16) & (v >= .12)
+    luminance = rgb @ np.array([.299, .587, .114])
+    grey = np.repeat((luminance * .90)[..., None], 3, axis=2)
+    rgba[..., :3][mask] = np.clip(.96 * grey[mask] + .04 * rgb[mask], 0, 255).astype(np.uint8)
+    return Image.fromarray(rgba)
+
+
 def dds_bytes(img):
     """Uncompressed A8R8G8B8 DDS with a full mip chain (the format of the hand-made skins)."""
     w, h = img.size
@@ -243,6 +259,8 @@ def main():
         src = Image.open(io.BytesIO(game.get(base)))
         src.load()
         new = recolor(src, base, steps)
+        if ids == "bb_support_lancer":
+            new = grey_lancer_leather(new)
         dst = os.path.join(bb.REPO, "work", *path.split("/"))
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         with open(dst, "wb") as f:

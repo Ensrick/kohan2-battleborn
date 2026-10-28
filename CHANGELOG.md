@@ -5,6 +5,12 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Changed
+- **Lancer grey leather (0.2.9-dev, 2026-10-20).** The black-horse Lancer support
+  now has grey leather on its rider and tack, approved after four-angle 3D review.
+  The skin, metalwork, wooden lance shaft and team-colour alpha are preserved.
+  The reproducible recipe and game-derived texture delta include the approved finish.
+
 ### Added
 - **Simple retextures for the 23 Battleborn units still on borrowed game art (0.2.8-dev, 2026-10-19;
   user: "Can you help with simple retextures for those that are not complete?").** Each unit now has
