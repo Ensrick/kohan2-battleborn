@@ -496,6 +496,7 @@ Haroun, as with the centers.
 - [ ] Unique support unit per company, lightly reskinned with an ability (Praetorian is the pilot; extend to other companies)
 - [ ] Captains restricted to their assigned unit type, OR cost unique resources with unique bonuses (like Shadow captains)
 - [ ] Reskin-faction concept, set A: Human -> Darklanders (undead-allied humans), Haroun -> Dark Elves, Gauri -> Normalish Dwarves, Drauga -> Human Barbarians, Undead -> Wizards (ivory white good town), Shadow -> Fiery Red Demons
+  - PARKED (user 2026-10-28, "hold onto the idea for now, we'll consider using it another time"): new races built on each existing town, with the alignment flipped: "Good version of undead town, evil version of human, etc." Haroun: corrupted forest, dark elves. Undead: white walls, wizard themed. Shadow: "has no architectural style, but we could make it like magic beasts or something" (replaces set A's demons). Not started; whether the game can take a seventh race is not checked yet.
 - [ ] Reskin-faction concept, set B: Human -> Northern Human Domain (less advanced, greater numbers, iron/wood structures, mail over plate), Haroun -> Snow Elves, Gauri -> Advanced Middle-Eastern Kingdom, Drauga -> Corrupt Shadow Drauga, Undead -> Dark Dwarves, Shadow -> Winter Demons
 
 ## 17. Engine research notes (sheet's Key Values)
