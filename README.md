@@ -36,7 +36,7 @@ file. Use one at a time.
 | Path | What it is |
 |---|---|
 | `patches/**.bbpatch` | Our changes to a game file, or a new file built from a game file. Contains only Battleborn's own lines; game text is *referenced* (`= Units/Haroun/windrider.tgi 104-106`), never copied, and removed lines appear only as a count and a hash. Each patch is pinned to the SHA-256 of the retail file it targets. |
-| `patches/**.bbdelta` | Art painted over a game texture, stored as a delta against that texture. Unreadable without your own `Data.rwd`. |
+| `patches/**.bbdelta` | Art painted over a game texture, stored as a delta against that texture (version 2 compresses first, for full recolours). Unreadable without your own `Data.rwd`. |
 | `original/` | Files that are entirely ours (namelists, the Battleborn properties file). |
 | `mod.json` | Name, version and rules (incompatible with Immortals) for the Kohan II Mod Manager package. |
 | `maps/` | Authored test maps (`.RMP`). |
@@ -50,10 +50,12 @@ file. Use one at a time.
 | `tools/animations.py` | Animation check, run by every build: every animation an ability uses exists on the actor. |
 | `tools/audit_public.py` | Publication check: no file or run of 4+ lines matches game data. |
 | `tools/bb_import.py` | Converts full-file overrides into patches (used once to migrate). |
+| `tools/climates.py` | Climate ports: every climate's terrains and doodads in every map editor palette, recoloured to fit (writes `work/` + texture deltas, then runs `diff`; `--preview <dir>` for contact sheets). |
 
 ## Developing
 
-Requires Python 3.8+ (standard library only).
+Requires Python 3.8+ (standard library only). The art generators `tools/recolor.py` and `tools/climates.py`
+also need numpy (and Pillow for previews).
 
 ```
 py -3 tools/bb.py work                # work/ = full, editable files (never commit work/)

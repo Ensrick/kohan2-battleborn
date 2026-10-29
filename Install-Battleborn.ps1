@@ -212,14 +212,18 @@ function Invoke-Delta([byte[]]$blob, [string]$label) {
     $base = Get-GameFile $meta.base
     if ($null -eq $base) { throw "${label}: game file $($meta.base) not found in Data.rwd" }
     if ((Get-Sha $base) -ne $meta.base_sha256) { throw "${label}: game file $($meta.base) differs from the retail version this delta targets" }
+    # BBDELTA1 = zlib(our file XOR game file); BBDELTA2 = zlib(our file) XOR game file
+    $v2 = $Utf8.GetString($blob, 0, 9) -eq "BBDELTA2`n"
+    $payload = [byte[]]::new($blob.Length - $hdrEnd - 1)
+    [Array]::Copy($blob, $hdrEnd + 1, $payload, 0, $payload.Length)
+    if ($v2) { for ($i = 0; $i -lt $payload.Length; $i++) { $payload[$i] = $payload[$i] -bxor $base[$i % $base.Length] } }
     # zlib stream = 2-byte header + raw deflate + adler32; .NET Framework reads the raw deflate part
-    $zStart = $hdrEnd + 3
-    $ms = [IO.MemoryStream]::new($blob, $zStart, $blob.Length - $zStart)
+    $ms = [IO.MemoryStream]::new($payload, 2, $payload.Length - 2)
     $ds = New-Object IO.Compression.DeflateStream($ms, [IO.Compression.CompressionMode]::Decompress)
     $outMs = New-Object IO.MemoryStream
     $ds.CopyTo($outMs); $ds.Dispose()
     $x = $outMs.ToArray()
-    for ($i = 0; $i -lt $x.Length; $i++) { $x[$i] = $x[$i] -bxor $base[$i % $base.Length] }
+    if (-not $v2) { for ($i = 0; $i -lt $x.Length; $i++) { $x[$i] = $x[$i] -bxor $base[$i % $base.Length] } }
     if ($x.Length -ne $meta.bytes -or (Get-Sha $x) -ne $meta.result_sha256) { throw "${label}: result does not match the expected file" }
     return , $x
 }

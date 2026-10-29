@@ -32,6 +32,15 @@ and gold, and so do captains. Vanilla captains don't cost anything. So we want t
 they are maybe a tad stronger than vanilla." So the floor for every paid leader is the free vanilla
 captain of its race, and the ceiling stays below the heroes.
 
+**Climate ports (author, 2026-10-28):** every climate's map editor offers the other climates' terrain
+and doodads, "different colored versions of the terrains to fit each climate. Snow is snow, so that's
+probably fine the way it is ... In the snow, have it be blue-grey, frosted for all grass and plants
+from midlands ported over and the desert to look cold and grey as well. The desert in the midlands
+should look sandy dry, and the midlands in the desert should be like yellowed grass and plants ...
+Each terrain type including forest and such to look natural in each one. Fall looking trees and
+yellowed grass in desert when placing the midlands terrain types." Built in 0.2.10-dev by
+`tools/climates.py` (looks are its first pass; the author's in-editor verdict is owed).
+
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. **2026-08-13 fix pass:** workbench is now the single source of
 truth and `Data/` was rebuilt as the curated deployable superset (stubs + orphaned art

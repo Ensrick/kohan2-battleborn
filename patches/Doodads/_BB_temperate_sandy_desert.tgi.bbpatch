@@ -1,0 +1,921 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+ref Doodads/Desert/desert_arch.tgi sha256=6ffff0b0c513fc4ac2b51d6b4993bca48787fcd2ac932fded3305649cf24c19d
+ref Doodads/Desert/desert_bones.tgi sha256=2a76a5b905ea059653affbc004439f75b90054da0906c308ad0cc69c872c033e
+ref Doodads/Desert/desert_boneslargewater.tgi sha256=15811ae2369a9838a667a036c9c123a95a97710dea07bceb32c181177e22981d
+ref Doodads/Desert/desert_bushes.tgi sha256=717ad629e4cc4f0a2e43faa382fd94b60555e472312ba8b09f51abccfaaff968
+ref Doodads/Desert/desert_cactus.tgi sha256=04b3c99abc825e9089b2fb8efaa60a48635e09346e03f2d854757836fca8c805
+ref Doodads/Desert/desert_flowers.tgi sha256=db23dc8e9111183676642557163ea133d43e5187de2b458db9bf8ee4a6851500
+ref Doodads/Desert/desert_grass.tgi sha256=4848ad45cabe418d2706d6c2f1b437050b9c3ca98cd5cb86d22f906ac91ff573
+ref Doodads/Desert/desert_grasswater.tgi sha256=32ad8112f21642d915c821daab69d3ae3d5a00bbbad51192cadff4a729421ca6
+ref Doodads/Desert/desert_plantsshoreline.tgi sha256=9eca78070e4c3ae2daebd1241d1f7ea0d7a167ea953218c568168bc5d7d30bd4
+ref Doodads/Desert/desert_rocks.tgi sha256=cfb8971d040dcd3ca9076bb273beb24ac861ff8f5af31ad3edf450eecdbaf876
+ref Doodads/Desert/desert_rockslarge.tgi sha256=9781db2b8188525715c7201019e2f9b6b06224b85de15d228e55da62c2a5aaad
+ref Doodads/Desert/desert_rocksshadow.tgi sha256=59e11be98eb93ccb3a3d1f82347adfc75f01e06bb2e9071cafa424575d859043
+ref Doodads/Desert/desert_trees.tgi sha256=9e715badc62474418d5c3c3d5de7d2e191f6e4f0c14f921fc51fe6104012f82d
+ref Doodads/Desert/desert_treespalm.tgi sha256=e7397968d02bac388ea7a529a702531e47927707cc3a9449a2a04865d9911bce
+ref Doodads/Temperate/temperate_plantsancient.tgi sha256=f8e1967ce728017f64e6a28f411afac179bfd02539bda9b1aa3280dfe84b060c
+result sha256=67cde4977b1c1577f9e211c1ce70fdf2800db94aec3206cc23f56bcf2c463284 bytes=28258
+bom no
+eol crlf
+
+@@ 1 -0 +1369 @@
++;; Battleborn: Desert doodads for Temperate maps (tools/climates.py)
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_arch
++	name = "#bb_temperate_sandy_desert_arch_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_forest
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_sand
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shore
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoretrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.0001
++		}
++	}
++	
++	[Flags]
++	blocking = true
++
++	
+= Doodads/Desert/desert_arch.tgi 42-49
++		resource_prefix = /Doodads/Desert/DesertRocksLarge/DesertRocksLarge
+= Doodads/Desert/desert_arch.tgi 51-56
++		skin = /Doodads/Desert/DesertRocksLarge/_BB_Sandy/DesertRocksBlockingBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_bones
++	name = "#bb_temperate_sandy_desert_bones_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_corrupt
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_corrupttrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_forest
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sand
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.01
++		}
++	}
++
++	
+= Doodads/Desert/desert_bones.tgi 59-64
++		resource_prefix = /Doodads/Desert/DesertBones/DesertBones
++		
+= Doodads/Desert/desert_bones.tgi 67-69
++		skin = /Doodads/Desert/DesertBones/_BB_Sandy/DesertSkeletonsBase.dds
++
+= Doodads/Desert/desert_bones.tgi 71-73
++		skin = /Doodads/Desert/DesertBones/_BB_Sandy/DesertSkeletonsBase.dds
++
+= Doodads/Desert/desert_bones.tgi 75-77
++		skin = /Doodads/Desert/DesertBones/_BB_Sandy/DesertSkeletonsBase.dds
++
+= Doodads/Desert/desert_bones.tgi 79-81
++		skin = /Doodads/Desert/DesertBones/_BB_Sandy/DesertSkeletonsBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_boneslarge
++	name = "#bb_temperate_sandy_desert_boneslarge_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_corrupt
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_corrupttrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_sand
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.0001
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertBonesLarge/DesertBonesLarge
+= Doodads/Desert/desert_boneslargewater.tgi 41-46
++		skin = /Doodads/Desert/DesertBonesLarge/_BB_Sandy/DesertBonesLargeBase.dds
++
+= Doodads/Desert/desert_boneslargewater.tgi 48-50
++		skin = /Doodads/Desert/DesertBonesLarge/_BB_Sandy/DesertBonesLargeBase.dds
++
+= Doodads/Desert/desert_boneslargewater.tgi 52-54
++		skin = /Doodads/Desert/DesertBonesLarge/_BB_Sandy/DesertSpineLargeBase.dds
++
+= Doodads/Desert/desert_boneslargewater.tgi 56-58
++		skin = /Doodads/Desert/DesertBonesLarge/_BB_Sandy/DesertSpineLargeBase.dds
++
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_boneslargewater
++	name = "#bb_temperate_sandy_desert_boneslargewater_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_lakemurky
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_waterblood
++			weight = 0.005
++
++			[Terrain]
++			IDS = bb_temperate_desert_watershadow
++			weight = 0.005
++		}
++	}
++	
++	[Flags]
++	water_based = true
++
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertBonesLarge/DesertBonesLarge
+= Doodads/Desert/desert_boneslargewater.tgi 41-46
++		skin = /Doodads/Desert/DesertBonesLarge/_BB_Sandy/DesertBonesLargeBase.dds
++
+= Doodads/Desert/desert_boneslargewater.tgi 48-50
++		skin = /Doodads/Desert/DesertBonesLarge/_BB_Sandy/DesertBonesLargeBase.dds
++
+= Doodads/Desert/desert_boneslargewater.tgi 52-54
++		skin = /Doodads/Desert/DesertBonesLarge/_BB_Sandy/DesertSpineLargeBase.dds
++
+= Doodads/Desert/desert_boneslargewater.tgi 56-58
++		skin = /Doodads/Desert/DesertBonesLarge/_BB_Sandy/DesertSpineLargeBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_bushes
++	name = "#bb_temperate_sandy_desert_bushes_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_forest
++			weight = 0.05
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sand
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shore
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoretrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.01
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertBushes/DesertBushes
+= Doodads/Desert/desert_bushes.tgi 46-68
++		skin = /Doodads/Desert/DesertBushes/_BB_Sandy/DesertBushesBase.dds
++
+= Doodads/Desert/desert_bushes.tgi 70-72
++		skin = /Doodads/Desert/DesertBushes/_BB_Sandy/DesertBushesBase.dds
++
+= Doodads/Desert/desert_bushes.tgi 74-76
++		skin = /Doodads/Desert/DesertBushes/_BB_Sandy/DesertBushesBase.dds
++
+= Doodads/Desert/desert_bushes.tgi 78-80
++		skin = /Doodads/Desert/DesertBushes/_BB_Sandy/DesertBushesBase.dds
++
+= Doodads/Desert/desert_bushes.tgi 82-84
++		skin = /Doodads/Desert/DesertBushes/_BB_Sandy/DesertBushesBase.dds
++
+= Doodads/Desert/desert_bushes.tgi 86-88
++		skin = /Doodads/Desert/DesertBushes/_BB_Sandy/DesertBushesBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_cactus
++	name = "#bb_temperate_sandy_desert_cactus_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_forest
++			weight = 0.05
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sand
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shore
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoretrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.01
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertCactus/DesertCactus
+= Doodads/Desert/desert_cactus.tgi 46-51
++		skin = /Doodads/Desert/DesertCactus/_BB_Sandy/DesertCactusBase.dds
++
+= Doodads/Desert/desert_cactus.tgi 53-55
++		skin = /Doodads/Desert/DesertCactus/_BB_Sandy/DesertCactusBase.dds
++
+= Doodads/Desert/desert_cactus.tgi 57-59
++		skin = /Doodads/Desert/DesertCactus/_BB_Sandy/DesertCactusBase.dds
++
+= Doodads/Desert/desert_cactus.tgi 61-63
++		skin = /Doodads/Desert/DesertCactus/_BB_Sandy/DesertCactusBase.dds
++
+= Doodads/Desert/desert_cactus.tgi 65-67
++		skin = /Doodads/Desert/DesertCactus/_BB_Sandy/DesertCactusBase.dds
++
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_flowers
++	name = "#bb_temperate_sandy_desert_flowers_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_forest
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_sand
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shore
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoretrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.001
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertFlowers/DesertFlowers
+= Doodads/Desert/desert_flowers.tgi 46-51
++		skin = /Doodads/Desert/DesertFlowers/_BB_Sandy/DesertFlowerBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_grass
++	name = "#bb_temperate_sandy_desert_grass_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_forest
++			weight = 0.05
++
++			[Terrain]
++			IDS = bb_temperate_desert_lake
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_lakemurky
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.1
++
++			[Terrain]
++			IDS = bb_temperate_desert_shore
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoretrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_waterblood
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_watershadow
++			weight = 0.01
++		}
++	}
++	
++	[Flags]
++	random_orientation = false
++	
++		
+= Doodads/Desert/desert_grass.tgi 46-51
++		resource_prefix = /Doodads/Desert/DesertGrass/DesertGrass
+= Doodads/Desert/desert_grass.tgi 53-87
++		skin = /Doodads/Desert/DesertGrass/_BB_Sandy/DesertSavannahGrassBase.dds
++
+= Doodads/Desert/desert_grasswater.tgi 53-55
++		skin = /Doodads/Desert/DesertGrass/_BB_Sandy/DesertSavannahGrassBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_grasswater
++	name = "#bb_temperate_sandy_desert_grasswater_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_lake
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_lakemurky
++			weight = 0.001
++		}
++	}
++	
+= Doodads/Desert/desert_grasswater.tgi 6-9
++		
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertGrass/DesertGrass
+= Doodads/Desert/desert_grasswater.tgi 30-51
++		skin = /Doodads/Desert/DesertGrass/_BB_Sandy/DesertSavannahGrassBase.dds
++
+= Doodads/Desert/desert_grasswater.tgi 53-55
++		skin = /Doodads/Desert/DesertGrass/_BB_Sandy/DesertSavannahGrassBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_plantsshoreline
++	name = "#bb_temperate_sandy_desert_plantsshoreline_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shore
+= Doodads/Desert/desert_treespalm.tgi 23-24
++
+= Doodads/Desert/desert_treespalm.tgi 26-26
++			IDS = bb_temperate_desert_shoretrans
++			weight = 1
++			primary_doodad = true
++		}
++	}
++	
+= Doodads/Desert/desert_treespalm.tgi 6-9
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertPlantsshoreline/DesertPlantsshoreline
+= Doodads/Desert/desert_plantsshoreline.tgi 36-58
++		skin = /Doodads/Desert/DesertPlantsShoreline/_BB_Sandy/DesertPlantsShoreline.dds
+= Doodads/Desert/desert_plantsshoreline.tgi 59-63
++		skin = /Doodads/Desert/DesertPlantsShoreline/_BB_Sandy/DesertPlantsShoreline.dds
+= Doodads/Desert/desert_plantsshoreline.tgi 64-68
++		skin = /Doodads/Desert/DesertPlantsShoreline/_BB_Sandy/DesertPlantsShoreline.dds
+= Doodads/Desert/desert_plantsshoreline.tgi 69-73
++		skin = /Doodads/Desert/DesertPlantsShoreline/_BB_Sandy/DesertPlantsShoreline.dds
+= Doodads/Desert/desert_plantsshoreline.tgi 74-78
++		skin = /Doodads/Desert/DesertPlantsShoreline/_BB_Sandy/DesertPlantsShoreline.dds
++		ground_size = 0.5,1
++
++
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_rocks
++	name = "#bb_temperate_sandy_desert_rocks_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_forest
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sand
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoretrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.01
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Desert/DesertRocks/DesertRocks
+= Doodads/Desert/desert_rocks.tgi 54-59
++		skin = /Doodads/Desert/DesertRocks/_BB_Sandy/DesertRocksBase.dds
++
+= Doodads/Desert/desert_rocks.tgi 61-63
++		skin = /Doodads/Desert/DesertRocks/_BB_Sandy/DesertRocksBase.dds
++
+= Doodads/Desert/desert_rocks.tgi 65-67
++		skin = /Doodads/Desert/DesertRocks/_BB_Sandy/DesertRocksBase.dds
++
+= Doodads/Desert/desert_rocks.tgi 69-71
++		skin = /Doodads/Desert/DesertRocks/_BB_Sandy/DesertRocksBase.dds
++
+= Doodads/Desert/desert_rocks.tgi 73-75
++		skin = /Doodads/Desert/DesertRocks/_BB_Sandy/DesertRocksBase.dds
++
+= Doodads/Desert/desert_rocks.tgi 77-79
++		skin = /Doodads/Desert/DesertRocks/_BB_Sandy/DesertRocksBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_rockslarge
++	name = "#bb_temperate_sandy_desert_rockslarge_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_scrubtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_forest
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountain
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_mountaintrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_road
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sand
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_sandtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_savannah
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shore
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoretrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.01
++		}
++	}
++	
++	[Flags]
++	blocking = true
++
++	
+= Doodads/Desert/desert_rockslarge.tgi 42-50
++		resource_prefix = /Doodads/Desert/DesertRocksLarge/DesertRocksLarge
+= Doodads/Desert/desert_rockslarge.tgi 52-57
++		skin = /Doodads/Desert/DesertRocksLarge/_BB_Sandy/DesertRocksBlockingBase.dds
++
+= Doodads/Desert/desert_rockslarge.tgi 59-61
++		skin = /Doodads/Desert/DesertRocksLarge/_BB_Sandy/DesertRocksBlockingBase.dds
++
+= Doodads/Desert/desert_rockslarge.tgi 63-65
++		skin = /Doodads/Desert/DesertRocksLarge/_BB_Sandy/DesertRocksBlockingBase.dds
++
+= Doodads/Desert/desert_rockslarge.tgi 67-69
++		skin = /Doodads/Desert/DesertRocksLarge/_BB_Sandy/DesertRocksBlockingBase.dds
++
+= Doodads/Desert/desert_rockslarge.tgi 71-73
++		skin = /Doodads/Desert/DesertRocksLarge/_BB_Sandy/DesertRocksBlockingBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_rocksshadow
++	name = "#bb_temperate_sandy_desert_rocksshadow_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_shoreshadow
++			weight = 0.0001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shoreshadowtrans
++			weight = 0.0001
++		}
++	}
++
+= Doodads/Desert/desert_rocksshadow.tgi 6-11
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertRocksShadow/DesertRocksShadow
+= Doodads/Desert/desert_rocksshadow.tgi 32-55
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_trees
++	name = "#bb_temperate_sandy_desert_trees_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_forest
+= Doodads/Desert/desert_treespalm.tgi 23-24
++
+= Doodads/Desert/desert_treespalm.tgi 26-26
++			IDS = bb_temperate_desert_savannah
++			weight = 0.01
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertTrees/DesertTrees
+= Doodads/Desert/desert_trees.tgi 27-49
++		skin = /Doodads/Desert/DesertTrees/_BB_Sandy/DesertTreesThinBase.dds
+= Doodads/Desert/desert_trees.tgi 50-54
++		skin = /Doodads/Desert/DesertTrees/_BB_Sandy/DesertTreesThinBase.dds
+= Doodads/Desert/desert_trees.tgi 55-59
++		skin = /Doodads/Desert/DesertTrees/_BB_Sandy/DesertTreesThinBase.dds
+= Doodads/Desert/desert_trees.tgi 60-64
++		skin = /Doodads/Desert/DesertTrees/_BB_Sandy/DesertTreesThinBase.dds
+= Doodads/Desert/desert_trees.tgi 65-69
++		skin = /Doodads/Desert/DesertTrees/_BB_Sandy/DesertTreesThinBase.dds
+= Doodads/Desert/desert_trees.tgi 70-74
++		skin = /Doodads/Desert/DesertTrees/_BB_Sandy/DesertTreesThinBase.dds
++		ground_size = 2,0.5
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_temperate_sandy_desert_treespalm
++	name = "#bb_temperate_sandy_desert_treespalm_name"
+= Doodads/Temperate/temperate_plantsancient.tgi 17-24
++			IDS = bb_temperate_desert_scrub
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_temperate_desert_shore
+= Doodads/Desert/desert_treespalm.tgi 23-24
++
+= Doodads/Desert/desert_treespalm.tgi 26-26
++			IDS = bb_temperate_desert_shoretrans
++			weight = 1
++			primary_doodad = true
++		}
++	}
++	
+= Doodads/Desert/desert_treespalm.tgi 6-9
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Desert/DesertTreesPalm/DesertTreesPalm
+= Doodads/Desert/desert_treespalm.tgi 36-58
++		skin = /Doodads/Desert/DesertTreesPalm/_BB_Sandy/DesertTreesPalmBase.dds
+= Doodads/Desert/desert_treespalm.tgi 59-63
++		skin = /Doodads/Desert/DesertTreesPalm/_BB_Sandy/DesertTreesPalmBase.dds
+= Doodads/Desert/desert_treespalm.tgi 64-68
++		skin = /Doodads/Desert/DesertTreesPalm/_BB_Sandy/DesertTreesPalmBase.dds
+= Doodads/Desert/desert_treespalm.tgi 69-73
++		skin = /Doodads/Desert/DesertTreesPalm/_BB_Sandy/DesertTreesPalmBase.dds
+= Doodads/Desert/desert_treespalm.tgi 74-78
++		skin = /Doodads/Desert/DesertTreesPalm/_BB_Sandy/DesertTreesPalmBase.dds
+= Doodads/Desert/desert_treespalm.tgi 79-83
++		skin = /Doodads/Desert/DesertTreesPalm/_BB_Sandy/DesertTreesPalmBase.dds
++		ground_size = 0.5,1
++
++	}
++}

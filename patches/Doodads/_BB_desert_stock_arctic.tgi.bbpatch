@@ -1,0 +1,378 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+ref Doodads/Arctic/arctic_brush.tgi sha256=be101043449d15ef3717d1016d711dace79e6fce1b733736e5079de9bc7447f0
+ref Doodads/Arctic/arctic_haze.tgi sha256=4714c42101036e181cbd6cf7fe7d7939591c7af575d896ef3c0ec1b6e66be2a0
+ref Doodads/Arctic/arctic_icebergs.tgi sha256=515b6846aea8f9920d4fe35e2acb3842639c5d8961b007f61403259609ffaafd
+ref Doodads/Arctic/arctic_iceshards.tgi sha256=2ed6a8d5583a0be26a4bcc83d5938b6d13426c971fb3a0642dc1ea363e5407b5
+ref Doodads/Arctic/arctic_rocks.tgi sha256=c7075ac5fef86a5e8a6b2f0f11c446818e5b91941c5f24da857980d7cc2f56b9
+ref Doodads/Arctic/arctic_steamvent.tgi sha256=4a752cd5740fc28fe46ec731bb2cece23cf15572418fbb70a3adeb8a81348b32
+ref Doodads/Arctic/arctic_treedeciduous.tgi sha256=ee8295aa2e039d02cdcc32cc371600c794f340316cb8311f182b2178f5e63813
+ref Doodads/Arctic/arctic_treesconiferous.tgi sha256=1ed4861c826c0418f7cfce0f6a56572e5fbbc5158979fccb5d4ff1d4a36b5e42
+ref Doodads/Arctic/arctic_treesconiferous_snow.tgi sha256=fa13f10a7228190b8fb1d0bfc54eb936f15cf7ee42be7bc31c2b00e23634c02e
+ref Doodads/Arctic/arctic_treesdead.tgi sha256=e261689d9c929837527e13983aceaba0d9de4c5d54564897e6f57bee8987ca5b
+ref Doodads/Desert/desert_grasswater.tgi sha256=32ad8112f21642d915c821daab69d3ae3d5a00bbbad51192cadff4a729421ca6
+ref Doodads/Temperate/temperate_plantsancient.tgi sha256=f8e1967ce728017f64e6a28f411afac179bfd02539bda9b1aa3280dfe84b060c
+ref Doodads/Temperate/temperate_treesancient.tgi sha256=47e31a780dbc6d01cc78146bf67533b3a266e28b6abd98a25bebf58f6f6cd34f
+ref Doodads/Temperate/temperate_treesconiferous.tgi sha256=02051cb2ef664e93aee18021cb3c3757033c84990045688fc1bfde873237d8c3
+ref Doodads/Temperate/temperate_treesdead.tgi sha256=a5e1f5f5efcc99dcdf493dd1d2605776d5a63207af459d2efa647d987ba687c9
+result sha256=1fd81b1b56e6a6e8bcde979a5cbc95f438d92ea4ae9df0af5f622b395a94c7c9 bytes=14430
+bom no
+eol crlf
+
+@@ 1 -0 +826 @@
++;; Battleborn: Arctic doodads for Desert maps (tools/climates.py)
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_brush
++	name = "#bb_desert_stock_arctic_brush_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_tundra
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_tundratrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_forest
++			weight = 0.05
++
++			[Terrain]
++			IDS = bb_desert_arctic_foresttrans
++			weight = 0.025
++
++			[Terrain]
++			IDS = bb_desert_arctic_forestboreal
++			weight = 0.05
++
++			[Terrain]
++			IDS = bb_desert_arctic_snow
++			weight = 0.00001
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Arctic/ArcticBrush/ArcticBrush
+= Doodads/Arctic/arctic_brush.tgi 46-70
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_haze
++	name = "#bb_desert_stock_arctic_haze_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_corrupt
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_forest
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_foresttrans
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_forestboreal
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_lake
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_lakefrozen
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_mountain
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_mountainpeak
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_mountaintrans
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_packice
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_packicetrans
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_river
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_snow
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_snowtrans
++			weight = 0.00001
++
++			[Terrain]
++			IDS = bb_desert_arctic_watershadow
++			weight = 0.00001
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Arctic/ArcticHaze/ArcticHaze
+= Doodads/Arctic/arctic_haze.tgi 44-50
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_iceshards
++	name = "#bb_desert_stock_arctic_iceshards_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_packice
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_snow
++			weight = 0.001
++		}
++	}
++	
+= Doodads/Arctic/arctic_iceshards.tgi 6-15
++
++	[View]
++	{
++		resource_prefix = /Doodads/Arctic/ArcticIceShards/ArcticIceShards
+= Doodads/Arctic/arctic_iceshards.tgi 36-59
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_rocks
++	name = "#bb_desert_stock_arctic_rocks_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_tundra
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_tundratrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_forest
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_foresttrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_forestboreal
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_lakefrozen
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_mountain
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_mountainpeak
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_mountaintrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_river
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_road
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_snow
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_snowtrans
++			weight = 0.01
++
++			[Terrain]
++			IDS = bb_desert_arctic_watershadow
++			weight = 0.01
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Arctic/ArcticRocks/ArcticRocks
+= Doodads/Arctic/arctic_rocks.tgi 42-81
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_steamvent
++	name = "#bb_desert_stock_arctic_steamvent_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_packice
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_snow
++			weight = 0.001
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Arctic/ArcticSteamVent/ArcticSteamVent
+= Doodads/Arctic/arctic_steamvent.tgi 26-32
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_tree_dead
++	name = "#bb_desert_stock_arctic_tree_dead_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_tundra
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_tundratrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_forest
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_arctic_foresttrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_arctic_forestboreal
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_arctic_snow
++			weight = 0.001
++		}
++	}
++	
+= Doodads/Arctic/arctic_treesdead.tgi 6-12
++	
++	[View]
++	{
++
++		resource_prefix = /Doodads/Arctic/ArcticTreesDead/ArcticTreesDead
+= Doodads/Arctic/arctic_treesdead.tgi 50-89
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_treesconiferous
++	name = "#bb_desert_stock_arctic_treesconiferous_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_tundra
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_tundratrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_forest
++			weight = 25
++			primary_doodad = true
++		}
++	}
++	
++
++	[View]
++	{
++		resource_prefix = /Doodads/Arctic/ArcticTreesConiferous/ArcticTreesConiferous
+= Doodads/Arctic/arctic_treesconiferous.tgi 31-74
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_treesconiferous_snow
++	name = "#bb_desert_stock_arctic_treesconiferous_snow_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_forestboreal
+= Doodads/Temperate/temperate_treesconiferous.tgi 21-24
++			IDS = bb_desert_arctic_snow
++			weight = 0.001
++		}
++	}
++	
++
++	[View]
++	{
++		resource_prefix = /Doodads/Arctic/ArcticTreesConiferousSnow/ArcticTreesConiferousSnow
+= Doodads/Arctic/arctic_treesconiferous_snow.tgi 27-64
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_arctic_treesdeciduous
++	name = "#bb_desert_stock_arctic_treesdeciduous_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_tundra
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_tundratrans
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_arctic_forest
++			weight = 0.05
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Arctic/ArcticTreesDeciduous/ArcticTreesDeciduous
+= Doodads/Arctic/arctic_treedeciduous.tgi 30-76
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_icebergs
++	name = "#bb_desert_stock_icebergs_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_lake
++			weight = 0.05
++		}
++	}
++	
++	[Flags]
++	water_based = true	
++	
++
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Arctic/ArcticIcebergs/ArcticIceberg
+= Doodads/Arctic/arctic_icebergs.tgi 27-44
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_stock_temperate_treesdead
++	name = "#bb_desert_stock_temperate_treesdead_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_arctic_corrupt
++			weight = 0.0001
++		}
++	}
++	
+= Doodads/Temperate/temperate_treesancient.tgi 6-10
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateTreesDead/TemperateTreesDead
+= Doodads/Temperate/temperate_treesdead.tgi 72-147

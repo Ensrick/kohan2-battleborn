@@ -1,0 +1,248 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+ref Terrain/Arctic/arctic_corrupt.tgi sha256=8df492140129368b3ba6b993b03d477b3a54113021e9fbfa72dfaeb6e0adedc2
+ref Terrain/Arctic/arctic_forest.tgi sha256=652a390e73729038ff391fcf05946c18f5da57d25efaf9e5d0acb98294447874
+ref Terrain/Arctic/arctic_forestboreal.tgi sha256=6838e763f3153d544996f19cb95d514e68ee39df0458cb20ef36fffbcbcd0d18
+ref Terrain/Arctic/arctic_foresttrans.tgi sha256=5ad5e54e491b09fbcc2041bf1334efe533ad6b3124d81e9150b968e5b7e204c8
+ref Terrain/Arctic/arctic_lake.tgi sha256=ae842e61d0dd8d3756c0e8c8ce549a2ce63b762e53097faa8e6555220e2e4b74
+ref Terrain/Arctic/arctic_lakefrozen.tgi sha256=c55b16fc188ce9e3607a72b0c78c43aad2bbbe9f71ae4b8ceeff2b81642d04db
+ref Terrain/Arctic/arctic_mountain.tgi sha256=714bb16dc4e72b7cf8d5781c3c83f651ba492f0f3e2eeba792f01f0f2a5098a5
+ref Terrain/Arctic/arctic_mountainpeak.tgi sha256=ce2de803eff0467b991e009ec34535106098f83942e0f41b43b827cc2b3d8032
+ref Terrain/Arctic/arctic_mountaintrans.tgi sha256=70f71264f87bcd41e87de5e45f81d9e8d5c33048b685ddb1e86c6164226f9aec
+ref Terrain/Arctic/arctic_packice.tgi sha256=af35a6e0719fd2bcf13d0c8b85723c108176dbab69e743437a2d25f757438afc
+ref Terrain/Arctic/arctic_packicetrans.tgi sha256=4fb86b8d83686a228ccdb1c831abb96159daa6d20eeca228cc81bb7d6f8469f2
+ref Terrain/Arctic/arctic_river.tgi sha256=c023ab8fa0fc1d45767a750e5095e58e2c0dba451f8f54ccb70b01e76ea5b4b0
+ref Terrain/Arctic/arctic_road.tgi sha256=a9bf24983ff769bb48c8fb53e4b1ac2a6a3639952d3711ba1d86c1e70cf1a67f
+ref Terrain/Arctic/arctic_snow.tgi sha256=22f7af5d29a20fd80ab20b68a8b082bcc9d01e98bc3f40ea61bbe76d7f39c4cc
+ref Terrain/Arctic/arctic_snowtrans.tgi sha256=e161b21f1258aab194f1d796dcd888284222b10c37b2274f79c6838abeebc3f3
+ref Terrain/Arctic/arctic_tundra.tgi sha256=6d09ddce3a3b6eba9c01c35793969c504cd970e39170003d692e7ed4b51ce70f
+ref Terrain/Arctic/arctic_tundratrans.tgi sha256=94643e02bff8d4b69bb668945341f6ac14dd7f8851e047da970b16ae3cf65baa
+ref Terrain/Arctic/arctic_watershadow.tgi sha256=5247d9fbb8820e53665885c15222bdbbab8a8d6b302daf89f4260874569d2fda
+result sha256=ecd6b15344d47815975b06ad5772146c0b0c1fd0711918ac371e669d9b128a02 bytes=16787
+bom no
+eol crlf
+
+@@ 1 -0 +723 @@
++;; Battleborn: Arctic terrains as they appear in Temperate maps (tools/climates.py)
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_tundra
++	name = "#bb_temperate_arctic_tundra_name"
++	
+= Terrain/Arctic/arctic_tundra.tgi 6-15
++	IDS = bb_temperate_arctic_tundra01
+= Terrain/Arctic/arctic_tundra.tgi 17-24
++	IDS = bb_temperate_arctic_tundra02
+= Terrain/Arctic/arctic_tundra.tgi 26-33
++	IDS = bb_temperate_arctic_tundra03
+= Terrain/Arctic/arctic_tundra.tgi 35-42
++	IDS = bb_temperate_arctic_tundra04
+= Terrain/Arctic/arctic_tundra.tgi 44-51
++	IDS = bb_temperate_arctic_tundra05
+= Terrain/Arctic/arctic_tundra.tgi 53-59
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_tundratrans
++	name = "#bb_temperate_arctic_tundratrans_name"
++	
+= Terrain/Arctic/arctic_tundratrans.tgi 6-16
++	IDS = bb_temperate_arctic_tundracorrupttrans01
+= Terrain/Arctic/arctic_tundratrans.tgi 18-24
++	IDS = bb_temperate_arctic_tundramountaintrans01
+= Terrain/Arctic/arctic_tundratrans.tgi 26-32
++	IDS = bb_temperate_arctic_tundrapackicetrans01
+= Terrain/Arctic/arctic_tundratrans.tgi 34-40
++	IDS = bb_temperate_arctic_tundrasnowtrans01
+= Terrain/Arctic/arctic_tundratrans.tgi 42-48
++	IDS = bb_temperate_arctic_tundraforesttrans01
+= Terrain/Arctic/arctic_tundratrans.tgi 50-55
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_snow
++	name = "#bb_temperate_arctic_snow_name"
++	
+= Terrain/Arctic/arctic_snow.tgi 6-15
++	IDS = bb_temperate_arctic_snow01
+= Terrain/Arctic/arctic_snow.tgi 17-24
++	IDS = bb_temperate_arctic_snow02
+= Terrain/Arctic/arctic_snow.tgi 26-33
++	IDS = bb_temperate_arctic_snow03
+= Terrain/Arctic/arctic_snow.tgi 35-42
++	IDS = bb_temperate_arctic_snow04
+= Terrain/Arctic/arctic_snow.tgi 44-50
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_snowtrans
++	name = "#bb_temperate_arctic_snowtrans_name"
++	
+= Terrain/Arctic/arctic_snowtrans.tgi 6-16
++	IDS = bb_temperate_arctic_snowtrans01
+= Terrain/Arctic/arctic_snowtrans.tgi 18-24
++	IDS = bb_temperate_arctic_snowmountaintrans01
+= Terrain/Arctic/arctic_snowtrans.tgi 26-32
++	IDS = bb_temperate_arctic_snowpackicetrans01
+= Terrain/Arctic/arctic_snowtrans.tgi 34-40
++	IDS = bb_temperate_arctic_snowshoretrans01
+= Terrain/Arctic/arctic_snowtrans.tgi 42-48
++	IDS = bb_temperate_arctic_snowforesttrans01
+= Terrain/Arctic/arctic_snowtrans.tgi 50-58
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_forestboreal
++	name = "#bb_temperate_arctic_forestboreal_name"
++	
++	base_priority = 502
+= Terrain/Arctic/arctic_forestboreal.tgi 7-15
++	IDS = bb_temperate_arctic_forestboreal01
+= Terrain/Arctic/arctic_forestboreal.tgi 17-24
++	IDS = bb_temperate_arctic_forestboreal02
+= Terrain/Arctic/arctic_forestboreal.tgi 26-32
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_forest
++	name = "#bb_temperate_arctic_forest_name"
++	
++	base_priority = 602
+= Terrain/Arctic/arctic_forestboreal.tgi 7-15
++	IDS = bb_temperate_arctic_forest01
+= Terrain/Arctic/arctic_forest.tgi 17-24
++	IDS = bb_temperate_arctic_forest02
+= Terrain/Arctic/arctic_forest.tgi 26-32
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_foresttrans
++	name = "#bb_temperate_arctic_foresttrans_name"
++	
+= Terrain/Arctic/arctic_foresttrans.tgi 6-16
++	IDS = bb_temperate_arctic_foresttrans01
+= Terrain/Arctic/arctic_foresttrans.tgi 18-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_packice
++	name = "#bb_temperate_arctic_packice_name"
++	
++	base_priority = 701
+= Terrain/Arctic/arctic_packice.tgi 7-15
++	IDS = bb_temperate_arctic_packice01
+= Terrain/Arctic/arctic_packice.tgi 17-24
++	IDS = bb_temperate_arctic_packice02
+= Terrain/Arctic/arctic_packice.tgi 26-32
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_packicetrans
++	name = "#bb_temperate_arctic_packicetrans_name"
++	
+= Terrain/Arctic/arctic_packicetrans.tgi 6-16
++	IDS = bb_temperate_arctic_packicetrans01
+= Terrain/Arctic/arctic_packicetrans.tgi 18-23
++
++[Terrain template=MountainTerrain]
++{
++	IDS = bb_temperate_arctic_mountain
++	name = "#bb_temperate_arctic_mountain_name"
++
+= Terrain/Arctic/arctic_mountain.tgi 6-22
++	IDS = bb_temperate_arctic_mountain01
+= Terrain/Arctic/arctic_mountain.tgi 24-31
++	IDS = bb_temperate_arctic_mountain02
+= Terrain/Arctic/arctic_mountain.tgi 33-39
++
++[Terrain template=MountainTerrain]
++{
++	IDS = bb_temperate_arctic_mountaintrans
++	name = "#bb_temperate_arctic_mountaintrans_name"
++
+= Terrain/Arctic/arctic_mountaintrans.tgi 6-23
++	IDS = bb_temperate_arctic_mountaintrans01
+= Terrain/Arctic/arctic_mountaintrans.tgi 25-31
++	IDS = bb_temperate_arctic_mountainsnowtrans01
+= Terrain/Arctic/arctic_mountaintrans.tgi 33-39
++	IDS = bb_temperate_arctic_mountainpackicetrans01
+= Terrain/Arctic/arctic_mountaintrans.tgi 41-46
++
++[Terrain template=MountainTerrain]
++{
++	IDS = bb_temperate_arctic_mountainpeak
++	name = "#bb_temperate_arctic_mountainpeak_name"
++
++	base_priority = 905
+= Terrain/Arctic/arctic_mountainpeak.tgi 7-22
++	IDS = bb_temperate_arctic_mountainpeak01
+= Terrain/Arctic/arctic_mountainpeak.tgi 24-30
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_corrupt
++	name = "#bb_temperate_arctic_corrupt_name"
++	
+= Terrain/Arctic/arctic_corrupt.tgi 6-18
++	IDS = bb_temperate_arctic_corrupt01
+= Terrain/Arctic/arctic_corrupt.tgi 20-27
++	IDS = bb_temperate_arctic_corrupt02
+= Terrain/Arctic/arctic_corrupt.tgi 29-35
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_arctic_road
++	name = "#bb_temperate_arctic_road_name"
++	
++	base_priority = 1102
+= Terrain/Arctic/arctic_road.tgi 7-13
++	IDS = bb_temperate_arctic_road01
+= Terrain/Arctic/arctic_road.tgi 15-20
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_temperate_arctic_lake
++	name = "#bb_temperate_arctic_lake_name"
++	
++	base_priority = 10002
+= Terrain/Arctic/arctic_lake.tgi 7-30
++	IDS = bb_temperate_arctic_lake01
+= Terrain/Arctic/arctic_lake.tgi 32-38
++	IDS = bb_temperate_arctic_lake02
+= Terrain/Arctic/arctic_lake.tgi 40-45
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_temperate_arctic_river
++	name = "#bb_temperate_arctic_river_name"
++	
+= Terrain/Arctic/arctic_river.tgi 6-26
++	IDS = bb_temperate_arctic_river01
+= Terrain/Arctic/arctic_river.tgi 28-34
++	IDS = bb_temperate_arctic_river02
+= Terrain/Arctic/arctic_river.tgi 36-41
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_temperate_arctic_watershadow
++	name = "#bb_temperate_arctic_watershadow_name"
++	
++	base_priority = 27051
+= Terrain/Arctic/arctic_watershadow.tgi 7-31
++	IDS = bb_temperate_arctic_watershadow01
+= Terrain/Arctic/arctic_watershadow.tgi 33-38
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_temperate_arctic_lakefrozen
++	name = "#bb_temperate_arctic_lakefrozen_name"
++	
++	land = true
++	water = false
++	
++	base_priority = 1090004
+= Terrain/Arctic/arctic_lakefrozen.tgi 10-29
++	IDS = bb_temperate_arctic_lakefrozen01
+= Terrain/Arctic/arctic_lakefrozen.tgi 31-38
++	IDS = bb_temperate_arctic_lakefrozen02
+= Terrain/Arctic/arctic_lakefrozen.tgi 40-46

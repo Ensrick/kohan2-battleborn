@@ -1,0 +1,1263 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+ref Doodads/Arctic/arctic_haze.tgi sha256=4714c42101036e181cbd6cf7fe7d7939591c7af575d896ef3c0ec1b6e66be2a0
+ref Doodads/Desert/desert_grasswater.tgi sha256=32ad8112f21642d915c821daab69d3ae3d5a00bbbad51192cadff4a729421ca6
+ref Doodads/Temperate/temperate_bushes.tgi sha256=ac00bdee43c935c7dde872bd51728789bc738f75711395a5a44661fdce05c856
+ref Doodads/Temperate/temperate_butterflies.tgi sha256=570209d1f6904a6c1039c648e27bf3c20f138597118ad22100ff7d2c9debb72b
+ref Doodads/Temperate/temperate_corruptcracks.tgi sha256=bba2132d60c8e651e5151522f97d1aaa4bf71c9f06944fabff87d1d9f4a1ce50
+ref Doodads/Temperate/temperate_driftwood.tgi sha256=8dd7184d7aded28b7f686b672f33bcfc147d79c88fc2e672b57fb12f59624149
+ref Doodads/Temperate/temperate_flower_small.tgi sha256=b24f3e8efa4003be3448d4ca961efa3298ba7d3147fd6833cd4fd89fb5f9db75
+ref Doodads/Temperate/temperate_flowerspurple.tgi sha256=ab5c47c43d58a1e29410c7d5f9cae1ab4ed0dcc72db63449ef1bc69b9da1a3a2
+ref Doodads/Temperate/temperate_flowersyellow.tgi sha256=f088987cb072028a1f53f1c37b3406fa35c40a7fdd2ad893dcd81b8f4a5c2064
+ref Doodads/Temperate/temperate_mushrooms.tgi sha256=7eb260aef67670d9682734a03134255d9e8f221cb67690336c577d43463b02b9
+ref Doodads/Temperate/temperate_plants.tgi sha256=7e8ae0b86bd9d5f880d1d44788fe7312e72ee90c8d1ff3feea3e7dd33aee874e
+ref Doodads/Temperate/temperate_plantsancient.tgi sha256=f8e1967ce728017f64e6a28f411afac179bfd02539bda9b1aa3280dfe84b060c
+ref Doodads/Temperate/temperate_plantsdead.tgi sha256=876ef86c71242fd7142009c580287d332f7d41cc3a37f320bd4b6e58252bb916
+ref Doodads/Temperate/temperate_plantslake.tgi sha256=2cb3080c39fd1ac3f922d2326027af23f31943fa5f0e8996d78d36ebc5cc8e77
+ref Doodads/Temperate/temperate_plantsmarsh.tgi sha256=6d5a1e8556cc199f009d95ff024997d219ea1409ee8e1271944d1625183d8d1c
+ref Doodads/Temperate/temperate_rocks.tgi sha256=c097ae91fb091e9e495c234ac3665e3b1bbddd584bc475480b5d898bcffe0ce1
+ref Doodads/Temperate/temperate_rocksdark.tgi sha256=489e09ad8a2d9867831168df351568da99c4dc81c99d14cc0fb91d7424fa60e9
+ref Doodads/Temperate/temperate_rockslake.tgi sha256=f4d86120cb7cb6fa87e59dd5cf5d67b05938095b8be7d687bd05ce4269ef0062
+ref Doodads/Temperate/temperate_treesancient.tgi sha256=47e31a780dbc6d01cc78146bf67533b3a266e28b6abd98a25bebf58f6f6cd34f
+ref Doodads/Temperate/temperate_treesconiferous.tgi sha256=02051cb2ef664e93aee18021cb3c3757033c84990045688fc1bfde873237d8c3
+ref Doodads/Temperate/temperate_treesdead.tgi sha256=a5e1f5f5efcc99dcdf493dd1d2605776d5a63207af459d2efa647d987ba687c9
+ref Doodads/Temperate/temperate_treesdeciduous.tgi sha256=d66c5482072cbb647e9a8886c29f31dedef63ecec1d02e18409a682c5c0dbbb0
+ref Doodads/Temperate/temperate_treesdeciduousdynamic.tgi sha256=20f72d48e33c58aa2c936fa5988f26aec731105a519f5219828464dc80e1d1c6
+result sha256=19c12909e01ea916062859d1c8bc148a53182235290f11790e09a245b0d341fa bytes=43237
+bom no
+eol crlf
+
+@@ 1 -0 +1977 @@
++;; Battleborn: Temperate doodads for Desert maps (tools/climates.py)
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_arctic_haze
++	name = "#bb_desert_autumn_arctic_haze_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_corrupt
++			weight = 0.00001
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Arctic/ArcticHaze/ArcticHaze
+= Doodads/Arctic/arctic_haze.tgi 44-50
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_driftwood_temperate
++	name = "#bb_desert_autumn_driftwood_temperate_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_lake
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_temperate_marsh
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_temperate_river
++			weight = 0.001
++		}
++	}
++	
++	[Flags]
++	water_based = true
++
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateDriftwood/TemperateDriftwood
++
+= Doodads/Temperate/temperate_driftwood.tgi 34-36
++		skin = /Doodads/Temperate/TemperateDriftwood/_BB_Autumn/TemperateDriftwood.dds
++		
+= Doodads/Temperate/temperate_driftwood.tgi 38-40
++		skin = /Doodads/Temperate/TemperateDriftwood/_BB_Autumn/TemperateDriftwood.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_bushes
++	name = "#bb_desert_autumn_temperate_bushes_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grasstrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellow
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellowtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestancient
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_foresttrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_marshtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountain
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountaintrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountainpeak
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_road
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_rough
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_roughtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shore
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shoretrans
++			weight = 5
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Temperate/TemperateBushes/TemperateBushes
+= Doodads/Temperate/temperate_bushes.tgi 50-72
++		skin = /Doodads/Temperate/TemperateBushes/_BB_Autumn/TemperateBushesBase.dds
++		
+= Doodads/Temperate/temperate_bushes.tgi 74-76
++		skin = /Doodads/Temperate/TemperateBushes/_BB_Autumn/TemperateBushesBase.dds
++		
+= Doodads/Temperate/temperate_bushes.tgi 78-80
++		skin = /Doodads/Temperate/TemperateBushes/_BB_Autumn/TemperateBushesBase.dds
++
+= Doodads/Temperate/temperate_bushes.tgi 82-84
++		skin = /Doodads/Temperate/TemperateBushes/_BB_Autumn/TemperateBushesBase.dds
++
+= Doodads/Temperate/temperate_bushes.tgi 86-88
++		skin = /Doodads/Temperate/TemperateBushes/_BB_Autumn/TemperateBushesBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_butterflies
++	name = "#bb_desert_autumn_temperate_butterflies_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_grasstrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellow
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellowtrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestancient
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_foresttrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_marshtrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountain
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountaintrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountainpeak
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_road
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_rough
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_roughtrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_shoretrans
++			weight = 1
++		}
++	}
++	
+= Doodads/Temperate/temperate_butterflies.tgi 6-9
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateButterflies/TemperateButterflies
+= Doodads/Temperate/temperate_butterflies.tgi 54-59
++		skin = /Doodads/Temperate/TemperateButterflies/_BB_Autumn/TemperateButterfliesBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_corruptcracks
++	name = "#bb_desert_autumn_temperate_corruptcracks_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_corrupt
+= Doodads/Temperate/temperate_treesconiferous.tgi 21-24
++			IDS = bb_desert_temperate_corrupttrans
++			weight = 5
++		}
++	}
++	
+= Doodads/Temperate/temperate_corruptcracks.tgi 6-9
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateCorruptCracks/TemperateCorruptCracks
+= Doodads/Temperate/temperate_corruptcracks.tgi 31-39
++		skin = /Doodads/Temperate/TemperateCorruptCracks/_BB_Autumn/TemperateCorruptCracksBase.dds
++
+= Doodads/Temperate/temperate_corruptcracks.tgi 41-43
++		skin = /Doodads/Temperate/TemperateCorruptCracks/_BB_Autumn/TemperateCorruptCracksBase.dds
++
+= Doodads/Temperate/temperate_corruptcracks.tgi 45-47
++		skin = /Doodads/Temperate/TemperateCorruptCracks/_BB_Autumn/TemperateCorruptCracksBase.dds
++
+= Doodads/Temperate/temperate_corruptcracks.tgi 49-51
++		skin = /Doodads/Temperate/TemperateCorruptCracks/_BB_Autumn/TemperateCorruptCracksBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_flower_decal_blue
++	name = "#bb_desert_autumn_temperate_flower_decal_blue_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_grasstrans
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellow
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellowtrans
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestancient
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_foresttrans
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_marshtrans
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountain
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountaintrans
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountainpeak
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_road
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_rough
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_roughtrans
++			weight = 2
++
++			[Terrain]
++			IDS = bb_desert_temperate_shoretrans
++			weight = 2
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_flower_small.tgi 57-71
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_flowerspurple
++	name = "#bb_desert_autumn_temperate_flowerspurple_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grasstrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellow
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellowtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestancient
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_foresttrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_marshtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountain
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountaintrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountainpeak
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_road
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_rough
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_roughtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shore
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shoretrans
++			weight = 5
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateFlowers/TemperateFlowers
+= Doodads/Temperate/temperate_flowerspurple.tgi 57-65
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_flowersyellow.tgi 71-73
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_flowersyellow.tgi 75-77
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_flowersyellow.tgi 79-81
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_flowersyellow.tgi 83-85
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++		
+= Doodads/Temperate/temperate_flowersyellow.tgi 87-89
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_flowersyellow
++	name = "#bb_desert_autumn_temperate_flowersyellow_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grasstrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellow
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellowtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestancient
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_foresttrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_marshtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountain
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountaintrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountainpeak
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_road
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_rough
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_roughtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shoretrans
++			weight = 5
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateFlowers/TemperateFlowers
+= Doodads/Temperate/temperate_flowersyellow.tgi 61-69
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_flowersyellow.tgi 71-73
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_flowersyellow.tgi 75-77
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_flowersyellow.tgi 79-81
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_flowersyellow.tgi 83-85
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++		
+= Doodads/Temperate/temperate_flowersyellow.tgi 87-89
++		skin = /Doodads/Temperate/TemperateFlowers/_BB_Autumn/TemperatePlantsBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_mushrooms
++	name = "#bb_desert_autumn_temperate_mushrooms_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grasstrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellow
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellowtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestancient
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_foresttrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_marsh
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_marshtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountain
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountaintrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountainpeak
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_road
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_rough
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_roughtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shore
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shoretrans
+= Doodads/Temperate/temperate_rockslake.tgi 18-23
++	scale_max = 0.35
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateMushrooms/TemperateMushrooms
+= Doodads/Temperate/temperate_mushrooms.tgi 46-51
++		skin = /Doodads/Temperate/TemperateMushrooms/_BB_Autumn/TemperateMushroomsBase.dds
++
+= Doodads/Temperate/temperate_mushrooms.tgi 53-55
++		skin = /Doodads/Temperate/TemperateMushrooms/_BB_Autumn/TemperateMushroomsBase.dds
++
+= Doodads/Temperate/temperate_mushrooms.tgi 57-59
++		skin = /Doodads/Temperate/TemperateMushrooms/_BB_Autumn/TemperateMushroomsBase.dds
++
+= Doodads/Temperate/temperate_mushrooms.tgi 61-63
++		skin = /Doodads/Temperate/TemperateMushrooms/_BB_Autumn/TemperateMushroomsBase.dds
++		
+= Doodads/Temperate/temperate_mushrooms.tgi 65-67
++		skin = /Doodads/Temperate/TemperateMushrooms/_BB_Autumn/TemperateMushroomsBase.dds
++		
+= Doodads/Temperate/temperate_mushrooms.tgi 69-71
++		skin = /Doodads/Temperate/TemperateMushrooms/_BB_Autumn/TemperateMushroomsBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_plants
++	name = "#bb_desert_autumn_temperate_plants_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grasstrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellow
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellowtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestancient
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_foresttrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_marshtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountain
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountaintrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountainpeak
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_road
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_rough
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_roughtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shore
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shoretrans
++			weight = 5
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Temperate/TemperatePlants/TemperatePlants
+= Doodads/Temperate/temperate_plants.tgi 50-72
++		skin = /Doodads/Temperate/TemperatePlants/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_plants.tgi 74-76
++		skin = /Doodads/Temperate/TemperatePlants/_BB_Autumn/TemperatePlantsBase.dds
++
+= Doodads/Temperate/temperate_plants.tgi 78-80
++		skin = /Doodads/Temperate/TemperatePlants/_BB_Autumn/TemperatePlantsBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_plants_marsh
++	name = "#bb_desert_autumn_temperate_plants_marsh_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_marsh
++			weight = 25
++		}
++	}
++	
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperatePlantsMarsh/TemperatePlantsMarsh
+= Doodads/Temperate/temperate_plantsmarsh.tgi 22-43
++		skin = /Doodads/Temperate/TemperatePlantsMarsh/_BB_Autumn/TemperateplantsMarshBase01.dds
++
+= Doodads/Temperate/temperate_plantsmarsh.tgi 45-47
++		skin = /Doodads/Temperate/TemperatePlantsMarsh/_BB_Autumn/TemperateplantsMarshBase02.dds
++
++
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_plantsancient
++	name = "#bb_desert_autumn_temperate_plantsancient_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_forestancient
++			weight = 5
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Temperate/TemperatePlantsAncient/TemperatePlantsAncient
+= Doodads/Temperate/temperate_plantsancient.tgi 37-45
++		skin = /Doodads/Temperate/TemperatePlantsAncient/_BB_Autumn/TemperatePlantsAncientBase.dds
++
+= Doodads/Temperate/temperate_plantsancient.tgi 47-49
++		skin = /Doodads/Temperate/TemperatePlantsAncient/_BB_Autumn/TemperatePlantsAncientBase.dds
++
+= Doodads/Temperate/temperate_plantsancient.tgi 51-53
++		skin = /Doodads/Temperate/TemperatePlantsAncient/_BB_Autumn/TemperatePlantsAncientBase.dds
++
+= Doodads/Temperate/temperate_plantsancient.tgi 55-57
++		skin = /Doodads/Temperate/TemperatePlantsAncient/_BB_Autumn/TemperatePlantsAncientBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_plantsdead
++	name = "#bb_desert_autumn_temperate_plantsdead_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_corrupt
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_corrupttrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdead
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeadtrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_marsh
++			weight = 1
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Temperate/TemperatePlantsDead/TemperatePlantsDead
+= Doodads/Temperate/temperate_plantsdead.tgi 42-50
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++		
+= Doodads/Temperate/temperate_plantsdead.tgi 52-54
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++		
+= Doodads/Temperate/temperate_plantsdead.tgi 56-58
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++
+= Doodads/Temperate/temperate_plantsdead.tgi 60-62
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++
+= Doodads/Temperate/temperate_plantsdead.tgi 64-66
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_plantslake
++	name = "#bb_desert_autumn_temperate_plantslake_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_lake
++			weight = 5
++		}
++	}
++	
++	[Flags]
++	water_based = true
++
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperatePlantsLake/TemperatePlantsLake
+= Doodads/Temperate/temperate_plantslake.tgi 25-30
++		skin = /Doodads/Temperate/TemperatePlantsLake/_BB_Autumn/TemperateLillyPads.dds
++
+= Doodads/Temperate/temperate_plantslake.tgi 32-34
++		skin = /Doodads/Temperate/TemperatePlantsLake/_BB_Autumn/TemperateLillyPads.dds
++
+= Doodads/Temperate/temperate_plantslake.tgi 36-38
++		skin = /Doodads/Temperate/TemperatePlantsLake/_BB_Autumn/TemperateCattails.dds
++
+= Doodads/Temperate/temperate_plantslake.tgi 40-42
++		skin = /Doodads/Temperate/TemperatePlantsLake/_BB_Autumn/TemperateCattails.dds
++
+= Doodads/Temperate/temperate_plantslake.tgi 44-47
++			skin = /Doodads/Temperate/TemperatePlantsLake/_BB_Autumn/TemperateGiantLillyPad.dds
++
+= Doodads/Temperate/temperate_plantslake.tgi 49-57
++		skin = /Doodads/Temperate/TemperatePlantsLake/_BB_Autumn/TemperateCattails.dds
++
+= Doodads/Temperate/temperate_plantslake.tgi 59-61
++		skin = /Doodads/Temperate/TemperatePlantsLake/_BB_Autumn/TemperateCattails.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_rocks
++	name = "#bb_desert_autumn_temperate_rocks_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grasstrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellow
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_grassyellowtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestancient
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_foresttrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_marshtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountain
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountaintrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_mountainpeak
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_road
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_rough
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_roughtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shore
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_shoretrans
++			weight = 5
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Temperate/TemperateRocks/TemperateRocks
+= Doodads/Temperate/temperate_rocks.tgi 50-55
++		skin = /Doodads/Temperate/TemperateRocks/_BB_Autumn/TemperateRocksBase.dds
++
+= Doodads/Temperate/temperate_rocks.tgi 57-59
++		skin = /Doodads/Temperate/TemperateRocks/_BB_Autumn/TemperateRocksBase.dds
++
+= Doodads/Temperate/temperate_rocks.tgi 61-63
++		skin = /Doodads/Temperate/TemperateRocks/_BB_Autumn/TemperateRocksBase.dds
++
+= Doodads/Temperate/temperate_rocks.tgi 65-67
++		skin = /Doodads/Temperate/TemperateRocks/_BB_Autumn/TemperateRocksBase.dds
++
+= Doodads/Temperate/temperate_rocks.tgi 69-71
++		skin = /Doodads/Temperate/TemperateRocks/_BB_Autumn/TemperateRocksBase.dds
++
+= Doodads/Temperate/temperate_rocks.tgi 73-75
++		skin = /Doodads/Temperate/TemperateRocks/_BB_Autumn/TemperateRocksBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_rocksdark
++	name = "#bb_desert_autumn_temperate_rocksdark_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_corrupt
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_corrupttrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdead
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeadtrans
++			weight = 1
++		}
++	}
++	
++	
+= Doodads/Temperate/temperate_plantsancient.tgi 30-35
++		resource_prefix = /Doodads/Temperate/TemperateRocksDark/TemperateRocksDark
+= Doodads/Temperate/temperate_rocksdark.tgi 38-43
++		skin = /Doodads/Temperate/TemperateRocksDark/_BB_Autumn/TemperateRocksDarkBase.dds
++
+= Doodads/Temperate/temperate_rocksdark.tgi 46-48
++		skin = /Doodads/Temperate/TemperateRocksDark/_BB_Autumn/TemperateRocksDarkBase.dds
++		
+= Doodads/Temperate/temperate_rocksdark.tgi 51-53
++		skin = /Doodads/Temperate/TemperateRocksDark/_BB_Autumn/TemperateRocksDarkBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_rockslake
++	name = "#bb_desert_autumn_temperate_rockslake_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_lake
++			weight = 5
++		}
++	}
++
++	[Flags]
++	water_based = true
++	
++	
+= Doodads/Temperate/temperate_rockslake.tgi 22-26
++		resource_prefix = /Doodads/Temperate/TemperateRocksLake/TemperateRocksLake
++
+= Doodads/Temperate/temperate_rockslake.tgi 29-31
++		skin = /Doodads/Temperate/TemperateRocksLake/_BB_Autumn/TemperateRocksLakeBase.dds
++
+= Doodads/Temperate/temperate_rockslake.tgi 33-35
++		skin = /Doodads/Temperate/TemperateRocksLake/_BB_Autumn/TemperateRocksLakeBase.dds
++		
+= Doodads/Temperate/temperate_rockslake.tgi 37-39
++		skin = /Doodads/Temperate/TemperateRocksLake/_BB_Autumn/TemperateRocksLakeBase.dds
++
+= Doodads/Temperate/temperate_rockslake.tgi 41-43
++		skin = /Doodads/Temperate/TemperateRocksLake/_BB_Autumn/TemperateRocksLakeBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_treesancient
++	name = "#bb_desert_autumn_temperate_treesancient_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_forestancient
+= Doodads/Temperate/temperate_treesconiferous.tgi 21-24
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 1
++		}
++	}
++	
+= Doodads/Temperate/temperate_treesancient.tgi 6-10
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateTreesAncient/TemperateTreesAncient
+= Doodads/Temperate/temperate_treesancient.tgi 32-53
++		skin = /Doodads/Temperate/TemperateTreesAncient/_BB_Autumn/TemperateTreesAncientBase.dds
+= Doodads/Temperate/temperate_treesancient.tgi 54-58
++		skin = /Doodads/Temperate/TemperateTreesAncient/_BB_Autumn/TemperateTreesAncientBase.dds
+= Doodads/Temperate/temperate_treesancient.tgi 59-63
++		skin = /Doodads/Temperate/TemperateTreesAncient/_BB_Autumn/TemperateTreesAncientBase.dds
+= Doodads/Temperate/temperate_treesancient.tgi 64-68
++		skin = /Doodads/Temperate/TemperateTreesAncient/_BB_Autumn/TemperateTreesAncientBase.dds
+= Doodads/Temperate/temperate_treesancient.tgi 69-73
++		skin = /Doodads/Temperate/TemperateTreesAncient/_BB_Autumn/TemperateTreesAncientBase.dds
+= Doodads/Temperate/temperate_treesancient.tgi 74-78
++		skin = /Doodads/Temperate/TemperateTreesAncient/_BB_Autumn/TemperateTreesAncientBase.dds
+= Doodads/Temperate/temperate_treesancient.tgi 79-83
++		skin = /Doodads/Temperate/TemperateTreesAncient/_BB_Autumn/TemperateTreesAncientBase.dds
+= Doodads/Temperate/temperate_treesancient.tgi 84-88
++		skin = /Doodads/Temperate/TemperateTreesAncient/_BB_Autumn/TemperateTreesAncientBase.dds
++		ground_size = 2.3,1.5
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_treesconiferous
++	name = "#bb_desert_autumn_temperate_treesconiferous_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
+= Doodads/Temperate/temperate_treesconiferous.tgi 21-24
++			IDS = bb_desert_temperate_foresttrans
++			weight = 5
++		}
++	}
++	
+= Doodads/Temperate/temperate_treesconiferous.tgi 6-11
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateTreesConiferous/TemperateTreesConiferous
+= Doodads/Temperate/temperate_treesconiferous.tgi 37-58
++		skin = /Doodads/Temperate/TemperateTreesConiferous/_BB_Autumn/TemperateTreesConiferousBase.dds
+= Doodads/Temperate/temperate_treesconiferous.tgi 59-63
++		skin = /Doodads/Temperate/TemperateTreesConiferous/_BB_Autumn/TemperateTreesConiferousBase.dds
+= Doodads/Temperate/temperate_treesconiferous.tgi 64-68
++		skin = /Doodads/Temperate/TemperateTreesConiferous/_BB_Autumn/TemperateTreesConiferousBase.dds
+= Doodads/Temperate/temperate_treesconiferous.tgi 69-73
++		skin = /Doodads/Temperate/TemperateTreesConiferous/_BB_Autumn/TemperateTreesConiferousBase.dds
+= Doodads/Temperate/temperate_treesconiferous.tgi 74-78
++		skin = /Doodads/Temperate/TemperateTreesConiferous/_BB_Autumn/TemperateTreesConiferousBase.dds
+= Doodads/Temperate/temperate_treesconiferous.tgi 79-83
++		skin = /Doodads/Temperate/TemperateTreesConiferous/_BB_Autumn/TemperateTreesConiferousBase.dds
++		ground_size = 2.3,1.5
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_treesdead
++	name = "#bb_desert_autumn_temperate_treesdead_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_corrupt
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_corrupttrans
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestconiferous
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdead
+= Doodads/Temperate/temperate_treesdead.tgi 36-39
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 0.001
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeadtrans
++			weight = 5
++
++			[Terrain]
++			IDS = bb_desert_temperate_marsh
++			weight = 1
++		}
++	}
++	
+= Doodads/Temperate/temperate_treesancient.tgi 6-10
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateTreesDead/TemperateTreesDead
+= Doodads/Temperate/temperate_treesdead.tgi 72-94
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++
+= Doodads/Temperate/temperate_treesdead.tgi 96-98
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
+= Doodads/Temperate/temperate_treesdead.tgi 99-103
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
+= Doodads/Temperate/temperate_treesdead.tgi 104-108
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
+= Doodads/Temperate/temperate_treesdead.tgi 109-113
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
+= Doodads/Temperate/temperate_treesdead.tgi 114-118
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
+= Doodads/Temperate/temperate_treesdead.tgi 119-123
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++
+= Doodads/Temperate/temperate_treesdead.tgi 125-127
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++
+= Doodads/Temperate/temperate_treesdead.tgi 129-131
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++
+= Doodads/Temperate/temperate_treesdead.tgi 133-135
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
+= Doodads/Temperate/temperate_treesdead.tgi 136-140
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
+= Doodads/Temperate/temperate_treesdead.tgi 141-145
++		skin = /Doodads/Temperate/TemperateTreesDead/_BB_Autumn/TemperateTreesDeadBase.dds
++	}
++}
++
++[Thing Template=K2Doodad]
++{
++	IDS = bb_desert_autumn_temperate_treesdeciduous
++	name = "#bb_desert_autumn_temperate_treesdeciduous_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 1
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
+= Doodads/Temperate/temperate_treesconiferous.tgi 21-24
++			IDS = bb_desert_temperate_foresttrans
++			weight = 5
++		}
++	}
++	
+= Doodads/Temperate/temperate_treesancient.tgi 6-10
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateTreesDeciduous/TemperateTreesDeciduous
+= Doodads/Temperate/temperate_treesdeciduous.tgi 36-58
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase.dds
++
+= Doodads/Temperate/temperate_treesdeciduous.tgi 60-62
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 63-67
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 68-72
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase3.dds
++
+= Doodads/Temperate/temperate_treesdeciduous.tgi 74-76
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase3.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 77-81
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase3.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 82-86
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase2.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 87-91
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase2.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 92-96
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 97-101
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase2.dds
++
+= Doodads/Temperate/temperate_treesdeciduous.tgi 103-105
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase.dds
++
+= Doodads/Temperate/temperate_treesdeciduous.tgi 107-109
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 110-114
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 115-119
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase3.dds
+= Doodads/Temperate/temperate_treesdeciduous.tgi 120-124
++		skin = /Doodads/Temperate/TemperateTreesDeciduous/_BB_Autumn/TreesDeciduousBase3.dds
++	}
++}
++
++[Thing Template=K2DynamicDoodad]
++{
++	IDS = bb_desert_autumn_temperate_treesdeciduousdynamic
++	name = "#bb_desert_autumn_temperate_treesdeciduousdynamic_name"
+= Doodads/Desert/desert_grasswater.tgi 10-17
++			IDS = bb_desert_temperate_grass
++			weight = 0.25
++
++			[Terrain]
++			IDS = bb_desert_temperate_forestdeciduous
++			weight = 1
++		}
++	}
++
+= Doodads/Temperate/temperate_treesancient.tgi 6-10
++	
++	[View]
++	{
++		resource_prefix = /Doodads/Temperate/TemperateTreesDeciduousDynamic/TemperateTreesDeciduousDynamic
+= Doodads/Temperate/temperate_treesdeciduousdynamic.tgi 32-41
++			skin = /Special/Markers/MarkerWood/_BB_Autumn/MarkerWoodBase.dds
++
+= Doodads/Temperate/temperate_treesdeciduousdynamic.tgi 43-60

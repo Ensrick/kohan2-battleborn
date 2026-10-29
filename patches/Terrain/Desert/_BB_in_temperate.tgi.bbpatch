@@ -1,0 +1,411 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+ref Terrain/Arctic/arctic_snowtrans.tgi sha256=e161b21f1258aab194f1d796dcd888284222b10c37b2274f79c6838abeebc3f3
+ref Terrain/Desert/desert_corrupt.tgi sha256=509d0dd87d95b5a7d35eacfdd07bcd77d36a52201821b4e08d2d21532e57bac5
+ref Terrain/Desert/desert_forest.tgi sha256=720c55ac8b0417e7247740d0832b051a2f45d033b56cf01066006c4fe61a8b18
+ref Terrain/Desert/desert_lake.tgi sha256=467884f7a2f08bc14283c86c63b97731eb2207204a9d4c8c4c3ed64702d3e436
+ref Terrain/Desert/desert_mountain.tgi sha256=e256b045658f5872463ce952a333b8f7a7a6d5f6f4f20b76811f973f1c7bddbb
+ref Terrain/Desert/desert_mountaintrans.tgi sha256=917c2a8de7663d71a40fda998232e9d8504c27942f3b3145f40442ec7503cf10
+ref Terrain/Desert/desert_road.tgi sha256=eb28a7da3c030b663988ad09fa139325106ed3df240eba32edc7956dead59feb
+ref Terrain/Desert/desert_sand.tgi sha256=b2458cec79ce6d9a10af161ed378be4a183d06d92366696a410ae5237fad0210
+ref Terrain/Desert/desert_savannah.tgi sha256=4a885a738e32e0c42e65f1b74b17d2513cdd96a4d073c1afe6955c6768850b12
+ref Terrain/Desert/desert_scrub.tgi sha256=f3d87ab4019ff001aa5f6dd17ef7cc2b5d2fa9bffb358fd774d380face4ab326
+ref Terrain/Desert/desert_shore.tgi sha256=ace952682e2b1dff37b61525d28ea2cef8b19fa2d570a63396e058bf32e18b43
+ref Terrain/Desert/desert_shoreshadow.tgi sha256=8df16bd71b690f69223fdac5c6e2547b73359bb2eaf9b30f808bef64658b4d55
+ref Terrain/Desert/desert_shoreshadowtrans.tgi sha256=3594eec919bd33ff21950e5188b4309e0928469fc39296fdecfc5fa4f87515e4
+ref Terrain/Desert/desert_waterblood.tgi sha256=acf135677a4af1b293142726d8e373d4448f2a03e4af1447e55e1b4e315461fc
+ref Terrain/Desert/desert_watermurky.tgi sha256=aeff756ce8e4140f5949e9b3428cb60dc9f341f4c81bee66e992aa38c13aa54f
+ref Terrain/Desert/desert_watershadow.tgi sha256=7511118283380e39997450d9a7f01dea2eb30bba5fe39ec3881f21bd6fb8e8a3
+ref Terrain/Temperate/temperate_roughtrans.tgi sha256=3e1d0e40941040b427864bfdcac35459900db8bfea2548dc2ec896eec2708e1b
+result sha256=349dadc1eb357a789c43c158abde64e378948a95327f04778eb97d2c0160ba82 bytes=16020
+bom no
+eol crlf
+
+@@ 1 -0 +679 @@
++;; Battleborn: Desert terrains as they appear in Temperate maps (tools/climates.py)
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_scrub
++	name = "#bb_temperate_desert_scrub_name"
++	
++	base_priority = 402
+= Terrain/Desert/desert_scrub.tgi 7-15
++	IDS = bb_temperate_desert_scrub01
++	name = "#desert_scrub_01_name"
++	texture = DesertScrub/_BB_Sandy/DesertScrub01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.831, 0.696, 0.494
++	weight = 0.6
++	
++	[Variation]
++	IDS = bb_temperate_desert_scrub02
++	name = "#desert_scrub_02_name"
++	texture = DesertScrub/_BB_Sandy/DesertScrub02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.861, 0.732, 0.540
++	weight = 0.1
++	
++	[Variation]
++	IDS = bb_temperate_desert_scrub03
++	name = "#desert_scrub_03_name"
++	texture = DesertScrub/_BB_Sandy/DesertScrub03.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.789, 0.643, 0.401
++	weight = 0.1
++
++	[Variation]
++	IDS = bb_temperate_desert_scrub04
++	name = "#desert_scrub_04_name"
++	texture = DesertScrub/_BB_Sandy/DesertScrub04.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.839, 0.716, 0.531
++	weight = 0.1
++
++	[Variation]
++	IDS = bb_temperate_desert_scrub05
++	name = "#desert_scrub_05_name"
++	texture = DesertScrub/_BB_Sandy/DesertScrub05.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.882, 0.736, 0.516
++	weight = 0.1
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_scrubtrans
++	name = "#bb_temperate_desert_scrubtrans_name"
++	
++	base_priority = 452
++	terrain_color = 0.815, 0.681, 0.479
+= Terrain/Desert/desert_scrub.tgi 7-15
++	IDS = bb_temperate_desert_scrubcorrupttrans01
++	name = "#desert_scrubtrans_desert_scrubcorrupttrans01_name"
++	texture = DesertScrubTrans/_BB_Sandy/DesertScrubCorruptTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++	
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_temperate_desert_scrubforesttrans01
++	name = "#desert_scrubtrans_desert_scrubforesttrans01_name"
++	texture = DesertScrubTrans/_BB_Sandy/DesertScrubForestTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_temperate_desert_scrubmountaintrans01
++	name = "#desert_scrubtrans_desert_scrubmountaintrans01_name"
++	texture = DesertScrubTrans/_BB_Sandy/DesertScrubMountainTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_temperate_desert_scrubsandtrans01
++	name = "#desert_scrubtrans_desert_scrubsandtrans01_name"
++	texture = DesertScrubTrans/_BB_Sandy/DesertScrubSandTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_temperate_desert_scrubsavannahtrans01
++	name = "#desert_scrubtrans_desert_scrubsavannahtrans01_name"
++	texture = DesertScrubTrans/_BB_Sandy/DesertScrubSavannahTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_temperate_desert_scrubshoretrans01
++	name = "#desert_scrubtrans_desert_scrubshoretrans01_name"
++	texture = DesertScrubTrans/_BB_Sandy/DesertScrubShoreTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_shore
++	name = "#bb_temperate_desert_shore_name"
++	
+= Terrain/Desert/desert_shore.tgi 6-12
++	IDS = bb_temperate_desert_shore01
++	name = "#desert_shore_01_name"
++	texture = DesertShore/_BB_Sandy/DesertShore01.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.552, 0.481, 0.375
++	weight = 0.6
++	
++	[Variation]
++	IDS = bb_temperate_desert_shore02
++	name = "#desert_shore_02_name"
++	texture = DesertShore/_BB_Sandy/DesertShore02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.576, 0.510, 0.410
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_shoretrans
++	name = "#bb_temperate_desert_shoretrans_name"
++	
++	base_priority = 550
++	terrain_color = 0.552, 0.481, 0.375
+= Terrain/Desert/desert_shore.tgi 7-7
++		
+= Terrain/Desert/desert_shore.tgi 9-12
++	IDS = bb_temperate_desert_shoretrans01
++	name = "#desert_shoretrans_01_name"
++	texture = DesertShoreTrans/_BB_Sandy/DesertShoreTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_shoreshadow
++	name = "#bb_temperate_desert_shoreshadow_name"
++	
+= Terrain/Desert/desert_shoreshadow.tgi 6-12
++	IDS = bb_temperate_desert_shoreshadow01
+= Terrain/Desert/desert_shoreshadow.tgi 14-22
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_shoreshadowtrans
++	name = "#bb_temperate_desert_shoreshadowtrans_name"
++	
+= Terrain/Desert/desert_shoreshadowtrans.tgi 6-13
++	IDS = bb_temperate_desert_shoreshadowtrans01
+= Terrain/Desert/desert_shoreshadowtrans.tgi 15-20
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_savannah
++	name = "#bb_temperate_desert_savannah_name"
++	
+= Terrain/Desert/desert_savannah.tgi 6-15
++	IDS = bb_temperate_desert_savannah01
++	name = "#desert_savannah_01_name"
++	texture = DesertSavannah/_BB_Sandy/DesertSavannah01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.811, 0.670, 0.453
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_temperate_desert_savannah02
++	name = "#desert_savannah_02_name"
++	texture = DesertSavannah/_BB_Sandy/DesertSavannah02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.818, 0.670, 0.439
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_forest
++	name = "#bb_temperate_desert_forest_name"
++	
+= Terrain/Desert/desert_forest.tgi 6-15
++	IDS = bb_temperate_desert_forest01
++	name = "#desert_forest_01_name"
++	texture = DesertForest/_BB_Sandy/DesertForest01.tga
+= Terrain/Desert/desert_forest.tgi 19-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_sand
++	name = "#bb_temperate_desert_sand_name"
++	
+= Terrain/Desert/desert_sand.tgi 6-15
++	IDS = bb_temperate_desert_sand01
++	name = "#desert_sand_01_name"
++	texture = DesertSand/_BB_Sandy/DesertSand01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.716, 0.594, 0.411
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_temperate_desert_sand02
++	name = "#desert_sand_02_name"
++	texture = DesertSand/_BB_Sandy/DesertSand02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.737, 0.613, 0.427
++	weight = 0.1
++	
++	[Variation]
++	IDS = bb_temperate_desert_sand03
++	name = "#desert_sand_03_name"
++	texture = DesertSand/_BB_Sandy/DesertSand03.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.694, 0.575, 0.396
++	weight = 0.1
++	
++	[Variation]
++	IDS = bb_temperate_desert_sand04
++	name = "#desert_sand_04_name"
++	texture = DesertSand/_BB_Sandy/DesertSand04.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.737, 0.618, 0.440
++	weight = 0.1
++
++	[Variation]
++	IDS = bb_temperate_desert_sand05
++	name = "#desert_sand_05_name"
++	texture = DesertSand/_BB_Sandy/DesertSand05.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.694, 0.572, 0.389
++	weight = 0.01
++}
++
++[Terrain template=MountainTerrain]
++{
++	IDS = bb_temperate_desert_mountain
++	name = "#bb_temperate_desert_mountain_name"
++
+= Terrain/Desert/desert_mountain.tgi 6-20
++	IDS = bb_temperate_desert_mountain01
++	name = "#desert_mountain_01_name"
++	texture = DesertMountain/_BB_Sandy/DesertMountain01.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.517, 0.431, 0.303
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_temperate_desert_mountain02
++	name = "#desert_mountain_02_name"
++	texture = DesertMountain/_BB_Sandy/DesertMountain02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.539, 0.453, 0.325
++	weight = 0.4
++}
++
++[Terrain template=MountainTerrain]
++{
++	IDS = bb_temperate_desert_mountaintrans
++	name = "#bb_temperate_desert_mountaintrans_name"
++
++	base_priority = 1150
++	terrain_color = 0.517, 0.431, 0.303
+= Terrain/Desert/desert_mountaintrans.tgi 8-21
++	IDS = bb_temperate_desert_mountaintrans01
++	name = "#desert_mountaintrans_01_name"
++	texture = DesertMountainTrans/_BB_Sandy/DesertMountainTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_corrupt
++	name = "#bb_temperate_desert_corrupt_name"
++	
++	base_priority = 1203
+= Terrain/Desert/desert_corrupt.tgi 7-18
++	IDS = bb_temperate_desert_corrupt01
++	name = "#desert_corrupt_01_name"
++	texture = DesertCorrupt/_BB_Sandy/DesertCorrupt01.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.521, 0.508, 0.488
++	weight = 0.6
++	
++	[Variation]
++	IDS = bb_temperate_desert_corrupt02
++	name = "#desert_corrupt_02_name"
++	texture = DesertCorrupt/_BB_Sandy/DesertCorrupt02.tga
+= Terrain/Desert/desert_corrupt.tgi 31-35
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_corrupttrans
++	name = "#bb_temperate_desert_corrupttrans_name"
++	
++	base_priority = 1251
++	terrain_color = 0.521, 0.508, 0.488
++	terrain_group = dirt	
+= Terrain/Desert/desert_corrupt.tgi 8-10
++
+= Terrain/Desert/desert_corrupt.tgi 12-18
++	IDS = bb_temperate_desert_corrupttrans01
++	name = "#desert_corrupttrans_01_name"
++	texture = DesertCorruptTrans/_BB_Sandy/DesertCorruptTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_temperate_desert_lake
++	name = "#bb_temperate_desert_lake_name"
++	
++	base_priority = 10001
+= Terrain/Desert/desert_lake.tgi 7-31
++	IDS = bb_temperate_desert_lake01
++	name = "#desert_lake_01_name"
++	texture = DesertWater/_BB_Sandy/DesertWater01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_road
++	name = "#bb_temperate_desert_road_name"
++	
++	base_priority = 10010
++	terrain_color = 0.850, 0.721, 0.529
+= Terrain/Desert/desert_road.tgi 8-13
++	IDS = bb_temperate_desert_road01
++	name = "#desert_road_01_name"
++	texture = DesertRoad/_BB_Sandy/DesertRoad01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_temperate_desert_lakemurky
++	name = "#bb_temperate_desert_lakemurky_name"
++	
+= Terrain/Desert/desert_watermurky.tgi 6-31
++	IDS = bb_temperate_desert_lakemurky01
++	name = "#desert_watermurky_desert_lakemurky01_name"
++	texture = DesertWater/_BB_Sandy/DesertWater01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_temperate_desert_watershadow
++	name = "#bb_temperate_desert_watershadow_name"
++	
+= Terrain/Desert/desert_watershadow.tgi 6-34
++	IDS = bb_temperate_desert_watershadow01
+= Terrain/Desert/desert_watershadow.tgi 36-41
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_temperate_desert_waterblood
++	name = "#bb_temperate_desert_waterblood_name"
++	
+= Terrain/Desert/desert_waterblood.tgi 6-31
++	IDS = bb_temperate_desert_waterblood01
+= Terrain/Desert/desert_waterblood.tgi 33-38
++
++[Terrain template=Terrain]
++{
++	IDS = bb_temperate_desert_sandtrans
++	name = "#bb_temperate_desert_sandtrans_name"
++	
++	base_priority = 101450
++	terrain_color = 0.716, 0.594, 0.411
+= Terrain/Temperate/temperate_roughtrans.tgi 8-8
++
+= Terrain/Temperate/temperate_roughtrans.tgi 10-16
++	IDS = bb_temperate_desert_sandforesttrans01
++	name = "#desert_sandtrans_desert_sandforesttrans01_name"
++	texture = DesertSandTrans/_BB_Sandy/DesertSandForestTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_temperate_desert_sandsavannahtrans01
++	name = "#desert_sandtrans_desert_sandsavannahtrans01_name"
++	texture = DesertSandTrans/_BB_Sandy/DesertSandSavannahTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23

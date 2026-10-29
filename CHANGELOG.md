@@ -12,6 +12,26 @@ All notable changes to the Battleborn mod. Format follows
   The reproducible recipe and game-derived texture delta include the approved finish.
 
 ### Added
+- **Every climate's terrains in every map editor palette, recoloured to fit (0.2.10-dev, 2026-10-28;
+  user: "I want different colored versions of the terrains to fit each climate ... Fall looking trees
+  and yellowed grass in desert when placing the midlands terrain types").** A map of any climate can
+  now paint the other two climates' terrains and place their doodads. Each copy is named after its
+  source, for example "Grass (Midlands, frosted)", and keeps its gameplay (terrain group, bonuses,
+  doodad density, draw order):
+  - Frozen Reaches: Midlands terrain, plants and trees frosted blue-grey; Barrens terrain and doodads
+    cold grey.
+  - Barrens: Midlands grass yellowed, plants and broadleaf trees in fall colours, conifers dry olive.
+  - Midlands: Barrens red ground turned to dry tan sand.
+  - Frozen Reaches terrain and doodads keep their snow look everywhere; Shadow and blood ground keeps
+    its colours.
+  Forests scatter the matching recoloured trees, as the originals do. Copied doodads reuse the game's
+  models with recoloured skins. Existing maps and random maps are unchanged. `tools/climates.py`
+  regenerates everything from the game files: 122 terrain copies, 96 doodad copies, 213 textures.
+  In-game look not yet confirmed.
+- **Compact texture deltas.** `BBDELTA2` compresses our texture before XOR-ing it with the game file;
+  a full recolour is 75 KB instead of 169 KB per terrain texture. `bb.py` writes whichever format is
+  smaller, and `Install-Battleborn.ps1` reads both. The archived Kohan II Mod Manager reads only the
+  first format.
 - **Simple retextures for the 23 Battleborn units still on borrowed game art (0.2.8-dev, 2026-10-19;
   user: "Can you help with simple retextures for those that are not complete?").** Each unit now has
   its own skin, a recolour of the game texture it borrowed, with its team-colour areas unchanged.

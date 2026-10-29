@@ -1,0 +1,1034 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Terrain/temperate.tgi sha256=ef3e84ec8f7c2b06d410d5be1205bcb3ca4e976a673f701fddfc2935f1fa88a9
+ref Terrain/arctic.tgi sha256=ba751396db85c23dd78c9077c9b0a7599a4a4aa3d7a2f24f7446195719b67b27
+ref Terrain/desert.tgi sha256=eea74dda9432f3ed15648b8f20f2a3da162d3f77c684886380db00f62b805742
+result sha256=06a7ecb330742acd4669b78a6b69b0fe3f21cb6a4b71d274c0c21c0fe879dd8d bytes=50071
+bom no
+eol crlf
+
+@@ 92 -0 +113 @@ [Biome temperate] > [Terrain]
++
++	;; Battleborn climate ports (tools/climates.py)
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_scrub
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_scrubtrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_shore
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_shoretrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_shoreshadow
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_shoreshadowtrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_savannah
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_forest
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_sand
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_mountain
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_mountaintrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_corrupt
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_corrupttrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_lake
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_road
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_lakemurky
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_watershadow
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_waterblood
++
++	[Terrain]
++	terrain_IDS = bb_temperate_desert_sandtrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_tundra
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_tundratrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_snow
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_snowtrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_forestboreal
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_forest
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_foresttrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_packice
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_packicetrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_mountain
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_mountaintrans
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_mountainpeak
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_corrupt
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_road
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_lake
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_river
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_watershadow
++
++	[Terrain]
++	terrain_IDS = bb_temperate_arctic_lakefrozen
+@@ 626 -0 +880 @@ [Biome temperate] > [Transition]
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_corrupt
++	variation_IDS = bb_temperate_desert_scrubcorrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_corrupttrans
++	variation_IDS = bb_temperate_desert_scrubcorrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_scrubforesttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_mountain
++	variation_IDS = bb_temperate_desert_scrubmountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_mountaintrans
++	variation_IDS = bb_temperate_desert_scrubmountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_scrubsavannahtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_scrubsandtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_shore
++	variation_IDS = bb_temperate_desert_scrubshoretrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_shoretrans
++	variation_IDS = bb_temperate_desert_scrubshoretrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_scrub
++	terrain2_IDS = bb_temperate_desert_lake
++	variation_IDS = bb_temperate_desert_scrubshoretrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_sand
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_sandsavannahtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_sand
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_sandforesttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_corrupt
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_corrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_corrupt
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_corrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_corrupt
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_corrupttrans
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_lake
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_lakemurky
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_road
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_shore
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_mountain
++	terrain2_IDS = bb_temperate_desert_shoretrans
++	variation_IDS = bb_temperate_desert_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shore
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_shoretrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shore
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_shoretrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shore
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_scrubsandtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_corrupt
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_road
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_shore
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lake
++	terrain2_IDS = bb_temperate_desert_shoretrans
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_corrupt
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_road
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_shore
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_lakemurky
++	terrain2_IDS = bb_temperate_desert_shoretrans
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_corrupt
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_road
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_shore
++	variation_IDS = bb_temperate_desert_shore01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_waterblood
++	terrain2_IDS = bb_temperate_desert_shoretrans
++	variation_IDS = bb_temperate_desert_shore02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_corrupt
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_road
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_shoreshadow
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_watershadow
++	terrain2_IDS = bb_temperate_desert_shoreshadowtrans
++	variation_IDS = bb_temperate_desert_shoreshadow01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_corrupt
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_mountain
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_mountaintrans
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_lake
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_lakemurky
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_road
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_shore
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_shoretrans
++	variation_IDS = bb_temperate_desert_shoreshadowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_scrub
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_scrubtrans
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_corrupt
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_mountain
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_mountaintrans
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_forest
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_lake
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_lakemurky
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_road
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_sand
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_savannah
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_shore
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_desert_shoreshadow
++	terrain2_IDS = bb_temperate_desert_shoretrans
++	variation_IDS = bb_temperate_desert_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_corrupt
++	terrain2_IDS = bb_temperate_arctic_mountain
++	variation_IDS = bb_temperate_arctic_tundracorrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_corrupt
++	terrain2_IDS = bb_temperate_arctic_mountaintrans
++	variation_IDS = bb_temperate_arctic_tundracorrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_forest
++	terrain2_IDS = bb_temperate_arctic_mountain
++	variation_IDS = bb_temperate_arctic_foresttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_forestboreal
++	terrain2_IDS = bb_temperate_arctic_mountain
++	variation_IDS = bb_temperate_arctic_foresttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_tundra
++	variation_IDS = bb_temperate_arctic_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_tundratrans
++	variation_IDS = bb_temperate_arctic_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_corrupt
++	variation_IDS = bb_temperate_arctic_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountaintrans
++	terrain2_IDS = bb_temperate_arctic_corrupt
++	variation_IDS = bb_temperate_arctic_tundracorrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_foresttrans
++	variation_IDS = bb_temperate_arctic_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_mountaintrans
++	variation_IDS = bb_temperate_arctic_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_packice
++	variation_IDS = bb_temperate_arctic_mountainpackicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountaintrans
++	terrain2_IDS = bb_temperate_arctic_packice
++	variation_IDS = bb_temperate_arctic_mountainpackicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_packicetrans
++	variation_IDS = bb_temperate_arctic_mountainpackicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountaintrans
++	terrain2_IDS = bb_temperate_arctic_packicetrans
++	variation_IDS = bb_temperate_arctic_mountainpackicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_road
++	variation_IDS = bb_temperate_arctic_mountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_mountainsnowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountaintrans
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_mountainsnowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountain
++	terrain2_IDS = bb_temperate_arctic_snowtrans
++	variation_IDS = bb_temperate_arctic_mountainsnowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountaintrans
++	terrain2_IDS = bb_temperate_arctic_snowtrans
++	variation_IDS = bb_temperate_arctic_mountainsnowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_tundra
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_tundratrans
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_corrupt
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_foresttrans
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_lake
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_mountaintrans
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_packice
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_packicetrans
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_river
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_road
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_mountainpeak
++	terrain2_IDS = bb_temperate_arctic_snowtrans
++	variation_IDS = bb_temperate_arctic_mountain01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_tundra
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_tundratrans
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_corrupt
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_foresttrans
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_lake
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_mountain
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_mountaintrans
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_river
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_road
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_packice
++	terrain2_IDS = bb_temperate_arctic_snowtrans
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_snow
++	terrain2_IDS = bb_temperate_arctic_mountain
++	variation_IDS = bb_temperate_arctic_snowmountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_snow
++	terrain2_IDS = bb_temperate_arctic_mountaintrans
++	variation_IDS = bb_temperate_arctic_snowmountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_snow
++	terrain2_IDS = bb_temperate_arctic_packice
++	variation_IDS = bb_temperate_arctic_snowpackicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_snow
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_snowforesttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_snow
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_snowforesttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_corrupt
++	variation_IDS = bb_temperate_arctic_tundracorrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundratrans
++	terrain2_IDS = bb_temperate_arctic_corrupt
++	variation_IDS = bb_temperate_arctic_tundracorrupttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_tundraforesttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_tundraforesttrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_mountain
++	variation_IDS = bb_temperate_arctic_tundramountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_mountaintrans
++	variation_IDS = bb_temperate_arctic_tundramountaintrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_packice
++	variation_IDS = bb_temperate_arctic_tundrapackicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_packicetrans
++	variation_IDS = bb_temperate_arctic_tundrapackicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_tundrasnowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_tundra
++	terrain2_IDS = bb_temperate_arctic_snowtrans
++	variation_IDS = bb_temperate_arctic_tundrasnowtrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lake
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_packice02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lake
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_packice01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lake
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_packice01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lake
++	terrain2_IDS = bb_temperate_arctic_tundra
++	variation_IDS = bb_temperate_arctic_packice02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lake
++	terrain2_IDS = bb_temperate_arctic_lakefrozen
++	variation_IDS = bb_temperate_arctic_packice01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lakefrozen
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lakefrozen
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lakefrozen
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lakefrozen
++	terrain2_IDS = bb_temperate_arctic_tundra
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lakefrozen
++	terrain2_IDS = bb_temperate_arctic_lake
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lakefrozen
++	terrain2_IDS = bb_temperate_arctic_river
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_lakefrozen
++	terrain2_IDS = bb_temperate_arctic_watershadow
++	variation_IDS = bb_temperate_arctic_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_river
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_packice01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_river
++	terrain2_IDS = bb_temperate_arctic_lakefrozen
++	variation_IDS = bb_temperate_arctic_packicetrans01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_river
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_packice02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_river
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_packice01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_river
++	terrain2_IDS = bb_temperate_arctic_tundra
++	variation_IDS = bb_temperate_arctic_packice02
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_watershadow
++	terrain2_IDS = bb_temperate_arctic_forest
++	variation_IDS = bb_temperate_arctic_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_watershadow
++	terrain2_IDS = bb_temperate_arctic_forestboreal
++	variation_IDS = bb_temperate_arctic_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_watershadow
++	terrain2_IDS = bb_temperate_arctic_snow
++	variation_IDS = bb_temperate_arctic_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_watershadow
++	terrain2_IDS = bb_temperate_arctic_tundra
++	variation_IDS = bb_temperate_arctic_corrupt01
++
++	[Transition]
++	terrain1_IDS = bb_temperate_arctic_watershadow
++	terrain2_IDS = bb_temperate_arctic_lakefrozen
++	variation_IDS = bb_temperate_arctic_corrupt01
+@@ 703 -0 +185 @@ [Biome temperate]
++
++	[WaterInfo]
++	{
++		terrain_ids = bb_temperate_desert_lake
++	
+= Terrain/desert.tgi 572-594
++		terrain_ids = bb_temperate_desert_lakemurky
++	
+= Terrain/desert.tgi 597-619
++		terrain_ids = bb_temperate_desert_waterblood
++	
+= Terrain/desert.tgi 622-644
++		terrain_ids = bb_temperate_desert_watershadow
++	
+= Terrain/desert.tgi 647-666
++
++	[WaterInfo]
++	{
++		terrain_ids = bb_temperate_arctic_lake
++	
+= Terrain/arctic.tgi 536-558
++		terrain_ids = bb_temperate_arctic_lakefrozen
++
+= Terrain/arctic.tgi 561-568
++		terrain_ids = bb_temperate_arctic_river
++	
+= Terrain/arctic.tgi 571-593
++		terrain_ids = bb_temperate_arctic_watershadow
++	
+= Terrain/desert.tgi 647-666

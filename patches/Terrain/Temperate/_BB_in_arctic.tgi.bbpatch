@@ -1,0 +1,544 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+ref Terrain/Arctic/arctic_snowtrans.tgi sha256=e161b21f1258aab194f1d796dcd888284222b10c37b2274f79c6838abeebc3f3
+ref Terrain/Desert/desert_shoreshadowtrans.tgi sha256=3594eec919bd33ff21950e5188b4309e0928469fc39296fdecfc5fa4f87515e4
+ref Terrain/Temperate/temperate_corrupt.tgi sha256=386fb4d973adcd9abea9f349f9f5487d8699cc64968facf14c102fbd5df330e4
+ref Terrain/Temperate/temperate_corrupttrans.tgi sha256=0975c166c11fdfb2a76973db50ec2faeece37293c51cefc4b506f81f49a6a8c3
+ref Terrain/Temperate/temperate_forestancient.tgi sha256=2e41885dcc8ce1c3d18177cf0f056edea4aec6b48ac9b0ddb9725343546f0bc6
+ref Terrain/Temperate/temperate_forestconiferous.tgi sha256=05bc5d8c7e0cac3c6e5ed80f8aa3a54b4dd3128f40852d303befc8f2cd884d4c
+ref Terrain/Temperate/temperate_forestdead.tgi sha256=dfe8701c085a116df8f0bad3c0d61a8c89a43ede3034a3cc1656598177e3f0e0
+ref Terrain/Temperate/temperate_forestdeadtrans.tgi sha256=9cfd0003322b59fbbbd1ed2cd1f2b1eb6397ccef9b1dfb91236a31f387d2a40e
+ref Terrain/Temperate/temperate_forestdeciduous.tgi sha256=e7e47e5f493aa479b0aedc52b2a6b9e628e922c4a4bfe4204f98b7603e42adb4
+ref Terrain/Temperate/temperate_foresttrans.tgi sha256=baf08c739fa3437ad970d811f46ff296bd17d50e607c299f3254847998194a8e
+ref Terrain/Temperate/temperate_grass.tgi sha256=caa94d2ca1066c95234acba600d1b3a08d9a5535406a03f4ec7033ebef606eaf
+ref Terrain/Temperate/temperate_grassyellow.tgi sha256=7fcf3e30dd452cc174ac9c7006cd6b167943a1b0885ed26a1f9fdbf17326abd1
+ref Terrain/Temperate/temperate_grassyellowtrans.tgi sha256=de7763494bd00ea79e5fee5063874f0bcd379dc35523f3d8f10bec7ef44892d8
+ref Terrain/Temperate/temperate_lake.tgi sha256=7d86365a77914ca3aab15bc9e4a7dfdeea14260d76c2bfd7723ae0d7fea9785f
+ref Terrain/Temperate/temperate_marsh.tgi sha256=a0c0733b98d70b14e9e657a5a230bead8c2bf7ad30357010b61b89598c139902
+ref Terrain/Temperate/temperate_marshtrans.tgi sha256=026e4acf3cd51b9b3171e803d6cd1c7e7b243bb84e1087f6367655cb3e8d4b35
+ref Terrain/Temperate/temperate_mountain.tgi sha256=8815f868a4f2e7f34f9f2cf41e1ae9003bd8b785d58ec686b1e1bc29233f6833
+ref Terrain/Temperate/temperate_mountainpeak.tgi sha256=28969bb1edcb84cc1eb0aea3d839b8ab79b98a8b78ad8579770bdd4a643aab79
+ref Terrain/Temperate/temperate_mountaintrans.tgi sha256=2f0bd869f9ba9a8f15e07f8518f0dc55bfd5e3f25cce9f3001f532f354e05996
+ref Terrain/Temperate/temperate_river.tgi sha256=af437da7b02c64b25d383709f5fcc6f27501095184211ef1d1b17ed733f230e2
+ref Terrain/Temperate/temperate_road.tgi sha256=7d1d5653c55e9f1d5fd4a5c235ff7f3fba68f2c50513bf68c5cad1cf82e2736f
+ref Terrain/Temperate/temperate_rough.tgi sha256=8bdf3a37cb96370fc7337dbe14dcd9332e0c602cff525d1e9db5b39a33e6f0b9
+ref Terrain/Temperate/temperate_roughtrans.tgi sha256=3e1d0e40941040b427864bfdcac35459900db8bfea2548dc2ec896eec2708e1b
+ref Terrain/Temperate/temperate_shore.tgi sha256=98ae8ff39437a48c79ae71fe97a635b893a082c79341b4e72d77a41bda92553a
+result sha256=d96ca64ee04f72f6455b98d8141caadd2f25c77a08794f6ec78ea1105dcbbe97 bytes=20187
+bom no
+eol crlf
+
+@@ 1 -0 +830 @@
++;; Battleborn: Temperate terrains as they appear in Arctic maps (tools/climates.py)
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_grass
++	name = "#bb_arctic_temperate_grass_name"
++	
+= Terrain/Temperate/temperate_grass.tgi 6-15
++	IDS = bb_arctic_temperate_grass01
++	name = "#temperate_grass_01_name"
++	texture = TemperateGrass/_BB_Frost/TemperateGrass01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.503, 0.591, 0.595
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_arctic_temperate_grass02
++	name = "#temperate_grass_02_name"
++	texture = TemperateGrass/_BB_Frost/TemperateGrass02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.505, 0.586, 0.595
++	weight = 0.4
++
++	[Variation]
++	IDS = bb_arctic_temperate_grass03
++	name = "#temperate_grass_03_name"
++	texture = TemperateGrass/_BB_Frost/TemperateGrass03.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.506, 0.600, 0.608
++	weight = 0.4
++	
++	[Variation]
++	IDS = bb_arctic_temperate_grass04
++	name = "#temperate_grass_04_name"
++	texture = TemperateGrass/_BB_Frost/TemperateGrass04.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.515, 0.600, 0.600
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_grasstrans
++	name = "#bb_arctic_temperate_grasstrans_name"
++	
++	base_priority = 150
++	terrain_color = 0.503, 0.591, 0.595
+= Terrain/Temperate/temperate_grassyellowtrans.tgi 8-16
++	IDS = bb_arctic_temperate_grasscorrupttrans01
++	name = "#temperate_grasstrans_temperate_grasscorrupttrans01_name"
++	texture = TemperateGrassTrans/_BB_Frost/TemperateGrassCorruptTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_arctic_temperate_grassdirttrans01
++	name = "#temperate_grasstrans_temperate_grassdirttrans01_name"
++	texture = TemperateGrassTrans/_BB_Frost/TemperateGrassDirtTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_arctic_temperate_grassforesttrans01
++	name = "#temperate_grasstrans_temperate_grassforesttrans01_name"
++	texture = TemperateGrassTrans/_BB_Frost/TemperateGrassForestTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_arctic_temperate_grassforestdeadtrans01
++	name = "#temperate_grasstrans_temperate_grassforestdeadtrans01_name"
++	texture = TemperateGrassTrans/_BB_Frost/TemperateGrassForestDeadTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++	
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_arctic_temperate_grassgrassdrytrans01
++	name = "#temperate_grasstrans_temperate_grassgrassdrytrans01_name"
++	texture = TemperateGrassTrans/_BB_Frost/TemperateGrassGrassDryTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++	
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_arctic_temperate_grassmountaintrans01
++	name = "#temperate_grasstrans_temperate_grassmountaintrans01_name"
++	texture = TemperateGrassTrans/_BB_Frost/TemperateGrassMountainTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++	
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_arctic_temperate_grassshoretrans01
++	name = "#temperate_grasstrans_temperate_grassshoretrans01_name"
++	texture = TemperateGrassTrans/_BB_Frost/TemperateGrassShoreTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_road
++	name = "#bb_arctic_temperate_road_name"
++	
+= Terrain/Temperate/temperate_road.tgi 6-12
++	IDS = bb_arctic_temperate_road01
++	name = "#temperate_road_01_name"
++	texture = TemperateRoad/_BB_Frost/TemperateRoad01.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.621, 0.671, 0.726
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_arctic_temperate_road02
++	name = "#temperate_road_02_name"
++	texture = TemperateRoad/_BB_Frost/TemperateRoad02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.622, 0.668, 0.726
++	weight = 0.6
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_forestconiferous
++	name = "#bb_arctic_temperate_forestconiferous_name"
++	
+= Terrain/Temperate/temperate_forestconiferous.tgi 6-15
++	IDS = bb_arctic_temperate_forestconiferous01
++	name = "#temperate_forestconiferous_01_name"
++	texture = TemperateForest/_BB_Frost/TemperateForest01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.388, 0.436, 0.441
++	weight = 0.6
++	
++	[Variation]
++	IDS = bb_arctic_temperate_forestconiferous02
++	name = "#temperate_forestconiferous_02_name"
++	texture = TemperateForest/_BB_Frost/TemperateForest02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.377, 0.424, 0.434
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_forestdeciduous
++	name = "#bb_arctic_temperate_forestdeciduous_name"
++	
+= Terrain/Temperate/temperate_forestdeciduous.tgi 6-15
++	IDS = bb_arctic_temperate_forestdeciduous01
++	name = "#temperate_forestdeciduous_01_name"
++	texture = TemperateForest/_BB_Frost/TemperateForest01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.387, 0.441, 0.441
++	weight = 0.6
++	
++	[Variation]
++	IDS = bb_arctic_temperate_forestdeciduous02
++	name = "#temperate_forestdeciduous_02_name"
++	texture = TemperateForest/_BB_Frost/TemperateForest02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.389, 0.431, 0.442
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_foresttrans
++	name = "#bb_arctic_temperate_foresttrans_name"
++	
++	base_priority = 425
++	terrain_color = 0.396, 0.444, 0.452
+= Terrain/Temperate/temperate_foresttrans.tgi 8-16
++	IDS = bb_arctic_temperate_foresttrans01
++	name = "#temperate_foresttrans_01_name"
++	texture = TemperateForestTrans/_BB_Frost/TemperateForestTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_forestancient
++	name = "#bb_arctic_temperate_forestancient_name"
++	
+= Terrain/Temperate/temperate_forestancient.tgi 6-15
++	IDS = bb_arctic_temperate_forestancient01
++	name = "#temperate_forestancient_01_name"
++	texture = TemperateForest/_BB_Frost/TemperateForest01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.389, 0.440, 0.446
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_arctic_temperate_forestancient02
++	name = "#temperate_forestancient_02_name"
++	texture = TemperateForest/_BB_Frost/TemperateForest02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.387, 0.432, 0.437
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_forestdead
++	name = "#bb_arctic_temperate_forestdead_name"
++	
+= Terrain/Temperate/temperate_forestdead.tgi 6-15
++	IDS = bb_arctic_temperate_forestdead01
++	name = "#temperate_forestdead_01_name"
++	texture = TemperateForestDead/_BB_Frost/TemperateForestDead01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.391, 0.444, 0.445
++	weight = 0.6
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_forestdeadtrans
++	name = "#bb_arctic_temperate_forestdeadtrans_name"
++	
++	base_priority = 485
++	terrain_color = 0.392, 0.436, 0.444
+= Terrain/Temperate/temperate_forestdeadtrans.tgi 8-16
++	IDS = bb_arctic_temperate_forestdeadtrans01
++	name = "#temperate_forestdeadtrans_01_name"
++	texture = TemperateForestDeadTrans/_BB_Frost/TemperateForestDeadTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=MountainTerrain]
++{
++	IDS = bb_arctic_temperate_mountain
++	name = "#bb_arctic_temperate_mountain_name"
++
+= Terrain/Temperate/temperate_mountain.tgi 6-22
++	IDS = bb_arctic_temperate_mountain01
++	name = "#temperate_mountain_01_name"
++	texture = TemperateMountain/_BB_Frost/TemperateMountain01.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.421, 0.453, 0.496
++	weight = 0.6
++	
++	[Variation]
++	IDS = bb_arctic_temperate_mountain02
++	name = "#temperate_mountain_02_name"
++	texture = TemperateMountain/_BB_Frost/TemperateMountain02.tga
++	texture_width = 4
++	texture_height = 4
++	terrain_color = 0.420, 0.449, 0.495
+= Terrain/Temperate/temperate_mountain.tgi 38-48
++
++[Terrain template=MountainTerrain]
++{
++	IDS = bb_arctic_temperate_mountainpeak
++	name = "#bb_arctic_temperate_mountainpeak_name"
++
+= Terrain/Temperate/temperate_mountainpeak.tgi 6-22
++	IDS = bb_arctic_temperate_mountainpeak01
++	name = "#temperate_mountainpeak_01_name"
++	texture = TemperateMountainPeak/_BB_Frost/TemperateMountainPeak01.tga
++	texture_width = 4
++	texture_height = 4
++	terrain_color = 0.428, 0.459, 0.502
++	weight = 0.6
++}
++
++[Terrain template=MountainTerrain]
++{
++	IDS = bb_arctic_temperate_mountaintrans
++	name = "#bb_arctic_temperate_mountaintrans_name"
++
++	base_priority = 1250
++	terrain_group = dirt
++	terrain_color = 0.431, 0.463, 0.506
++	
+= Terrain/Temperate/temperate_mountaintrans.tgi 10-23
++	IDS = bb_arctic_temperate_mountaintrans01
++	name = "#temperate_mountaintrans_01_name"
++	texture = TemperateMountainTrans/_BB_Frost/TemperateMountainTrans01.tga
+= Terrain/Temperate/temperate_mountaintrans.tgi 27-30
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_shore
++	name = "#bb_arctic_temperate_shore_name"
++	
+= Terrain/Temperate/temperate_shore.tgi 6-12
++	IDS = bb_arctic_temperate_shore01
++	name = "#temperate_shore_01_name"
++	texture = TemperateShore/_BB_Frost/TemperateShore01.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.542, 0.583, 0.626
++	weight = 0.6
++	
++	[Variation]
++	IDS = bb_arctic_temperate_shore02
++	name = "#temperate_shore_02_name"
++	texture = TemperateShore/_BB_Frost/TemperateShore02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.541, 0.588, 0.625
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_shoretrans
++	name = "#bb_arctic_temperate_shoretrans_name"
++	
++	base_priority = 1550
++	terrain_group = sand
++	terrain_color = 0.542, 0.583, 0.626
++	
+= Terrain/Desert/desert_shoreshadowtrans.tgi 10-11
++
+= Terrain/Desert/desert_shoreshadowtrans.tgi 13-13
++	IDS = bb_arctic_temperate_shoretrans01
++	name = "#temperate_shoretrans_01_name"
++	texture = TemperateShoreTrans/_BB_Frost/TemperateShoreTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_corrupt
++	name = "#bb_arctic_temperate_corrupt_name"
++	
+= Terrain/Temperate/temperate_corrupt.tgi 6-18
++	IDS = bb_arctic_temperate_corrupt01
++	name = "#temperate_corrupt_01_name"
++	texture = TemperateCorrupt/_BB_Frost/TemperateCorrupt01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.411, 0.443, 0.475
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_arctic_temperate_corrupt02
++	name = "#temperate_corrupt_02_name"
++	texture = TemperateCorrupt/_BB_Frost/TemperateCorrupt02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.410, 0.448, 0.474
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_corrupttrans
++	name = "#bb_arctic_temperate_corrupttrans_name"
++	
++	base_priority = 2050
++	terrain_color = 0.411, 0.443, 0.475
+= Terrain/Temperate/temperate_corrupttrans.tgi 8-19
++	IDS = bb_arctic_temperate_corrupttrans01
++	name = "#temperate_corrupttrans_01_name"
++	texture = TemperateCorruptTrans/_BB_Frost/TemperateCorruptTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_arctic_temperate_lake
++	name = "#bb_arctic_temperate_lake_name"
++	
++	base_priority = 10002
+= Terrain/Temperate/temperate_lake.tgi 7-29
++	IDS = bb_arctic_temperate_lake01
++	name = "#temperate_lake_01_name"
++	texture = TemperateWater/_BB_Frost/TemperateWater01.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.339, 0.416, 0.471
++	weight = 0.6
++}
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_arctic_temperate_river
++	name = "#bb_arctic_temperate_river_name"
++	
+= Terrain/Temperate/temperate_river.tgi 6-24
++	IDS = bb_arctic_temperate_river01
++	name = "#temperate_river_01_name"
++	texture = TemperateWater/_BB_Frost/TemperateWater01.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.339, 0.416, 0.471
+= Terrain/Temperate/temperate_river.tgi 31-41
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_marshtrans
++	name = "#bb_arctic_temperate_marshtrans_name"
++	
++	base_priority = 1090002
++	terrain_color = 0.442, 0.483, 0.509
+= Terrain/Temperate/temperate_marshtrans.tgi 8-16
++	IDS = bb_arctic_temperate_marshtrans01
++	name = "#temperate_marshtrans_01_name"
++	texture = TemperateForestDeadTrans/_BB_Frost/TemperateForestDeadTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_arctic_temperate_marshforesttrans01
++	name = "#temperate_marshtrans_temperate_marshforesttrans01_name"
++	texture = TemperateMarshTrans/_BB_Frost/TemperateMarshForestTrans01.tga
+= Terrain/Arctic/arctic_snowtrans.tgi 20-22
++
+= Terrain/Arctic/arctic_snowtrans.tgi 24-24
++	IDS = bb_arctic_temperate_marshroughtrans01
++	name = "#temperate_marshtrans_temperate_marshroughtrans01_name"
++	texture = TemperateMarshTrans/_BB_Frost/TemperateMarshRoughTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=WaterTerrain]
++{
++	IDS = bb_arctic_temperate_marsh
++	name = "#bb_arctic_temperate_marsh_name"
++	
+= Terrain/Temperate/temperate_marsh.tgi 7-28
++	IDS = bb_arctic_temperate_marsh01
++	name = "#temperate_marsh_01_name"
++	texture = TemperateMarsh/_BB_Frost/TemperateMarsh01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.444, 0.490, 0.517
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_arctic_temperate_marsh02
++	name = "#temperate_marsh_02_name"
++	texture = TemperateMarsh/_BB_Frost/TemperateMarsh02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.444, 0.490, 0.517
++	weight = 0.6
++
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_rough
++	name = "#bb_arctic_temperate_rough_name"
++	
+= Terrain/Temperate/temperate_rough.tgi 6-15
++	IDS = bb_arctic_temperate_rough01
++	name = "#temperate_rough_01_name"
++	texture = TemperateRough/_BB_Frost/TemperateRough01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.619, 0.658, 0.693
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_arctic_temperate_rough02
++	name = "#temperate_rough_02_name"
++	texture = TemperateRough/_BB_Frost/TemperateRough02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.619, 0.652, 0.692
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_roughtrans
++	name = "#bb_arctic_temperate_roughtrans_name"
++	
++	base_priority = 2009801
++	terrain_color = 0.619, 0.658, 0.693
+= Terrain/Temperate/temperate_roughtrans.tgi 8-16
++	IDS = bb_arctic_temperate_roughtrans01
++	name = "#temperate_roughtrans_01_name"
++	texture = TemperateRoughTrans/_BB_Frost/TemperateRoughTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_grassyellow
++	name = "#bb_arctic_temperate_grassyellow_name"
++	
+= Terrain/Temperate/temperate_grassyellow.tgi 6-15
++	IDS = bb_arctic_temperate_grassyellow01
++	name = "#temperate_grassyellow_01_name"
++	texture = TemperateGrassYellow/_BB_Frost/TemperateGrassYellow01.tga
++	texture_width = 16
++	texture_height = 16
++	terrain_color = 0.524, 0.614, 0.619
++	weight = 0.6
++
++	[Variation]
++	IDS = bb_arctic_temperate_grassyellow02
++	name = "#temperate_grassyellow_02_name"
++	texture = TemperateGrassYellow/_BB_Frost/TemperateGrassYellow02.tga
++	texture_width = 8
++	texture_height = 8
++	terrain_color = 0.531, 0.621, 0.628
++	weight = 0.4
++}
++
++[Terrain template=Terrain]
++{
++	IDS = bb_arctic_temperate_grassyellowtrans
++	name = "#bb_arctic_temperate_grassyellowtrans_name"
++	
++	base_priority = 2019802
++	terrain_color = 0.503, 0.591, 0.595
+= Terrain/Temperate/temperate_grassyellowtrans.tgi 8-16
++	IDS = bb_arctic_temperate_grassyellowtrans01
++	name = "#temperate_grassyellowtrans_01_name"
++	texture = TemperateGrassYellowTrans/_BB_Frost/TemperateGrassYellowTrans01.tga
+= Terrain/Temperate/temperate_roughtrans.tgi 20-23
