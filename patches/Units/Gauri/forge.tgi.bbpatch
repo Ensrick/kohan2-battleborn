@@ -1,13 +1,11 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Gauri/forge.tgi sha256=3dda31a07268350526675df4513f9d06d0abe4e42e26614e263129ec0cfbf174
-result sha256=8455d3fe95b7c71ee6253c3320a3b7b425258563557b4cf2cad6dacbff34fdbb bytes=5056
+result sha256=ca93a1becea8585fc43c20117088cc4e25965af2deb745df84cf7caf74fa42c1 bytes=4997
 bom no
-eol crlf*25 lf*1 crlf*258
+eol crlf
 
-@@ 24 -0 +3 @@ [Unit forge] > [BuilderComponent] > [BuildActor]
+@@ 24 -1:2b4c342f +1 @@ [Unit forge] > [BuilderComponent] > [BuildActor]
 +
-+		[BuildActor]
-+		actor_ids = bb_gauri_woodmill_outpost
 @@ 170 -1:01726488 +1 @@ [Unit forge] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
 +				amount = 2 ;; 8, build time x4
 @@ 185 -1:7de0979f +1 @@ [Unit forge] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]

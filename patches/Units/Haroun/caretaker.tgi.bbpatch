@@ -1,12 +1,10 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Haroun/caretaker.tgi sha256=24b79873d6b6a396c93e258628d9f8997f4ee58283280d3db9605244899d8b4c
-result sha256=401100a65c86ef487a64b2253e2df370d57d8619e461080bc70c818db9811326 bytes=4147
+result sha256=70ddc856e74650f8174f38bb442d69960d8782134874f907263ece33c257e696 bytes=4087
 bom no
-eol crlf*20 lf*1 crlf*212
+eol crlf
 
-@@ 19 -0 +3 @@ [Thing caretaker] > [BuilderComponent] > [BuildActor]
+@@ 19 -1:2b4c342f +1 @@ [Thing caretaker] > [BuilderComponent] > [BuildActor]
 +
-+		[BuildActor]
-+		actor_ids = bb_haroun_woodmill_outpost
 @@ 163 -1:2a7d6e18 +1 @@ [Thing caretaker] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
 +				amount = 0.25 ;; 1, build time x4

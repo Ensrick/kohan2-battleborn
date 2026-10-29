@@ -158,6 +158,15 @@ current unit names come from the user's design sheet). To tweak namelist values:
 or edit the pools in `tools/gen_namelists.ps1` and rerun.
 Builder units per faction (vanilla `BuilderComponent` carriers): Human engineer, Drauga
 crafter, Gauri forge, Haroun caretaker, Shadow nightbringer, Undead boneweaver.
+**Who builds them (user 2026-10-29):** "move the structures crafting out of the cluttered menu which
+icludes mines for engineers, and give settlers the ability to craft these peripheral structures
+instead." 0.2.12-dev: Pioneer (+ its captain), Drauga settler, Gauri founder, Haroun pilgrim build
+the out-of-town structures; engineers keep outpost, fort and mines. Nightbringer and boneweaver are
+both settler and builder, so their menus are unchanged.
+**Open asks from the same message (not started):** (a) move the other "peripheral expensive
+structures" outside towns, every race; (b) guards themed on each structure's resource; (c) workers
+inside every structure, mine and tech building who come out to repair, "only a pair or a small
+number for non-town structures, that way the Engineers and such don't have to repair everything".
 
 - [x] Fort + outpost: health x2, captureable, cost 100->250, bigger garrisons, `unit_limit_provided` 3/2 (matches the design targets in section 15 exactly)
 - [x] `bb_human_woodmill_outpost` chain COMPLETED 2026-08-13: engineer.tgi override adds it to the `BuilderComponent` build list (vanilla out-of-town build mechanism); upgrades `bb_human_sawmill_outpost` (285g, wood 8) and `bb_human_woodmarket_outpost` (285g, gold 12 + wood 3) authored on the 3x-cost / 2/3-output formula, vanilla sawmill/woodexport art + names, capturable + razable, same worker/bowman garrison. **VERIFY in-game:** build via engineer, upgrade paths, and whether the AI ever builds it (design-doc caution)

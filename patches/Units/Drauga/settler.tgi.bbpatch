@@ -1,9 +1,13 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Drauga/settler.tgi sha256=e2bbb2e43c9b52d9f48da6d10cc263715505c05769282272c7fa2dacad7cf1b1
-result sha256=58b09949ea1cf1b912109b171fc0fdf3e8aa58f44b01fc51e442c6bac6656311 bytes=4424
+result sha256=1ca37ac76184a9b3c225399060443758882608cf1176d888b4e21e7292554c44 bytes=4484
 bom no
 eol crlf
 
+@@ 123 -0 +3 @@ [Unit settler] > [BuilderComponent] > [BuildActor]
++
++		[BuildActor]
++		actor_ids = bb_drauga_woodmill_outpost
 @@ 128 -1:7000d9e4 +1 @@ [Unit settler] > [EconomyComponent] > [Cost]
 +		gold = 2 ;; 5
 @@ 131 -1:736f7308 +1 @@ [Unit settler] > [EconomyComponent] > [Upkeep]

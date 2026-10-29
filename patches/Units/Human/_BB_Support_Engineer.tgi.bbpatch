@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/engineer.tgi sha256=dcf298fbd3f4eb91388544ec1ddbb60116fa39beb543230b9832eb2c5b3938b5
-result sha256=b84a9b862189a2d3ea0aabebd6398f31f7aa4701ed438dd7afae16c9821270b6 bytes=5180
+result sha256=4600e0ffff255f70dc1fd85c77e3c85fe2946d0fd3d3c79a00d465469164ed21 bytes=5124
 bom no
 eol lf
 
@@ -22,10 +22,7 @@ eol lf
 +	health = 260 ;; engineer 220
 @@ 41 -1:2b4c342f +1 @@ [Unit engineer] > [BodyComponent]
 +
-@@ 46 -1:2b4c342f +4 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
-+
-+		[BuildActor]
-+		actor_ids = bb_human_woodmill_outpost
+@@ 46 -1:2b4c342f +1 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
 +
 @@ 49 -1:31609426 +1 @@ [Unit engineer] > [BuilderComponent] > [BuildActor]
 +

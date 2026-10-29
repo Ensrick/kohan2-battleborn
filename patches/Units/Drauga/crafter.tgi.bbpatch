@@ -1,12 +1,10 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Drauga/crafter.tgi sha256=53e717fb96b78bc308b09ab73b4172798da1d463e5da058c1c6939a52bf5c10a
-result sha256=3acacab9d528582293c47021b18cd6b3027447d786e673a0f52f08127b23e9bc bytes=3929
+result sha256=d9140f077eb43da64b534f53bfb75dd31ffa2f4efcdad70bcf3d04e7511d2d80 bytes=3869
 bom no
-eol crlf*20 lf*1 crlf*200 none*1
+eol crlf none*1
 
-@@ 19 -0 +3 @@ [Unit Crafter] > [BuilderComponent] > [BuildActor]
+@@ 19 -1:2b4c342f +1 @@ [Unit Crafter] > [BuilderComponent] > [BuildActor]
 +
-+		[BuildActor]
-+		actor_ids = bb_drauga_woodmill_outpost
 @@ 152 -1:e32b3167 +1 @@ [Unit Crafter] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
 +				amount = 1.25 ;; 5, build time x4

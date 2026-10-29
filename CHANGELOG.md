@@ -5,6 +5,15 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Changed
+- **Settlers build the out-of-town economy structures (0.2.12-dev, 2026-10-29; user: "We should move
+  the structures crafting out of the cluttered menu which icludes mines for engineers, and give settlers
+  the ability to craft these peripheral structures instead").** The wood outpost (which upgrades to the
+  out-of-town sawmill or wood market) moved from the Engineer, Crafter, Forge and Caretaker build menus
+  to the Pioneer, Drauga Settler, Founder and Pilgrim. Those builders keep the outpost, fort and mines.
+  Shadow's Nightbringer and the Undead Boneweaver found towns and build mines themselves, so their
+  menus are unchanged.
+
 ### Fixed
 - **Ported terrain filled with the host climate's doodads (0.2.11-dev, 2026-10-29; user: "All the
   terrains ported over to midlands are placing what appear to be normal grassy terrain doodads").**

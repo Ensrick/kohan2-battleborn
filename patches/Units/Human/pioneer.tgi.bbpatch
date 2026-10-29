@@ -1,9 +1,13 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/pioneer.tgi sha256=463abe221db658fdccec80317b400565d321a822fc906a38b7ac7066674299d9
-result sha256=82c4f16486bf1b04102783ec1af0c53d7b23f682e0a4af05a6fac91a2db4d235 bytes=4388
+result sha256=63ff16c75cb4c559a96dd16cf18baa9125ffee50680dc3d3fd8d3b01c3723f2e bytes=4447
 bom no
 eol crlf
 
+@@ 36 -0 +3 @@ [Unit pioneer] > [BuilderComponent] > [BuildActor]
++
++		[BuildActor]
++		actor_ids = bb_human_woodmill_outpost
 @@ 125 -1:7000d9e4 +1 @@ [Unit pioneer] > [EconomyComponent] > [Cost]
 +		gold = 2 ;; 5
 @@ 128 -1:70dad19c +1 @@ [Unit pioneer] > [EconomyComponent] > [Upkeep]

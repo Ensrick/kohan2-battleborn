@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Human/pioneer.tgi sha256=463abe221db658fdccec80317b400565d321a822fc906a38b7ac7066674299d9
-result sha256=03b181a679c81d0f08f4bda98e8262ccf56eb6b274574282b917ae63061e5c01 bytes=3532
+result sha256=5593ef3746d95bf6d34a77857cf99862e0735f2c940b2120d8a033d17e1a3217 bytes=3591
 bom no
 eol crlf none*1
 
@@ -10,6 +10,10 @@ eol crlf none*1
 +
 +		[AspectNormal]
 +		skin = /Units/Human/_BB_Captain_Pioneer/bb_captain_pioneer.dds
+@@ 36 -0 +3 @@ [Unit pioneer] > [BuilderComponent] > [BuildActor]
++
++		[BuildActor]
++		actor_ids = bb_human_woodmill_outpost
 @@ 121 -9:443e8032 +0 @@ [Unit pioneer]
 @@ 132 -1:5673fadb +1 @@ [Unit pioneer] > [ElementComponent]
 +	morale_value = 9

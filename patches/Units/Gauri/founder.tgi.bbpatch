@@ -1,9 +1,13 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Gauri/founder.tgi sha256=e363c0f94df973d448ff9bccc71dd90b2912eb2825d8868c07415df0b3e2cf5e
-result sha256=7d5c1824abffdec211bb941661e275488d946dca770d987b08c3e9a13e035630 bytes=3323
+result sha256=6740bc6c280139b0a82e217a9371f32da96cba1b5b2735c692ab7f30b4b25e76 bytes=3382
 bom no
 eol crlf
 
+@@ 19 -0 +3 @@ [Unit founder] > [BuilderComponent] > [BuildActor]
++
++		[BuildActor]
++		actor_ids = bb_gauri_woodmill_outpost
 @@ 75 -1:7000d9e4 +1 @@ [Unit founder] > [EconomyComponent] > [Cost]
 +		gold = 2 ;; 5
 @@ 78 -1:736f7308 +1 @@ [Unit founder] > [EconomyComponent] > [Upkeep]

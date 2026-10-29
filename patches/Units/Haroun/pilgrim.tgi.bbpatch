@@ -1,9 +1,13 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Haroun/pilgrim.tgi sha256=5f46886274c2723a10223c4d12e1e33a9a12f96c2ec7f5826cace113c0269ece
-result sha256=db33f54cfa6213a8e3ccc80b59caac7dd7c5063874aa53c53be7328c46a43d74 bytes=3722
+result sha256=0f7e3085d8116393353545063a21c658b95b429a802fc08bac427d2af0e5e457 bytes=3782
 bom no
 eol crlf
 
+@@ 19 -0 +3 @@ [Unit pilgrim] > [BuilderComponent] > [BuildActor]
++
++		[BuildActor]
++		actor_ids = bb_haroun_woodmill_outpost
 @@ 103 -1:3d77d193 +1 @@ [Unit pilgrim] > [EconomyComponent] > [Cost]
 +		gold = 3 ;; 8
 @@ 106 -1:70dad19c +1 @@ [Unit pilgrim] > [EconomyComponent] > [Upkeep]
