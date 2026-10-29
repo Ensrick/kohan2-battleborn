@@ -5,6 +5,14 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Fixed
+- **Ported terrain filled with the host climate's doodads (0.2.11-dev, 2026-10-29; user: "All the
+  terrains ported over to midlands are placing what appear to be normal grassy terrain doodads").**
+  Each climate's own bushes, flowers, plants, rocks and cacti scatter on every terrain they do not
+  list, so they also landed on the ported terrains and outnumbered the ported doodads. The 19 doodad
+  files involved now list every ported terrain at weight 0, the way the game already keeps them off
+  its own lakes and roads, so ported ground auto-places only its own climate's doodads.
+
 ### Changed
 - **Lancer grey leather (0.2.9-dev, 2026-10-20).** The black-horse Lancer support
   now has grey leather on its rider and tack, approved after four-angle 3D review.

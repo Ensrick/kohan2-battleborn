@@ -40,6 +40,9 @@ should look sandy dry, and the midlands in the desert should be like yellowed gr
 Each terrain type including forest and such to look natural in each one. Fall looking trees and
 yellowed grass in desert when placing the midlands terrain types." Built in 0.2.10-dev by
 `tools/climates.py` (looks are its first pass; the author's in-editor verdict is owed).
+Rule from the first editor test (2026-10-29, "Each terrain has doodads that should auto-place on it"):
+ported ground auto-places only its own climate's (recoloured) doodads, never the host climate's.
+0.2.11-dev lists every ported terrain at weight 0 in the host doodads that scatter biome-wide.
 
 Status inventory built 2026-08-13 by diffing `workbench/` and `Data/` against the pristine
 `Data (Backup)` extract. **2026-08-13 fix pass:** workbench is now the single source of

@@ -1,0 +1,157 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+base Doodads/Temperate/temperate_bushes.tgi sha256=ac00bdee43c935c7dde872bd51728789bc738f75711395a5a44661fdce05c856
+result sha256=8aac9452d09124a94ddb67b67b3d98fb41814e22d7c372a4b03bf2cf24192a20 bytes=4205
+bom no
+eol crlf
+
+@@ 39 -0 +150 @@ [Thing temperate_bushes] > [Placement] > [Biome temperate] > [Terrain temperate_river]
++			weight = 0
++
++			;; Battleborn climate ports: no native scatter on ported ground (tools/climates.py)
++
++			[Terrain]
++			ids = bb_temperate_desert_scrub
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_scrubtrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_shore
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_shoretrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_shoreshadow
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_shoreshadowtrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_savannah
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_forest
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_sand
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_mountain
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_mountaintrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_corrupt
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_corrupttrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_lake
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_road
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_lakemurky
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_watershadow
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_waterblood
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_desert_sandtrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_tundra
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_tundratrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_snow
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_snowtrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_forestboreal
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_forest
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_foresttrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_packice
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_packicetrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_mountain
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_mountaintrans
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_mountainpeak
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_corrupt
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_road
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_lake
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_river
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_watershadow
++			weight = 0
++
++			[Terrain]
++			ids = bb_temperate_arctic_lakefrozen

@@ -21,6 +21,9 @@ from the player's own Data.rwd:
                                                (Doodads/ root loads after every climate folder,
                                                so the decal effects they name already exist)
     Localization/strings_data_K2.tgi           names such as "Grass (Midlands, frosted)"
+    Doodads/<Climate>/<file>.tgi               the target's own doodads that scatter on every
+                                               terrain they do not list (biome-wide weight) list
+                                               each ported terrain at weight 0
 
 Copies live in the SOURCE terrain folder so their relative texture paths keep working. Textures
 ship as deltas (bbdelta); the .tgi files become patches through 'bb.py diff', which this tool runs.
@@ -53,6 +56,7 @@ SKIP = {"arctic": re.compile(r"butterflies")}   # no butterflies in the snow
 EFFECT_TEX = re.compile(r"glow|mist|smoke|waterring|currant", re.I)
 MARK_BEGIN = "\t;; Battleborn climate ports (written by tools/climates.py)"
 MARK_END = "\t;; end of climate ports"
+NO_SCATTER = ";; Battleborn climate ports: no native scatter on ported ground (tools/climates.py)"
 
 
 # ---------------------------------------------------------------- colour looks (rgb 0..1, rows)
@@ -562,9 +566,28 @@ def _rename_thing(cl, did, target, key, look, places, out):
     return nid, "\n".join(final)
 
 
+def _exclude(text, did, biome, ids):
+    """The Thing did's own [Biome] block for biome, with a weight 0 [Terrain] item for each of ids."""
+    for s, e in blocks(text, "Thing "):
+        if (_first(text[s:e], "IDS") or "").lower() != did:
+            continue
+        for bs, be in blocks(text[s:e], "Biome"):
+            sub = text[s + bs:s + be]
+            if (_first(sub, "ids") or "").lower() != biome:
+                continue
+            ind = next(_kv(x)[0] for x in sub.split("\n") if _kv(x) and _kv(x)[1].lower() == "ids")
+            cr = "\r" if "\r\n" in sub else ""
+            add = [cr, f"{ind}{NO_SCATTER}{cr}"] + [
+                x for n in ids for x in (cr, f"{ind}[Terrain]{cr}", f"{ind}ids = {n}{cr}", f"{ind}weight = 0{cr}")]
+            at = s + bs + sub.rstrip().rfind("\n")      # end of the line before the block's closing brace
+            return text[:at] + "".join("\n" + x for x in add) + text[at:]
+    sys.exit(f"{did}: scatters on all {biome} terrain but has no [Biome] block of its own to extend")
+
+
 def generate(cl, out):
     names = {}
     biome_text, bio = {}, {}
+    edits = {}                          # native doodad file -> text with ported terrains excluded
     for b in FOLDER:
         bio[b] = cl.biome(b)
     for target in FOLDER:
@@ -635,6 +658,15 @@ def generate(cl, out):
             out.files[f"Doodads/_BB_{target}_{key}_{source}.tgi"] = (   # root folder: loads after every climate's own
                 f";; Battleborn: {FOLDER[source]} doodads for {FOLDER[target]} maps (tools/climates.py)\r\n\r\n"
                 + "\r\n\r\n".join(things) + "\r\n").encode("latin-1")
+        # A doodad with a biome-wide weight scatters on every terrain it does not list, so the
+        # target's own grass and flowers filled the ported ground (user 2026-10-29: Barrens ground
+        # in Midlands placed grassy doodads). List each ported terrain at weight 0, the way vanilla
+        # keeps bushes off its own lakes and roads.
+        for d, (f, _, _) in sorted(cl.doodads.items()):
+            biomes, pw = cl.effective(d)
+            b = biomes.get(target)
+            if b is not None and (b["w"] if b["w"] is not None else pw) > 0:
+                edits[f] = _exclude(edits.get(f) or _decode(cl.game.get(f)), d, target, new_ids)
         # the target biome: copies after its own terrains, transitions and water
         lines = t.split("\n")
         cr = "\r" if lines[0].endswith("\r") else ""
@@ -654,6 +686,10 @@ def generate(cl, out):
         biome_text[target] = "\n".join(lines)
         out.files[f"Terrain/{target}.tgi"] = biome_text[target].encode("latin-1")
         print(f"{target}: +{len(new_ids)} terrains, +{len(new_trans)} transitions, +{len(new_water)} water")
+    for f, text in edits.items():
+        bom = cl.game.get(f).startswith(b"\xef\xbb\xbf")
+        out.files[f] = (b"\xef\xbb\xbf" + text.encode("utf-8")) if bom else text.encode("latin-1")
+    print(f"{len(edits)} native doodad file(s) keep off ported ground")
     return names
 
 
@@ -689,6 +725,15 @@ def clean():
                         gone += 1
                 if gen_dir and not os.listdir(dirpath):
                     os.rmdir(dirpath)
+    for dirpath, _, filenames in os.walk(os.path.join(REPO, "work", "Doodads")):
+        for f in filenames:
+            full = os.path.join(dirpath, f)
+            if f.lower().endswith(".tgi") and NO_SCATTER.encode() in open(full, "rb").read():
+                rel = os.path.relpath(full, os.path.join(REPO, "work"))
+                for p in (full, os.path.join(REPO, "patches", rel) + ".bbpatch"):
+                    if os.path.exists(p):
+                        os.remove(p)
+                        gone += 1
     return gone
 
 
