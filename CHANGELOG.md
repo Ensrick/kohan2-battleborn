@@ -5,6 +5,18 @@ All notable changes to the Battleborn mod. Format follows
 
 ## [Unreleased]
 
+### Added
+- **Shadow and Undead out-of-town builders (0.2.13-dev, 2026-10-29; user: "The nightbringer and
+  boneweavers will need new companies for the out of town buildings explicitly ... make them
+  semi-combat versions of themselves, so they have some function besides making just these
+  structures").** Two new units with their own companies, recruited where their originals are
+  (village center): a Nightbringer copy (200 hp, defense 2, melee 12, speed 3.75, 7 gold; Nightbringer
+  180/1/10/3/5) and a Boneweaver copy (170 hp, defense 2, melee 15, 9 gold; Boneweaver 120/1/10/6),
+  about halfway to the Shadeling and Skeleton. They build only the out-of-town wood mill and keep
+  their originals' repair. The Nightbringer and Boneweaver no longer list the wood mill. Stock models
+  and placeholder names ("Nightbringer Builder", "Boneweaver Builder") until the user names them;
+  stats are a first proposal.
+
 ### Changed
 - **Settlers build the out-of-town economy structures (0.2.12-dev, 2026-10-29; user: "We should move
   the structures crafting out of the cluttered menu which icludes mines for engineers, and give settlers

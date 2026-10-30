@@ -1,0 +1,90 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+ref Units/Gauri/anvil.tgi sha256=801b555fe17fdabc2dc54bc4a14bce6479e67cb001f77fb9c3997e0de9231591
+ref Units/Shadow/nightbringer.tgi sha256=ce58e6e17974535c5fb814e9bd70dd5af09819e655945266bc68db836ab7e65a
+ref Units/Shadow/warg.tgi sha256=e3ff6e0d5702d1de22ce208c8f598bbd88690a17ec77d65891a7e38a1ca25e5b
+result sha256=4de2878d807791a04cd457198b7e515cb56b50b7ea46398804553cfba853527a bytes=5350
+bom no
+eol crlf
+
+@@ 1 -0 +253 @@
++;; Nightbringer, out-of-town builder (0.2.13-dev, user 2026-10-29: "copy these companies and make them
++;; semi-combat versions of themselves, so they have some function besides making just these structures").
++;; Builds only the out-of-town wood mill; stats halfway to the race's basic infantry (Shadeling: 160 hp, def 2, melee 14, speed 4.5, gold 6).
++;; PLACEHOLDER NAME: the user names unit types.
++
++
++[Unit template=K2ShadowUnit]
++{
++	IDS = bb_shadow_outpost_nightbringer
++	name = "#bb_shadow_outpost_nightbringer_name"
++	description = "#bb_shadow_outpost_nightbringer_description"
++ 	
++	[View]
++	{
++		resource_prefix = /Units/Shadow/Nightbringer/Nightbringer
++
+= Units/Gauri/anvil.tgi 11-12
++	}
++		
+= Units/Gauri/anvil.tgi 15-15
++	health = 200 ;; Nightbringer 180
++	defense = 2 ;; Nightbringer 1
++	
++	[BuilderComponent template=BuilderComponent]
++	{
++		[BuildActor]
++		actor_ids = bb_shadow_woodmill_outpost
++	}
++
+= Units/Shadow/nightbringer.tgi 44-104
++		gold = 7 ;; Nightbringer 5
++			
+= Units/Shadow/nightbringer.tgi 107-122
++		speed_max = 3.75 ;; Nightbringer 3
++		
+= Units/Shadow/nightbringer.tgi 125-141
++				amount = 12 ;; Nightbringer 10
++				
+= Units/Shadow/nightbringer.tgi 144-171
++				amount = 2 ;; 8, build time x4
++
+= Units/Shadow/nightbringer.tgi 174-187
++				amount = 2 ;; 8, build time x4
++				
+= Units/Shadow/nightbringer.tgi 190-202
++				amount = 2.5 ;; 10, build time x4
++				
++				[Effect Template=HealEffect]
++				targets = walls
++				amount = 5 ;; 20, build time x4
++
+= Units/Shadow/nightbringer.tgi 209-220
++		property_IDS = role_engineer
++	}
++}
++
++;; Battleborn: the company this builder leads (the company editor's front slot is locked to the company type)
++[Thing template=K2ShadowCompany]
++{
++	IDS = horde_bb_shadow_outpost_nightbringer
++	name = "#horde_bb_shadow_outpost_nightbringer_name"
++
++	[View]
++	{
++		resource_prefix = /Units/Shadow/Nightbringer/Nightbringer
+= Units/Shadow/nightbringer.tgi 236-236
++
+= Units/Shadow/nightbringer.tgi 238-250
++		property_IDS = role_engineer
++	}
++
+= Units/Shadow/warg.tgi 187-190
++
+= Units/Shadow/warg.tgi 192-192
++		element_IDS = bb_shadow_outpost_nightbringer
++
+= Units/Shadow/warg.tgi 195-196
++
+= Units/Shadow/warg.tgi 198-199
++	}
+= Units/Shadow/warg.tgi 201-201

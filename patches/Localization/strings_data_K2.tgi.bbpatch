@@ -1,6 +1,6 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Localization/strings_data_K2.tgi sha256=1de5c400a207659c6209831b88b23ac9a857ba0a159aa8b9e4b907fda40b4ea5
-result sha256=19426a158af7c9970bdf7f94de358c682b85dadf1a2e7ea2604745bdeb522c30 bytes=437210
+result sha256=4e54c4d15c3a3d7cb1bd4c8529db9a9a29db3895bb9ef07a425683aad4d20422 bytes=437822
 bom yes
 eol crlf
 
@@ -40,7 +40,7 @@ eol crlf
 +	pikeman_AbilityDefinition_name = "Halberd"
 +	pikeman_company_pikeman_name = "Halberdier Company"
 +	pikeman_militia_pikeman_name = "Halberdier Militia"
-@@ 5755 -0 +1229 @@ [Text Localization/strings_data_K2.tgi]
+@@ 5755 -0 +1235 @@ [Text Localization/strings_data_K2.tgi]
 +
 +;; Custom Mod strings 
 +
@@ -1048,6 +1048,12 @@ eol crlf
 +	bb_company_bb_front_nationalist_swordsman_name = "Crusader Company"
 +	bb_company_bb_front_ceyah_stonewalker_name = "Blackguard Company"
 +	bb_company_bb_front_council_hammer_name = "Rune Hammer Company"
++	bb_shadow_outpost_nightbringer_name = "Nightbringer Builder (name TBD)"
++	bb_shadow_outpost_nightbringer_description = "Builds the out-of-town wood mill, repairs, and fights better than a Nightbringer. Placeholder name."
++	horde_bb_shadow_outpost_nightbringer_name = "Nightbringer Builder Company (name TBD)"
++	bb_undead_outpost_boneweaver_name = "Boneweaver Builder (name TBD)"
++	bb_undead_outpost_boneweaver_description = "Builds the out-of-town wood mill, repairs, and fights better than a Boneweaver. Placeholder name."
++	company_bb_undead_outpost_boneweaver_name = "Boneweaver Builder Company (name TBD)"
 +	bb_lair_regrowth_name = "Regrowth"
 +
 +	;; Battleborn climate ports (written by tools/climates.py)

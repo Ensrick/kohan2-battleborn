@@ -1,0 +1,92 @@
+# Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
+ref Units/Haroun/caretaker.tgi sha256=24b79873d6b6a396c93e258628d9f8997f4ee58283280d3db9605244899d8b4c
+ref Units/Undead/bone_golem.tgi sha256=066dbdc7ea77d49f5de658a6b254b7cfec2707c0ba9753119927ec7fb4b6a8ae
+ref Units/Undead/boneweaver.tgi sha256=d0b94706a76daaad6d4ba1aa05489eb41730ab5517a9b7163b04a1e1067f10bd
+ref Units/Undead/ghoul.tgi sha256=e31322670917976418300fdd51e4963ac4166b6750f143c3759a1fc97f757b3c
+ref Units/Undead/skeleton.tgi sha256=ca18b643cc8c5f96181345cbe559b9cdfef0ba85230682f76619dbeb349b76ad
+result sha256=0c867888a0ad5098eca426104aada15f83c4639019e1c2fb1f39752669197a9e bytes=5491
+bom no
+eol crlf
+
+@@ 1 -0 +258 @@
++;; Boneweaver, out-of-town builder (0.2.13-dev, user 2026-10-29: "copy these companies and make them
++;; semi-combat versions of themselves, so they have some function besides making just these structures").
++;; Builds only the out-of-town wood mill; stats halfway to the race's basic infantry (Skeleton: 220 hp, def 3, melee 20, speed 3.5, gold 12).
++;; PLACEHOLDER NAME: the user names unit types.
++
++
++[Unit template=K2UndeadUnit]
++{
++	IDS = bb_undead_outpost_boneweaver
++	name = "#bb_undead_outpost_boneweaver_name"
++	description = "#bb_undead_outpost_boneweaver_description"
++ 	
++	[View]
++	resource_prefix = /Units/Undead/Boneweaver/Boneweaver
++			
++	[BodyComponent]
++	health = 170 ;; Boneweaver 120
++	defense = 2 ;; Boneweaver 1
++	
++	[BuilderComponent template=BuilderComponent]
++	{
++		[BuildActor]
++		actor_ids = bb_undead_woodmill_outpost
++	}
++
+= Units/Undead/boneweaver.tgi 39-80
++		gold = 9 ;; Boneweaver 6
++		
+= Units/Undead/boneweaver.tgi 83-123
++				amount = 15 ;; Boneweaver 10
++				
+= Units/Undead/boneweaver.tgi 126-143
++				amount = 2.5 ;; 10, build time x4
++				
++				[Effect Template=HealEffect]
++				targets = walls
++				amount = 12.5 ;; 50, build time x4
++
+= Units/Undead/boneweaver.tgi 150-177
++				amount = 1.25 ;; 5, build time x4
++
+= Units/Undead/boneweaver.tgi 180-193
++				amount = 1.25 ;; 5, build time x4
++				
+= Units/Undead/boneweaver.tgi 196-208
++		
+= Units/Undead/boneweaver.tgi 210-210
++		property_IDS = bb_settler_flank
++
+= Units/Undead/bone_golem.tgi 200-203
+= Units/Haroun/caretaker.tgi 183-189
++;; Battleborn: the company this builder leads (the company editor's front slot is locked to the company type)
++[Thing template=K2UndeadCompany]
++{
++	IDS = company_bb_undead_outpost_boneweaver
++	name = "#company_bb_undead_outpost_boneweaver_name"
++
++	[View]
++	{
++		resource_prefix = /Units/Undead/Boneweaver/Boneweaver
+= Units/Undead/boneweaver.tgi 232-232
++
+= Units/Undead/boneweaver.tgi 234-246
++		property_IDS = role_engineer
++	}
++
+= Units/Undead/ghoul.tgi 231-234
++
+= Units/Undead/ghoul.tgi 236-236
++		element_IDS = bb_undead_outpost_boneweaver
++
+= Units/Undead/skeleton.tgi 167-168
++
+= Units/Undead/skeleton.tgi 170-171
++
+= Units/Undead/skeleton.tgi 173-174
++
+= Units/Undead/skeleton.tgi 176-176
++		element_IDS = reaper
++	}
+= Units/Undead/skeleton.tgi 179-179

@@ -1,13 +1,11 @@
 # Battleborn patch - only Battleborn's own lines; game text is referenced, never copied.
 base Units/Shadow/nightbringer.tgi sha256=ce58e6e17974535c5fb814e9bd70dd5af09819e655945266bc68db836ab7e65a
-result sha256=f73e9e4e96fb77a14641c55c547cffbbc60a68d35b98a99ece2d52942dcffbf4 bytes=5421
+result sha256=20fc44a87afb743e6b47b0ee45c4714d5fd54955ce5ecb814daebb569a7a0280 bytes=5361
 bom no
-eol crlf*28 lf*1 crlf*263
+eol crlf
 
-@@ 27 -0 +3 @@ [Unit nightbringer] > [BuilderComponent] > [BuildActor]
+@@ 27 -1:2b4c342f +1 @@ [Unit nightbringer] > [BuilderComponent] > [BuildActor]
 +
-+		[BuildActor]
-+		actor_ids = bb_shadow_woodmill_outpost
 @@ 172 -1:01726488 +1 @@ [Unit nightbringer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]
 +				amount = 2 ;; 8, build time x4
 @@ 188 -1:01726488 +1 @@ [Unit nightbringer] > [PerformerComponent] > [Ability] > [AbilityDefinition] > [Effect]

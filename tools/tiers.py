@@ -108,6 +108,7 @@ tier("Shadow/leviathan.tgi", "leviathan", need(S, "manafocus", "barracks", "city
 tier("Shadow/banshee.tgi", "banshee", need(S, "shrine", "town"))
 tier("Shadow/fiend.tgi", "fiend", need(S, "manafocus", "town"))
 tier("Shadow/warlock.tgi", "warlock", need(S, "shrine", "library", "town"))
+tier("Shadow/_BB_Outpost_Nightbringer.tgi", "bb_shadow_outpost_nightbringer", need(S, "village"))  # out-of-town builder, as its Nightbringer
 
 # Undead: zombie (infantry) and bone archer are the village pair
 U = "undead"
@@ -118,6 +119,7 @@ tier("Undead/nightmare.tgi", "nightmare", need(U, "blacksmith", "barracks", "cit
 tier("Undead/lich.tgi", "lich", need(U, "shrine", "town"))
 tier("Undead/revenant.tgi", "revenant", need(U, "library", "town"))
 tier("Undead/_BB_Captain_Necromancer.tgi", "bb_captain_undead_necromancer", need(U, "shrine", "city"))
+tier("Undead/_BB_Outpost_Boneweaver.tgi", "bb_undead_outpost_boneweaver", need(U, "village"))  # out-of-town builder, as its Boneweaver
 
 # Council race lines (the Council races: Gauri, Haroun, Human)
 tier("Council/_BB_Front_Rune_Hammer.tgi", "bb_front_council_hammer", need(G, "blacksmith", "barracks", "city"))

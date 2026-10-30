@@ -4,7 +4,7 @@ Written by `tools/roster.py` on every `bb.py build`; do not edit by hand.
 
 ## Skins
 
-87 company units, 31 on Battleborn skins. Of the 31 units Battleborn adds, 0 still wear stock art. **Battleborn** = a texture this mod ships; stock = the unit's own game art; borrowed = another unit's or a hero's game art.
+89 company units, 31 on Battleborn skins. Of the 33 units Battleborn adds, 2 still wear stock art. **Battleborn** = a texture this mod ships; stock = the unit's own game art; borrowed = another unit's or a hero's game art.
 
 ### Human
 
@@ -78,6 +78,7 @@ Written by `tools/roster.py` on every `bb.py build`; do not edit by hand.
 
 | Unit | IDS | Slots | Skin | Icon |
 |---|---|---|---|---|
+| Nightbringer Builder (name TBD) | `bb_shadow_outpost_nightbringer` | front | borrowed: Nightbringerbase.dds | borrowed: NightbringerIcon.tga |
 | Banshee | `banshee` | captain | stock | stock |
 | Beast | `beast` | front, flank | stock | stock |
 | Brute | `brute` | captain | stock | stock |
@@ -94,6 +95,7 @@ Written by `tools/roster.py` on every `bb.py build`; do not edit by hand.
 | Unit | IDS | Slots | Skin | Icon |
 |---|---|---|---|---|
 | Necromancer | `bb_captain_undead_necromancer` | captain | **Battleborn** | borrowed: LichIcon.tga |
+| Boneweaver Builder (name TBD) | `bb_undead_outpost_boneweaver` | front | borrowed: Boneweaverbase.dds | borrowed: BoneweaverIcon.tga |
 | Bone Archer | `bonearcher` | front, flank | stock | stock |
 | Boneweaver | `boneweaver` | front | stock | stock |
 | Lich | `lich` | support | stock | stock |
@@ -200,6 +202,7 @@ Each company type's front unit and the sergeant or captain it starts with (the p
 
 | Company | Front unit | Sergeant or captain | Its model | Same model |
 |---|---|---|---|---|
+| Nightbringer Builder Company (name TBD) | Nightbringer Builder (name TBD) | Shade (`shade`) | shade | no |
 | Beast Horde | Beast | Shade (`shade`) | shade | no |
 | Fallen Beast Horde | Beast | Banshee (`banshee`) | banshee | no |
 | Durash's Beast Horde | Beast | Durash (`durash`) | nightbringer | no |
@@ -214,6 +217,7 @@ Each company type's front unit and the sergeant or captain it starts with (the p
 
 | Company | Front unit | Sergeant or captain | Its model | Same model |
 |---|---|---|---|---|
+| Boneweaver Builder Company (name TBD) | Boneweaver Builder (name TBD) | Reaper (`reaper`) | reaper | no |
 | Bone Archer Company | Bone Archer | Reaper (`reaper`) | reaper | no |
 | Boneweaver Company | Boneweaver | Reaper (`reaper`) | reaper | no |
 | Nightmare Company | Nightmare | Reaper (`reaper`) | reaper | no |

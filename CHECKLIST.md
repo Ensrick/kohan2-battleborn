@@ -162,7 +162,12 @@ crafter, Gauri forge, Haroun caretaker, Shadow nightbringer, Undead boneweaver.
 icludes mines for engineers, and give settlers the ability to craft these peripheral structures
 instead." 0.2.12-dev: Pioneer (+ its captain), Drauga settler, Gauri founder, Haroun pilgrim build
 the out-of-town structures; engineers keep outpost, fort and mines. Nightbringer and boneweaver are
-both settler and builder, so their menus are unchanged.
+both settler and builder, so (user 2026-10-29) they get "new companies for the out of town buildings
+explicitly ... semi-combat versions of themselves": 0.2.13-dev `_BB_Outpost_Nightbringer` /
+`_BB_Outpost_Boneweaver`, own companies (horde_standard + shade / company_standard + reaper), build only
+the wood mill outpost, stats halfway to shadeling / skeleton. **Owed:** user names for both units and
+companies (placeholders "Nightbringer Builder" / "Boneweaver Builder", name TBD), own skins (stock now),
+stat sign-off, AI use.
 **Open asks from the same message (not started):** (a) RESOLVED same day: the "peripheral
 structures" are "All the copies of structures we build in the town that were made explicitly to
 function outside the town" (the wood chain), and the player picks the sawmill / wood market upgrade
